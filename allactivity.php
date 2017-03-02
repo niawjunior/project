@@ -28,7 +28,7 @@ if(isset($_GET['user']))
 
 
 $Num_Rows = mysqli_num_rows($objQuery_NUM);
-$Per_Page = 2;
+$Per_Page = 20;
 $Page = $_GET["Page"];
   if(!$_GET["Page"])
   {
