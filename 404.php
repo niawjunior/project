@@ -1,0 +1,38 @@
+<?
+require_once("config_home.php");
+?>
+<style>
+body{height:100%;
+width:100%;
+background-image:url(img/wallpapers.jpeg);/*your background image*/
+background-repeat:no-repeat;/*we want to have one single image not a repeated one*/
+background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
+/*css hack for ie*/
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
+-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
+}
+</style>
+<script>
+$(window).load(function()
+{
+$('#myModal').modal('show');
+setTimeout("location.href = 'home.php';",3000);
+});
+</script>
+<div class="container">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">ขออภัย!! ขณะนี้บัญชีของคุณถูกระงับการใช้งาน</h4>
+        </div>
+        <div class="modal-body">
+          <p>กรุณาติดต่อผู้ดูแลระบบ เพื่อเข้าสู่ระบบอีกครั้งในภายหลัง.</p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+body{
+    background-image:url('../photo/bg.png');
+	img {
+    max-width: 100%;
+    height: auto;
+}
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}

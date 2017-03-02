@@ -1,0 +1,121 @@
+<?
+require_once("connect.php");
+require_once("config.php");
+?>
+<?
+$connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
+$strSQL1 = "SELECT * FROM data ";
+$objQuery1 = mysqli_query($connect,"SELECT * FROM data");
+$Num_Rows = mysqli_num_rows($objQuery1);
+$Per_Page = 5;
+$Page = $_GET["Page"];
+if(!$_GET["Page"])
+{
+$Page=1;
+}
+$Prev_Page = $Page-1;
+$Next_Page = $Page+1;
+$Page_Start = (($Per_Page*$Page)-$Per_Page);
+if($Num_Rows<=$Per_Page)
+{
+$Num_Pages =1;
+}
+else if(($Num_Rows % $Per_Page)==0)
+{
+$Num_Pages =($Num_Rows/$Per_Page) ;
+}
+else
+{
+$Num_Pages =($Num_Rows/$Per_Page)+1;
+$Num_Pages = (int)$Num_Pages;
+}
+$objQuery3 = mysqli_query($connect,"SELECT * FROM data order by ID desc  LIMIT $Page_Start , $Per_Page");
+$objQuery4 = mysqli_query($connect,"SELECT * FROM showdata");
+while($objResult4 = mysqli_fetch_array($objQuery4))
+{
+$f1111 = $objResult4['showh1'];
+}
+?>
+<table class="table table-hover" >
+  <tr bg>
+    <th  width="15%" height="50"> <div align="center">สถานที่</div></th>
+    <th  width="60%" height="50"> <div align="center">คำอธิบาย</div></th>
+    <th  width="10%" height="50"> <div align="center">ละติจูด</div></th>
+    <th  width="10%" height="50"> <div align="center">ลองติจูด</div></th>
+    <th  width="5%" height="50"> <div align="center">สถานะ</div></th>
+    <th  width="15%" height="50"> <div align="center">รูปภาพ</div></th>
+  </tr>
+  <?
+  while($objResult3 = mysqli_fetch_array($objQuery3))
+  {
+  $f000 = $objResult3['h1'];
+  $f111 = $objResult3['h2'];
+  $f222 = $objResult3['la'];
+  $f333 = $objResult3['lo'];
+  $f444 = $objResult3['url'];
+  ?>
+  <?
+  if($f000==$f1111)
+  {
+  $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span>';
+  }
+  else
+  {
+  $icon='<span class="glyphicon glyphicon-record" style="color:#f76c6c"></span>';
+  }
+  ?>
+  <tr class="bg-style">
+    <td><center><a class="text-primary" href="showdata.php?PAGE=<?=$f000?>" target="_blank"><?php echo $f000 ?></a></center></td>
+    <td><center><?php echo $f111 ?></center></td>
+    <td><center><?php echo Round($f222,2) ?></center></td>
+    <td><center><?php echo Round($f333,2) ?></center></td>
+    <td align="center"><?=$icon?></td>
+    <td><center><img src="uploadphoto/<?php echo $f444 ?>" width="auto" height="30"></center></td>
+  </tr>
+  
+  <?
+  }
+  ?>
+</table>
+<center>
+<nav>
+  <ul class="pagination">
+    <li <? if($Page==1) echo 'class="disabled"'?>>
+      <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <?
+    for($i=1;$i<=$Num_Pages;$i++)
+    {
+    if($Page-2>=2 and ($i>2 and $i<$Page-2))
+    {
+    ?>
+    <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>">...</a></li>
+    <?
+    $i=$Page-2;
+    }
+    if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
+    {
+    ?>
+    <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>">...</a></li>
+    <?
+    $i=$Num_Pages-1;
+    }
+    ?>
+    <li <? if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>"><?php echo $i; $e=$i; ?></a></li>
+    <?php
+    }
+    ?>
+    <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
+      <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</center>
+</form>
+<?
+mysqli_close($connect);
+?>

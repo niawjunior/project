@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+/** { margin:0; padding:0; }*/
+
+html, body { 
+	margin:0;
+	padding:0;
+	font-family:Tahoma, Arial, sans-serif; 
+	font-size:13px;
+	height:100%;
+}
+
+input[type=text], input[type=password] { padding:2px; font-family:Tahoma, Arial, sans-serif; }
+input[type=button] { font-family:Tahoma, Arial, sans-serif; cursor:pointer; }
+select, input { font-family:Tahoma, Arial, sans-serif; padding:2px; }
+select option { padding:0 10px 0 5px; }
+
+#ClipPlayer,
+.wraper,
+.wraper td {
+	width: 100%;
+	height: 100%;
+	border: 0 none;
+	border-collapse: collapse;
+}
+
+.success { background-color:#CDDAA0; padding:3px 5px; text-align:center; margin-bottom:5px; }
+
+.profile-form { display:table; width:100%; }
+.profile-form dt { clear:both; float:left; width:43%; margin:6px 0 6px 5px; font-weight:bold; }
+.profile-form dt span { float:right; margin-right:5px; }
+.profile-form dd { float:right; width:55%; margin:4px 0; }
+
+.button {
+	color:#fff; 
+	border-radius:5px; 
+	border:1px solid #314f8c;
+	box-shadow:inset 0 0 1px rgba(255,255,255,0.7);
+	text-shadow:0 1px 0 rgba(0,0,0,0.5);
+	padding:2px 10px;
+	cursor:pointer;
+	background: 			#3d5c9e;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#6580b3), to(#3d5c9e)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #6580b3, #3d5c9e); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #6580b3, #3d5c9e); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #6580b3, #3d5c9e); /* IE10 */
+	background-image:      -o-linear-gradient(top, #6580b3, #3d5c9e); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #6580b3, #3d5c9e);
+}
+.button:hover {
+	box-shadow:inset 0 0 1px rgba(255,255,255,0.8);
+	background: 			#4a6eba;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#708eca), to(#4a6eba)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #708eca, #4a6eba); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #708eca, #4a6eba); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #708eca, #4a6eba); /* IE10 */
+	background-image:      -o-linear-gradient(top, #708eca, #4a6eba); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #708eca, #4a6eba);
+}
+
+.web-offline { text-align:center; padding:5px; }
+.web-offline p { margin:5px 0; font-size:20px; line-height:45px; }
+.web-offline p span { font-weight:bold; color:#AC1A1E; }
+.web-offline a { text-decoration:none; }
+.web-offline a:hover {  }
+
+.search-zone { margin:5px 0 10px; }
+.DatepickerInput { width:90px; }
+.ui-datepicker-trigger { 
+	cursor: pointer;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.report-zone { text-align:center; padding:10px 0; margin:5px 0; background-color:#eee; border-radius:8px; }
+.report-zone h1 { margin:0; padding:0; font-size:18px; text-shadow:0 1px 0 #fff; }
+
+.LocationPanel { overflow:hidden; border-radius:5px; }
+
+#lb_riverData { background:url('img/bg/bg-riverdata.jpg') repeat-x left bottom #6cc5e7; min-height:500px; position:relative; padding-top:5px; }
+#lb_riverData h1 { 
+	margin:0 5px; padding:5px 0; text-align:center; border:2px solid #5eb4d5; color:#4572a7; font-size:14px; border-radius:10px; text-shadow:0 1px 0 #fff;
+	background: 			#e5e5e5;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#e5e5e5)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #efefef, #e5e5e5); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #efefef, #e5e5e5); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #efefef, #e5e5e5); /* IE10 */
+	background-image:      -o-linear-gradient(top, #efefef, #e5e5e5); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #efefef, #e5e5e5);
+}
+#lb_riverData h1 span { display:block; font-weight:normal; font-size:13px; }
+.lb_house { background:url('img/bg/simu_house.png') no-repeat center center; background-size:100% 430px; width:100%; height:430px; position:fixed; top:0; left:0; }
+.lb_riverDataCover { background:url('img/bg/simu_bg.png') no-repeat center center; background-size:100% 430px; width:100%; height:430px; position:fixed; top:0; left:0; }
+
+.lb_town { width:100%; height:430px; position:fixed; bottom:0; left:0; }
+.lb_town .c-left,
+.lb_town .c-right { position:absolute; bottom:0; min-height:210px; }
+.lb_town .c-left { background:url('img/bg/simu_town_left.png') no-repeat left top; width:176px; left:0; }
+.lb_town .c-right { background:url('img/bg/simu_town_right.png') no-repeat right top; width:178px; right:0; }
+
+.lb_riverDataTownCover { background:url('img/bg/simu_bg_town.png') no-repeat center center; background-size:100% 430px; width:100%; height:430px; position:fixed; top:0; left:0; }
+
+.legend { margin:15px 0 0 25px; border:1px solid #909090; width:100px; border-radius:5px; background-color:rgba(255,255,255,0.7); text-shadow:0 1px 0 #fff; padding:5px; z-index:600; }
+.legend .series { border-left:15px solid; padding-left:5px; margin:5px; color:#3e576f; line-height:14px; } 
+.legend .current { border-color:#4572a7; }
+.legend .station { border-color:#aa4643; }
+
+.water-capacity { position:absolute; left:0; bottom:0; height:310px; width:100%; }
+.water-capacity.town { height:210px; }
+#current_capacity span,
+#station_capacity span { width:50px; text-align:center; display:block; padding:3px 5px; border-radius:3px; box-shadow:0 2px 1px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.5) inset; position:relative; }
+#current_capacity span:after,
+#station_capacity span:after { content:""; position:absolute; bottom:-7px; left:20px; border-style:solid; border-width:8px 8px 0; }
+
+#current_capacity { /*background:url('img/bg/bg-water.png') no-repeat center top; background-size:100% 100%;*/ position:absolute; bottom:0; width:100%; }
+#current_capacity span { 
+	margin:-25px auto 0; text-shadow:0 1px 0 rgba(0,0,0,0.2); color:#fff; 
+	background: 			#4572a7;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#4c87cb), to(#4572a7)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #4c87cb, #4572a7); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #4c87cb, #4572a7); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #4c87cb, #4572a7); /* IE10 */
+	background-image:      -o-linear-gradient(top, #4c87cb, #4572a7); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #4c87cb, #4572a7);
+}
+#current_capacity span:after { border-color:#4572a7 transparent; }
+
+.water-capacity.town #current_capacity span { margin:-32px auto 0; }
+
+#station_capacity { position:absolute; bottom:0; width:100%; height:100%; border-top:2px dotted rgba(175,81,78,0.7); }
+#station_capacity span { 
+	margin:-35px 0 0 60%; text-shadow:0 1px 0 rgba(0,0,0,0.2); color:#fff;
+	background: 			#d5706d;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d55551), to(#d5706d)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #d55551, #d5706d); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #d55551, #d5706d); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #d55551, #d5706d); /* IE10 */
+	background-image:      -o-linear-gradient(top, #d55551, #d5706d); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #d55551, #d5706d);
+}
+#station_capacity span:after { border-color:#d5706d transparent; }
+
+#water { position:absolute; left:0; bottom:0; }
+
+.legend_level { 
+	position: absolute; bottom:110px; right:35px; background-color:rgba(71,121,179,0.5); border:1px solid #4777B0;
+	list-style:none; padding:5px; width:85px; border-radius:8px; box-shadow:0 3px 3px rgba(0,0,0,0.2);
+}
+.legend_level li { display:block; text-align:right; padding-right:30px; font-size:13px; color:#fff; border-bottom:1px dotted #fff; font-weight:bold; line-height:26px; }
+.legend_level li:last-child { border-bottom:0 none; }
+
+.canal-value { 
+	 bottom:0; position: absolute; min-height:240px;
+}
+.canal-value.c-left { left:0; background:url('img/bg/simu_bg_canal_left.png') no-repeat right top; width:176px; }
+.canal-value.c-right { right:0; background:url('img/bg/simu_bg_canal_right.png') no-repeat left top; width:178px; }
+.canal-value span {
+	position: absolute; bottom:30px; position:absolute; background-color:#fff; box-shadow:0 0 5px rgba(0,0,0,0.2) inset; 
+	border-radius:10px; border:1px solid #fff; padding:15px 25px; text-align:center;
+}
+.canal-value.c-left span { left:35px; }
+.canal-value.c-right span { right:35px; }
