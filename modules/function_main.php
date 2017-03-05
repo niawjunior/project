@@ -1,5 +1,8 @@
+<?php
+session_start(); 
+?>
 <script>	
-function date_time(id)
+function date_time_th(id)
 {
         date = new Date;
         year = date.getFullYear();
@@ -25,14 +28,41 @@ function date_time(id)
         }
         result = ''+days[day]+' ที่ '+d+' '+months[month]+'  '+year+' เวลา '+h+':'+m+':'+s;
         document.getElementById(id).innerHTML = result;
-        setTimeout('date_time("'+id+'");','1000');
+        setTimeout('date_time_th("'+id+'");','1000');
         return true;
 }
 </script>
-
-
-
-
+<script>	
+function date_time_en(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' ที่ '+d+' '+months[month]+'  '+year+' เวลา '+h+':'+m+':'+s;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time_en("'+id+'");','1000');
+        return true;
+}
+</script>
 <?php
 date_default_timezone_set('Asia/Bangkok');
 $date = date("d-m-Y");
@@ -49,8 +79,22 @@ $time = date("H:i");
         <?echo $_SESSION["strh1"]?> (<?echo $_SESSION["strh2"]?>)  &nbsp;<span class="glyphicon glyphicon-time">
         </span><?echo $_SESSION["strh3"]?>
          <body>
-            <span id="date_time"></span>
-            <script type="text/javascript">window.onload = date_time('date_time');</script>
+         <?
+         if($_SESSION["lang"] == "th")
+         {
+			$date_time  = 'date_time_th';
+         }
+         else if($_SESSION["lang"] == "en")
+         {
+         	$date_time  = 'date_time_en';
+         }
+         else
+         {
+         	$date_time  = 'date_time_th';
+         }
+         ?>
+            <span id="<?echo $date_time?>"></span>
+            <script type="text/javascript">window.onload = <?echo $date_time?>('<?echo $date_time?>');</script>
     </body>
         </h3>
 
