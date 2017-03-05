@@ -1,3 +1,38 @@
+<script>	
+function date_time(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('วันจันทร์', 'วันอังคาร', 'วันพุทธ', 'วันพฤหัสบดี', 'วันศุกร์', 'วันเสาร์', 'วันอาทิตย์');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' ที่ '+d+' '+months[month]+'  '+year+' เวลา '+h+':'+m+':'+s;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("'+id+'");','1000');
+        return true;
+}
+</script>
+
+
+
+
 <?php
 date_default_timezone_set('Asia/Bangkok');
 $date = date("d-m-Y");
@@ -12,8 +47,13 @@ $time = date("H:i");
         <span class="glyphicon glyphicon-bookmark">
         </span>
         <?echo $_SESSION["strh1"]?> (<?echo $_SESSION["strh2"]?>)  &nbsp;<span class="glyphicon glyphicon-time">
-        </span> <?echo $_SESSION["strh3"]?> : <?echo $date." / ".$time?>
+        </span><?echo $_SESSION["strh3"]?>
+         <body>
+            <span id="date_time"></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
+    </body>
         </h3>
+
         <h3 class="panel-title pull-right ">
         </h3>
       </div>

@@ -1,5 +1,4 @@
 <?php
-
 $objQuery6 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
 while($objResult6 = mysqli_fetch_array($objQuery6))
 {
@@ -13,8 +12,6 @@ else
 {
 $logoprofile = $CHECKPHOTO;
 }
-
-
 if($_SESSION["status"] == "ADMIN")
 {
 $PAGE = "profile.php";
@@ -36,7 +33,6 @@ $PAGE_PROFILE = "profile.php?Action=Profile";
 $PAGE_SETTING = "profile.php?Action=Setting";
 $type_user ="ผู้ใช้งานทั่วไป";
 }
-
 if($_SESSION["status"] == "ADMIN")
 {
 ?>
@@ -60,5 +56,4 @@ if($_SESSION["status"] == "ADMIN")
   <a href="<?php echo $PAGE_PROFILE?>">
     <img src="<?=$logoprofile?>" class="img-circle " height ="30" width="auto" >
   </a>
-  
 </form>
