@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require_once("config.php");
+  require_once("config_home.php");
   require_once("connect.php");
   date_default_timezone_set('Asia/Bangkok');
 ?>
@@ -13,73 +13,64 @@
 $objQuery1 = mysqli_query($connect,"SELECT * FROM activity") or die ("Error Query [".$strSQL."]");
 
 $objQuery2 = mysqli_query($connect,"SELECT * FROM activity WHERE user = '".$_GET['user']."'") or die ("Error Query [".$strSQL."]");
-
-
 $USER = $_GET['user'];
 if(isset($_GET['user']))
 	{
 		$objQuery_NUM = $objQuery2;
 	}
-	else
+else
 	{
 		$objQuery_NUM = $objQuery1;
 	}
-
-
-
 $Num_Rows = mysqli_num_rows($objQuery_NUM);
 $Per_Page = 20;
 $Page = $_GET["Page"];
-  if(!$_GET["Page"])
-  {
-  $Page=1;
-  }
-  $Prev_Page = $Page-1;
-  $Next_Page = $Page+1;
-  $Page_Start = (($Per_Page*$Page)-$Per_Page);
-  if($Num_Rows<=$Per_Page)
-  {
-  $Num_Pages =1;
-  }
-  else if(($Num_Rows % $Per_Page)==0)
-  {
-  $Num_Pages =($Num_Rows/$Per_Page) ;
-  }
-  else
-  {
-  $Num_Pages =($Num_Rows/$Per_Page)+1;
-  $Num_Pages = (int)$Num_Pages;
-  }
+if(!$_GET["Page"])
+	{
+	$Page=1;
+	}
+$Prev_Page = $Page-1;
+$Next_Page = $Page+1;
+$Page_Start = (($Per_Page*$Page)-$Per_Page);
+if($Num_Rows<=$Per_Page)
+	{
+	$Num_Pages =1;
+	}
+else if(($Num_Rows % $Per_Page)==0)
+	{
+	$Num_Pages =($Num_Rows/$Per_Page) ;
+	}
+else
+	{
+	$Num_Pages =($Num_Rows/$Per_Page)+1;
+	$Num_Pages = (int)$Num_Pages;
+	}
 
 
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
-
 $objQuery3 = mysqli_query($connect, "SELECT * FROM activity where user='$USER' ORDER BY ID DESC LIMIT $Page_Start , $Per_Page ");
-
 $objQuery4 = mysqli_query($connect, "SELECT * FROM activity  ORDER BY ID DESC LIMIT $Page_Start , $Per_Page ");
-
 if(isset($_GET['user']))
 	{
 		$objQuery = $objQuery3;
 	}
-	else
+else
 	{
 		$objQuery = $objQuery4;
 	}
-
 ?>
 <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>">
 <input type="hidden" name="hdnCmd" value="">
 <center><h1><thead>บันทึกกิจกรรมทั้งหมด</thead></h1></center>
 <table class="table table-hover" border="0">
-  <tr>
-  <thead class="thead-inverse">
-    <th class="default" width="10%" height="50"> <div align="center">ชื่อสมาชิก</div></th>
-    <th class="default" width="9%" height="50"> <div align="center">เวลา</div></th>
-    <th class="default" width="15%" height="50"> <div align="center">วันที่</th>
-    <th class="default" width="20%" height="50"> <div align="center">การกระทำ</div></th>
-    <th class="default" width="50%" height="50"> <div align="center">*หมายเหตุ/รายละเอียด</div></th>
-  </thead>
+  	<tr>
+	  <thead class="thead-inverse">
+	    <th class="default" width="10%" height="50"> <div align="center">ชื่อสมาชิก</div></th>
+	    <th class="default" width="9%" height="50"> <div align="center">เวลา</div></th>
+	    <th class="default" width="15%" height="50"> <div align="center">วันที่</th>
+	    <th class="default" width="20%" height="50"> <div align="center">การกระทำ</div></th>
+	    <th class="default" width="50%" height="50"> <div align="center">*หมายเหตุ/รายละเอียด</div></th>
+	  </thead>
     </tr>
 <?
 while($objResult = mysqli_fetch_array($objQuery))
@@ -93,11 +84,11 @@ while($objResult = mysqli_fetch_array($objQuery))
   {
   ?>
   <tr>
-   <td ><center><?php echo $f1 ?></center></td>
-      <td ><center><?php echo $f2 ?></center></td>
-         <td ><center><?php echo $f3 ?></center></td>
-            <td ><center><?php echo $f4 ?></center></td>
-               <td ><center><?php echo $f5 ?></center></td>
+	<td ><center><?php echo $f1 ?></center></td>
+	<td ><center><?php echo $f2 ?></center></td>
+	<td ><center><?php echo $f3 ?></center></td>
+	<td ><center><?php echo $f4 ?></center></td>
+	<td ><center><?php echo $f5 ?></center></td>
   </tr>
   <?
   }
@@ -105,43 +96,42 @@ while($objResult = mysqli_fetch_array($objQuery))
   ?>
 </table>
   <center>
-  <nav>
-    <ul class="pagination">
-      <li <? if($Page==1) echo 'class="disabled"'?>>
-        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1<?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <?
-      for($i=1;$i<=$Num_Pages;$i++)
-      {
-      if($Page-2>=2 and ($i>2 and $i<$Page-2))
-      {
-      ?>
-
-      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>">...</a></li>
-      <?
-      $i=$Page-2;
-      }
-      if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
-      {
-      ?>
-      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>">...</a></li>
-      <?
-      $i=$Num_Pages-1;
-      }
-      ?>
-      <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>"><?php echo $i; $e=$i; ?></a></li>
-      <?php
-      }
-      ?>
-      <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
-        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+	  <nav>
+	    <ul class="pagination">
+	      <li <? if($Page==1) echo 'class="disabled"'?>>
+	        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1<?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>" aria-label="Previous">
+	          <span aria-hidden="true">&laquo;</span>
+	        </a>
+	      </li>
+	      <?
+	      for($i=1;$i<=$Num_Pages;$i++)
+		      {
+		      if($Page-2>=2 and ($i>2 and $i<$Page-2))
+				      {
+				      ?>
+				      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>">...</a></li>
+				      <?
+				      $i=$Page-2;
+				      }
+	      		if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
+	      {
+	      ?>
+	      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>">...</a></li>
+	      <?
+	      $i=$Num_Pages-1;
+	      }
+	      ?>
+	      <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>"><?php echo $i; $e=$i; ?></a></li>
+	      <?php
+	      }
+	      ?>
+	      <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
+	        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>" aria-label="Next">
+	          <span aria-hidden="true">&raquo;</span>
+	        </a>
+	      </li>
+	    </ul>
+	  </nav>
   </center>
 </form>
 <?

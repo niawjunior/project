@@ -6,7 +6,6 @@ require_once("config_home.php");
 <html>
   <body>
     <?
-
     $US = $_SESSION["USER"];
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     $objQuery4 = mysqli_query($connect,"SELECT * FROM member where user='$US'");
@@ -43,7 +42,6 @@ require_once("config_home.php");
 			    	$pofile = '/photo/user.png';
 			    }
 		    }
-		    
 		    $objQuery = mysqli_query($connect,"UPDATE member SET pass = '".$_POST["inputPasswordConfirm"]."',name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
 	    }
 		else
@@ -70,7 +68,6 @@ require_once("config_home.php");
 			    }
 			    $objQuery = mysqli_query($connect,"UPDATE member SET name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
 		    }
-		    
 		    ?>
 		    <script>
 		    $(window).load(function()
@@ -103,14 +100,12 @@ require_once("config_home.php");
 		    echo ("ไม่สามารถบันทึกข้อมูลได้");
 		    }
     }
-
     if($_GET["Action"] == "Update" and $password1 !== $passwordcheck )
     {
     ?>
     <script>
     $(window).load(function()
     {
-    
     $('#myModal').modal('show');
     setTimeout("",2000);
     });
@@ -134,11 +129,8 @@ require_once("config_home.php");
     </div>
     <?
     }
-    
     $objQuery = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
-   
     ?>
-
     <form role="form" method="post" action="<?=$_SERVER["PHP_SELF"];?>?Action=Update&ID=<?=$_GET["ID"];?>">
           <div class="panel-body">
           <?
@@ -169,8 +161,7 @@ require_once("config_home.php");
            require_once("modules/function_profile.php");
           }
           }
-                  ?>
-               
+                  ?>  
                 <div class="modal fade" id="loginModal"  aria-labelledby="Login" aria-hidden="true">
                   <div class="modal-dialog modl-md">
                     <div class="modal-content">
@@ -184,18 +175,15 @@ require_once("config_home.php");
                         <div class="form-group">
                           <h4><label class="col-md-3 control-label"><span class="glyphicon glyphicon-lock"> </span> รหัสผ่าน</label></h4>
                           <div class="col-md-8">
-                            <input type="password" class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>
-                            
+                            <input type="password" class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>     
                           </div>
-                          
-                          <br><br><br>
+				           <br><br><br>
                           <div class="col-md-9"></div>
                           <button type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok"></span></button>
                         </div>
                       </div>
                     </div>
                   </div>
-               
               </form>
               <?
               mysqli_close($connect);
@@ -203,31 +191,3 @@ require_once("config_home.php");
             </body>
           </html>
 
-
-<script src="http://www.jquery-az.com/boots/js/bootstrap-filestyle.min.js"></script>
-          <script>
-$('#BSbtndanger').filestyle({
- 
-buttonName : 'btn-danger',
- 
-buttonText : ' File selection'
- 
-});
- 
-$('#BSbtnsuccess').filestyle({
- 
-buttonName : 'btn-success',
- 
-buttonText : ' Open'
- 
-});
- 
-$('#BSbtninfo').filestyle({
- 
-buttonName : 'btn-info',
- 
-buttonText : ' Select a File'
- 
-});
- 
-</script>

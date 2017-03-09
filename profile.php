@@ -78,67 +78,10 @@ $type_user ="ผู้ใช้งานทั่วไป";
   </head>
   
   <body class="background">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header hidden-sm">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border:1px solid #0B4D61" >
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar" style="background:#fff"></span>
-          <span class="icon-bar" style="background:#fff"></span>
-          <span class="icon-bar" style="background:#fff"></span>
-          </button>
-          <a class="navbar-brand" href="home.php" onclick="getHome();">WATER LEVEL </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li id="tab_active_home">
-              <a href="home.php">
-                <span class="glyphicon glyphicon-home" aria-hidden="true">
-                </span>
-              </a>
-            </li>
-            <li id="tab_active_weather"><a href="">ที่มาและความสำคัญ</a>
-          </li>
-          <li id="tab_active_research"><a href="">วิธีการติดตั้ง/ใช้งาน</a>
-        </li>
-      </ul>
-      <?
-      if($_SESSION["STATUS"]=="")
-      {
-      require_once("modules/function_login.php");
-      }
-      else
-      {
-      ?>
-      <?
-      if($_SESSION["status"] == "ADMIN")
-      {
-      ?>
-      <ul class="nav navbar-nav">
-        <li id="tab_active_weather"><a href="profile.php">หน้าจัดการข้อมูล</a>
-      </li>
-    </ul>
-    <?
-    }
-    ?>
-    <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="<?echo $PAGE?>">
-      <button class="btn btn-warning">ยินดีต้อนรับคุณ <?echo $_SESSION["USER"]?>
-      <span text-primary>(<?echo $type_user?>)</span >&nbsp;<span class="glyphicon glyphicon-cog"></span>
-      </button>
-      <a href="logout.php">
-        <button type="button" class="btn btn-danger">LOGOUT</button>
-      </a>
-      <a href="profile.php?Action=Profile"><img src="<?=$logoprofile?>" class="img-circle" height ="30" width="auto" >
-      </a>
-    </form>
-  </div>
-</div>
-</nav>
-<?
-}
+<?php require_once( "modules/function_nav.php");?>
 ?>
 <style>
-body { padding-top:20px;
+body { padding-top:10px;
 }
 .panel-body .btn:not(.btn-block) { width:130px;margin-bottom:5px; }
 </style>
@@ -270,7 +213,7 @@ if($_GET["Action"] == "Graph")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=graph.php width=100% height=100% frameborder=0 scrolling=no>
+    <IFRAME src=graph.php width=100% height=75% frameborder=0 scrolling=no>
     </IFRAME>
   </div>
 </div>

@@ -43,20 +43,20 @@ function date_time_en(id)
         day = date.getDay();
         days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
         h = date.getHours();
-        if(h<10)
-        {
-                h = "0"+h;
-        }
-        m = date.getMinutes();
-        if(m<10)
-        {
-                m = "0"+m;
-        }
-        s = date.getSeconds();
-        if(s<10)
-        {
-                s = "0"+s;
-        }
+	        if(h<10)
+	        {
+	                h = "0"+h;
+	        }
+	        m = date.getMinutes();
+	        if(m<10)
+	        {
+	                m = "0"+m;
+	        }
+	        s = date.getSeconds();
+	        if(s<10)
+	        {
+	                s = "0"+s;
+	        }
         result = ''+days[day]+' ที่ '+d+' '+months[month]+'  '+year+' เวลา '+h+':'+m+':'+s;
         document.getElementById(id).innerHTML = result;
         setTimeout('date_time_en("'+id+'");','1000');
@@ -76,8 +76,8 @@ $time = date("H:i");
         <h3 class="panel-title">
         <span class="glyphicon glyphicon-bookmark">
         </span>
-        <?echo $_SESSION["strh1"]?> (<?echo $_SESSION["strh2"]?>)  &nbsp;<span class="glyphicon glyphicon-time">
-        </span><?echo $_SESSION["strh3"]?>
+        <?echo $_SESSION["strh1"]?> (<?echo $_SESSION["strh2"]?>)  <span class="glyphicon glyphicon-time">
+        </span> <?echo $_SESSION["strh3"]?>
          <body>
          <?
          if($_SESSION["lang"] == "th")
@@ -122,4 +122,4 @@ $time = date("H:i");
   </div>
 </div>
 <div class="panel panel-primary">
-  <div class="panel-body">
+<div class="panel-body">

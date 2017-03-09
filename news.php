@@ -9,20 +9,6 @@ $time = date("H:i:s");
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <br>
-    <script>
-    $(document).ready( function () {
-    $('#bootstrap-table').bdt();
-    });
-    </script>
-    <script>
-    $(document).ready( function () {
-    $('#bootstrap-table').bdt({
-    showSearchForm: 2,
-    showEntriesPerPageField: 0
-    });
-    });
-    </script>
   </head>
   <body>
     <?
@@ -103,7 +89,7 @@ $time = date("H:i:s");
     ?>
     <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?> " enctype="multipart/form-data">
       <input type="hidden" name="hdnCmd" value="">
-      <table class="table table-hover  "  border="0" id="bootstrap-table" >
+      <table class="table table-hover  "  border="0">
         <tr>
           <thead class="thead-inverse">
             <th class="default" width="30%" height="50"> <div align="center">เรื่อง/ข่าวสาร</div></th>

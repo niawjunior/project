@@ -11,12 +11,12 @@ require_once("config.php");
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     if($t1=="B2")
     {
-    header( "location: /project/pdf/index.php" );
+    header( "location: /project_final/pdf/index.php" );
     exit(0);
     }
     if($t1=="B3")
     {
-    header( "location: /project/pdf/index1.php" );
+    header( "location: /project_final/pdf/index1.php" );
     exit(0);
     }
     if($t1=="")

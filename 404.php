@@ -4,10 +4,9 @@ require_once("config_home.php");
 <style>
 body{height:100%;
 width:100%;
-background-image:url(img/wallpapers.jpeg);/*your background image*/
-background-repeat:no-repeat;/*we want to have one single image not a repeated one*/
-background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
-/*css hack for ie*/
+background-image:url(img/wallpapers.jpeg);
+background-repeat:no-repeat;
+background-size:cover;
 filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
 -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
 }

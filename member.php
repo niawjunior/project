@@ -10,32 +10,18 @@ $time = date("H:i:s");
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <br>
-  <script>
-    $(document).ready( function () {
-      $('#bootstrap-table').bdt();
-    });
-  </script>
-  <script>
-    $(document).ready( function () {
-      $('#bootstrap-table').bdt({
-        showSearchForm: 2,
-        showEntriesPerPageField: 0
-      });
-    });
-  </script>
 </head>
 <body>
   <?
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
-  if($_POST["hdnCmd"] == "Add")
+  /*if($_POST["hdnCmd"] == "Add")
   {
     $password1=md5(md5(md5($_POST['txtAddpass'])));
     $objQuery = mysqli_query($connect, "INSERT INTO member (user,pass,name,email,sex,tel,status) values  ('".$_POST["txtAdduser"]."','$password1','".$_POST["txtAddname"]."','".$_POST["txtAddemail"]."','".$_POST["SEX"]."','".$_POST["txtAddtel"]."','".$_POST["STATUS"]."')");
     mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มสมาชิก',' เพิ่มข้อมูล | ชื่อ ".$_POST["txtAdduser"]."') ");
     mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มสมาชิก | ชื่อ ".$_POST["txtAdduser"]."'  where user = '$POST'");
     mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
-  }
+  }*/
   if($_POST["hdnCmd"] == "Update")
   {
     $objQuery = mysqli_query($connect, "SELECT * FROM member WHERE ID = '".$_POST["txtID"]."' ");
@@ -71,7 +57,7 @@ $time = date("H:i:s");
       <tr>
         <thead class="thead-inverse">
           <th class="default" width="15%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong></div></th>
-          <th class="default" width="8%" height="50"> <div align="center"><strong>รหัสผ่าน</strong></div></th> 
+          <!--<th class="default" width="8%" height="50"> <div align="center"><strong>รหัสผ่าน</strong></div></th> -->
           <th class="default" width="15%" height="50"> <div align="center"><strong>ชื่อจริง</strong></div></th>
           <th class="default" width="20%" height="50"> <div align="center"><strong>อีเมล</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>เพศ</strong></div></th>
@@ -111,7 +97,7 @@ $time = date("H:i:s");
           ?>
           <tr>
             <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtuser"  value="<?=$f1?>"></center></td>
-            <td><center><input disabled class="form-control" type="password" style="text-align:center;" name="txtpass"  value="<?=$f2?>"></center></td>
+            <!--<td><center><input disabled class="form-control" type="password" style="text-align:center;" name="txtpass"  value="<?=$f2?>"></center></td>-->
             <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?=$f3?>"></center></td>
             <td><center><input class="form-control" type="text" style="text-align:center;" name="txtemail"   value="<?=$f4?>"></center></td>
             <td>
@@ -141,7 +127,7 @@ $time = date("H:i:s");
           ?>
           <tr>
             <td ><center><?php echo $f1 ?></center></td>
-            <td><center><?php echo substr($f2, 0, 5); ?></center></td>
+            <!--<td><center><?php echo substr($f2, 0, 5); ?></center></td>-->
             <td><center><?php echo $f3?></center></td>
             <td><center><?php echo $f4 ?></center></td>
             <td><center><?php echo $f5 ?></center></td>
