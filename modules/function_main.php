@@ -10,7 +10,7 @@ function date_time_th(id)
         months = new Array('มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
         d = date.getDate();
         day = date.getDay();
-        days = new Array('วันจันทร์', 'วันอังคาร', 'วันพุทธ', 'วันพฤหัสบดี', 'วันศุกร์', 'วันเสาร์', 'วันอาทิตย์');
+        days = new Array('วันจันทร์', 'วันอังคาร', 'วันพุธ', 'วันพฤหัสบดี', 'วันศุกร์', 'วันเสาร์', 'วันอาทิตย์');
         h = date.getHours();
         if(h<10)
         {
@@ -26,7 +26,7 @@ function date_time_th(id)
         {
                 s = "0"+s;
         }
-        result = ''+days[day]+' ที่ '+d+' '+months[month]+'  '+year+' เวลา '+h+':'+m+':'+s;
+        result = ''+days[day]+' '+d+' '+months[month]+' '+year+' '+h+':'+m+':'+s;
         document.getElementById(id).innerHTML = result;
         setTimeout('date_time_th("'+id+'");','1000');
         return true;
@@ -57,7 +57,7 @@ function date_time_en(id)
 	        {
 	                s = "0"+s;
 	        }
-        result = ''+days[day]+' ที่ '+d+' '+months[month]+'  '+year+' เวลา '+h+':'+m+':'+s;
+        result = ''+days[day]+'   '+d+' '+months[month]+'   '+year+' '+h+':'+m+':'+s;
         document.getElementById(id).innerHTML = result;
         setTimeout('date_time_en("'+id+'");','1000');
         return true;

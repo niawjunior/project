@@ -1,5 +1,5 @@
 <div class="col-md-3" align="center">
-	<img class="img-rounded" width="auto" height="200"  alt="User Pic" src="<?=$f8?>">
+	<img class="img-rounded" width="200" height="auto"  alt="User Pic" src="<?=$f8?>">
 </div>
 <div class=" col-md-9">
 	<table class="table table-user-information">

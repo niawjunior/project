@@ -81,9 +81,9 @@ $type_user ="ผู้ใช้งานทั่วไป";
 <?php require_once( "modules/function_nav.php");?>
 ?>
 <style>
-body { padding-top:10px;
+body { padding-top:3px;
 }
-.panel-body .btn:not(.btn-block) { width:130px;margin-bottom:5px; }
+.panel-body .btn:not(.btn-block) { width:135px;margin-bottom:4px; }
 </style>
 <div class="container box-shadow " id="main-container" style="margin-top: 12px;">
 <br>

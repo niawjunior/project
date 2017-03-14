@@ -54,6 +54,6 @@ if($_SESSION["status"] == "ADMIN")
     </button>
   </a>
   <a href="<?php echo $PAGE_PROFILE?>">
-    <img src="<?=$logoprofile?>" class="img-circle " height ="30" width="auto" >
+    <img src="<?=$logoprofile?>" class="img-circle " height ="30" width="30" >
   </a>
 </form>
