@@ -7,15 +7,35 @@ require_once ("config_home.php");
 require_once ("check_connect.php");
 $connect = mysqli_connect($host, $user, $pass, $db);
 ?>
-
 <html lang="en">
     <head>
         <link href="css/all.css" rel="stylesheet">
         <title>
         WATER LEVEL
         </title>
+         <script type="text/javascript" src="js/bootstrap-growl.js"></script>
     </head>
-    <body class="background">
+    <script type="text/javascript">
+    $(function(){
+         $.bootstrapGrowl('ระดับน้ำในปัจจุบัน 3 เมตร',{
+            type: 'success',
+            delay: 2500,
+            width: 200,
+             offset: {from: 'top', amount: 7},
+             align: 'right',
+             //allow_dismiss: false,
+        });
+            $.bootstrapGrowl('สถานะ (ปกติ)',{
+            type: 'info',
+            delay: 2500,
+            width: 200,
+             offset: {from: 'top', amount: 7},
+             align: 'right',
+             //allow_dismiss: false,
+        });
+    });
+</script>
+<body class="background">
 <?php require_once( "modules/function_nav.php");?>
 <?php include "status_level.php"; ?>
 <div class="container box-shadow " id="main-container" style="margin-top: 50px;">
