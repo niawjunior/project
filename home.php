@@ -13,28 +13,8 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         <title>
         WATER LEVEL
         </title>
-         <script type="text/javascript" src="js/bootstrap-growl.js"></script>
+         
     </head>
-    <script type="text/javascript">
-    $(function(){
-         $.bootstrapGrowl('ระดับน้ำในปัจจุบัน 3 เมตร',{
-            type: 'success',
-            delay: 2500,
-            width: 200,
-             offset: {from: 'top', amount: 7},
-             align: 'right',
-             //allow_dismiss: false,
-        });
-            $.bootstrapGrowl('สถานะ (ปกติ)',{
-            type: 'info',
-            delay: 2500,
-            width: 200,
-             offset: {from: 'top', amount: 7},
-             align: 'right',
-             //allow_dismiss: false,
-        });
-    });
-</script>
 <body class="background">
 <?php require_once( "modules/function_nav.php");?>
 <?php include "status_level.php"; ?>
@@ -48,8 +28,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 <div class="row">
     <div class="col-md-6">
         <h4><li class="glyphicon glyphicon-map-marker" aria-hidden="true"></li>
-        แผนที่ติดตั้งเครื่องวัดระดับน้ำ
-        	</h4>
+        แผนที่ติดตั้งเครื่องวัดระดับน้ำ</h4>
         <iframe src="multiple.php" width="560" height="900" scrolling="no" frameBorder="0"></iframe>
     	</div>
     <div class="col-md-6">
@@ -88,25 +67,40 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         <li class="glyphicon glyphicon-tint" aria-hidden="true"></li>
         ปริมาณน้ำย้อนหลัง (ทั้งหมด)
         ล่าสุดวันที่ : <font  color="#428bca"><?=$f44?></font> เวลา : <font  color="#428bca"><?=$lasttime?></font>
-        	</h4>
+        </h4>
         <iframe src="water_level.php" width="100%" height="55%" scrolling="no" frameBorder="0"></iframe>
-        <h4>
-        <li class="glyphicon glyphicon-tint" aria-hidden="true"></li>
-        รายงาน/ข่าวสาร ระดับน้ำ (ย้อนหลัง)
-        	</h4>
+        <h4><li class="glyphicon glyphicon-tint" aria-hidden="true"></li>
+        รายงาน/ข่าวสาร ระดับน้ำ (ย้อนหลัง)</h4>
         <iframe src="news_upload.php" width="100%" height="55%" scrolling="no" frameBorder="0">
         	</iframe>
     </div>
 </div>
-	<h4><li class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></li> สถานที่ติดตั้งเครื่องวัดระดับน้ำ
-		</h4>
-	<iframe src="showpage.php" width="100%" height="55%" scrolling="no" frameBorder="0">
-		</iframe>
+	<h4><li class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></li> สถานที่ติดตั้งเครื่องวัดระดับน้ำ</h4>
+	<iframe src="showpage.php" width="100%" height="55%" scrolling="no" frameBorder="0"></iframe>
 	<h4><li class="glyphicon glyphicon-signal" aria-hidden="true"></li> กราฟแสดงปริมาณน้ำใน 
-	<font  color="#428bca"><?=$showh1?></font> 24 ชม.ย้อนหลัง
-		</h4>
+	<font  color="#428bca"><?=$showh1?></font> 24 ชม.ย้อนหลัง</h4>
 	<iframe src="graph1.php" width="100%" height="50%" scrolling="no" frameBorder="0">	
-		</iframe>
+	</iframe>
 </div>
+    <script type="text/javascript">
+    $(function(){
+         $.bootstrapGrowl('ระดับน้ำในปัจจุบัน <?php echo $f55;?> เมตร',{
+            type: 'info',
+            delay: 5000,
+            width: 200,
+             offset: {from: 'top', amount: 7},
+             align: 'right',
+             //allow_dismiss: false,
+        });
+            $.bootstrapGrowl('สถานะ (<?php echo $check;?>)',{
+            type: '<?php if($check=='เกินความจุ'){?>danger<?}else if($check=='น้ำมาก'){?>warning<?}else if($check=='น้ำปานกลาง'){?>success<?} else if($check=='น้ำน้อย'){?>warning<?} else{?>danger<?}?>',
+            delay: 5000,
+            width: 200,
+             offset: {from: 'top', amount: 7},
+             align: 'right',
+             //allow_dismiss: false,
+        });
+    });
+</script>
 </body>
 </html>

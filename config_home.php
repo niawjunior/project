@@ -7,6 +7,7 @@
 <script type="javascript" scr="./js/jquery.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-growl.js"></script>
 <!-- CSS -->
 <link href="css/all.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">

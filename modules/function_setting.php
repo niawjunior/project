@@ -84,6 +84,48 @@
               </div>
             </div>
           </div>
+
+            <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h4><label>แจ้งปัญหา/ติดต่อผู้ดูแลระบบ</label></h4>
+   <form class="form-horizontal" role="form" method="post" action="mail_contact.php">
+	<div class="form-group">
+		<label for="name" class="col-sm-2 control-label">ชื่อ</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="email" class="col-sm-2 control-label">อีเมล</label>
+		<div class="col-sm-10">
+			<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="" required>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="message" class="col-sm-2 control-label">ข้อความ</label>
+		<div class="col-sm-10">
+			<textarea class="form-control" rows="4" name="message" required></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-10 col-sm-offset-2">
+			<input id="submit" name="submit" type="submit" value="ส่ง" class="btn btn-primary">
+		</div>
+	</div>
+</form>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h4><label>สนทนา/ห้องแชท</label></h4>
+                <br><br>
+              </div>
+            </div>
+          </div>
           <div class="col-md-12">
             <br>
             <br>
