@@ -67,18 +67,19 @@
 		    </div>
 		  </div>
 		</div>
-			<?php	
-			$strTo = $email;
-			$strSubject = "อีเมลฉบับบนี้ใช้สำหรับเปลี่ยนรหัสผ่านเท่านั้น";
+		<meta charset="utf-8">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+			<?
+			$strTo = $objResult["email"];
+			$strSubject = "Password Reset";
 			$strHeader = "Content-type: text/html; charset=windows-874\n"; // or UTF-8 //
-		    $strHeader .= "From: webmaster@water-pj.esy.es";
+			$strHeader .= "From: webmaster\nReply-To: webmaster@thaicreate.com";
 			$strMessage = "";
-			$strMessage .= "สวัสดีคุณ : ".$objResult["name"]."<br>";
-			$strMessage .= "ลิ้งสำหรับรีเซ็ตรหัสผ่าน : ".$objResult["name"]."<br>";
+			$strMessage .= "Click the link below to set a new password: "."water-pj.esy.es/project_final/reset.php?user=";
 			$strMessage .= "=================================<br>";
 			$flgSend = mail($strTo,$strSubject,$strMessage,$strHeader); 
-	}
-	mysql_close();
-?>
+
+		}
+			?>
 </body>
 </html>

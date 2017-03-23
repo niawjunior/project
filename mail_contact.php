@@ -3,21 +3,18 @@
 <?php
 	session_start();
 	$username = $_POST['username'];
-	$email = $_POST['email'];
 	$message = $_POST['message'];
 	?>
-			<?php	
-			$strTo = $email;
-			$strSubject = "แจ้งปัญหา/ติดต่อผู้ดูแลระบบ";
+		<?
+			$strTo = $_POST['email'];
+			$strSubject = "Mail to Admin";
 			$strHeader = "Content-type: text/html; charset=windows-874\n"; // or UTF-8 //
-		    $strHeader .= "From: "."$email";
+			$strHeader .= "From: USER\nReply-To: niawkung2@gmail.com";
 			$strMessage = "";
-			$strMessage .= "ข้อความจากคุณ : ".$username."<br>";
-			$strMessage $message;
+			$strMessage .= $message."<br>";
 			$strMessage .= "=================================<br>";
 			$flgSend = mail($strTo,$strSubject,$strMessage,$strHeader); 
-			mysql_close();
-?>
+			?>
 <script>
 		$(window).load(function()
 		{

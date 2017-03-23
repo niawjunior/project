@@ -84,7 +84,6 @@
               </div>
             </div>
           </div>
-
             <div class="col-md-6">
             <div class="panel panel-default">
               <div class="panel-body">
@@ -122,6 +121,7 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <h4><label>สนทนา/ห้องแชท</label></h4>
+                
                 <br><br>
               </div>
             </div>
