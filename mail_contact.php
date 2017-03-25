@@ -2,6 +2,7 @@
 <body>
 <?php
 	session_start();
+	require_once("config.php");
 	$username = $_POST['username'];
 	$message = $_POST['message'];
 	?>
@@ -19,7 +20,7 @@
 		$(window).load(function()
 		{
 		$('#myModal').modal('show');
-		setTimeout("window.top.location.href = 'home.php';",3000);
+		setTimeout("window.top.location.href = 'profile.php?Action=Setting';",2000);
 		});
 		</script>
 		<div class="container">

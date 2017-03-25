@@ -113,6 +113,7 @@
 		</div>
 	</div>
 </form>
+<br><br><br><br>
               </div>
             </div>
           </div>
@@ -121,7 +122,8 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <h4><label>สนทนา/ห้องแชท</label></h4>
-                
+                 <IFRAME src=AjaxPHPChat1.php width=100% height=45% frameborder=0 scrolling=no>
+    </IFRAME>
                 <br><br>
               </div>
             </div>

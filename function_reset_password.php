@@ -7,7 +7,7 @@ require_once("config_home.php");
 <div class="container" >
   <div class="col-md-12" >
     <div id="logbox"  >
-      <form data-toggle="validator" id="signup" method="post" role="form" action="mail.php">
+      <form data-toggle="validator" method="post" role="form" action="mail.php">
         <h1>ระบบรีเซ็ตรหัสผ่าน</h1>
         <div class="form-group" >
           <input name="username" type="text" class="input pass" id="inputName" placeholder="Username (ชื่อที่ใช้ล็อกอิน)" data-minlength="4" data-error="ชื่อผู้ใช้สั้นเกินไป" required>
