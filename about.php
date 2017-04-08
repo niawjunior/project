@@ -1,4 +1,4 @@
-<?
+<?php 
 session_start();
 $ID = $_SESSION["ID"];
 require_once("config_home.php");

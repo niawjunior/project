@@ -2,7 +2,7 @@
 include "config_home.php";
 date_default_timezone_set('Asia/Bangkok');
 ?>
-<?
+<?php 
 if($_POST["hdnCmd"] == "Add")
 {
 $mysql_host = $_POST['host'];
@@ -39,7 +39,7 @@ setTimeout("location.href = 'create_database.php';",3000);
         </div>
     </div>
 </div>
-<?
+<?php 
 }
 else
 {
@@ -113,7 +113,7 @@ setTimeout("location.href = 'create_database.php';",3000);
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">สร้างฐานข้อมูลข้อมูลชื่อว่า <?echo $cleanname2?> เรียบร้อยแล้ว</h4>
+                    <h4 class="modal-title">สร้างฐานข้อมูลข้อมูลชื่อว่า <?php echo $cleanname2?> เรียบร้อยแล้ว</h4>
                 </div>
                 <div class="modal-body">
                     <p>กรุณารอสักครู่..</p>
@@ -125,7 +125,7 @@ setTimeout("location.href = 'create_database.php';",3000);
         </div>
     </div>
 </div>
-<?
+<?php 
 }
 }
 }
@@ -153,7 +153,7 @@ setTimeout("location.href = 'create_database.php';",3000);
 <div class="backup_main">
 <div class="main">
     <fieldset><legend><h2>สร้างฐานข้อมูล</h2></legend>
-    <form  name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
+    <form  name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
         <input type="hidden" name="hdnCmd" value="">
         <div><h3>ชื่อเซิฟเวอร์:</h3><input type="text" class="form-control" name="host" value="localhost" required/></div>
         <div class="cls"></div>
@@ -170,7 +170,5 @@ setTimeout("location.href = 'create_database.php';",3000);
 </fieldset>
 </div>
 </div>
-<?php
-?>
 <link rel="stylesheet" type="text/css" href="./css/create_database.css">
 </thead></table>

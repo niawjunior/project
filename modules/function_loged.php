@@ -39,12 +39,12 @@ if($_SESSION["status"] == "ADMIN")
 <ul class="nav navbar-nav">
   <li id="tab_active_weather"><a href="<?php echo $PAGE_SETTING?>">หน้าจัดการข้อมูล</a></li>
 </ul>
-<?
+<?php 
 }
 ?>
-<form id="signin" class="navbar-form navbar-right" role="form" method="post" action="<?echo $PAGE?>">
-  <button class="btn btn-warning">ยินดีต้อนรับคุณ <?echo $_SESSION["USER"]?>
-  <span text-primary>(<?echo $type_user?>)
+<form id="signin" class="navbar-form navbar-right" role="form" method="post" action="<?php echo $PAGE?>">
+  <button class="btn btn-warning">ยินดีต้อนรับคุณ <?php echo $_SESSION["USER"]?>
+  <span text-primary>(<?php echo $type_user?>)
   </span >
   <span class="glyphicon glyphicon-cog">
   </span>
@@ -54,6 +54,6 @@ if($_SESSION["status"] == "ADMIN")
     </button>
   </a>
   <a href="<?php echo $PAGE_PROFILE?>">
-    <img src="<?=$logoprofile?>" class="img-circle " height ="30" width="30" >
+    <img src="<?php echo $logoprofile?>" class="img-circle " height ="30" width="30" >
   </a>
 </form>

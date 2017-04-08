@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 $ID = $_SESSION["ID"];
 require_once("connect.php");
@@ -31,11 +31,11 @@ if( $_SESSION["lang"] == "")
     $_SESSION["strh15"] = "ตกลง";
 }
 ?>
-<?
+<?php
 $status=0;
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
 ?>
-<?
+<?php
 $objQuery_SETTING = mysqli_query($connect,"SELECT * FROM setting");
 $objQuery5 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
 while($objResult5 = mysqli_fetch_array($objQuery5))
@@ -55,7 +55,7 @@ while($objResult_SETTING = mysqli_fetch_array( $objQuery_SETTING))
 $f_register = $objResult_SETTING['type_register'];
 }
 ?>
-<?
+<?php
 if($_SESSION["status"] == "ADMIN")
 {
 $PAGE = "profile.php";
@@ -87,18 +87,18 @@ body { padding-top:3px;
 </style>
 <div class="container box-shadow " id="main-container" style="margin-top: 12px;">
 <br>
-<?
+<?php
 if($_SESSION["status"] == "ADMIN" or $_SESSION["status"]=="USER")
 {
 require_once("modules/function_main.php");
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Multiple")
 {
 ?>
 <div align="right">
-  <a  href="<?=$_SERVER["PHP_SELF"];?>?Action=Find" class="btn btn-sm" role="button"><span class="glyphicon glyphicon-search"></span>ค้นหา</a>
+  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Find" class="btn btn-sm" role="button"><span class="glyphicon glyphicon-search"></span>ค้นหา</a>
 </div>
 <div class="row">
   <div class="col-md-12" >
@@ -108,15 +108,15 @@ if($_GET["Action"] == "Multiple")
 </div>
 <IFRAME src=place.php width=100% height=90% frameborder=0 scrolling=no>
 </IFRAME>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Find")
 {
 ?>
 <div align="right">
-  <a  href="<?=$_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-sm" role="button">  <span class="glyphicon glyphicon-arrow-left"></span>ย้อนกลับ</a>
+  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-sm" role="button">  <span class="glyphicon glyphicon-arrow-left"></span>ย้อนกลับ</a>
 </div>
 <div class="row">
   <div class="col-md-12" >
@@ -126,10 +126,10 @@ if($_GET["Action"] == "Find")
 </div>
 <IFRAME src=place.php width=100% height=70% frameborder=0 scrolling=no>
 </IFRAME>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Setting?Backup")
 {
 ?>
@@ -139,10 +139,10 @@ if($_GET["Action"] == "Setting?Backup")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Setting?Status")
 {
 ?>
@@ -152,10 +152,10 @@ if($_GET["Action"] == "Setting?Status")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Setting?Create")
 {
 ?>
@@ -165,10 +165,10 @@ if($_GET["Action"] == "Setting?Create")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Member")
 {
 ?>
@@ -178,10 +178,10 @@ if($_GET["Action"] == "Member")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "News")
 {
 ?>
@@ -191,10 +191,10 @@ if($_GET["Action"] == "News")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Display")
 {
 ?>
@@ -204,10 +204,10 @@ if($_GET["Action"] == "Display")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Graph")
 {
 ?>
@@ -217,19 +217,19 @@ if($_GET["Action"] == "Graph")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "")
 {
 ?>
 <IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=no>
 </IFRAME>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Activity")
 {
 ?>
@@ -239,19 +239,19 @@ if($_GET["Action"] == "Activity")
     </IFRAME>
   </div>
 </div>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Profile")
 {
 ?>
 <IFRAME src=admin_profile.php width=100% height=100% frameborder=0 scrolling=no>
 </IFRAME>
-<?
+<?php
 }
 ?>
-<?
+<?php
 if($_GET["Action"] == "Setting")
 {
 require_once("modules/function_setting.php");

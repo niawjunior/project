@@ -8,10 +8,10 @@
     <?php
         require_once("connect.php");
     ?>
-    <?
+    <?php 
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     ?>
-    <?
+    <?php 
     $objQuery4 = mysqli_query($connect,"SELECT * FROM showdata");
     while($objResult4 = mysqli_fetch_array($objQuery4))
     {
@@ -33,16 +33,16 @@
     $(function () {
     $('#container').highcharts({
     chart: {
-    type: 'line' //รูปแบบของ แผนภูมิ ในที่นี้ให้เป็น line
+    type: 'line' 
     },
     title: {
-    text: '' //
+    text: '' 
     },
     subtitle: {
     text: ''
     },
     xAxis: {
-    categories: ['<?= implode("<br>','", $time);?>'+'<br>']
+    categories: ['<?php echo  implode("<br>','", $time);?>'+'<br>']
     },
     yAxis: {
     title: {
@@ -73,7 +73,7 @@
     },
     series: [{
     name: '',
-    data: [<?= implode(',', $y2559) // ข้อมูล array แกน y ?>]
+    data: [<?php echo  implode(',', $y2559) // ข้อมูล array แกน y ?>]
     }
     ]
     });

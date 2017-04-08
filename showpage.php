@@ -1,8 +1,8 @@
-<?
+<?php
 require_once("connect.php");
 require_once("config.php");
 ?>
-<?
+<?php
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
 $strSQL1 = "SELECT * FROM data ";
 $objQuery1 = mysqli_query($connect,"SELECT * FROM data");
@@ -54,7 +54,7 @@ $f1111 = $objResult4['showh1'];
   $f333 = $objResult3['lo'];
   $f444 = $objResult3['url'];
   ?>
-  <?
+  <?php
   if($f000==$f1111)
   {
   $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span>';
@@ -69,46 +69,46 @@ $f1111 = $objResult4['showh1'];
     <td><center><?php echo $f111 ?></center></td>
     <td><center><?php echo Round($f222,2) ?></center></td>
     <td><center><?php echo Round($f333,2) ?></center></td>
-    <td align="center"><?=$icon?></td>
+    <td align="center"><?php echo $icon?></td>
     <td><center><img src="uploadphoto/<?php echo $f444 ?>" width="auto" height="30"></center></td>
   </tr>
   
-  <?
+  <?php
   }
   ?>
 </table>
 <center>
 <nav>
   <ul class="pagination">
-    <li <? if($Page==1) echo 'class="disabled"'?>>
-      <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1" aria-label="Previous">
+    <li <?php if($Page==1) echo 'class="disabled"'?>>
+      <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=1" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <?
+    <?php
     for($i=1;$i<=$Num_Pages;$i++)
     {
     if($Page-2>=2 and ($i>2 and $i<$Page-2))
     {
     ?>
-    <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>">...</a></li>
-    <?
+    <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>">...</a></li>
+    <?php
     $i=$Page-2;
     }
     if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
     {
     ?>
-    <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>">...</a></li>
-    <?
+    <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>">...</a></li>
+    <?php
     $i=$Num_Pages-1;
     }
     ?>
-    <li <? if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>"><?php echo $i; $e=$i; ?></a></li>
+    <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>"><?php echo $i; $e=$i; ?></a></li>
     <?php
     }
     ?>
-    <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
-      <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?>" aria-label="Next">
+    <li <?php if($Page==$Num_Pages) echo 'class="disabled"'?>>
+      <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?>" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
@@ -116,6 +116,6 @@ $f1111 = $objResult4['showh1'];
 </nav>
 </center>
 </form>
-<?
+<?php
 mysqli_close($connect);
 ?>

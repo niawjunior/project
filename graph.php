@@ -8,10 +8,10 @@
     <?php
         require_once("connect.php");
     ?>
-    <?
+    <?php 
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     ?>
-    <?
+    <?php 
     $PLACE = array();
     $place_query = mysqli_query($connect,"SELECT * FROM data");
     while ($result_place = mysqli_fetch_array($place_query)) {
@@ -47,7 +47,7 @@
     text: ''
     },
     xAxis: {
-    categories: ['<?= implode("<br>','", $time);?>'+'<br>']
+    categories: ['<?php echo  implode("<br>','", $time);?>'+'<br>']
     },
     yAxis: {
     title: {
@@ -77,15 +77,15 @@
     }
     },
     series: [
-    <?
+    <?php 
     for ($i=0; $i <$COUNT ; $i++)
     {
     ?>
     {
-    name: [<?=$i?>],
-    data: [<?= implode(',', $map[$i]) // ข้อมูล array แกน y ?>]
+    name: [<?php echo $i?>],
+    data: [<?php echo  implode(',', $map[$i]) // ข้อมูล array แกน y ?>]
     },
-    <?
+    <?php 
     }
     ?>
     ]

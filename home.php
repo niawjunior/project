@@ -13,7 +13,6 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         <title>
         WATER LEVEL
         </title>
-         
     </head>
 <body class="background">
 <?php require_once( "modules/function_nav.php");?>
@@ -34,9 +33,9 @@ $connect = mysqli_connect($host, $user, $pass, $db);
     <div class="col-md-6">
         <h4>
         	<li class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></li>
-        สถานที่ที่ใช้ทดสอบ:  <font  color="#428bca"><?=$showh1?></font>
+        สถานที่ที่ใช้ทดสอบ:  <font  color="#428bca"><?php echo $showh1?></font>
         	<li class="glyphicon glyphicon-alert" aria-hidden="true"></li>
-        สถานะ: <?if($check==""){$check1="ไม่ได้เชื่อมต่อ";}else{$check1=$check;}?><font  color="#428bca"><?=$check1?></font>
+        สถานะ: <?php if($check==""){$check1="ไม่ได้เชื่อมต่อ";}else{$check1=$check;}?><font  color="#428bca"><?php echo $check1?></font>
         	</h4>
         <div class="col-md-12">
             <span class="label label-danger"><?php echo '<=30 น้ำน้อยวิกฤติ'?></span>
@@ -48,25 +47,25 @@ $connect = mysqli_connect($host, $user, $pass, $db);
        <br>
         <h4>
         	<li class="glyphicon glyphicon-chevron-up" aria-hidden="true"></li>
-        ระดับน้ำสูงสุด: <font  color="#428bca"><?=$max?></font> เมตร
-        	<li class="glyphicon glyphicon-chevron-down" aria-hidden="true"></li> ระดับน้ำต่ำสุด: <font  color="#428bca"><?=$min?></font> เมตร
+        ระดับน้ำสูงสุด: <font  color="#428bca"><?php echo $max?></font> เมตร
+        	<li class="glyphicon glyphicon-chevron-down" aria-hidden="true"></li> ระดับน้ำต่ำสุด: <font  color="#428bca"><?php echo $min?></font> เมตร
         	</h4>
         <div class="col-xs-12 col-sm-12 progress-container">
             <div class="progress progress-striped active">
                 <div class="progress-bar progress-bar-primary" style="width:0%">
-                    <? echo "ระดับน้ำใน ".$showh1. " ".number_format($persen, 2, ',', ' '); ?>%
+                    <?php echo "ระดับน้ำใน ".$showh1. " ".number_format($persen, 2, ',', ' '); ?>%
                 </div>
             </div>
         </div>
         <script>
             $(".progress-bar").animate({
-            width: "<? echo $persen ?>%"
+            width: "<?php  echo $persen ?>%"
             }, 1500);
         </script>
         <h4>
         <li class="glyphicon glyphicon-tint" aria-hidden="true"></li>
         ปริมาณน้ำย้อนหลัง (ทั้งหมด)
-        ล่าสุดวันที่ : <font  color="#428bca"><?=$f44?></font> เวลา : <font  color="#428bca"><?=$lasttime?></font>
+        ล่าสุดวันที่ : <font  color="#428bca"><?php echo $f44?></font> เวลา : <font  color="#428bca"><?php echo $lasttime?></font>
         </h4>
         <iframe src="water_level.php" width="100%" height="55%" scrolling="no" frameBorder="0"></iframe>
         <h4><li class="glyphicon glyphicon-tint" aria-hidden="true"></li>
@@ -78,7 +77,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 	<h4><li class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></li> สถานที่ติดตั้งเครื่องวัดระดับน้ำ</h4>
 	<iframe src="showpage.php" width="100%" height="55%" scrolling="no" frameBorder="0"></iframe>
 	<h4><li class="glyphicon glyphicon-signal" aria-hidden="true"></li> กราฟแสดงปริมาณน้ำใน 
-	<font  color="#428bca"><?=$showh1?></font> 24 ชม.ย้อนหลัง</h4>
+	<font  color="#428bca"><?php echo $showh1?></font> 24 ชม.ย้อนหลัง</h4>
 	<iframe src="graph1.php" width="100%" height="50%" scrolling="no" frameBorder="0">	
 	</iframe>
 </div>
@@ -90,15 +89,13 @@ $connect = mysqli_connect($host, $user, $pass, $db);
             width: 200,
              offset: {from: 'top', amount: 7},
              align: 'right',
-             //allow_dismiss: false,
         });
             $.bootstrapGrowl('สถานะ (<?php echo $check;?>)',{
-            type: '<?php if($check=='เกินความจุ'){?>danger<?}else if($check=='น้ำมาก'){?>warning<?}else if($check=='น้ำปานกลาง'){?>success<?} else if($check=='น้ำน้อย'){?>warning<?} else{?>danger<?}?>',
+            type: '<?php if($check=='เกินความจุ'){?>danger<?php }else if($check=='น้ำมาก'){?>warning<?php }else if($check=='น้ำปานกลาง'){?>success<?php } else if($check=='น้ำน้อย'){?>warning<?php } else{?>danger<?php }?>',
             delay: 5000,
             width: 200,
              offset: {from: 'top', amount: 7},
              align: 'right',
-             //allow_dismiss: false,
         });
     });
 </script>
@@ -106,7 +103,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 </html>
 
 
-	        <script type="text/javascript">
+	    <script type="text/javascript">
 		var headID = document.getElementsByTagName("head")[0];
 		var newCss = document.createElement('link');
 		newCss.rel = 'stylesheet';

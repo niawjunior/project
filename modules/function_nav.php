@@ -24,7 +24,7 @@
                 </li>
                 
             </ul>
-            <? if($_SESSION[ "STATUS"]=="" ) { require_once( "modules/function_login.php"); } else { require_once( "modules/function_loged.php"); } ?>
+            <?php  if($_SESSION[ "STATUS"]=="" ) { require_once( "modules/function_login.php"); } else { require_once( "modules/function_loged.php"); } ?>
         </div>
     </div>
 </nav>

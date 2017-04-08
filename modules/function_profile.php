@@ -1,5 +1,5 @@
 <div class="col-md-3" align="center">
-	<img class="img-rounded" width="200" height="auto"  alt="User Pic" src="<?=$f8?>">
+	<img class="img-rounded" width="200" height="auto"  alt="User Pic" src="<?php echo $f8?>">
 </div>
 <div class=" col-md-9">
 	<table class="table table-user-information">
@@ -43,6 +43,6 @@
 		</tbody>
 	</table>
 
-	<td><a  type="button" class="btn btn-warning" href="<?=$_SERVER["PHP_SELF"];?>?Action=Edit&ID=<?=$f0?>">แก้ไขข้อมูล <span class="glyphicon glyphicon-edit"></span></a></td>
+	<td><a  type="button" class="btn btn-warning" href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Edit&ID=<?php echo $f0?>">แก้ไขข้อมูล <span class="glyphicon glyphicon-edit"></span></a></td>
 	<td></td>
 </div>

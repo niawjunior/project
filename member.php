@@ -12,16 +12,8 @@ $time = date("H:i:s");
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <?
+  <?php 
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
-  /*if($_POST["hdnCmd"] == "Add")
-  {
-    $password1=md5(md5(md5($_POST['txtAddpass'])));
-    $objQuery = mysqli_query($connect, "INSERT INTO member (user,pass,name,email,sex,tel,status) values  ('".$_POST["txtAdduser"]."','$password1','".$_POST["txtAddname"]."','".$_POST["txtAddemail"]."','".$_POST["SEX"]."','".$_POST["txtAddtel"]."','".$_POST["STATUS"]."')");
-    mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มสมาชิก',' เพิ่มข้อมูล | ชื่อ ".$_POST["txtAdduser"]."') ");
-    mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มสมาชิก | ชื่อ ".$_POST["txtAdduser"]."'  where user = '$POST'");
-    mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
-  }*/
   if($_POST["hdnCmd"] == "Update")
   {
     $objQuery = mysqli_query($connect, "SELECT * FROM member WHERE ID = '".$_POST["txtID"]."' ");
@@ -51,13 +43,12 @@ $time = date("H:i:s");
   $objQuery1 = mysqli_query($connect, "SELECT * FROM member ");
   $objQuery = mysqli_query($connect, "SELECT * FROM member ORDER BY ID DESC ");
   ?>
-  <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>">
+  <form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
     <input type="hidden" name="hdnCmd" value="">
     <table class="table table-hover  "  border="0" id="bootstrap-table">
       <tr>
         <thead class="thead-inverse">
           <th class="default" width="15%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong></div></th>
-          <!--<th class="default" width="8%" height="50"> <div align="center"><strong>รหัสผ่าน</strong></div></th> -->
           <th class="default" width="15%" height="50"> <div align="center"><strong>ชื่อจริง</strong></div></th>
           <th class="default" width="20%" height="50"> <div align="center"><strong>อีเมล</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>เพศ</strong></div></th>
@@ -68,7 +59,7 @@ $time = date("H:i:s");
           <th class="default" width="20%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
         </tr>
       </thead>
-      <?
+      <?php 
       while($objResult = mysqli_fetch_array($objQuery))
       {
         $f0 = $objResult['ID'];
@@ -82,7 +73,7 @@ $time = date("H:i:s");
         $f8 = $objResult['img']
 
         ?>
-        <?
+        <?php
 
           if($f8 == "")
           {
@@ -96,17 +87,16 @@ $time = date("H:i:s");
         {
           ?>
           <tr>
-            <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtuser"  value="<?=$f1?>"></center></td>
-            <!--<td><center><input disabled class="form-control" type="password" style="text-align:center;" name="txtpass"  value="<?=$f2?>"></center></td>-->
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?=$f3?>"></center></td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtemail"   value="<?=$f4?>"></center></td>
+            <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtuser"  value="<?php echo $f1?>"></center></td>
+            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>"></center></td>
+            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtemail"   value="<?php echo $f4?>"></center></td>
             <td>
               <select name="SEX_EDIT" class="form-control" >
                 <option value="ชาย">ชาย</option>
                 <option value="หญิง">หญิง</option>
               </select>
             </td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txttel"   value="<?=$f6?>"></center></td>
+            <td><center><input class="form-control" type="text" style="text-align:center;" name="txttel"   value="<?php echo $f6?>"></center></td>
                            <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td>
               <select name="STATUS_EDIT" class="form-control" >
@@ -116,10 +106,10 @@ $time = date("H:i:s");
               </select>
             </td>
             <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnUpdate" value="บันทึก" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();"></td></center>
-            <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?>';"></td></center>
-            <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?=$f0?>"></tr>
+            <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';"></td></center>
+            <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
           </tr>
-          <?
+          <?php 
         }
         else
         {
@@ -127,49 +117,24 @@ $time = date("H:i:s");
           ?>
           <tr>
             <td ><center><?php echo $f1 ?></center></td>
-            <!--<td><center><?php echo substr($f2, 0, 5); ?></center></td>-->
             <td><center><?php echo $f3?></center></td>
             <td><center><?php echo $f4 ?></center></td>
             <td><center><?php echo $f5 ?></center></td>
             <td><center><?php echo substr($f6,0,7).'xxx' ?></center></td>
             <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td><center><?php echo $f7 ?></center></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?>&Action=Edit&ID=<?=$f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?>&Action=Del&ID=<?=$f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
+            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
           </tr>
-          <?
+          <?php 
         }
         ?>
-        <?
+        <?php 
       }
       ?>
-      <!-- <tr>
-        <td><center><input class="form-control" type="text" style="text-align:center;" name="txtAdduser" ></center></td>
-        <td><center><input class="form-control" type="text" style="text-align:center;" name="txtAddpass" ></center></td>
-        <td><center><input class="form-control" type="text" style="text-align:center;" name="txtAddname" ></center></td>
-        <td><center><input class="form-control" type="text" style="text-align:center;" name="txtAddemail"  ></center></td>
-        <td>
-          <select name="SEX"class="form-control" >
-            <option value="ชาย">ชาย</option>
-            <option value="หญิง">หญิง</option>
-          </select>
-        </td>
-        <td><center><input class="form-control" type="text" style="text-align:center;" name="txtAddtel"  ></center></td>
-        <td><center><label class="btn btn-default btn-file">
-          รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">
-        </label></center></td>
-        <td>
-          <select name="STATUS" class="form-control">
-            <option value="USER">USER</option>
-            <option value="ADMIN">ADMIN</option>
-          </select>
-        </td>
-        <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnAdd" width="20%" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();"></td>
-        <td><center><input type = "reset" class="btn btn-default" width="20%" value="เคลียร์"></td>
-      </tr> -->
     </table>
   </form>
-  <?
+  <?php 
   mysqli_close($connect);
   ?>
 </body>

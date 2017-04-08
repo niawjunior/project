@@ -9,7 +9,7 @@ require_once("config.php");
 </head>
 <body>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?
+  <?php 
   session_start();
   date_default_timezone_set('Asia/Bangkok');
   $date = date("d-m-Y");
@@ -24,12 +24,12 @@ require_once("config.php");
     <div class="form-group">
       <span class="glyphicon glyphicon-search"></span>
       <select  style="text-align-last:center;" name="search" class="selectpicker show-tick" title="กรุณาเลือกสถานที่" data-live-search="true" >
-        <?
+        <?php
         while($objResult1 = mysqli_fetch_array($objQuery5)){
           $place = $objResult1['h1'];
           ?>
-          <center><option data-tokens="<?=$place?>" value="<?=$place?>"><center><?=$place?></center></option></center>
-          <?
+          <center><option data-tokens="<?php echo $place?>" value="<?php echo $place?>"><center><?php echo $place?></center></option></center>
+          <?php 
         }
         ?>
       </select>
@@ -150,7 +150,7 @@ require_once("config.php");
     $Num_Pages = (int)$Num_Pages;
   }
   ?>
-  <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>">
+  <form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
     <input type="hidden" name="hdnCmd" value="">
     <table class="table table-hover  "  border="0" id="bootstrap-table">
       <tr>
@@ -164,7 +164,7 @@ require_once("config.php");
           <th class="default" width="20%" height="50"> <div align="center">ลบ</div></th>
         </thead>
       </tr>
-      <?
+      <?php 
 
     $objQuery3 = mysqli_query($connect,"SELECT * FROM water_table WHERE (place  = '$search') ORDER BY ID DESC LIMIT $Page_Start , $Per_Page");
 
@@ -187,20 +187,20 @@ require_once("config.php");
         $f3 = $objResult['time'];
         $f4 = $objResult['date'];
         ?>
-        <?
+        <?php 
         if($objResult["ID"] == $_GET["ID"] and $_GET["Action"] == "Edit")
         {
           ?>
           <tr>
-            <td><center><input  class="form-control" type="text" style="text-align:center;" name="txtplace"  value="<?=$f1?>" ></center></td>
-            <td><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?=$f2?>"></center></td>
-            <td><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?=$f3?>"></center></td>
-            <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?=$f4?>"></center></td>
+            <td><center><input  class="form-control" type="text" style="text-align:center;" name="txtplace"  value="<?php echo $f1?>" ></center></td>
+            <td><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
+            <td><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
+            <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
             <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnUpdate" value="บันทึก" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();"></center></td>
-            <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?><?if(isset($_GET['search'])){?>&search=<?=$search?><?}?>';"></center></td>
-            <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?=$f0?>"></tr>
+            <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>';"></center></td>
+            <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
           </tr>
-          <?
+          <?php 
         }
         else
         {
@@ -210,85 +210,85 @@ require_once("config.php");
             <td><center><?php echo $f2 ?></center></td>
             <td><center><?php echo $f3 ?></center></td>
             <td><center><?php echo $f4 ?></center></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?><?if(isset($_GET['search'])){?>&search=<?=$search?><?}?>&Action=Edit&ID=<?=$f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?><?if(isset($_GET['search'])){?>&search=<?=$search?><?}?>&Action=Del&ID=<?=$f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
+            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
           </tr>
-          <?
+          <?php
         }
         ?>
-        <?
+        <?php 
       }
       ?>
       <tr>
-        <?
+        <?php 
         if($Rows == 1)
         {
           ?>
-          <td><center><input class="form-control" type="text" style="text-align:center;" name="txtAddplace" value="<?=$PLACE_ADD?>" <?=$TXT_PLACE ?>></center></td>
-          <?
+          <td><center><input class="form-control" type="text" style="text-align:center;" name="txtAddplace" value="<?php echo $PLACE_ADD?>" <?php echo $TXT_PLACE ?>></center></td>
+          <?php 
         }
         else
         {
           ?>
           <td>
             <select  style="text-align-last:center;" name="PLACE" class="form-control" >
-              <?
+              <?php 
                 $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
               while($objResult1 = mysqli_fetch_array($objQuery5))
               {
                 $place = $objResult1['h1'];
                 ?>
-                <center><option value="<?=$place?>"><center><?=$place?></center></option></center>
-                <?
+                <center><option value="<?php echo $place?>"><center><?php echo $place?></center></option></center>
+                <?php 
               }
               ?>
             </select>
           </td>
-          <?
+          <?php 
         }
         ?>
           <td><center>
-            <input style="text-align:center;" class="form-control" type="number" name="txtAddlevel"  min="1" max="100" <?=$TXT_PLACE ?>/>
+            <input style="text-align:center;" class="form-control" type="number" name="txtAddlevel"  min="1" max="100" <?php echo $TXT_PLACE ?>/>
           </center>
           </td>
-        <td><center><input class="form-control" type="time" style="text-align:center;" name="txtAddtime"  <?=$TXT_PLACE ?>></center></td>
-        <td><center><input class="form-control" type="date" style="text-align:center;" name="txtAdddate" <?=$TXT_PLACE ?>></center></td>
-        <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnAdd" width="20%" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();" <?=$TXT_PLACE ?>></td>
-        <td><center><input type = "reset" class="btn btn-default" width="20%" value="เคลียร์" <?=$TXT_PLACE ?>></td>
+        <td><center><input class="form-control" type="time" style="text-align:center;" name="txtAddtime"  <?php echo $TXT_PLACE ?>></center></td>
+        <td><center><input class="form-control" type="date" style="text-align:center;" name="txtAdddate" <?php echo $TXT_PLACE ?>></center></td>
+        <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnAdd" width="20%" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();" <?php echo $TXT_PLACE ?>></td>
+        <td><center><input type = "reset" class="btn btn-default" width="20%" value="เคลียร์" <?php echo $TXT_PLACE ?>></td>
       </tr>
     </table>
     <div align="right">
       <nav>
         <ul class="pagination">
-          <li <? if($Page==1) echo 'class="disabled"'?>>
-            <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1<?if(isset($_GET['search'])){?>&search=<?=$search?><?}?>" aria-label="Previous">
+          <li <?php  if($Page==1) echo 'class="disabled"'?>>
+            <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=1<?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
-          <?
+          <?php 
           for($i=1;$i<=$Num_Pages;$i++)
           {
             if($Page-2>=2 and ($i>2 and $i<$Page-2))
             {
               ?>
-              <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>&search=<?=$search?>">...</a></li>
-              <?
+              <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>&search=<?php echo $search?>">...</a></li>
+              <?php 
               $i=$Page-2;
             }
             if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
             {
               ?>
-              <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['search'])){?>&search=<?=$search?><?}?>">...</a></li>
-              <?
+              <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>">...</a></li>
+              <?php 
               $i=$Num_Pages-1;
             }
             ?>
-            <li <? if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['search'])){?>&search=<?=$search?><?}?>"><?php echo $i; $e=$i; ?></a></li>
+            <li <?php  if($Page==$i) echo 'class="active"'?>><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>"><?php echo $i; $e=$i; ?></a></li>
             <?php
           }
           ?>
-          <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
-            <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?><?if(isset($_GET['search'])){?>&search=<?=$search?><?}?>" aria-label="Next">
+          <li <?php  if($Page==$Num_Pages) echo 'class="disabled"'?>>
+            <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
             </a>
           </li>

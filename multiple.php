@@ -89,7 +89,7 @@ $f111 = $objResult3['showh1'];
     {
     ?>
     addMarker(
-    <?
+    <?php
     if($loc["info"] == $f111)
     {
     $check1 =  "กำลังใช้งาน";
@@ -168,7 +168,7 @@ $f111 = $objResult3['showh1'];
             </script>
             <body onload="initMap()" >
                 <div id="map"></div>
-                <?
+                <?php
                 mysqli_close($connect);
                 ?>
             </body>

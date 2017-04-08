@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 require_once("connect.php");
 require_once("config.php");
@@ -23,12 +23,8 @@ setTimeout("window.top.location.href = 'register.php';",3000);
 });
 </script>
 <div class="container">
-  <!-- Trigger the modal with a button -->
-  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-      
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -40,12 +36,10 @@ setTimeout("window.top.location.href = 'register.php';",3000);
         <div class="modal-footer">
         </div>
       </div>
-      
     </div>
   </div>
-  
 </div>
-<?
+<?php
 }
 else
 {
@@ -75,15 +69,13 @@ setTimeout("window.top.location.href = 'home.php';",3000);
         <div class="modal-footer">
         </div>
       </div>
-      
     </div>
   </div>
-  
 </div>
-<?
+<?php
 }
 ?>
 </center>
-<?
+<?php
 mysqli_close($connect);
 ?>

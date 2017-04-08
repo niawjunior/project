@@ -80,7 +80,7 @@ setTimeout("location.href = 'create_database.php';",3000);
         </div>
     </div>
 </div>
-<?
+<?php
 exit();
 }
 // Introduction information

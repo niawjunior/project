@@ -11,24 +11,21 @@ $time = date("H:i:s");
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <?
+    <?php
     $POST = $_SESSION["USER"];
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     if($_POST["hdnCmd"] == "Add")
     {
-    $fileupload = $_REQUEST['fileupload']; //รับค่าไฟล์จากฟอร์ม
-    //เพิ่มไฟล์
+    $fileupload = $_REQUEST['fileupload']; 
     $upload=$_FILES['fileupload'];
     if($upload <> '')
-    {   //not select file
-    //โฟลเดอร์ที่จะ upload file เข้าไป
+    {
     $path="myfile/";
     $remove_these = array(' ','`','"','\'','\\','/','_');
     $newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
     $newname = time();
     $path_copy=$path.$newname;
     $path_link="myfile/".$newname;
-    //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
     move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
     }
     $objQuery = mysqli_query($connect,"INSERT INTO upload (t2,url,date,postby) VALUES ('".$_POST["txtt2"]."','$newname','".$_POST["txtdate"]."','$POST')");
@@ -46,12 +43,11 @@ $time = date("H:i:s");
     $data3 = $objResult8['url'];
     $data4 = $objResult8['postby'];
     }
-    $fileupload_edit = $_REQUEST['fileupload_edit']; //รับค่าไฟล์จากฟอร์ม
-    //เพิ่มไฟล์
+    $fileupload_edit = $_REQUEST['fileupload_edit']; 
+
     $upload=$_FILES['fileupload_edit'];
     if($upload <> '')
-    {   //not select file
-    //โฟลเดอร์ที่จะ upload file เข้าไป
+    { 
     $path="myfile/";
     $remove_these = array(' ','`','"','\'','\\','/','_');
     $newname = str_replace($remove_these, '', $_FILES['fileupload_edit']['name']);
@@ -87,7 +83,7 @@ $time = date("H:i:s");
     $objQuery1 = mysqli_query($connect,"SELECT * FROM member");
     $objQuery = mysqli_query($connect,"SELECT * FROM upload ORDER BY ID DESC ");
     ?>
-    <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?> " enctype="multipart/form-data">
+    <form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?> " enctype="multipart/form-data">
       <input type="hidden" name="hdnCmd" value="">
       <table class="table table-hover  "  border="0">
         <tr>
@@ -100,7 +96,7 @@ $time = date("H:i:s");
             <th class="default" width="5%" height="50"> <div align="center">ลบ</div></th>
           </thead>
         </tr>
-        <?
+        <?php 
         while($objResult = mysqli_fetch_array($objQuery))
         {
         $f0 = $objResult['ID'];
@@ -109,38 +105,38 @@ $time = date("H:i:s");
         $f5 = $objResult['date'];
         $f7 = $objResult['postby'];
         ?>
-        <?
+        <?php 
         if($objResult["ID"] == $_GET["ID"] and $_GET["Action"] == "Edit")
         {
         ?>
         <tr>
-          <td><center><input class="form-control" type="text" style="text-align:center;" name="txtt2_edit"  value="<?=$f2?>" ></center></td>
+          <td><center><input class="form-control" type="text" style="text-align:center;" name="txtt2_edit"  value="<?php echo $f2?>" ></center></td>
           <td><center><label style="position:relative;" class="btn btn-default btn-file" >
             <input type="file" name="fileupload_edit">
           </label></td>
-          <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate_edit"   value="<?=$f5?>"></center></td>
-          <td><center><input  disabled class="form-control" type="text" style="text-align:center;" name="txtpostby_edit"  value="<?echo $_SESSION["USER"]?>"></center></td>
+          <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate_edit"   value="<?php echo $f5?>"></center></td>
+          <td><center><input  disabled class="form-control" type="text" style="text-align:center;" name="txtpostby_edit"  value="<?php echo $_SESSION["USER"]?>"></center></td>
           <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnUpdate" value="บันทึก" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();"></td></center>
-          <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?>';"></td></center>
-          <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?=$f0?>"></tr>
+          <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';"></td></center>
+          <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
         </tr>
-        <?
+        <?php
         }
         else
         {
         ?>
         <tr>
           <td><center><?php echo $f2 ?></center></td>
-          <td><center><a href="myfile/<?=$f3?>" target="_blank"><?=substr($f3, 0, 15)?></a></center></td>
+          <td><center><a href="myfile/<?php echo $f3?>" target="_blank"><?php echo substr($f3, 0, 15)?></a></center></td>
           <td><center><?php echo $f5 ?></center></td>
           <td><center><?php echo $f7 ?></center></td>
-          <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?>&Action=Edit&ID=<?=$f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-          <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?=$_SERVER["PHP_SELF"];?>?Page=<?=$Page?>&Action=Del&ID=<?=$f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+          <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
+          <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
-        <?
+        <?php
         }
         ?>
-        <?
+        <?php
         }
         ?>
         <tr>
@@ -149,13 +145,13 @@ $time = date("H:i:s");
             <input type="file" name="fileupload" id="fileupload" >
           </label></td>
           <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"  ></center></td>
-          <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtpostby" value="<?echo $_SESSION["USER"]?>"></center></td>
+          <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtpostby" value="<?php echo $_SESSION["USER"]?>"></center></td>
           <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnAdd" width="20%" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();"></td>
           <td><center><input type = "reset" class="btn btn-default" width="20%" value="เคลียร์"></td>
         </tr>
       </table>
     </form>
-    <?
+    <?php
     mysqli_close($connect);
     ?>
   </body>

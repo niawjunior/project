@@ -1,11 +1,11 @@
 <html>
   <head>
   </head>
-  <?
+  <?php
   require_once("connect.php");
   require_once("config_home.php");
   ?>
-  <?
+  <?php
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   $PAGE = $_GET["PAGE"];
   $objQuery1 = mysqli_query($connect,"SELECT * FROM water_table") or die ("Error Query [".$strSQL."]");
@@ -57,13 +57,13 @@ else
 
    $objQuery2 = mysqli_query($connect,"SELECT * FROM water_table WHERE place='$PAGE' ORDER By ID DESC LIMIT $Page_Start , $Per_Page")
   ?>
-  <?php 
+  <?php
   function heading()
   {
     ?>
     <center>
       <h1>
-    <thead>บันทึกระดับน้ำ<?echo $_GET['PAGE'];?></thead>
+    <thead>บันทึกระดับน้ำ<?php echo $_GET['PAGE'];?></thead>
     </h1>
     </center>
     <?php
@@ -84,7 +84,7 @@ else
       <th  width="20%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
       <th  width="25%" height="50"> <div align="center"><strong>หมายเหตุ</strong></div></th>
     </tr>
-    <?
+    <?php
     if($PAGE=="")
     {
       $sql_Query = $objQuery;
@@ -129,49 +129,49 @@ else
     }
     ?>
     <tr class="bg-style">
-      <td><center><a class="text-primary" href="<?$_SERVER[SCRIPT_NAME]?>?PAGE=<?=$f1?>" target="_blank"><?php echo $f1 ?></a></center></td>
+      <td><center><a class="text-primary" href="<?php $_SERVER[SCRIPT_NAME]?>?PAGE=<?php echo $f1?>" target="_blank"><?php echo $f1 ?></a></center></td>
       <td><center><?php echo $f2 ?></center></td>
-      <td><?echo $count?></span></td>
+      <td><?php echo $count?></span></td>
       <td><center><?php echo $f3 ?></center></td>
       <td><center><?php echo $f4 ?></center></td>
-      <td><center><span class="label label-<?=$color_label?>"><?php echo $check ?></span></center></td>
+      <td><center><span class="label label-<?php echo $color_label?>"><?php echo $check ?></span></center></td>
     </tr>
-    <?
+    <?php
     }
     ?>
   </table>
   <center>
   <nav>
     <ul class="pagination">
-      <li <? if($Page==1) echo 'class="disabled"'?>>
-        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1&PAGE=<?php echo $PAGE?>" aria-label="Previous">
+      <li <?php if($Page==1) echo 'class="disabled"'?>>
+        <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=1&PAGE=<?php echo $PAGE?>" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      <?
+      <?php
       for($i=1;$i<=$Num_Pages;$i++)
       {
       if($Page-2>=2 and ($i>2 and $i<$Page-2))
       {
       ?>
-      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>&PAGE=<?php echo $PAGE?>">...</a></li>
-      <?
+      <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>&PAGE=<?php echo $PAGE?>">...</a></li>
+      <?php
       $i=$Page-2;
       }
       if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
       {
       ?>
-      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>&PAGE=<?php echo $PAGE?>">...</a></li>
-      <?
+      <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>&PAGE=<?php echo $PAGE?>">...</a></li>
+      <?php
       $i=$Num_Pages-1;
       }
       ?>
-      <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>&PAGE=<?php echo $PAGE?>"><?php echo $i; $e=$i; ?></a></li>
+      <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>&PAGE=<?php echo $PAGE?>"><?php echo $i; $e=$i; ?></a></li>
       <?php
       }
       ?>
-      <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
-        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?>&PAGE=<?php echo $PAGE?>" aria-label="Next">
+      <li <?php if($Page==$Num_Pages) echo 'class="disabled"'?>>
+        <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?>&PAGE=<?php echo $PAGE?>" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
@@ -179,7 +179,7 @@ else
   </nav>
   </center>
 </form>
-<?
+<?php
 mysqli_close($connect);
 ?>
 </body>

@@ -1,4 +1,4 @@
-<?
+<?php
 include "config.php";
 include "connect.php";
 ?>
@@ -18,7 +18,7 @@ $mysqli = new mysqli($host,$user,$pass);
 $server = ($mysqli->server_info);
 $host_info = ($mysqli->host_info);
 ?>
-<?
+<?php
 $total = (GetDirectorySize('')/1024)/1024;
 function GetDirectorySize($path){
 $bytestotal = 0;
@@ -63,13 +63,13 @@ return $status[1];}
     <fieldset><legend><h2>รายละเอียดของฐานข้อมูล</h2></legend>
     <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
         <input type="hidden" name="hdnCmd" value="">
-        <div><h3>ชื่อเซิฟเวอร์ (Server Name):</h3><br><h4><?echo $host_info ?></h4></div>
+        <div><h3>ชื่อเซิฟเวอร์ (Server Name):</h3><br><h4><?php echo $host_info ?></h4></div>
         <div class="cls"></div>
-        <div><h3>ดาต้าเบสและเวอร์ชั่นที่ใช้ (Server Database):</h3><br><h4>MySQL server version <?echo $server ?></h4></div>
+        <div><h3>ดาต้าเบสและเวอร์ชั่นที่ใช้ (Server Database):</h3><br><h4>MySQL server version <?php echo $server ?></h4></div>
         <div class="cls"></div>
-        <div><h3>เว็บเซิฟเวอร์ (web server) :</h3><br><h4><?echo $_SERVER["SERVER_SOFTWARE"];?></h4></div>
+        <div><h3>เว็บเซิฟเวอร์ (web server) :</h3><br><h4><?php echo $_SERVER["SERVER_SOFTWARE"];?></h4></div>
         <div class="cls"></div>
-        <div><h3>ชื่อฐานข้อมูล (Database Name):</h3><br><h4><?echo $db?></h4></div>
+        <div><h3>ชื่อฐานข้อมูล (Database Name):</h3><br><h4><?php echo $db?></h4></div>
         <div class="cls"></div>
         <div style="text-align: center;margin-top: 50px"></div>
         <div class="cls"></div>
@@ -81,13 +81,13 @@ return $status[1];}
 <fieldset><legend><h2>สถานะต่างๆ &nbsp;<img src="photo/useron.gif" height ="20" width="auto" ></h2></legend>
 <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
 <input type="hidden" name="hdnCmd" value="">
-<div><h3>สถานะการเชื่อมต่อเว็บไซต์ (HTTP):</h3><br><h4><?echo $status?></h4></div>
+<div><h3>สถานะการเชื่อมต่อเว็บไซต์ (HTTP):</h3><br><h4><?php echo $status?></h4></div>
 <div class="cls"></div>
-<div><h3>สถานะการเชื่อมต่อฐานข้อมูล (Database):</h3><br><h4><?echo $status_db?></h4></div>
+<div><h3>สถานะการเชื่อมต่อฐานข้อมูล (Database):</h3><br><h4><?php echo $status_db?></h4></div>
 <div class="cls"></div>
-<div><h3>สถานะการถ่ายโอนไฟล์ (FTP):</h3><br><h4><?echo $status_ftp?></h4></div>
+<div><h3>สถานะการถ่ายโอนไฟล์ (FTP):</h3><br><h4><?php echo $status_ftp?></h4></div>
 <div class="cls"></div>
-<div><h3>ความจำที่ใช้ไปทั้งหมด (Memory Used):</h3><br><h4><?echo number_format($total, 2, '.', ''); ?> MB</h4></div>
+<div><h3>ความจำที่ใช้ไปทั้งหมด (Memory Used):</h3><br><h4><?php echo number_format($total, 2, '.', ''); ?> MB</h4></div>
 <div class="cls"></div>
 <div style="text-align: center;margin-top: 50px"></div>
 <div class="cls"></div>

@@ -7,7 +7,7 @@ require_once("config.php");
   <head>
     <center>
     <br>
-    <?
+    <?php
     $t1 = $_POST['d1'];
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     if($t1=="D2")
@@ -68,7 +68,7 @@ require_once("config.php");
         </div>
       </div>
     </div>
-    <?
+    <?php
     }
     if($t1=="D3")
     {
@@ -126,7 +126,7 @@ require_once("config.php");
         </div>
       </div>
     </div>
-    <?
+    <?php
     }
     if($t1=="")
     {
@@ -160,7 +160,7 @@ require_once("config.php");
         </div>
       </div>
     </div>
-    <?
+    <?php
     mysqli_close($connect);
     }
     ?>

@@ -5,7 +5,7 @@ require_once("config_home.php");
 ?>
 <html>
   <body>
-    <?
+    <?php 
     $US = $_SESSION["USER"];
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     $objQuery4 = mysqli_query($connect,"SELECT * FROM member where user='$US'");
@@ -94,7 +94,7 @@ require_once("config_home.php");
 		        </div>
 		      </div>
 		    </div>
-		    <?
+		    <?php 
 		    if(!$objQuery)
 		    {
 		    echo ("ไม่สามารถบันทึกข้อมูลได้");
@@ -127,13 +127,13 @@ require_once("config_home.php");
         </div>
       </div>
     </div>
-    <?
+    <?php 
     }
     $objQuery = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
     ?>
-    <form role="form" method="post" action="<?=$_SERVER["PHP_SELF"];?>?Action=Update&ID=<?=$_GET["ID"];?>">
+    <form role="form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>?Action=Update&ID=<?php echo $_GET["ID"];?>">
           <div class="panel-body">
-          <?
+          <?php 
           while($objResult = mysqli_fetch_array($objQuery))
           {
           $f0 = $objResult['ID'];
@@ -185,7 +185,7 @@ require_once("config_home.php");
                     </div>
                   </div>
               </form>
-              <?
+              <?php 
               mysqli_close($connect);
               ?>
             </body>

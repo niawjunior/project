@@ -6,7 +6,7 @@ if (mysqli_connect_errno()) {
 $(window).load(function()
 {
 $('#myModal').modal('show');
-setTimeout("location.href = '/project';",2000);
+setTimeout("location.href = '/project_final';",2000);
 });
 </script>
 <div class="container">

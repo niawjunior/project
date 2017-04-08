@@ -1,4 +1,4 @@
-<?
+<?php 
 include "config_home.php";
 $host = $_POST['host_delete'];
 $user = $_POST['user_delete'];
@@ -34,7 +34,7 @@ setTimeout("location.href = 'create_database.php';",3000);
     </div>
   </div>
 </div>
-<?
+<?php 
 }
 $sql = "drop database $db";
 if(mysqli_query($connect, $sql)){
@@ -52,7 +52,7 @@ setTimeout("location.href = 'create_database.php';",3000);
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ลบฐานข้อมูล<?echo $db?>ข้อมูลเรียบร้อยแล้ว</h4>
+          <h4 class="modal-title">ลบฐานข้อมูล<?php echo $db?>ข้อมูลเรียบร้อยแล้ว</h4>
         </div>
         <div class="modal-body">
           <p>กรุณารอสักครู่..</p>
@@ -64,7 +64,7 @@ setTimeout("location.href = 'create_database.php';",3000);
     </div>
   </div>
 </div>
-<?
+<?php 
 }
 mysqli_close($connect);
 ?>

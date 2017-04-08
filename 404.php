@@ -1,4 +1,4 @@
-<?
+<?php 
 require_once("config_home.php");
 ?>
 <style>

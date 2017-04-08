@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<?
+<?php 
 $objQuery1 = mysqli_query($connect,"SELECT * FROM activity") or die ("Error Query [".$strSQL."]");
 
 $objQuery2 = mysqli_query($connect,"SELECT * FROM activity WHERE user = '".$_GET['user']."'") or die ("Error Query [".$strSQL."]");
@@ -59,7 +59,7 @@ else
 		$objQuery = $objQuery4;
 	}
 ?>
-<form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>">
+<form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 <input type="hidden" name="hdnCmd" value="">
 <center><h1><thead>บันทึกกิจกรรมทั้งหมด</thead></h1></center>
 <table class="table table-hover" border="0">
@@ -72,7 +72,7 @@ else
 	    <th class="default" width="50%" height="50"> <div align="center">*หมายเหตุ/รายละเอียด</div></th>
 	  </thead>
     </tr>
-<?
+<?php 
 while($objResult = mysqli_fetch_array($objQuery))
 {
       $f0 = $objResult['ID'];
@@ -90,7 +90,7 @@ while($objResult = mysqli_fetch_array($objQuery))
 	<td ><center><?php echo $f4 ?></center></td>
 	<td ><center><?php echo $f5 ?></center></td>
   </tr>
-  <?
+  <?php 
   }
 }
   ?>
@@ -98,35 +98,35 @@ while($objResult = mysqli_fetch_array($objQuery))
   <center>
 	  <nav>
 	    <ul class="pagination">
-	      <li <? if($Page==1) echo 'class="disabled"'?>>
-	        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1<?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>" aria-label="Previous">
+	      <li <?php  if($Page==1) echo 'class="disabled"'?>>
+	        <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=1<?php if(isset($_GET['user'])){?>&user=<?php echo $USER?><?php }?>" aria-label="Previous">
 	          <span aria-hidden="true">&laquo;</span>
 	        </a>
 	      </li>
-	      <?
+	      <?php 
 	      for($i=1;$i<=$Num_Pages;$i++)
 		      {
 		      if($Page-2>=2 and ($i>2 and $i<$Page-2))
 				      {
 				      ?>
-				      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>">...</a></li>
-				      <?
+				      <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?><?php if(isset($_GET['user'])){?>&user=<?php echo $USER?><?php }?>">...</a></li>
+				      <?php 
 				      $i=$Page-2;
 				      }
 	      		if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
 	      {
 	      ?>
-	      <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>">...</a></li>
-	      <?
+	      <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?php if(isset($_GET['user'])){?>&user=<?php echo $USER?><?php }?>">...</a></li>
+	      <?php 
 	      $i=$Num_Pages-1;
 	      }
 	      ?>
-	      <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>"><?php echo $i; $e=$i; ?></a></li>
+	      <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?><?php if(isset($_GET['user'])){?>&user=<?php echo $USER?><?php }?>"><?php echo $i; $e=$i; ?></a></li>
 	      <?php
 	      }
 	      ?>
-	      <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
-	        <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?><?if(isset($_GET['user'])){?>&user=<?=$USER?><?}?>" aria-label="Next">
+	      <li <?php  if($Page==$Num_Pages) echo 'class="disabled"'?>>
+	        <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?><?php if(isset($_GET['user'])){?>&user=<?php echo $USER?><?php }?>" aria-label="Next">
 	          <span aria-hidden="true">&raquo;</span>
 	        </a>
 	      </li>
@@ -134,7 +134,7 @@ while($objResult = mysqli_fetch_array($objQuery))
 	  </nav>
   </center>
 </form>
-<?
+<?php 
 mysqli_close($connect);
 ?>
 </body>

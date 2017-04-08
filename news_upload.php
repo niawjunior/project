@@ -1,8 +1,8 @@
-<?
+<?php 
 require_once("connect.php");
 require_once("config.php");
 ?>
-<?
+<?php 
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
 $objQuery1 = mysqli_query($connect,"SELECT * FROM upload");
 $Num_Rows = mysqli_num_rows($objQuery1);
@@ -38,7 +38,7 @@ $objQuery5 = mysqli_query($connect,"SELECT * FROM upload order by ID desc  LIMIT
     <th  width="10%" height="50"> <div align="center">ไฟล์ประกอบ</div></th>
   </tr>
   
-  <?
+  <?php 
   while($objResult5 = mysqli_fetch_array($objQuery5))
   {
   
@@ -50,44 +50,44 @@ $objQuery5 = mysqli_query($connect,"SELECT * FROM upload order by ID desc  LIMIT
   <tr class="bg-style">
     <td><center><?php echo $f22 ?></center></td>
     <td><center><?php echo $f44 ?></center></td>
-    <td><center><a class="text-primary" href="myfile/<?=$f33?>" target="_blank"><span class="glyphicon glyphicon-link"></span></a></center></td>
+    <td><center><a class="text-primary" href="myfile/<?php echo $f33?>" target="_blank"><span class="glyphicon glyphicon-link"></span></a></center></td>
   </tr>
-  <?
+  <?php 
   }
   ?>
 </table>
 <center>
 <nav>
   <ul class="pagination">
-    <li <? if($Page==1) echo 'class="disabled"'?>>
-      <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=1" aria-label="Previous">
+    <li <?php  if($Page==1) echo 'class="disabled"'?>>
+      <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=1" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <?
+    <?php 
     for($i=1;$i<=$Num_Pages;$i++)
     {
     if($Page-2>=2 and ($i>2 and $i<$Page-2))
     {
     ?>
-    <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>">...</a></li>
-    <?
+    <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>">...</a></li>
+    <?php 
     $i=$Page-2;
     }
     if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
     {
     ?>
-    <li><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>">...</a></li>
-    <?
+    <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>">...</a></li>
+    <?php 
     $i=$Num_Pages-1;
     }
     ?>
-    <li <? if($Page==$i) echo 'class="active"'?>><a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>"><?php echo $i; $e=$i; ?></a></li>
+    <li <?php  if($Page==$i) echo 'class="active"'?>><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>"><?php echo $i; $e=$i; ?></a></li>
     <?php
     }
     ?>
-    <li <? if($Page==$Num_Pages) echo 'class="disabled"'?>>
-      <a href="<?$_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?>" aria-label="Next">
+    <li <?php  if($Page==$Num_Pages) echo 'class="disabled"'?>>
+      <a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $Num_Pages;?>" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
@@ -95,6 +95,6 @@ $objQuery5 = mysqli_query($connect,"SELECT * FROM upload order by ID desc  LIMIT
 </nav>
 </center>
 </form>
-<?
+<?php 
 mysqli_close($connect);
 ?>
