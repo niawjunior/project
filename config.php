@@ -5,13 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- JS -->
 <!-- <script src="js/validator.js"></script> -->
+
+
 <script src="js/jquery.min.js"></script>
+<script src="js/nprogress.js"></script>
 <script src="js/jquery.bdt.js" type="text/javascript"></script>
 <script type="javascript" scr="./js/jquery.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-number-input.js"></script>
 <!-- CSS -->
+<link href="css/nprogress.css" rel="stylesheet">
 <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
 <link href="css/bootstrap-select.min.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -79,3 +83,4 @@ label,span,a,td,th,body,h1,h2,h3,h4,h5,h6{
 /*@import  url(https://fonts.googleapis.com/css?family=Kanit:400,400italic,500,500italic,600,700,900,800,200,300&subset=latin,thai);*/
 /* map */
 </style>
+

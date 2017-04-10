@@ -38,3 +38,11 @@ require_once ("connect.php");
 </div>
 </body>
 </html>
+
+  <script>
+    $('body').show();
+    $('.version').text(NProgress.version);
+    NProgress.start();
+    setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+    NProgress.done();
+  </script>

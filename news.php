@@ -116,8 +116,8 @@ $time = date("H:i:s");
           </label></td>
           <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate_edit"   value="<?php echo $f5?>"></center></td>
           <td><center><input  disabled class="form-control" type="text" style="text-align:center;" name="txtpostby_edit"  value="<?php echo $_SESSION["USER"]?>"></center></td>
-          <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnUpdate" value="บันทึก" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();"></td></center>
-          <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';"></td></center>
+          <td><center><input name="btnAdd" class="btn btn-primary" type="button" id="btnUpdate" value="บันทึก" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();"></td></center>
+          <td><center><input name="btnAdd" class="btn btn-warning" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';"></td></center>
           <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
         </tr>
         <?php
@@ -146,8 +146,8 @@ $time = date("H:i:s");
           </label></td>
           <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"  ></center></td>
           <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtpostby" value="<?php echo $_SESSION["USER"]?>"></center></td>
-          <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnAdd" width="20%" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();"></td>
-          <td><center><input type = "reset" class="btn btn-default" width="20%" value="เคลียร์"></td>
+          <td><center><input name="btnAdd" class="btn btn-primary" type="button" id="btnAdd" width="20%" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();"></td>
+          <td><center><input type = "reset" class="btn btn-warning" width="20%" value="เคลียร์"></td>
         </tr>
       </table>
     </form>

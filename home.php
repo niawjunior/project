@@ -14,6 +14,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         WATER LEVEL
         </title>
     </head>
+
 <body class="background">
 <?php require_once( "modules/function_nav.php");?>
 <?php include "status_level.php"; ?>
@@ -117,5 +118,11 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 		headID.appendChild(newScript);
 		headID.appendChild(newCss);
 		</script>
-	    
-	    
+
+  <script>
+    $('body').show();
+    $('.version').text(NProgress.version);
+    NProgress.start();
+    setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+    NProgress.done();
+  </script>

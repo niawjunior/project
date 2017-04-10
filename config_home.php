@@ -4,12 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- js -->
-<script type="javascript" scr="./js/jquery.js"></script>
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/nprogress.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-growl.js"></script>
 <!-- CSS -->
 <link href="css/all.css" rel="stylesheet">
+<link href="css/nprogress.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Kanit:300" rel="stylesheet">
 <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">

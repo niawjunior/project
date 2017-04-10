@@ -285,8 +285,8 @@ else
 <td><center><label class="btn btn-default btn-file">
     รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">
 </label></center></td>
-  <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnAdd" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();"></td>
-  <td><center><input class="btn btn-default" type = "reset" width="20%" value="เคลียร์"></td><td></td>
+  <td><center><input name="btnAdd" class="btn btn-primary" type="button" id="btnAdd" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();"></td>
+  <td><center><input class="btn btn-warning" type = "reset" width="20%" value="เคลียร์"></td><td></td>
   </tr>
 </table>
 
