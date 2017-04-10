@@ -34,6 +34,7 @@ if($_POST["hdnCmd"] == "Add")
   mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
 
 $fileupload = $_REQUEST['fileupload'];  
+// echo "<pre>";print_r($_FILES['fileupload']['name']);exit();
 $upload=$_FILES['fileupload'];
 if($upload <> '') 
   { 
@@ -47,7 +48,15 @@ if($upload <> '')
     move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);   
   }
 
-	$objQuery = mysqli_query($connect,"INSERT INTO data (h1,h2,la,lo,deep,url) VALUES ('".$_POST["txtAddh1"]."','".$_POST["txtAddh2"]."','".$_POST["txtAddla"]."','".$_POST["txtAddlo"]."','".$_POST["txtAdddeep"]."','$newname')");
+  if($_FILES['fileupload']['name'] =='')
+  {
+    $objQuery = mysqli_query($connect,"INSERT INTO data (h1,h2,la,lo,deep,url) VALUES ('".$_POST["txtAddh1"]."','".$_POST["txtAddh2"]."','".$_POST["txtAddla"]."','".$_POST["txtAddlo"]."','".$_POST["txtAdddeep"]."','map.jpg')");
+  }
+  else
+  {
+      $objQuery = mysqli_query($connect,"INSERT INTO data (h1,h2,la,lo,deep,url) VALUES ('".$_POST["txtAddh1"]."','".$_POST["txtAddh2"]."','".$_POST["txtAddla"]."','".$_POST["txtAddlo"]."','".$_POST["txtAdddeep"]."','$newname')");
+  }
+
 }
 if($_POST["hdnCmd"] == "Update")
 {
