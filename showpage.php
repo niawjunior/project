@@ -48,6 +48,7 @@ $f1111 = $objResult4['showh1'];
   <?
   while($objResult3 = mysqli_fetch_array($objQuery3))
   {
+  $ID = $objResult3['ID'];
   $f000 = $objResult3['h1'];
   $f111 = $objResult3['h2'];
   $f222 = $objResult3['la'];
@@ -65,7 +66,7 @@ $f1111 = $objResult4['showh1'];
   }
   ?>
   <tr class="bg-style">
-    <td><center><a class="text-primary" href="showdata.php?PAGE=<?=$f000?>" target="_blank"><?php echo $f000 ?></a></center></td>
+    <td><center><a class="text-primary" href="map.php?ID=<?=$ID?>" target="_blank"><?php echo $f000 ?></a></center></td>
     <td><center><?php echo $f111 ?></center></td>
     <td><center><?php echo Round($f222,2) ?></center></td>
     <td><center><?php echo Round($f333,2) ?></center></td>
