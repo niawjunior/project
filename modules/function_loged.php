@@ -17,21 +17,21 @@ if($_SESSION["status"] == "ADMIN")
 $PAGE = "profile.php";
 $PAGE_PROFILE = "profile.php?Action=Profile";
 $PAGE_SETTING = "profile.php?Action=Setting";
-$type_user ="ผู้ดูแลระบบ";
+$type_user = $_SESSION["strh19"];
 }
 else if ($_SESSION["status"] =="BAN")
 {
 $PAGE = "404.php";
 $PAGE_PROFILE = "404.php";
 $PAGE_SETTING = "404.php";
-$type_user ="ระงับการใช้งาน";
+$type_user = $_SESSION["strh20"];
 }
 else
 {
 $PAGE = "profile.php";
 $PAGE_PROFILE = "profile.php?Action=Profile";
 $PAGE_SETTING = "profile.php?Action=Setting";
-$type_user ="ผู้ใช้งานทั่วไป";
+$type_user =$_SESSION["strh18"];
 }
 if($_SESSION["status"] == "ADMIN")
 {
@@ -43,14 +43,14 @@ if($_SESSION["status"] == "ADMIN")
 }
 ?>
 <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="<?php echo $PAGE?>">
-  <button class="btn btn-warning">ยินดีต้อนรับคุณ <?php echo $_SESSION["USER"]?>
+  <button class="btn btn-warning"><?php echo $_SESSION["strh17"];?> <?php echo $_SESSION["USER"]?>
   <span text-primary>(<?php echo $type_user?>)
   </span >
   <span class="glyphicon glyphicon-cog">
   </span>
   </button>
   <a href="logout.php">
-    <button type="button" class="btn btn-danger">LOGOUT <span class="glyphicon glyphicon-log-out"></span>
+    <button type="button" class="btn btn-danger"><?php echo $_SESSION["strh16"];?> <span class="glyphicon glyphicon-log-out"></span>
     </button>
   </a>
   <a href="<?php echo $PAGE_PROFILE?>">

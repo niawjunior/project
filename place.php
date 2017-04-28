@@ -220,7 +220,7 @@ while($objResult = mysqli_fetch_array($objQuery))
   <td><center>
   <input class="form-control" style="text-align:center;" name="txtdeep" type="text" value="<?php echo $f5?>">
 </center></td>
-<td><center><label class="btn btn-default btn-file">
+<td><center><label class="btn btn-primary btn-file">
     รูปภาพ <input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
 </label></center></td>
   <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate" value="" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
@@ -235,10 +235,10 @@ while($objResult = mysqli_fetch_array($objQuery))
   ?>
   <tr>
 
-  <td><center><a class="text-primary" href="showdata.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo $f1 ?></a></center></td>
-  <td><center><?php echo $f2 ?></center></td>
-  <td><center><?php echo Round($f3,2) ?></center></td>
-  <td><center><?php echo Round($f4,2) ?></center></td>
+  <td><center><a class="text-primary" href="showdata.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo substr($f1,0,20);?></a></center></td>
+  <td><center><?php echo substr($f2,0,30); ?></center></td>
+  <td><center><?php echo Round($f3,2); ?></center></td>
+  <td><center><?php echo Round($f4,2); ?></center></td>
   <td><center><?php echo $f5 ?></center></td>
 <?
 if($f1==$f111)
@@ -282,7 +282,7 @@ else
   <td><center>
   <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" >
 </center></td>
-<td><center><label class="btn btn-default btn-file">
+<td><center><label class="btn btn-info btn-file">
     รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">
 </label></center></td>
   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>

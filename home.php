@@ -5,6 +5,7 @@ date_default_timezone_set('Asia/Bangkok');
 require_once ("connect.php");
 require_once ("config.php");
 require_once ("check_connect.php");
+require_once("lang.php");
 $connect = mysqli_connect($host, $user, $pass, $db);
 ?>
 <html lang="en">
@@ -54,7 +55,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         <div class="col-xs-12 col-sm-12 progress-container">
             <div class="progress progress-striped active">
                 <div class="progress-bar progress-bar-primary" style="width:0%">
-                    <?php echo "ระดับน้ำใน ".$showh1. " ".number_format($persen, 2, ',', ' '); ?>%
+                    <?php echo "ระดับน้ำ (".$showh1. ") ".number_format($persen, 2, ',', ' '); ?>%
                 </div>
             </div>
         </div>

@@ -3,33 +3,7 @@ session_start();
 $ID = $_SESSION["ID"];
 require_once("connect.php");
 require_once("config.php");
-if( $_SESSION["lang"] == "")
-{
-    $_SESSION["lang"] = "th";
-    $_SESSION["strwater"] = "ระดับน้ำ";
-    $_SESSION["strmap"] = "แผนที่";
-    $_SESSION["strgraph"] = "กราฟ";
-    $_SESSION["strreport"] = "รายงานผล";
-    $_SESSION["strmember"] = "สมาชิก";
-    $_SESSION["strprofile"] = "ข้อมูลส่วนตัว";
-    $_SESSION["stractivity"] = "บันทึก";
-    $_SESSION["strmore"] = "อื่นๆ";
-    $_SESSION["strh1"] = "ตั้งค่าระบบ";
-    $_SESSION["strh2"] = "เฉพาะผู้ดูและระบบเท่านั้น";
-    $_SESSION["strh3"] = "วันที่/เวลา";
-    $_SESSION["strh4"] = "ระบบล็อกอิน";
-    $_SESSION["strh5"] = "ระบบบันทึก&รายงาน";
-    $_SESSION["strh6"] = "ระบบเปลี่ยนภาษา";
-    $_SESSION["strh7"] = "ระบบสำรองข้อมูล";
-    $_SESSION["strh8"] = "ภาษาไทย";
-    $_SESSION["strh9"] = "ภาษาอังกฤษ";
-    $_SESSION["strh10"] = "บันทึกกิจกรรม";
-    $_SESSION["strh11"] = "รายงานระดับน้ำ";
-    $_SESSION["strh12"] = "สำรองข้อมูล";
-    $_SESSION["strh13"] = "สร้าง/ลบ ฐานข้อมูล";
-    $_SESSION["strh14"] = "รายละเอียด/สถานะต่างๆ";
-    $_SESSION["strh15"] = "ตกลง";
-}
+require_once("lang.php");
 ?>
 <?php
 $status=0;
@@ -98,7 +72,7 @@ if($_GET["Action"] == "Multiple")
 {
 ?>
 <div align="right">
-  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Find" class="btn btn-sm" role="button"><span class="glyphicon glyphicon-search"></span>ค้นหา</a>
+  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Find" class="btn btn-sm" role="button"><span class="glyphicon glyphicon-search"></span><h4>ค้นหา</h4></a>
 </div>
 <div class="row">
   <div class="col-md-12" >
@@ -116,7 +90,7 @@ if($_GET["Action"] == "Find")
 {
 ?>
 <div align="right">
-  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-sm" role="button">  <span class="glyphicon glyphicon-arrow-left"></span>ย้อนกลับ</a>
+  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-sm" role="button">  <span class="glyphicon glyphicon-arrow-left"></span><h4>ย้อนกลับ</h4></a>
 </div>
 <div class="row">
   <div class="col-md-12" >

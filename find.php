@@ -2,6 +2,11 @@
     require_once("connect.php");
     require_once("config.php");
 ?>
+<?php
+echo $_POST['searchTextField'];
+echo $_POST['latitude'];
+echo $_POST['longitude'];
+?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -9,12 +14,14 @@
     </head>
     <center>
     <body>
+    <form  method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
         สถานที่:
-        <input id="searchTextField"  type="text" size="100" style="text-align: left;width:400px;direction: ltr;">
-        <br>
-        <br>
+        <input id="searchTextField" name="searchTextField"  type="text" size="50" style="text-align: left;width:400px;direction: ltr;">
+
         ละติจูด:<input name="latitude" class="MapLat" value="" type="text" placeholder="Latitude" style="width: 170px;">
         ลองติจูด:<input name="longitude" class="MapLon" value="" type="text" placeholder="Longitude" style="width: 170px;">
+        <button name="btnAdd" class="btn btn-success btn-sm" id="btnAdd" value="" type="submit">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button>
+    </form>
         <div id="map_canvas" style="height: 100%;width: 100%;margin: 0.6em;"></div>
         <script>
         $(function () {
