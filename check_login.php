@@ -5,7 +5,7 @@ session_start();
 <center>
 <?php
 	require_once("connect.php");
-	require_once("config_home.php");
+	require_once("config.php");
 	$remember = $_POST['b1'];
 	$connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
 	$username2 = $_POST['username'];

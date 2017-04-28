@@ -1,5 +1,5 @@
 <?php 
-require_once("config_home.php");
+require_once("config.php");
 ?>
 <style>
 body{height:100%;

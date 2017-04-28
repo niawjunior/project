@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("connect.php");
-require_once("config_home.php");
+require_once("config.php");
 ?>
 <br><br><br>
 <center>

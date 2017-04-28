@@ -1,6 +1,6 @@
 <?php
 require_once("connect.php");
-require_once("config_home.php");
+require_once("config.php");
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
 $result=mysqli_query($connect,"SELECT * FROM data");
 while ($row=mysqli_fetch_array($result))

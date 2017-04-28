@@ -3,7 +3,7 @@ session_start();
 $ID = $_SESSION["ID"];
 date_default_timezone_set('Asia/Bangkok');
 require_once ("connect.php");
-require_once ("config_home.php");
+require_once ("config.php");
 require_once ("check_connect.php");
 $connect = mysqli_connect($host, $user, $pass, $db);
 ?>

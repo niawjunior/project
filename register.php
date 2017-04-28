@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("config_home.php");
+require_once("config.php");
 ?>
 <html lang="en">
    <head>

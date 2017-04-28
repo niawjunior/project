@@ -1,5 +1,5 @@
 <?php
-require_once("config_home.php");
+require_once("config.php");
 ?>
 <script src="js/validator.js"></script>
 <link href="css/register.css" rel="stylesheet">

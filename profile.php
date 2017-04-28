@@ -2,7 +2,7 @@
 session_start();
 $ID = $_SESSION["ID"];
 require_once("connect.php");
-require_once("config_home.php");
+require_once("config.php");
 if( $_SESSION["lang"] == "")
 {
     $_SESSION["lang"] = "th";

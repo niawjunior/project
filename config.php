@@ -3,10 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- JS -->
-<!-- <script src="js/validator.js"></script> -->
-
-
+<!-- js -->
 <script src="js/jquery.min.js"></script>
 <script src="js/nprogress.js"></script>
 <script src="js/jquery.bdt.js" type="text/javascript"></script>

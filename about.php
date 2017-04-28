@@ -1,7 +1,7 @@
 <?php 
 session_start();
 $ID = $_SESSION["ID"];
-require_once("config_home.php");
+require_once("config.php");
 require_once ("connect.php");
 ?>
 <html lang="en">

@@ -1,5 +1,5 @@
 <?php
-include "config_home.php";
+include "config.php";
 date_default_timezone_set('Asia/Bangkok');
 error_reporting(E_ALL);
 ini_set('display_errors', '1');    // 0 or 1 set 1 if unable to download database it will show all possible errors

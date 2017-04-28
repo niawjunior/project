@@ -1,5 +1,5 @@
 <?php 
-include "config_home.php";
+include "config.php";
 $host = $_POST['host_delete'];
 $user = $_POST['user_delete'];
 $pass = $_POST['password_delete'];

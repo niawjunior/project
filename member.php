@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("config_home.php");
+require_once("config.php");
 require_once("connect.php");
 $POST = $_SESSION["USER"];
 date_default_timezone_set('Asia/Bangkok');
