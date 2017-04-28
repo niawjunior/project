@@ -20,67 +20,75 @@
 <link href="css/bootstrap-select.min.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Kanit:300" rel="stylesheet">
-<!-- <link href="css/buttons.css" rel="stylesheet"> -->
-<!-- <link href="css/bootstrap-form.css" rel="stylesheet"> -->
-<!-- <link rel="stylesheet" type="./css" href="./css/bootstrap.min.css"> -->
-<!-- <link href="css/demo.css" rel="stylesheet"> -->
 
+<!-- Style -->
+<style type="text/css">
 
-<style>
-.btn-danger {
-color: #fff;
-background-color: #fb7d83;
-border-color: #fa646b;
-border-width: 0 0 4px 0!important;
-margin: 0;
+iframe {
+	background-image: url("photo/load.gif");
+	background-repeat: no-repeat;
+	background-position: 50% 50%
+}
+.navbar-brand{
+	font-size: xx-large;
+	font-family: cursive;
+
+}
+
+input,label,span,p,a,td,th,body,h1,h2,h3,h4,h5,h6{
+	font-family: 'Kanit', sans-serif;
+	font-weight:300;
+}
+
+    .btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    border-width: 0 0 4px 0!important;
+    margin: 0;
 }
 .btn-success {
-color: #fff;
-background-color: #a3d39c;
-border-color: #93cb8a;
-border-width: 0 0 4px 0!important;
-margin: 0;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    border-width: 0 0 4px 0!important;
+	margin: 0;
 }
-.btn-warning {
-color: #fff;
-background-color: #ffc77f;
-border-color: #ffbc65;
-border-width: 0 0 4px 0!important;
-margin: 0;
-}
-.btn-info {
-color: #fff;
-background-color: #8dc3eb;
-border-color: #77b8e7;
-border-width: 0 0 4px 0!important;
-margin: 0;
-}
-.btn-primary {
-color: #fff;
-background-color: #72a9e5;
-border-color: #5c9ce1;
-border-width: 0 0 4px 0!important;
-margin: 0;
-}
-.btn-primary1 {
-color: #fff;
-background-color: #33b79d;
-border-color: #199980;
-border-width: 0 0 4px 0!important;
-margin: 0;
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    border-width: 0 0 4px 0!important;
+    margin: 0;
 }
 
-label,span,a,td,th,body,h1,h2,h3,h4,h5,h6{
-		font-family: 'Kanit', sans-serif;
-		font-weight: 10px;
+.btn-primary {
+	color: #fff;
+	background-color: #72a9e5;
+	border-color: #5c9ce1;
+	border-width: 0 0 4px 0!important;
+	margin: 0;
+}
+
+.btn-info {
+	color: #fff;
+	background-color: #8dc3eb;
+	border-color: #77b8e7;
+	border-width: 0 0 4px 0!important;
+	margin: 0;
 }
 
 .btn-lg.round {
-	border-radius: 24px;
+    border-radius: 24px;
 }
-</style>
-<style>
-/*@import  url(https://fonts.googleapis.com/css?family=Kanit:400,400italic,500,500italic,600,700,900,800,200,300&subset=latin,thai);*/
-/* map */
+
+.img-rounded {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+	display:inline-block;
+	margin:10px;
+}
 </style>
 

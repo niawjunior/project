@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "config_home.php";
 include "connect.php";
 ?>
 <?php

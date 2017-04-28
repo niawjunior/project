@@ -4,11 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- js -->
-<script src="js/jquery.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/nprogress.js"></script>
+<script src="js/jquery.bdt.js" type="text/javascript"></script>
+<script type="javascript" scr="./js/jquery.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-growl.js"></script>
+<script src="js/bootstrap-number-input.js"></script>
 <!-- CSS -->
 <link href="css/all.css" rel="stylesheet">
 <link href="css/nprogress.css" rel="stylesheet">

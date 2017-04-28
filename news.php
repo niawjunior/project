@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("connect.php");
-require_once("config.php");
+require_once("config_home.php");
 date_default_timezone_set('Asia/Bangkok');
 $date = date("d-m-Y");
 $time = date("H:i:s");
