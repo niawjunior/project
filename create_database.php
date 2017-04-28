@@ -144,7 +144,8 @@ setTimeout("location.href = 'create_database.php';",3000);
             <div class="cls"></div>
             <div><h3>รหัสผ่านฐานข้อมูล:</h3><input type="password" class="form-control" name="password_delete" value="" required  /></div>
             <div class="cls"></div>
-            <div style="text-align: center;margin-top: 50px"><input onclick="vky(this)" type="submit" id="submit" name="submit" class="btn btn-danger" value="ลบฐานข้อมูล" /></div>
+            <div style="text-align: center;margin-top: 50px">
+            <button onclick="vky(this)" type="submit" id="submit" name="submit" class="btn btn-danger" value="">ลบฐานข้อมูล <span class="glyphicon glyphicon-trash"></span></button></div>
             <div class="cls"></div>
         </form>
     </fieldset>
@@ -163,7 +164,8 @@ setTimeout("location.href = 'create_database.php';",3000);
         <div class="cls"></div>
         <div><h3>รหัสผ่านฐานข้อมูล:</h3><input type="password" class="form-control" name="password" value="" required /></div>
         <div class="cls"></div>
-        <div style="text-align: center;margin-top: 50px"><input name="btnAdd" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();" type="submit" id="submit" class="btn btn-success" value="สร้างฐานข้อมูล" /></div>
+        <div style="text-align: center;margin-top: 50px">
+        <button name="btnAdd" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();" type="submit" id="submit" class="btn btn-success" value="">สร้างฐานข้อมูล <span class="glyphicon glyphicon-import"></span></button></div>
         <div class="cls">
         </div>
     </form>

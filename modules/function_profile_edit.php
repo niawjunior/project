@@ -82,9 +82,9 @@
 
     </tbody>
 </table>
-                <td><a name="btnAdd" class="btn btn-warning" type="button" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>';">ยกเลิก <span class="glyphicon glyphicon-remove"></span></a>  
-                </td>
+
                 <button  class="btn btn-success" type="button" value="บันทึกข้อมูล" data-toggle="modal" data-target="#loginModal"/>บันทึกข้อมูล 
-                <span class="glyphicon glyphicon-ok"></span>
+                <span class="glyphicon glyphicon-ok-sign"></span>
                 </button>
+                <button name="btnAdd" class="btn btn-warning" type="button" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button>  
 </div>

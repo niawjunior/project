@@ -22,7 +22,7 @@
                     </div>
                   </h4>
                   <br>
-                  <input class="btn btn-sm btn-success " type="submit" value="<?php echo $_SESSION["strh15"];?>">
+                  <button class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></button>
                 </fieldset>
               </form>
             </div>
@@ -66,7 +66,7 @@
                       <input type="radio" name="d1" id="D3" value="D3" <?php echo $checked2?>/><?php if (isset ($d1) && $d1=="D3")?>
                       <label for="D3"><?php echo $_SESSION["strh9"];?> <img title="en. version" alt="english" src="photo/fagen.png"></label>
                     </div></h4><br>
-                    <input class="btn btn-sm btn-success " type="submit" value="<?php echo $_SESSION["strh15"];?>">
+                    <button class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></span></button>
                   </fieldset>
                 </form>
               </div>

@@ -50,7 +50,7 @@ if($_SESSION["status"] == "ADMIN")
   </span>
   </button>
   <a href="logout.php">
-    <button type="button" class="btn btn-danger">LOGOUT
+    <button type="button" class="btn btn-danger">LOGOUT <span class="glyphicon glyphicon-log-out"></span>
     </button>
   </a>
   <a href="<?php echo $PAGE_PROFILE?>">

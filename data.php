@@ -196,8 +196,8 @@ require_once("config.php");
             <td><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
             <td><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
             <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
-            <td><center><input name="btnAdd" class="btn btn-primary" type="button" id="btnUpdate" value="บันทึก" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();"></center></td>
-            <td><center><input name="btnAdd" class="btn btn-warning" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>';"></center></td>
+            <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate"  OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+            <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
             <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
           </tr>
           <?php 
@@ -253,8 +253,8 @@ require_once("config.php");
           </td>
         <td><center><input class="form-control" type="time" style="text-align:center;" name="txtAddtime"  <?php echo $TXT_PLACE ?>></center></td>
         <td><center><input class="form-control" type="date" style="text-align:center;" name="txtAdddate" <?php echo $TXT_PLACE ?>></center></td>
-        <td><center><input name="btnAdd" class="btn btn-primary" type="button" id="btnAdd" width="20%" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();" <?php echo $TXT_PLACE ?>></td>
-        <td><center><input type = "reset" class="btn btn-warning" width="20%" value="เคลียร์" <?php echo $TXT_PLACE ?>></td>
+        <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" width="20%" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();" <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+        <td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>
       </tr>
     </table>
     <div align="right">

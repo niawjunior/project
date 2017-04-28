@@ -179,7 +179,7 @@ require_once("config.php");
                           </div>
 				           <br><br><br>
                           <div class="col-md-9"></div>
-                          <button type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok"></span></button>
+                          <button type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok-sign"></span></button>
                         </div>
                       </div>
                     </div>

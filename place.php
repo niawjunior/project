@@ -223,8 +223,8 @@ while($objResult = mysqli_fetch_array($objQuery))
 <td><center><label class="btn btn-default btn-file">
     รูปภาพ <input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
 </label></center></td>
-  <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnUpdate" value="บันทึก" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();"></td></center>
-  <td><center><input name="btnAdd" class="btn btn-default" type="button" id="btnCancel" value="ยกเลิก" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';"></td></center>
+  <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate" value="" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+  <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></button></center></td>
     </div></td><td></td>
         <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
   </tr>
@@ -280,13 +280,13 @@ else
   <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" >
 </center></td>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtAdddeep" type="text" >
+  <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" >
 </center></td>
 <td><center><label class="btn btn-default btn-file">
     รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">
 </label></center></td>
-  <td><center><input name="btnAdd" class="btn btn-primary" type="button" id="btnAdd" value="บันทึก" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();"></td>
-  <td><center><input class="btn btn-warning" type = "reset" width="20%" value="เคลียร์"></td><td></td>
+  <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+  <td><center><button class="btn btn-warning" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td><td></td>
   </tr>
 </table>
 

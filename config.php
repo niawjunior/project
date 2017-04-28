@@ -11,6 +11,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-number-input.js"></script>
 <!-- CSS -->
+
 <link href="css/nprogress.css" rel="stylesheet">
 <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
 <link href="css/bootstrap-select.min.css" rel="stylesheet">
@@ -38,21 +39,18 @@ input,label,span,p,a,td,th,body,h1,h2,h3,h4,h5,h6{
 
     .btn-warning {
     color: #fff;
-    background-color: #f0ad4e;
     border-color: #eea236;
     border-width: 0 0 4px 0!important;
     margin: 0;
 }
 .btn-success {
     color: #fff;
-    background-color: #5cb85c;
     border-color: #4cae4c;
     border-width: 0 0 4px 0!important;
 	margin: 0;
 }
 .btn-danger {
     color: #fff;
-    background-color: #d9534f;
     border-color: #d43f3a;
     border-width: 0 0 4px 0!important;
     margin: 0;
@@ -60,7 +58,6 @@ input,label,span,p,a,td,th,body,h1,h2,h3,h4,h5,h6{
 
 .btn-primary {
 	color: #fff;
-	background-color: #72a9e5;
 	border-color: #5c9ce1;
 	border-width: 0 0 4px 0!important;
 	margin: 0;
@@ -68,7 +65,6 @@ input,label,span,p,a,td,th,body,h1,h2,h3,h4,h5,h6{
 
 .btn-info {
 	color: #fff;
-	background-color: #8dc3eb;
 	border-color: #77b8e7;
 	border-width: 0 0 4px 0!important;
 	margin: 0;

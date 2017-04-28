@@ -20,7 +20,7 @@ date_default_timezone_set('Asia/Bangkok');
     $NUM = mysqli_num_rows($objQuery1);
     ?>
     <form class="nav navbar-nav navbar-right">
-      <span class="glyphicon glyphicon-user"></span>&nbsp;<span class="label label-info round btn-xs">สมาชิก Online : <?php echo $NUM?> คน&nbsp;&nbsp;</span>
+      &nbsp;<label class="label label-info round btn-xs"><span class="glyphicon glyphicon-user"></span> สมาชิก Online : <?php echo $NUM?> คน&nbsp;&nbsp;</label>
       <br><br>
     </form>
     <form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
