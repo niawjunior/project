@@ -82,24 +82,6 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 	<iframe src="graph1.php" width="100%" height="50%" scrolling="no" frameBorder="0">	
 	</iframe>
 </div>
-    <script type="text/javascript">
-    $(function(){
-         $.bootstrapGrowl('ระดับน้ำในปัจจุบัน <?php echo $f55;?> เมตร',{
-            type: 'info',
-            delay: 5000,
-            width: 200,
-             offset: {from: 'top', amount: 7},
-             align: 'right',
-        });
-            $.bootstrapGrowl('สถานะ (<?php echo $check;?>)',{
-            type: '<?php if($check=='เกินความจุ'){?>danger<?php }else if($check=='น้ำมาก'){?>warning<?php }else if($check=='น้ำปานกลาง'){?>success<?php } else if($check=='น้ำน้อย'){?>warning<?php } else{?>danger<?php }?>',
-            delay: 5000,
-            width: 200,
-             offset: {from: 'top', amount: 7},
-             align: 'right',
-        });
-    });
-</script>
 </body>
 </html>
 

@@ -7,7 +7,6 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/nprogress.js"></script>
 <script src="js/jquery.bdt.js" type="text/javascript"></script>
-<script type="javascript" scr="./js/jquery.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-number-input.js"></script>
