@@ -71,9 +71,6 @@ require_once("modules/function_main.php");
 if($_GET["Action"] == "Multiple")
 {
 ?>
-<div align="right">
-  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Find" class="btn btn-sm" role="button"><span class="glyphicon glyphicon-search"></span><h4>ค้นหา</h4></a>
-</div>
 <div class="row">
   <div class="col-md-12" >
     <IFRAME src=multiple.php width=100% height=65% frameborder=0 scrolling=no>
@@ -89,12 +86,9 @@ if($_GET["Action"] == "Multiple")
 if($_GET["Action"] == "Find")
 {
 ?>
-<div align="right">
-  <a  href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-sm" role="button">  <span class="glyphicon glyphicon-arrow-left"></span><h4>ย้อนกลับ</h4></a>
-</div>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=find.php width=100% height=60% frameborder=0 scrolling=no>
+    <IFRAME src=find.php width=100% height=50% frameborder=0 scrolling=no>
     </IFRAME>
   </div>
 </div>

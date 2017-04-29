@@ -1,26 +1,45 @@
 <?php
-    require_once("connect.php");
-    require_once("config.php");
+require_once("connect.php");
+require_once("config.php");
+session_start();
+$POST = $_SESSION["USER"];
+date_default_timezone_set('Asia/Bangkok');
+$date = date("d-m-Y");
+$time = date("H:i:s");
 ?>
 <?php
-echo $_POST['searchTextField'];
-echo $_POST['latitude'];
-echo $_POST['longitude'];
+if(isset($_POST['submit']))
+{
+ $h1 = 'ไม่ระบุชื่อ';
+ $h2 = $_POST['searchTextField'];
+ $la = $_POST['latitude'];
+ $lo = $_POST['longitude'];
+
+  mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มแผนที่',' เพิ่มข้อมูล | สถานที่ ".$h1."') ");
+
+  mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มแผนที่ | สถานที่ $h1'  where user = '$POST'");
+  mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
+  mysqli_query($connect,"INSERT INTO data (h1,h2,la,lo,url) VALUES ('$h1','".$_POST["searchTextField"]."','".$_POST["latitude"]."','".$_POST["longitude"]."','map.jpg')");
+}
+
 ?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmH-aZePSfjYwBjBLJtuBfdqCRdawcPQg&libraries=places&region=uk&language=en&sensor=true"></script>
     </head>
-    <center>
     <body>
     <form  method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+    &nbsp;
         สถานที่:
-        <input id="searchTextField" name="searchTextField"  type="text" size="50" style="text-align: left;width:400px;direction: ltr;">
+        <input id="searchTextField" name="searchTextField"  type="text" placeholder="ค้นหาสถานที่" style=" width: 380px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);line-height: 1.42857143;border-radius: 4px;padding: 6px 12px;border: 1px solid #ccc;">
 
-        ละติจูด:<input name="latitude" class="MapLat" value="" type="text" placeholder="Latitude" style="width: 170px;">
-        ลองติจูด:<input name="longitude" class="MapLon" value="" type="text" placeholder="Longitude" style="width: 170px;">
-        <button name="btnAdd" class="btn btn-success btn-sm" id="btnAdd" value="" type="submit">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button>
+        ละติจูด:
+        <input name="latitude" class="MapLat" value="" type="text" placeholder="Latitude" style="box-shadow: inset 0 1px 1px rgba(0,0,0,.075);line-height: 1.42857143;border-radius: 4px;padding: 6px 12px;border: 1px solid #ccc;">
+        ลองติจูด:
+        <input name="longitude" class="MapLon" value="" type="text" placeholder="Longitude" style="box-shadow: inset 0 1px 1px rgba(0,0,0,.075);line-height: 1.42857143;border-radius: 4px;padding: 6px 12px;border: 1px solid #ccc;">
+        <button name="submit" class="btn btn-primary btn-sm" id="submit" value="" type="submit">เพิ่ม <span class="glyphicon glyphicon-plus-sign"></span></button>
+          <a  href="/project_final/profile.php?Action=Multiple" target="_top" class="btn btn-warning btn-sm" role="button"><span class="glyphicon glyphicon-arrow-left"></span> ย้อนกลับ</a>
     </form>
         <div id="map_canvas" style="height: 100%;width: 100%;margin: 0.6em;"></div>
         <script>
@@ -101,5 +120,4 @@ echo $_POST['longitude'];
         });
         </script>
     </body>
-    </center>
 </html>
