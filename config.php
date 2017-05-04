@@ -6,12 +6,15 @@
 <!-- js -->
 <script src="js/jquery.min.js"></script>
 <script src="js/nprogress.js"></script>
+<script src="js/Notify.js"></script>
+<script src="js/bootstrap-notify.min.js"></script>
+<script src="js/bootstrap-notify.js"></script>
 <script src="js/jquery.bdt.js" type="text/javascript"></script>
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-number-input.js"></script>
 <!-- CSS -->
-
+<link href="css/animate.min.css" rel="stylesheet">
 <link href="css/nprogress.css" rel="stylesheet">
 <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
 <link href="css/bootstrap-select.min.css" rel="stylesheet">

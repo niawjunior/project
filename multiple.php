@@ -166,10 +166,6 @@ $f111 = $objResult3['showh1'];
             map.fitBounds(bounds);
             }
             </script>
-            <div align="right">
-  <a  href="/project_final/profile.php?Action=Find" target="_top" class="btn btn-info btn-sm" role="button"><span class="glyphicon glyphicon-search"></span> ค้นหา</a>
-</div>
-<br>
             <body onload="initMap()" >
                 <div id="map"></div>
                 <?php

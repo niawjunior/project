@@ -71,6 +71,10 @@ require_once("modules/function_main.php");
 if($_GET["Action"] == "Multiple")
 {
 ?>
+<div align="right">
+  <a  href="/project_final/profile.php?Action=Find" target="_top" class="btn btn-info btn-sm" role="button"><span class="glyphicon glyphicon-search"></span> ค้นหา</a>
+</div>
+<br>
 <div class="row">
   <div class="col-md-12" >
     <IFRAME src=multiple.php width=100% height=65% frameborder=0 scrolling=no>
