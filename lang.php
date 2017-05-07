@@ -4,7 +4,7 @@
 			$_SESSION["strwater"] = "ระดับน้ำ";
 		    $_SESSION["strmap"] = "แผนที่";
 		    $_SESSION["strgraph"] = "กราฟ";
-		    $_SESSION["strreport"] = "รายงานผล";
+		    $_SESSION["strreport"] = "รายงาน";
 		    $_SESSION["strmember"] = "สมาชิก";
 		    $_SESSION["strprofile"] = "ข้อมูลส่วนตัว";
 		    $_SESSION["stractivity"] = "บันทึก";
@@ -66,7 +66,7 @@
 			$_SESSION["strwater"] = "ระดับน้ำ";
 		    $_SESSION["strmap"] = "แผนที่";
 		    $_SESSION["strgraph"] = "กราฟ";
-		    $_SESSION["strreport"] = "รายงานผล";
+		    $_SESSION["strreport"] = "รายงาน";
 		    $_SESSION["strmember"] = "สมาชิก";
 		    $_SESSION["strprofile"] = "ข้อมูลส่วนตัว";
 		    $_SESSION["stractivity"] = "บันทึก";
