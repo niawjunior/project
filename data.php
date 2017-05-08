@@ -22,18 +22,17 @@ require_once("config.php");
   ?>
   <form class="navbar-form navbar-left"  method="get" action="<?php $_SERVER["PHP_SELF"];?>?<?$_POST['search'];?>">
     <div class="form-group">
-      <span class="glyphicon glyphicon-search"></span>
-      <select  style="text-align-last:center;" name="search" class="selectpicker show-tick" title="กรุณาเลือกสถานที่" data-live-search="true" >
+      <select  style="text-align-last:center;" name="search" class="selectpicker show-tick" title="กรุณาเลือกสถานที่" data-live-search="true" required >
         <?php
         while($objResult1 = mysqli_fetch_array($objQuery5)){
           $place = $objResult1['h1'];
           ?>
-          <center><option data-tokens="<?php echo $place?>" value="<?php echo $place?>"><center><?php echo $place?></center></option></center>
+          <center><option data-tokens="<?php echo $place?>" value="<?php echo $place?>" required><center><?php echo $place?></center></option></center>
           <?php 
         }
         ?>
       </select>
-      <button type="submit" class="btn btn-default">ค้นหา</button>
+      <button type="submit" class="btn btn-default">ค้นหา <span class="glyphicon glyphicon-search"></span></button>
     </div>
   </form>
   <?
