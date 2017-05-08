@@ -72,7 +72,7 @@ if($_GET["Action"] == "Multiple")
 {
 ?>
 <div align="right">
-  <a  href="/project_final/profile.php?Action=Find" target="_top" class="btn btn-info btn-sm" role="button"><span class="glyphicon glyphicon-search"></span> ค้นหา</a>
+  <a  href="/project_final/profile.php?Action=Find" target="_top" class="btn btn-info btn-sm" role="button">ค้นหา <span class="glyphicon glyphicon-search"></span></a>
 </div>
 <br>
 <div class="row">

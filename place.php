@@ -17,7 +17,8 @@ $date = date("d-m-Y");
 $time = date("H:i:s");
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
 
-if($_POST["hdnCmd"] == "Add")
+// if($_POST["hdnCmd"] == "Add")
+if(isset($_POST['submit']))
 {
 
   mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มแผนที่',' เพิ่มข้อมูล | สถานที่ ".$_POST["txtAddh1"]."') ");
@@ -218,28 +219,28 @@ while($objResult = mysqli_fetch_array($objQuery))
 	{
   ?>
   <tr>
-<td><center>
-  <input class="form-control" style="text-align:center;" name="txth1" type="text" value="<?php echo $f1?>">
-</center></td>
-  <td><center>
-  <input class="form-control" style="text-align:center;" name="txth2" type="text" value="<?php echo $f2?>">
-</center></td>
-  <td><center>
-  <input class="form-control" style="text-align:center;" name="txtla" type="text" value="<?php echo $f3?>">
-</center></td>
-  <td><center>
-  <input class="form-control" style="text-align:center;" name="txtlo" type="text" value="<?php echo $f4?>">
-</center></td>
-  <td><center>
-  <input class="form-control" style="text-align:center;" name="txtdeep" type="number" value="<?php echo $f5?>">
-</center></td>
-<td><center><label class="btn btn-primary btn-file">
-    รูปภาพ <input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
-</label></center></td>
-  <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate" value="" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
-  <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></button></center></td>
-    </div></td><td></td>
-        <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
+    <td><center>
+      <input class="form-control" style="text-align:center;" name="txth1" type="text" value="<?php echo $f1?>">
+    </center></td>
+      <td><center>
+      <input class="form-control" style="text-align:center;" name="txth2" type="text" value="<?php echo $f2?>">
+    </center></td>
+      <td><center>
+      <input class="form-control" style="text-align:center;" name="txtla" type="text" value="<?php echo $f3?>">
+    </center></td>
+      <td><center>
+      <input class="form-control" style="text-align:center;" name="txtlo" type="text" value="<?php echo $f4?>">
+    </center></td>
+      <td><center>
+      <input class="form-control" style="text-align:center;" name="txtdeep" type="number" value="<?php echo $f5?>">
+    </center></td>
+    <td><center><label class="btn btn-primary btn-file">
+        รูปภาพ <input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
+    </label></center></td>
+      <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate" value="" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+      <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></button></center></td>
+        </div></td><td></td>
+            <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
   </tr>
   <?
 	}
@@ -281,25 +282,27 @@ else
 ?>
   <tr>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtAddh1" type="text">
+  <input class="form-control" style="text-align:center;" name="txtAddh1" type="text" placeholder="ชื่อสถานที่" required>
 </center></td>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtAddh2" type="text" >
+  <input class="form-control" style="text-align:center;" name="txtAddh2" type="text" placeholder="คำอธิบายสั้นๆ" required >
 </center></td>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtAddla" type="text" >
+  <input class="form-control" style="text-align:center;" name="txtAddla" type="text" required>
 </center></td>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" >
+  <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
 </center></td>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" >
+  <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" required>
 </center></td>
 <td><center><label class="btn btn-primary btn-file">
     รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">
 </label></center></td>
-  <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
-  <td><center><button class="btn btn-warning" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td><td></td>
+<!--   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td> -->
+  <td><center><button name="submit" class="btn btn-success" id="submit" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+  <td><center><button class="btn btn-warning" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></span></button></center></td>
+    <td><center><a href="profile.php?Action=Find" target="_top" type="button" class="btn btn-info">ค้นหา <span class="glyphicon glyphicon-search"></span></a></center></td>
   </tr>
 </table>
 

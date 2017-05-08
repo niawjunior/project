@@ -14,7 +14,7 @@ $time = date("H:i:s");
     <?php
     $POST = $_SESSION["USER"];
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
-    if($_POST["hdnCmd"] == "Add")
+    if(isset($_POST["submit"]))
     {
     $fileupload = $_REQUEST['fileupload']; 
     $upload=$_FILES['fileupload'];
@@ -140,13 +140,15 @@ $time = date("H:i:s");
         }
         ?>
         <tr>
-          <td><center><input class="form-control" type="text" style="text-align:center;" name="txtt2" ></center></td>
+          <td><center><input class="form-control" type="text" style="text-align:center;" name="txtt2" placeholder="หัวข้อ/ชื่อเรื่อง" required></center></td>
           <td><center><label style="position:relative;" class="btn btn-default btn-file" >
-            <input type="file" name="fileupload" id="fileupload" >
+            <input type="file" name="fileupload" id="fileupload" required>
           </label></td>
-          <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"  ></center></td>
+          <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"  required></center></td>
           <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtpostby" value="<?php echo $_SESSION["USER"]?>"></center></td>
-          <td><center><button name="btnAdd" class="btn btn-success"  id="btnAdd" width="20%" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+          <td><center><button name="submit" class="btn btn-success"  id="submit" width="20%" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+
+<!--           <td><center><button name="btnAdd" class="btn btn-success"  id="btnAdd" width="20%" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td> -->
           <td><center><button type = "reset" class="btn btn-warning" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>
         </tr>
       </table>
