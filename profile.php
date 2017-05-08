@@ -55,7 +55,7 @@ $type_user ="ผู้ใช้งานทั่วไป";
 <?php require_once( "modules/function_nav.php");?>
 ?>
 <style>
-body { padding-top:3px;
+body { padding-top:1px;
 }
 .panel-body .btn:not(.btn-block) { width:135px;margin-bottom:4px; }
 </style>
