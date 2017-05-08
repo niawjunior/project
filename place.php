@@ -294,7 +294,7 @@ else
   <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
 </center></td>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" required>
+  <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
 </center></td>
 <td><center><label class="btn btn-primary btn-file">
     รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">

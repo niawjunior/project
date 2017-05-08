@@ -67,7 +67,7 @@ require_once("config.php");
     mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('$PLACE_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
     
   }
-  if($_POST["hdnCmd"] == "Add")
+  if(isset($_POST["submit"]))
   {
     $objQuery4 = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '".$_POST["PLACE"]."'");
     while($objResult = mysqli_fetch_array($objQuery4))
@@ -248,13 +248,14 @@ require_once("config.php");
         }
         ?>
           <td><center>
-            <input style="text-align:center;" class="form-control" type="number" name="txtAddlevel"  min="1" max="100" <?php echo $TXT_PLACE ?>/>
+            <input style="text-align:center;" class="form-control" type="number" name="txtAddlevel"  min="0" max="100" required <?php echo $TXT_PLACE ?>/>
           </center>
           </td>
-        <td><center><input class="form-control" type="time" style="text-align:center;" name="txtAddtime"  <?php echo $TXT_PLACE ?>></center></td>
-        <td><center><input class="form-control" type="date" style="text-align:center;" name="txtAdddate" <?php echo $TXT_PLACE ?>></center></td>
-        <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" width="20%" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();" <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-        <td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>
+        <td><center><input class="form-control" type="time" style="text-align:center;" name="txtAddtime" required <?php echo $TXT_PLACE ?>></center></td>
+        <td><center><input class="form-control" type="date" style="text-align:center;" name="txtAdddate" required <?php echo $TXT_PLACE ?>></center></td>
+        <td><center><button name="submit" class="btn btn-success" id="submit" width="20%" value=""  <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+        <td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>        
+        <!--<td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>-->
       </tr>
     </table>
     <div align="right">

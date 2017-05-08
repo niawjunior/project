@@ -109,7 +109,7 @@ $time = date("H:i");
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-globe"></span> <br/><?echo $_SESSION["strmap"]?></a>
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Graph" class="btn btn-primary  btn-lg" role="button">
             <span class="glyphicon glyphicon-stats"></span> <br/><?echo $_SESSION["strgraph"]?></a>
-            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=News" class="btn btn-warning  btn-lg" role="button"><span class="glyphicon glyphicon-book"></span> <br/><?echo $_SESSION["strreport"]?></a>
+            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=News" class="btn btn-warning  btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/><?echo $_SESSION["strreport"]?></a>
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Member" class="btn btn-danger  btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/><?echo $_SESSION["strmember"]?></a>
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Profile" class="btn btn-primary  btn-lg" role="button"><span class="	glyphicon glyphicon-heart"></span> <br/><?echo $_SESSION["strprofile"]?></a>
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Activity" class="btn btn-danger  btn-lg" role="button"><span class="glyphicon glyphicon-calendar"></span> <br/><?echo $_SESSION["stractivity"]?></a>
