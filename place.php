@@ -7,15 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
 <script src="js/jquery.bdt.js" type="text/javascript"></script>
-<br>
-<script>
-    $(document).ready( function () {
-        $('#bootstrap-table').bdt({
-            showSearchForm: 2,
-            showEntriesPerPageField: 0
-        });
-    });
-</script>
 </head>
 <body>
 <?php
@@ -57,6 +48,12 @@ if($upload <> '')
       $objQuery = mysqli_query($connect,"INSERT INTO data (h1,h2,la,lo,deep,url) VALUES ('".$_POST["txtAddh1"]."','".$_POST["txtAddh2"]."','".$_POST["txtAddla"]."','".$_POST["txtAddlo"]."','".$_POST["txtAdddeep"]."','$newname')");
   }
 
+  ?>
+  <script>
+    window.top.location.replace("profile.php?Action=Multiple");
+  </script>
+  <?php
+
 }
 if($_POST["hdnCmd"] == "Update")
 {
@@ -91,7 +88,11 @@ if($_POST["hdnCmd"] == "Update")
            $objQuery = mysqli_query($connect,"UPDATE data SET h1 = '".$_POST["txth1"]."',h2 = '".$_POST["txth2"]."',la = '".$_POST["txtla"]."',lo = '".$_POST["txtlo"]."',deep = '".$_POST["txtdeep"]."',url = '$data3' WHERE ID = '".$_POST["txtID"]."'");
       }
     }
-
+?>
+  <script>
+    window.top.location.replace("profile.php?Action=Multiple");
+  </script>
+<?php
 }
 $objQuery3 = mysqli_query($connect,"SELECT * FROM showdata");
 while($objResult3 = mysqli_fetch_array($objQuery3))
@@ -122,8 +123,11 @@ if($_GET["Action"] == "Use")
     mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
     mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เลือกเป็นแผนที่หลัก',' เลือกใช้ข้อมูล | สถานที่ $f11 | ไอดี $f00') ");
     mysqli_query($connect,"UPDATE member SET lastactivity = 'ใช้เป็นแผนที่หลัก | สถานที่ $f11'  where user = '$POST'");
-    header( "location: place.php" );
-    exit(0);
+    ?>
+  <script>
+    window.top.location.replace("profile.php?Action=Multiple");
+  </script>
+    <?php
 }
 
 if($_GET["Action"] == "UnUse")
@@ -150,8 +154,12 @@ if($_GET["Action"] == "UnUse")
     mysqli_query($connect,"UPDATE member SET lastactivity = 'เลิกใช้เป็นแผนที่หลัก | สถานที่ $f111'  where user = '$POST'");
 
   	$objQuery = mysqli_query($connect,"DELETE FROM showdata WHERE ID = '".$_GET["ID"]."'");
-    header( "location: place.php" );
-    exit(0);
+
+?>
+ <script>
+    window.top.location.replace("profile.php?Action=Multiple");
+  </script>
+<?php
 }
 
 if($_GET["Action"] == "Del")
@@ -169,6 +177,11 @@ if($_GET["Action"] == "Del")
 
 
   	$objQuery = mysqli_query($connect,"DELETE FROM data  WHERE ID = '".$_GET["ID"]."'");
+    ?>
+      <script>
+    window.top.location.replace("profile.php?Action=Multiple");
+  </script>
+    <?php
 }
 
 $objQuery1 = mysqli_query($connect,"SELECT * FROM data");
@@ -218,7 +231,7 @@ while($objResult = mysqli_fetch_array($objQuery))
   <input class="form-control" style="text-align:center;" name="txtlo" type="text" value="<?php echo $f4?>">
 </center></td>
   <td><center>
-  <input class="form-control" style="text-align:center;" name="txtdeep" type="text" value="<?php echo $f5?>">
+  <input class="form-control" style="text-align:center;" name="txtdeep" type="number" value="<?php echo $f5?>">
 </center></td>
 <td><center><label class="btn btn-primary btn-file">
     รูปภาพ <input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
@@ -282,7 +295,7 @@ else
   <td><center>
   <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" >
 </center></td>
-<td><center><label class="btn btn-info btn-file">
+<td><center><label class="btn btn-primary btn-file">
     รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">
 </label></center></td>
   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>

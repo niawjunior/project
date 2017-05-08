@@ -74,7 +74,6 @@ $time = date("H:i:s");
 
         ?>
         <?php
-
           if($f8 == "")
           {
             $logoprofile = 'photo/user.png';
@@ -113,7 +112,6 @@ $time = date("H:i:s");
         }
         else
         {
-
           ?>
           <tr>
             <td ><center><?php echo $f1 ?></center></td>

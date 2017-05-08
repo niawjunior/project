@@ -14,12 +14,17 @@ if(isset($_POST['submit']))
  $h2 = $_POST['searchTextField'];
  $la = $_POST['latitude'];
  $lo = $_POST['longitude'];
-
+ $deep = 'ไม่ระบุ';
   mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มแผนที่',' เพิ่มข้อมูล | สถานที่ ".$h1."') ");
 
   mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มแผนที่ | สถานที่ $h1'  where user = '$POST'");
   mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
-  mysqli_query($connect,"INSERT INTO data (h1,h2,la,lo,url) VALUES ('$h1','".$_POST["searchTextField"]."','".$_POST["latitude"]."','".$_POST["longitude"]."','map.jpg')");
+  mysqli_query($connect,"INSERT INTO data (h1,h2,la,lo,url,deep) VALUES ('$h1','".$_POST["searchTextField"]."','".$_POST["latitude"]."','".$_POST["longitude"]."','map.jpg','$deep')");
+  ?>
+    <script>
+    window.top.location.replace("profile.php?Action=Multiple");
+  </script>
+  <?php
 }
 
 ?>
