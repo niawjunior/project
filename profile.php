@@ -48,7 +48,7 @@ $type_user ="ผู้ใช้งานทั่วไป";
     WATER LEVEL
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/all.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
   </head>
   
   <body class="background">

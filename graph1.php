@@ -1,9 +1,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <script src="js/jquery.min.js"></script>
-        <script src="js/highcharts.js"></script>
-        <script src="js/exporting.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/highcharts.js"></script>
+        <script src="assets/js/exporting.js"></script>
     </head>
     <?php
         require_once("connect.php");

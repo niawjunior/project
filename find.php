@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmH-aZePSfjYwBjBLJtuBfdqCRdawcPQg&libraries=places&region=uk&language=en&sensor=true"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmH-aZePSfjYwBjBLJtuBfdqCRdawcPQg&libraries=places&region=uk&language=en"></script>
     </head>
     <body>
     <form  method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">

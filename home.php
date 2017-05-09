@@ -10,7 +10,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 ?>
 <html lang="en">
     <head>
-        <link href="css/all.css" rel="stylesheet">
+        <link href="assets/css/all.css" rel="stylesheet">
         <title>
         WATER LEVEL
         </title>

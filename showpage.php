@@ -67,7 +67,7 @@ $f1111 = $objResult4['showh1'];
   ?>
   <tr class="bg-style">
     <td><center><a class="text-primary" href="map.php?ID=<?=$ID?>" target="_blank"><?php echo $f000 ?></a></center></td>
-    <td><center><?php echo $f111 ?></center></td>
+     <td><center><?php echo substr($f111,0,30); ?></center></td>
     <td><center><?php echo Round($f222,2) ?></center></td>
     <td><center><?php echo Round($f333,2) ?></center></td>
     <td align="center"><?php echo $icon?></td>

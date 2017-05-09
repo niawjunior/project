@@ -6,7 +6,7 @@ require_once ("connect.php");
 ?>
 <html lang="en">
    <head>
-		<link href="css/all.css" rel="stylesheet">
+		<link href="assets/css/all.css" rel="stylesheet">
       <style>
 #container {
 	min-width: 320px;

@@ -4,21 +4,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- js -->
-<script src="js/jquery.min.js"></script>
-<script src="js/nprogress.js"></script>
-<script src="js/Notify.js"></script>
-<script src="js/bootstrap-notify.min.js"></script>
-<script src="js/bootstrap-notify.js"></script>
-<script src="js/jquery.bdt.js" type="text/javascript"></script>
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-number-input.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/nprogress.js"></script>
+<script src="assets/js/bootstrap-notify.min.js"></script>
+<script src="assets/js/bootstrap-notify.js"></script>
+<script src="assets/js/jquery.bdt.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-number-input.js"></script>
 <!-- CSS -->
-<link href="css/animate.min.css" rel="stylesheet">
-<link href="css/nprogress.css" rel="stylesheet">
-<link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
-<link href="css/bootstrap-select.min.css" rel="stylesheet">
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/animate.min.css" rel="stylesheet">
+<link href="assets/css/nprogress.css" rel="stylesheet">
+<link href="assets/css/jquery.bdt.css" type="text/css" rel="stylesheet">
+<link href="assets/css/bootstrap-select.min.css" rel="stylesheet">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Kanit:300" rel="stylesheet">
 
 <!-- Style -->

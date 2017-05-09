@@ -5,8 +5,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
-<script src="js/jquery.bdt.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
@@ -235,7 +233,7 @@ while($objResult = mysqli_fetch_array($objQuery))
       <input class="form-control" style="text-align:center;" name="txtdeep" type="number" value="<?php echo $f5?>">
     </center></td>
     <td><center><label class="btn btn-primary btn-file">
-        รูปภาพ <input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
+        รูปภาพ <span class="glyphicon glyphicon-picture"></span><input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
     </label></center></td>
       <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate" value="" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
       <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></button></center></td>
@@ -297,7 +295,7 @@ else
   <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
 </center></td>
 <td><center><label class="btn btn-primary btn-file">
-    รูปภาพ <input type="file" name="fileupload" id="fileupload" style="display: none;">
+    รูปภาพ <span class="glyphicon glyphicon-picture"></span> <input type="file" name="fileupload" id="fileupload" style="display: none;">
 </label></center></td>
 <!--   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td> -->
   <td><center><button name="submit" class="btn btn-success" id="submit" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
