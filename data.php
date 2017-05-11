@@ -64,21 +64,9 @@ require_once("config.php");
   if($_GET["Action"] == "ADD")
   {
     mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('$PLACE_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
-    
+     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
   }
-  if(isset($_POST["submit"]))
-  {
-    $objQuery4 = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '".$_POST["PLACE"]."'");
-    while($objResult = mysqli_fetch_array($objQuery4))
-    {
-      $DEEP = $objResult['deep'];
-    }
-    mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('".$_POST["PLACE"]."','$LEVEL_ADD',' $DEEP','$TIME_ADD','$DATE_ADD') ");
-    mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
-    mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มข้อมูลระดับน้ำ','เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร ') ");
-    mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร '  where user = '$POST'");
-    mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
-  }
+
   if($_POST["hdnCmd"] == "Update")
   {
     mysqli_query($connect,"UPDATE water_table SET place = '".$_POST["txtplace"]."',level = '".$_POST["txtlevel"]."',time = '".$_POST["txttime"]."',date = '".$_POST["txtdate"]."'WHERE ID = '".$_POST["txtID"]."' ");
@@ -257,6 +245,22 @@ require_once("config.php");
         <!--<td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>-->
       </tr>
     </table>
+    
+    <?php
+          if(isset($_POST["submit"]))
+              {
+                $objQuery4 = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '".$_POST["PLACE"]."'");
+                while($objResult = mysqli_fetch_array($objQuery4))
+                {
+                  $DEEP = $objResult['deep'];
+                }
+                mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('".$_POST["PLACE"]."','$LEVEL_ADD',' $DEEP','$TIME_ADD','$DATE_ADD') ");
+                mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '".$_POST["PLACE"]."' ");
+                mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มข้อมูลระดับน้ำ','เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร ') ");
+                mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร '  where user = '$POST'");
+                mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
+              }
+  ?>
     <div align="right">
       <nav>
         <ul class="pagination">

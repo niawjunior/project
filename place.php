@@ -247,7 +247,7 @@ while($objResult = mysqli_fetch_array($objQuery))
   ?>
   <tr>
 
-  <td><center><a class="text-primary" href="showdata.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo substr($f1,0,50);?></a></center></td>
+  <td><center><a class="text-primary" href="water_level.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo substr($f1,0,50);?></a></center></td>
   <td><center><?php echo substr($f2,0,30); ?></center></td>
   <td><center><?php echo Round($f3,2); ?></center></td>
   <td><center><?php echo Round($f4,2); ?></center></td>
