@@ -6,7 +6,7 @@
     <tbody>
               <tr>
                   <div class="form-group">
-                    <td><label><strong>ชื่อที่ใช้ล็อกอิน</strong></label></td>
+                    <td><label><strong>ชื่อที่ใช้ล็อกอิน </strong></label></td>
                     <td><input class="form-control" disabled type="text" style="text-align:center;" name="txtuser"  value="<?php echo $f1?>" required></td>
                   </div>
                 </tr>
@@ -83,8 +83,8 @@
     </tbody>
 </table>
 
-                <button  class="btn btn-success" type="button" value="บันทึกข้อมูล" data-toggle="modal" data-target="#loginModal"/>บันทึกข้อมูล 
+                <button  data-toggle="tooltip" title="บันทึกข้อมูล" class="btn btn-success" type="button" value="บันทึกข้อมูล" data-toggle="modal" data-target="#loginModal"/>บันทึกข้อมูล 
                 <span class="glyphicon glyphicon-ok-sign"></span>
                 </button>
-                <button name="btnAdd" class="btn btn-warning" type="button" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button>  
+                <button data-toggle="tooltip" title="ยกเลิก" name="btnAdd" class="btn btn-warning" type="button" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button>  
 </div>

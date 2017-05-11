@@ -147,13 +147,13 @@ require_once("config.php");
     <table class="table table-hover  "  border="0" id="bootstrap-table">
       <tr>
         <thead class="thead-inverse">
-          <th class="default" width="25%" height="50"> <div align="center">สถานที่</div></th>
-          <th class="default" width="25%" height="50"> <div align="center">ระดับน้ำ(เมตร)</div>
+          <th class="default" width="25%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
+          <th class="default" width="25%" height="50"> <div align="center"><strong>ระดับน้ำ(เมตร)</strong></div>
           </th>
-          <th class="default" width="25%" height="50"> <div align="center">เวลา</div></th>
-          <th class="default" width="25%" height="50"> <div align="center">วันที่</div></th>
-          <th class="default" width="20%" height="50"> <div align="center">แก้ไข</div></th>
-          <th class="default" width="20%" height="50"> <div align="center">ลบ</div></th>
+          <th class="default" width="25%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
+          <th class="default" width="25%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
+          <th class="default" width="20%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
+          <th class="default" width="20%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
         </thead>
       </tr>
       <?php 
@@ -188,8 +188,8 @@ require_once("config.php");
             <td><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
             <td><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
             <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
-            <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate"  OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-            <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
+            <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="btnAdd" class="btn btn-success" id="btnUpdate"  OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+            <td><center><button data-toggle="tooltip" title="ยกเลิก" data-placement="top" name="btnAdd" class="btn btn-warning" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
             <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
           </tr>
           <?php 
@@ -202,8 +202,8 @@ require_once("config.php");
             <td><center><?php echo $f2 ?></center></td>
             <td><center><?php echo $f3 ?></center></td>
             <td><center><?php echo $f4 ?></center></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+            <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
+            <td align="center"><a  data-toggle="tooltip" title="ลบข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
           </tr>
           <?php
         }
@@ -245,8 +245,8 @@ require_once("config.php");
           </td>
         <td><center><input class="form-control" type="time" style="text-align:center;" name="txtAddtime" required <?php echo $TXT_PLACE ?>></center></td>
         <td><center><input class="form-control" type="date" style="text-align:center;" name="txtAdddate" required <?php echo $TXT_PLACE ?>></center></td>
-        <td><center><button name="submit" class="btn btn-success" id="submit" width="20%" value=""  <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-        <td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>        
+        <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success" id="submit" width="20%" value=""  <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+        <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>        
         <!--<td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>-->
       </tr>
     </table>

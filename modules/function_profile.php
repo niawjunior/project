@@ -43,6 +43,6 @@
 		</tbody>
 	</table>
 
-	<td><a  type="button" class="btn btn-warning" href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Edit&ID=<?php echo $f0?>">แก้ไขข้อมูล <span class="glyphicon glyphicon-edit"></span></a></td>
+	<td><a  data-toggle="tooltip" title="แก้ไขข้อมูล" type="button" class="btn btn-warning" href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Edit&ID=<?php echo $f0?>">แก้ไขข้อมูล <span class="glyphicon glyphicon-edit"></span></a></td>
 	<td></td>
 </div>

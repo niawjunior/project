@@ -67,7 +67,7 @@ date_default_timezone_set('Asia/Bangkok');
           <td ><center><?php echo $f8 ?> | <?php echo $f9 ?></center></td>
           <td><center><?php echo $f10?> <?php if($f10 !==""){
             ?>
-            <a class="text-primary" href="allactivity.php?user=<?php echo $f1?>" target="_blank"><button type="button" class="btn btn-warning round btn-xs">ทั้งหมด <span class="badge"><?php echo $f11?></span></button>  </a>
+            <a class="text-primary" href="allactivity.php?user=<?php echo $f1?>" target="_blank"><button data-toggle="tooltip" title="คลิ้๊กเพื่อดูทั้งหมด" type="button" class="btn btn-warning round btn-xs">ทั้งหมด <span class="badge"><?php echo $f11?></span></button>  </a>
             <?php 
           }?></center></td>
         </tr>

@@ -48,15 +48,15 @@ $time = date("H:i:s");
     <table class="table table-hover  "  border="0" id="bootstrap-table">
       <tr>
         <thead class="thead-inverse">
-          <th class="default" width="15%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong></div></th>
           <th class="default" width="16%" height="50"> <div align="center"><strong>ชื่อจริง</strong></div></th>
-          <th class="default" width="20%" height="50"> <div align="center"><strong>อีเมล</strong></div></th>
+          <th class="default" width="15%" height="50"> <div align="center"><strong>อีเมล</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>เพศ</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>เบอร์โทร</strong></div></th>
-          <th class="default" width="11%" height="50"> <div align="center"><strong>รูปประจำตัว</strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong>รูปประจำตัว</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
-          <th class="default" width="20%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
-          <th class="default" width="20%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
+          <th class="default" width="25%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
         </tr>
       </thead>
       <?php 
@@ -98,14 +98,13 @@ $time = date("H:i:s");
             <td><center><input class="form-control" type="text" style="text-align:center;" name="txttel"   value="<?php echo substr($f6,0,6).'xxx' ?>" required></center></td>
                            <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td>
-              <select name="STATUS_EDIT" class="form-control" >
-                <option value="USER">USER</option>
+              <select name="STATUS_EDIT" class="form-control">
                 <option value="ADMIN">ADMIN</option>
                 <option value="BAN">BAN</option>
               </select>
             </td>
-            <td><center><button name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-            <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
+            <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+            <td><center><button data-toggle="tooltip" title="ยกเลิก" name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
             <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
           </tr>
           <?php 
@@ -121,8 +120,8 @@ $time = date("H:i:s");
             <td><center><?php echo substr($f6,0,7).'xxx' ?></center></td>
             <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td><center><?php echo $f7 ?></center></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-            <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+            <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
+            <td align="center"><a data-toggle="tooltip" title="ลบข้อมูล" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
           </tr>
           <?php 
         }

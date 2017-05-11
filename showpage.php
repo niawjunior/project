@@ -38,12 +38,12 @@ $f1111 = $objResult4['showh1'];
 ?>
 <table class="table table-hover" >
   <tr bg>
-    <th  width="15%" height="50"> <div align="center">สถานที่</div></th>
-    <th  width="60%" height="50"> <div align="center">คำอธิบาย</div></th>
-    <th  width="10%" height="50"> <div align="center">ละติจูด</div></th>
-    <th  width="10%" height="50"> <div align="center">ลองติจูด</div></th>
-    <th  width="5%" height="50"> <div align="center">สถานะ</div></th>
-    <th  width="15%" height="50"> <div align="center">รูปภาพ</div></th>
+    <th  width="15%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
+    <th  width="60%" height="50"> <div align="center"><strong>คำอธิบาย</strong></div></th>
+    <!--<th  width="12%" height="50"> <div align="center"><strong>ละติจูด</strong></div></th>
+    <th  width="15%" height="50"> <div align="center"><strong>ลองติจูด</strong></div></th>-->
+    <th  width="5%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
+    <th  width="15%" height="50"> <div align="center"><strong>รูปภาพ</strong></div></th>
   </tr>
   <?
   while($objResult3 = mysqli_fetch_array($objQuery3))
@@ -68,8 +68,8 @@ $f1111 = $objResult4['showh1'];
   <tr class="bg-style">
     <td><center><a class="text-primary" href="map.php?ID=<?=$ID?>" target="_blank"><?php echo $f000 ?></a></center></td>
      <td><center><?php echo substr($f111,0,30); ?></center></td>
-    <td><center><?php echo Round($f222,2) ?></center></td>
-    <td><center><?php echo Round($f333,2) ?></center></td>
+    <!--<td><center><?php echo Round($f222,2) ?></center></td>
+    <td><center><?php echo Round($f333,2) ?></center></td>-->
     <td align="center"><?php echo $icon?></td>
     <td><center><img src="uploadphoto/<?php echo $f444 ?>" width="auto" height="30"></center></td>
   </tr>

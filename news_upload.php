@@ -33,9 +33,9 @@ $objQuery5 = mysqli_query($connect,"SELECT * FROM upload order by ID desc  LIMIT
 ?>
 <table class="table table-hover" >
   <tr bg>
-    <th  width="30%" height="50"> <div align="center">เรื่อง</div></th>
-    <th  width="15%" height="50"> <div align="center">วันที่</div></th>
-    <th  width="10%" height="50"> <div align="center">ไฟล์ประกอบ</div></th>
+    <th  width="30%" height="50"> <div align="center"><strong>เรื่อง</strong></div></th>
+    <th  width="15%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
+    <th  width="10%" height="50"> <div align="center"><strong>ไฟล์ประกอบ</strong></div></th>
   </tr>
   
   <?php 

@@ -87,12 +87,12 @@ $time = date("H:i:s");
       <table class="table table-hover  "  border="0">
         <tr>
           <thead class="thead-inverse">
-            <th class="default" width="10%" height="50"> <div align="center">เรื่อง/ข่าวสาร</div></th>
-            <th class="default" width="20%" height="50"> <div align="center">ไฟล์ประกอบ (PDF)</div></th>
-            <th class="default" width="5%" height="50"> <div align="center">วันที่</div></th>
-            <th class="default" width="10%" height="50"> <div align="center">โดย</div></th>
-            <th class="default" width="5%" height="50"> <div align="center">แก้ไข</div></th>
-            <th class="default" width="5%" height="50"> <div align="center">ลบ</div></th>
+            <th class="default" width="10%" height="50"> <div align="center"><strong>เรื่อง/ข่าวสาร</strong></div></th>
+            <th class="default" width="20%" height="50"> <div align="center"><strong>ไฟล์ประกอบ (PDF)</strong></div></th>
+            <th class="default" width="5%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
+            <th class="default" width="10%" height="50"> <div align="center"><strong>โดย</strong></div></th>
+            <th class="default" width="5%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
+            <th class="default" width="5%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
           </thead>
         </tr>
         <?php 
@@ -115,8 +115,8 @@ $time = date("H:i:s");
           </label></td>
           <td width="10%"><center><input class="form-control" type="date" style="text-align:center;" name="txtdate_edit"   value="<?php echo $f5?>" required></center></td>
           <td width="14%"><center><input  disabled class="form-control" type="text" style="text-align:center;" name="txtpostby_edit"  value="<?php echo $_SESSION["USER"]?>"></center></td>
-          <td><center><button name="submit_edit" class="btn btn-success" type="" id="submit_edit" value="" >บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-          <td><center><button name="btnAdd" class="btn btn-warning" type="" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></td></center>
+          <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" name="submit_edit" class="btn btn-success" type="" id="submit_edit" value="" >บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+          <td><center><button data-toggle="tooltip" title="ยกเลิก" name="btnAdd" class="btn btn-warning" type="" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></td></center>
           <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
         </tr>
         <?php
@@ -129,8 +129,8 @@ $time = date("H:i:s");
           <td><center><a href="myfile/<?php echo $f3?>" target="_blank"><?php echo substr($f3, 0, 15)?></a></center></td>
           <td width="10%"><center><?php echo $f5 ?></center></td>
           <td><center><?php echo $f7 ?></center></td>
-          <td align="center"><a href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-          <td align="center"><a href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+          <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
+          <td align="center"><a data-toggle="tooltip" title="ลบข้อมูล" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
         <?php
         }
@@ -151,8 +151,8 @@ $time = date("H:i:s");
           </label></td>
           <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"  required></center></td>
           <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtpostby" value="<?php echo $_SESSION["USER"]?>"></center></td>
-          <td><center><button name="submit" class="btn btn-success"  id="submit" width="20%" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
-          <td><center><button type = "reset" class="btn btn-warning" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>
+          <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" name="submit" class="btn btn-success"  id="submit" width="20%" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+          <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" type = "reset" class="btn btn-warning" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>
         </tr>
       </table>
      </form>

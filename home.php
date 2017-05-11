@@ -39,7 +39,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         	<li class="glyphicon glyphicon-alert" aria-hidden="true"></li>
         สถานะ: <?php if($check==""){$check1="ไม่ได้เชื่อมต่อ";}else{$check1=$check;}?><font  color="#428bca"><?php echo $check1?></font>
         	</h4>
-        <div class="col-md-12">
+        <div class="col-xs-12">
             <span class="label label-danger"><?php echo '<=30 น้ำน้อยวิกฤติ'?></span>
             <span class="label label-warning"><?php echo '>30-50% น้ำน้อย'?></span>
             <span class="label label-success"><?php echo '>50-80% น้ำปานกลาง'?></span>
@@ -70,14 +70,12 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         ล่าสุดวันที่ : <font  color="#428bca"><?php echo $f44?></font> เวลา : <font  color="#428bca"><?php echo $lasttime?></font>
         </h4>
         <iframe src="water_level.php" width="100%" height="55%" scrolling="no" frameBorder="0"></iframe>
-        <h4><li class="glyphicon glyphicon-tint" aria-hidden="true"></li>
-        รายงาน/ข่าวสาร ระดับน้ำ (ย้อนหลัง)</h4>
-        <iframe src="news_upload.php" width="100%" height="55%" scrolling="no" frameBorder="0">
+        <h4><li class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></li>
+        สถานที่ติดตั้งเครื่องวัดระดับน้ำ</h4>
+        <iframe src="showpage.php" width="100%" height="55%" scrolling="no" frameBorder="0">
         	</iframe>
     </div>
 </div>
-	<h4><li class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></li> สถานที่ติดตั้งเครื่องวัดระดับน้ำ</h4>
-	<iframe src="showpage.php" width="100%" height="55%" scrolling="no" frameBorder="0"></iframe>
 	<h4><li class="glyphicon glyphicon-signal" aria-hidden="true"></li> กราฟแสดงปริมาณน้ำใน 
 	<font  color="#428bca"><?php echo $showh1?></font> 24 ชม.ย้อนหลัง</h4>
 	<iframe src="graph1.php" width="100%" height="50%" scrolling="no" frameBorder="0">	
