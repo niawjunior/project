@@ -14,7 +14,7 @@ $time = date("H:i:s");
 <body>
   <?php 
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
-  if($_POST["hdnCmd"] == "Update")
+  if(isset($_POST['btnUpdate']))
   {
     $objQuery = mysqli_query($connect, "SELECT * FROM member WHERE ID = '".$_POST["txtID"]."' ");
     while($objResult = mysqli_fetch_array($objQuery))
@@ -49,7 +49,7 @@ $time = date("H:i:s");
       <tr>
         <thead class="thead-inverse">
           <th class="default" width="15%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong></div></th>
-          <th class="default" width="15%" height="50"> <div align="center"><strong>ชื่อจริง</strong></div></th>
+          <th class="default" width="16%" height="50"> <div align="center"><strong>ชื่อจริง</strong></div></th>
           <th class="default" width="20%" height="50"> <div align="center"><strong>อีเมล</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>เพศ</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>เบอร์โทร</strong></div></th>
@@ -87,15 +87,15 @@ $time = date("H:i:s");
           ?>
           <tr>
             <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtuser"  value="<?php echo $f1?>"></center></td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>"></center></td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtemail"   value="<?php echo $f4?>"></center></td>
+            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" required></center></td>
+            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtemail"   value="<?php echo $f4?>" required></center></td>
             <td>
               <select name="SEX_EDIT" class="form-control" >
                 <option value="ชาย">ชาย</option>
                 <option value="หญิง">หญิง</option>
               </select>
             </td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txttel"   value="<?php echo $f6?>"></center></td>
+            <td><center><input class="form-control" type="text" style="text-align:center;" name="txttel"   value="<?php echo substr($f6,0,6).'xxx' ?>" required></center></td>
                            <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td>
               <select name="STATUS_EDIT" class="form-control" >
@@ -104,7 +104,7 @@ $time = date("H:i:s");
                 <option value="BAN">BAN</option>
               </select>
             </td>
-            <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate" value="" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+            <td><center><button name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
             <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
             <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
           </tr>

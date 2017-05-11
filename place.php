@@ -54,7 +54,7 @@ if($upload <> '')
   <?php
 
 }
-if($_POST["hdnCmd"] == "Update")
+if(isset($_POST['btnUpdate']))
 {
 
   $mysql_query8 = mysqli_query($connect,"SELECT * FROM data WHERE ID = '".$_POST["txtID"]."'");
@@ -186,20 +186,19 @@ if($_GET["Action"] == "Del")
 $objQuery1 = mysqli_query($connect,"SELECT * FROM data");
 $objQuery = mysqli_query($connect,"SELECT * FROM data ORDER BY ID DESC ");
 ?>
-<form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
-<input type="hidden" name="hdnCmd" value="">
+<form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
 <table class="table table-hover"  id="bootstrap-table">
   <tr>
   <thead class="thead-inverse">
     <th class="default" width="20%" height="50"> <div align="center">สถานที่</div></th>
-    <th class="default" width="50%" height="50"> <div align="center">คำอธิบาย</div></th>
-    <th class="default" width="10%" height="50"> <div align="center">ละติจูด</div></th>
-    <th class="default" width="10%" height="50"> <div align="center">ลองติจูด</div></th>
-    <th class="default" width="13%" height="50"> <div align="center">ความลึก(ม)</div></th>
-    <th class="default" width="5%" height="50"> <div align="center">เลือก</div></th>
-    <th class="default" width="5%" height="50"> <div align="center">สถานะ</div></th>
-    <th class="default" width="5%" height="50"> <div align="center">แก้ไข</div></th>
-    <th class="default" width="5%" height="50"> <div align="center">&nbsp;&nbsp;ลบ&nbsp;&nbsp;</div></th>
+    <th class="default" width="28%" height="50"> <div align="center">คำอธิบาย</div></th>
+    <th class="default" width="12%" height="50"> <div align="center">ละติจูด</div></th>
+    <th class="default" width="8%" height="50"> <div align="center">ลองติจูด</div></th>
+    <th class="default" width="10%" height="50"> <div align="center">ความลึก(ม)</div></th>
+    <th class="default" width="10%" height="50"> <div align="center">เลือก</div></th>
+    <th class="default" width="10%" height="50"> <div align="center">สถานะ</div></th>
+    <th class="default" width="10%" height="50"> <div align="center">แก้ไข</div></th>
+    <th class="default" width="10%" height="50"> <div align="center">ลบ</div></th>
 </thead>
   </tr>
 <?php
@@ -217,28 +216,29 @@ while($objResult = mysqli_fetch_array($objQuery))
 	{
   ?>
   <tr>
-    <td><center>
-      <input class="form-control" style="text-align:center;" name="txth1" type="text" value="<?php echo $f1?>">
+    <td width="27%"><center>
+      <input class="form-control" style="text-align:center;" name="txth1" type="text" value="<?php echo $f1?>" required>
     </center></td>
-      <td><center>
-      <input class="form-control" style="text-align:center;" name="txth2" type="text" value="<?php echo $f2?>">
+      <td width="40%"><center>
+      <input class="form-control" style="text-align:center;" name="txth2" type="text" value="<?php echo $f2?>" required>
     </center></td>
-      <td><center>
-      <input class="form-control" style="text-align:center;" name="txtla" type="text" value="<?php echo $f3?>">
+      <td width="12%"><center>
+      <input class="form-control" style="text-align:center;" name="txtla" type="text" value="<?php echo $f3?>" required>
     </center></td>
-      <td><center>
-      <input class="form-control" style="text-align:center;" name="txtlo" type="text" value="<?php echo $f4?>">
+      <td width="10%"><center>
+      <input class="form-control" style="text-align:center;" name="txtlo" type="text" value="<?php echo $f4?>" required>
     </center></td>
-      <td><center>
-      <input class="form-control" style="text-align:center;" name="txtdeep" type="number" value="<?php echo $f5?>">
+      <td width="12%"><center>
+      <input class="form-control" style="text-align:center;" name="txtdeep" type="number" value="<?php echo $f5?>" required>
     </center></td>
-    <td><center><label class="btn btn-primary btn-file">
+    <td ><center><label class="btn btn-primary btn-file">
         รูปภาพ <span class="glyphicon glyphicon-picture"></span><input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
     </label></center></td>
-      <td><center><button name="btnAdd" class="btn btn-success" id="btnUpdate" value="" OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
-      <td><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></button></center></td>
-        </div></td><td></td>
-            <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
+      <td ><center><button name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+      <td ><center><button name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></button></center></td>
+        </div></td>
+        
+           <input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>">
   </tr>
   <?
 	}
@@ -247,7 +247,7 @@ while($objResult = mysqli_fetch_array($objQuery))
   ?>
   <tr>
 
-  <td><center><a class="text-primary" href="water_level.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo substr($f1,0,50);?></a></center></td>
+  <td width="20%"><center><a class="text-primary" href="water_level.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo substr($f1,0,50);?></a></center></td>
   <td><center><?php echo substr($f2,0,30); ?></center></td>
   <td><center><?php echo Round($f3,2); ?></center></td>
   <td><center><?php echo Round($f4,2); ?></center></td>
@@ -278,20 +278,26 @@ else
 <?php 
 }
 ?>
-  <tr>
-  <td><center>
+</table>
+
+</form>
+
+<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
+<table class="table table-hover"  id="bootstrap-table">
+ <tr>
+  <td width="20%"><center>
   <input class="form-control" style="text-align:center;" name="txtAddh1" type="text" placeholder="ชื่อสถานที่" required>
 </center></td>
-  <td><center>
+  <td width="28%"><center>
   <input class="form-control" style="text-align:center;" name="txtAddh2" type="text" placeholder="คำอธิบายสั้นๆ" required >
 </center></td>
-  <td><center>
+  <td width="10%"><center>
   <input class="form-control" style="text-align:center;" name="txtAddla" type="text" required>
 </center></td>
-  <td><center>
+  <td width="10%"><center>
   <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
 </center></td>
-  <td><center>
+  <td width="10%"><center>
   <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
 </center></td>
 <td><center><label class="btn btn-primary btn-file">
@@ -300,11 +306,11 @@ else
 <!--   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td> -->
   <td><center><button name="submit" class="btn btn-success" id="submit" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
   <td><center><button class="btn btn-warning" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></span></button></center></td>
-    <td><center><a href="profile.php?Action=Find" target="_top" type="button" class="btn btn-info">ค้นหา <span class="glyphicon glyphicon-search"></span></a></center></td>
+    <!--<td><center><a href="profile.php?Action=Find" target="_top" type="button" class="btn btn-info">ค้นหา <span class="glyphicon glyphicon-search"></span></a></center></td>-->
   </tr>
 </table>
-
 </form>
+
 <?php 
 mysqli_close($connect);
 ?>
