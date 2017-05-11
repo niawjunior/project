@@ -65,6 +65,11 @@ require_once("config.php");
   {
     mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('$PLACE_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
      mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
+     ?>
+      <script>
+        window.top.location.replace("profile.php");
+      </script>
+  <?php
   }
 
   if($_POST["hdnCmd"] == "Update")
@@ -259,6 +264,12 @@ require_once("config.php");
                 mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มข้อมูลระดับน้ำ','เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร ') ");
                 mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร '  where user = '$POST'");
                 mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
+
+                ?>
+                  <script>
+                    window.top.location.replace("profile.php");
+                  </script>
+                <?php
               }
   ?>
     <div align="right">
