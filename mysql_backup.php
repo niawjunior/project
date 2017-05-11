@@ -229,4 +229,4 @@ $i++;
 }
 return $files;
 }}?>
-<link rel="stylesheet" type="text/css" href="./css/create_database.css">
+<link rel="stylesheet" type="text/css" href="assets/css/create_database.css">

@@ -73,7 +73,7 @@ require_once("config.php");
 		    $(window).load(function()
 		    {
 		    $('#myModal').modal('show');
-		    setTimeout("",3000);
+		    setTimeout("redirect();",3000);
 		    });
 		    </script>
 		    <div class="container">
@@ -94,6 +94,11 @@ require_once("config.php");
 		        </div>
 		      </div>
 		    </div>
+         <script>
+        function redirect(){
+    window.top.location.replace("profile.php?Action=Profile");
+        }
+        </script>
 		    <?php 
 		    if(!$objQuery)
 		    {

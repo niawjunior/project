@@ -172,5 +172,5 @@ setTimeout("location.href = 'create_database.php';",3000);
 </fieldset>
 </div>
 </div>
-<link rel="stylesheet" type="text/css" href="./css/create_database.css">
+<link rel="stylesheet" type="text/css" href="assets/css/create_database.css">
 </thead></table>

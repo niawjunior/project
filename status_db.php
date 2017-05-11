@@ -58,7 +58,7 @@ return $status[1];}
 }
 ?>
 <br>
-<link rel="stylesheet" type="text/css" href="./css/create_database.css"><div class="backup_main">
+<link rel="stylesheet" type="text/css" href="assets/css/create_database.css"><div class="backup_main">
 <div class="main">
     <fieldset><legend><h2>รายละเอียดของฐานข้อมูล</h2></legend>
     <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">

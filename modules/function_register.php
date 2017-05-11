@@ -1,9 +1,9 @@
 <?php
 require_once("config.php");
 ?>
-<script src="js/validator.js"></script>
-<link href="css/register.css" rel="stylesheet">
-<link href="css/all.css" rel="stylesheet">
+<script src="assets/js/validator.js"></script>
+<link href="assets/css/register.css" rel="stylesheet">
+<link href="assets/css/all.css" rel="stylesheet">
 <div class="container" >
   <div class="col-md-12" >
     <div id="logbox"  >

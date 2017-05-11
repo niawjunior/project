@@ -5,7 +5,7 @@ require_once("config.php");
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      <link href="css/all.css" rel="stylesheet">
+      <link href="assets/css/all.css" rel="stylesheet">
    </head>
    <body class="background">
 <?php require_once( "modules/function_nav.php");?>

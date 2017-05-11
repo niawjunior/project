@@ -13,7 +13,7 @@
                 <tr>
                   <div class="form-group">
                     <td><label><strong>ชื่อ-นามสกุล</strong></label></td>
-                    <td><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" placeholder="ชื่อจริง *"  required></td>
+                    <td><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" placeholder="ชื่อจริง "></td>
                   </div>
                 </tr>
               <tr>
@@ -35,7 +35,7 @@
                 <tr>
                   <div class="form-group">
                     <td><label><strong>เบอร์โทร</strong></label></td>
-                    <td><input class="form-control" type="text" style="text-align:center;" name="txttel"  value="<?php echo $f6?>" placeholder="เบอร์โทร ที่สามารถติดต่อได้ *" required></td>
+                    <td><input class="form-control" type="text" style="text-align:center;" name="txttel"  value="<?php echo $f6?>" placeholder="เบอร์โทร ที่สามารถติดต่อได้ " ></td>
                   </div>
                 </tr>
 
