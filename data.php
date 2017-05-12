@@ -4,11 +4,11 @@ require_once("config.php");
 ?>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
 </head>
 <body>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php 
   session_start();
   date_default_timezone_set('Asia/Bangkok');

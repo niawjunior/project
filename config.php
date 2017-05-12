@@ -2,7 +2,7 @@
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!-- js -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/nprogress.js"></script>

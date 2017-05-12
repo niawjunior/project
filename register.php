@@ -5,6 +5,7 @@ require_once("config.php");
 <html lang="en">
    <head>
       <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="assets/css/all.css" rel="stylesheet">
    </head>
    <body class="background">

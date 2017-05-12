@@ -43,11 +43,11 @@ $type_user ="ผู้ใช้งานทั่วไป";
 ?>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <title>
     WATER LEVEL
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/all.css" rel="stylesheet">
   </head>
   
@@ -77,11 +77,11 @@ if($_GET["Action"] == "Multiple")
 <br>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=multiple.php width=100% height=65% frameborder=0 scrolling=no>
+    <IFRAME src=multiple.php width=100% height=65% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
-<IFRAME src=place.php width=100% height=90% frameborder=0 scrolling=no>
+<IFRAME src=place.php width=100% height=90% frameborder=0 scrolling=yes>
 </IFRAME>
 <?php
 }
@@ -92,11 +92,11 @@ if($_GET["Action"] == "Find")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=find.php width=100% height=50% frameborder=0 scrolling=no>
+    <IFRAME src=find.php width=100% height=50% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
-<IFRAME src=place.php width=100% height=70% frameborder=0 scrolling=no>
+<IFRAME src=place.php width=100% height=70% frameborder=0 scrolling=yes>
 </IFRAME>
 <?php
 }
@@ -107,7 +107,7 @@ if($_GET["Action"] == "Setting?Backup")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=no>
+    <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -120,7 +120,7 @@ if($_GET["Action"] == "Setting?Status")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=status_db.php width=100% height=100% frameborder=0 scrolling=no>
+    <IFRAME src=status_db.php width=100% height=100% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -133,7 +133,7 @@ if($_GET["Action"] == "Setting?Create")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=create_database.php width=100% height=100% frameborder=0 scrolling=no>
+    <IFRAME src=create_database.php width=100% height=100% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -146,7 +146,7 @@ if($_GET["Action"] == "Member")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=member.php width=100% height=100% frameborder=0 scrolling=no>
+    <IFRAME src=member.php width=100% height=100% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -159,7 +159,7 @@ if($_GET["Action"] == "News")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=news.php width=100% height=100% frameborder=0 scrolling=no>
+    <IFRAME src=news.php width=100% height=100% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -172,7 +172,7 @@ if($_GET["Action"] == "Display")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=no>
+    <IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -185,7 +185,7 @@ if($_GET["Action"] == "Graph")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=graph.php width=100% height=75% frameborder=0 scrolling=no>
+    <IFRAME src=graph.php width=100% height=75% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -196,7 +196,7 @@ if($_GET["Action"] == "Graph")
 if($_GET["Action"] == "")
 {
 ?>
-<IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=no>
+<IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=yes>
 </IFRAME>
 <?php
 }
@@ -207,7 +207,7 @@ if($_GET["Action"] == "Activity")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=no>
+    <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=yes>
     </IFRAME>
   </div>
 </div>
@@ -218,7 +218,7 @@ if($_GET["Action"] == "Activity")
 if($_GET["Action"] == "Profile")
 {
 ?>
-<IFRAME src=admin_profile.php width=100% height=100% frameborder=0 scrolling=no>
+<IFRAME src=admin_profile.php width=100% height=100% frameborder=0 scrolling=yes>
 </IFRAME>
 <?php
 }

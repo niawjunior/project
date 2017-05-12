@@ -10,6 +10,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 ?>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="assets/css/all.css" rel="stylesheet">
         <title>
         WATER LEVEL
@@ -30,7 +31,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
     <div class="col-md-6">
         <h4><li class="glyphicon glyphicon-map-marker" aria-hidden="true"></li>
         แผนที่ติดตั้งเครื่องวัดระดับน้ำ</h4>
-        <iframe src="multiple.php" width="560" height="900" scrolling="no" frameBorder="0"></iframe>
+        <iframe src="multiple.php" width="560" height="900" scrolling="yes" frameBorder="0"></iframe>
     	</div>
     <div class="col-md-6">
         <h4>
@@ -39,13 +40,12 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         	<li class="glyphicon glyphicon-alert" aria-hidden="true"></li>
         สถานะ: <?php if($check==""){$check1="ไม่ได้เชื่อมต่อ";}else{$check1=$check;}?><font  color="#428bca"><?php echo $check1?></font>
         	</h4>
-        <div class="col-xs-12">
+
             <span class="label label-danger"><?php echo '<=30 น้ำน้อยวิกฤติ'?></span>
             <span class="label label-warning"><?php echo '>30-50% น้ำน้อย'?></span>
             <span class="label label-success"><?php echo '>50-80% น้ำปานกลาง'?></span>
             <span class="label label-warning"><?php echo '>80-100% น้ำมาก'?></span>
             <span class="label label-danger"><?php echo '>100% เกินความจุ'?></span>
-        	</div>
        <br>
         <h4>
         	<li class="glyphicon glyphicon-chevron-up" aria-hidden="true"></li>
@@ -72,13 +72,13 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         <iframe src="water_level.php" width="100%" height="55%" scrolling="no" frameBorder="0"></iframe>
         <h4><li class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></li>
         สถานที่ติดตั้งเครื่องวัดระดับน้ำ</h4>
-        <iframe src="showpage.php" width="100%" height="55%" scrolling="no" frameBorder="0">
+        <iframe src="showpage.php" width="100%" height="55%" scrolling="yes" frameBorder="0">
         	</iframe>
     </div>
 </div>
 	<h4><li class="glyphicon glyphicon-signal" aria-hidden="true"></li> กราฟแสดงปริมาณน้ำใน 
 	<font  color="#428bca"><?php echo $showh1?></font> 24 ชม.ย้อนหลัง</h4>
-	<iframe src="graph1.php" width="100%" height="50%" scrolling="no" frameBorder="0">	
+	<iframe src="graph1.php" width="100%" height="50%" scrolling="yes" frameBorder="0">	
 	</iframe>
 </div>
 </body>
