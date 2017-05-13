@@ -28,7 +28,41 @@ require_once ("connect.php");
                     <p class="lead">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การตรวจวัดระดับน้ำในแหล่งน้ำชุมชน ได้มีหน่วยงานที่คอยดูแลตรวจวัดและจัดการปริมาณน้ำที่ปล่อยน้ำออกไปเพื่อให้ประชาชนได้ใช้บริโภคอุปโภค เช่น กรมชลประทาน เป็นต้น  โดยได้มีการใช้คนและเครื่องมือในบันทึกข้อมูล ซึ่งใช้งบประมาณค่อนข้างแพง และต้องใช้ผู้เชียวชาญเฉพาะด้านเข้ามาควบคุม <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;จากปัญหาข้างต้น ผู้จัดทำ จึงสนใจสร้าง <FONT COLOR="#0e5064">"ระบบตรวจวัดระดับน้ำในแหล่งชุมชน ผ่านระบบสารสนเทศภูมิศาสตร์"</FONT> เป็นกรณีศึกษาขึ้นมา<br>เพื่อให้เกิดความสะดวกในการวัดและตรวจสอบปริมาณน้ำ โดยสามารถตรวจสอบปริมาณน้ำผ่านทางเว็บไซต์ เพื่อความสะดวกและรวดเร็วในการคาดการณ์<br>และตรวจวัดปริมาณน้ำที่เพิ่มขึ้นหรือลดลง พร้อมทั้งช่วยประหยัดค่าใช่จ่ายในการติดตั้งอุปกรณ์และจ้างบุคลากรได้อีกด้วย</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-3 col-sm-6">
-                    <img class="img-responsive img-thumbnail" src="img/water_level.JPG" alt="">
+
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="img/water2.JPG" alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img src="img/water3.JPG" alt="New York">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!--
+
+
+
+                    <img class="img-responsive img-thumbnail" src="img/water_level.JPG" alt="">-->
                 </div>
             </div>
         </div>
