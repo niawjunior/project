@@ -9,6 +9,11 @@
 <body>
 <?php
 session_start();
+    if($_SESSION["STATUS"]=='')
+    {
+      header('Location: 404.php');
+      exit();
+    }
 $POST = $_SESSION["USER"];
 date_default_timezone_set('Asia/Bangkok');
 $date = date("d-m-Y");
@@ -190,15 +195,22 @@ $objQuery = mysqli_query($connect,"SELECT * FROM data ORDER BY ID DESC ");
 <table class="table table-hover"  id="bootstrap-table">
   <tr>
   <thead class="thead-inverse">
-    <th class="default" width="20%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
+    <th class="default" width="15%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
     <th class="default" width="28%" height="50"> <div align="center"><strong>คำอธิบาย</strong></div></th>
     <th class="default" width="12%" height="50"> <div align="center"><strong>ละติจูด</strong></div></th>
     <th class="default" width="8%" height="50"> <div align="center"><strong>ลองติจูด</strong></div></th>
     <th class="default" width="10%" height="50"> <div align="center"><strong>ความลึก(ม)</strong></div></th>
+      <?php if($_SESSION["status"] == 'ADMIN')
+        {
+        ?>
     <th class="default" width="5%" height="50"> <div align="center"><strong>เลือก</strong></div></th>
     <th class="default" width="5%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
     <th class="default" width="5%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
     <th class="default" width="15%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+        <?php
+        }
+      ?>
+
 </thead>
   </tr>
 <?php
@@ -236,6 +248,7 @@ while($objResult = mysqli_fetch_array($objQuery))
     </label></center></td>
       <td ><center><button data-toggle="tooltip" title="บันทึกข้อมูล" name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
       <td ><center><button data-toggle="tooltip" title="ยกเลิก" name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></button></center></td>
+      
         </div></td>
         
            <input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>">
@@ -246,72 +259,74 @@ while($objResult = mysqli_fetch_array($objQuery))
 	{
   ?>
   <tr>
-
   <td width="20%"><center><a class="text-primary" href="water_level.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo substr($f1,0,50);?></a></center></td>
   <td><center><?php echo substr($f2,0,30); ?></center></td>
   <td><center><?php echo Round($f3,2); ?></center></td>
   <td><center><?php echo Round($f4,2); ?></center></td>
   <td><center><?php echo $f5 ?></center></td>
-<?
-if($f1==$f111)
-{
-  $ICON='<span class="glyphicon glyphicon-minus-sign" style="color:#f76c6c"></span>';
-  $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span> ';
-}
-else
-{
-  $ICON='<span class="glyphicon glyphicon-plus-sign"></span>';
-    $icon='<span class="glyphicon glyphicon-record" style="color:#f76c6c"></span>';
-  }
-?>
-<?php if($f1==$f111){$TT='ต้องการยกเลิกการใช้แผนที่หรือไม่?';$text1='ยกเลิกแผนที่หลัก';}else{$TT='ต้องการใช้เป็นแผนที่หลักหรือไม่?';$text1 ='ใช้เป็นแผนที่หลัก';}?>
+
+  <?php if($_SESSION["status"] == 'ADMIN')
+    {
+
+      if($f1==$f111)
+      {
+        $ICON='<span class="glyphicon glyphicon-minus-sign" style="color:#f76c6c"></span>';
+        $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span> ';
+      }
+      else
+      {
+        $ICON='<span class="glyphicon glyphicon-plus-sign"></span>';
+          $icon='<span class="glyphicon glyphicon-record" style="color:#f76c6c"></span>';
+        }
+      ?>
+<?php 
+if($f1==$f111){$TT='ต้องการยกเลิกการใช้แผนที่หรือไม่?';$text1='ยกเลิกแผนที่หลัก';}else{$TT='ต้องการใช้เป็นแผนที่หลักหรือไม่?';$text1 ='ใช้เป็นแผนที่หลัก';}?>
 <td align="center"><a data-toggle="tooltip" title="<?php echo $text1?>" href="JavaScript:if(confirm('<?php echo $TT?>')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=<?if($f1==$f111){$UU='UnUse';$II=$f222;}else{$UU='Use';$II=$f0;}?><?php echo $UU?>&ID=<?php echo $II?>';}"><?php echo $ICON?></a></td>
-
-
-  <td align="center" > <?php echo $icon?></td>
+<td align="center" > <?php echo $icon?></td>
 <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $objResult["ID"];?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-
-  <td align="center"><a data-toggle="tooltip" title="ลบข้อมูล" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
-  </tr>
+<td align="center"><a data-toggle="tooltip" title="ลบข้อมูล" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+</tr>
   <?php 
 	}
-  ?>
-<?php 
+}
 }
 ?>
 </table>
-
 </form>
-
-<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
-<table class="table table-hover"  id="bootstrap-table">
- <tr>
-  <td width="20%"><center>
-  <input class="form-control" style="text-align:center;" name="txtAddh1" type="text" placeholder="ชื่อสถานที่" required>
-</center></td>
-  <td width="28%"><center>
-  <input class="form-control" style="text-align:center;" name="txtAddh2" type="text" placeholder="คำอธิบายสั้นๆ" required >
-</center></td>
-  <td width="10%"><center>
-  <input class="form-control" style="text-align:center;" name="txtAddla" type="text" required>
-</center></td>
-  <td width="10%"><center>
-  <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
-</center></td>
-  <td width="10%"><center>
-  <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
-</center></td>
-<td><center><label class="btn btn-primary btn-file" data-toggle="tooltip" title="เลือกรูปภาพ">
-    รูปภาพ <span class="glyphicon glyphicon-picture"></span> <input  data-placement="top" type="file" name="fileupload" id="fileupload" style="display: none;">
-</label></center></td>
-<!--   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td> -->
-  <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success" id="submit" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-  <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" class="btn btn-warning" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></span></button></center></td>
-    <!--<td><center><a href="profile.php?Action=Find" target="_top" type="button" class="btn btn-info">ค้นหา <span class="glyphicon glyphicon-search"></span></a></center></td>-->
-  </tr>
-</table>
-</form>
-
+  <?php if($_SESSION["status"] == 'ADMIN')
+    {
+      ?>
+      <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
+      <table class="table table-hover"  id="bootstrap-table">
+      <tr>
+        <td width="20%"><center>
+        <input class="form-control" style="text-align:center;" name="txtAddh1" type="text" placeholder="ชื่อสถานที่" required>
+      </center></td>
+        <td width="30%"><center>
+        <input class="form-control" style="text-align:center;" name="txtAddh2" type="text" placeholder="คำอธิบายสั้นๆ" required >
+      </center></td>
+        <td width="10%"><center>
+        <input class="form-control" style="text-align:center;" name="txtAddla" type="text" required>
+      </center></td>
+        <td width="10%"><center>
+        <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
+      </center></td>
+        <td width="10%"><center>
+        <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
+      </center></td>
+      <td><center><label class="btn btn-primary btn-file btn-sm" data-toggle="tooltip" title="เลือกรูปภาพ">
+          รูปภาพ <span class="glyphicon glyphicon-picture"></span> <input  data-placement="top" type="file" name="fileupload" id="fileupload" style="display: none;">
+      </label></center></td>
+      <!--   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td> -->
+        <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success btn-sm" id="submit" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+        <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" class="btn btn-warning btn-sm" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></span></button></center></td>
+          <!--<td><center><a href="profile.php?Action=Find" target="_top" type="button" class="btn btn-info">ค้นหา <span class="glyphicon glyphicon-search"></span></a></center></td>-->
+        </tr>
+      </table>
+      </form>
+      <?php
+    }
+    ?>
 <?php 
 mysqli_close($connect);
 ?>

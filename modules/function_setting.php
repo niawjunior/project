@@ -72,6 +72,9 @@
               </div>
             </div>
           </div>
+                       <?php if($_SESSION["status"] == 'ADMIN')
+    {
+        ?>
           <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-body">
@@ -83,6 +86,10 @@
               </div>
             </div>
           </div>
+        <?php
+    }
+    ?>
+
           <div class="col-md-12">
             <br>
             <br>

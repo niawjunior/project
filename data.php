@@ -11,6 +11,11 @@ require_once("config.php");
 <body>
   <?php 
   session_start();
+    if($_SESSION["STATUS"]=='')
+    {
+      header('Location: 404.php');
+      exit();
+    }
   date_default_timezone_set('Asia/Bangkok');
   $date = date("d-m-Y");
   $time = date("H:i:s");
@@ -152,8 +157,14 @@ require_once("config.php");
           </th>
           <th class="default" width="25%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
           <th class="default" width="25%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
+          <?php if($_SESSION["status"] == 'ADMIN')
+          {
+            ?>
           <th class="default" width="20%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
           <th class="default" width="20%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+            <?php
+          }
+          ?>
         </thead>
       </tr>
       <?php 
@@ -202,8 +213,15 @@ require_once("config.php");
             <td><center><?php echo $f2 ?></center></td>
             <td><center><?php echo $f3 ?></center></td>
             <td><center><?php echo $f4 ?></center></td>
+                      <?php if($_SESSION["status"] == 'ADMIN')
+          {
+            ?>
             <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
             <td align="center"><a  data-toggle="tooltip" title="ลบข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+
+            <?php
+          }
+            ?>
           </tr>
           <?php
         }
@@ -211,7 +229,11 @@ require_once("config.php");
         <?php 
       }
       ?>
-      <tr>
+
+        <?php if($_SESSION["status"] == 'ADMIN')
+          {
+            ?>
+ <tr>
         <?php 
         if($Rows == 1)
         {
@@ -249,6 +271,10 @@ require_once("config.php");
         <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>        
         <!--<td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>-->
       </tr>
+            <?php
+          }
+        ?>
+     
     </table>
     
     <?php

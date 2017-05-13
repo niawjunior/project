@@ -6,7 +6,13 @@
         <script src="assets/js/exporting.js"></script>
     </head>
     <?php
+    session_start();
         require_once("connect.php");
+                if($_SESSION["STATUS"]=='')
+        {
+        header('Location: 404.php');
+        exit();
+        }
     ?>
     <?php 
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");

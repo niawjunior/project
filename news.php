@@ -1,5 +1,10 @@
 <?php
 session_start();
+    if($_SESSION["STATUS"]=='')
+    {
+      header('Location: 404.php');
+      exit();
+    }
 require_once("connect.php");
 require_once("config.php");
 date_default_timezone_set('Asia/Bangkok');
@@ -91,8 +96,15 @@ $time = date("H:i:s");
             <th class="default" width="20%" height="50"> <div align="center"><strong>ไฟล์ประกอบ (PDF)</strong></div></th>
             <th class="default" width="5%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
             <th class="default" width="10%" height="50"> <div align="center"><strong>โดย</strong></div></th>
+                      <?php if($_SESSION["status"] == 'ADMIN')
+    {
+        ?>
             <th class="default" width="5%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
             <th class="default" width="5%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+        <?php
+
+    }
+    ?>
           </thead>
         </tr>
         <?php 
@@ -129,8 +141,15 @@ $time = date("H:i:s");
           <td><center><a href="myfile/<?php echo $f3?>" target="_blank"><?php echo substr($f3, 0, 15)?></a></center></td>
           <td width="10%"><center><?php echo $f5 ?></center></td>
           <td><center><?php echo $f7 ?></center></td>
+                                <?php if($_SESSION["status"] == 'ADMIN')
+    {
+        ?>
           <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
           <td align="center"><a data-toggle="tooltip" title="ลบข้อมูล" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+
+        <?php
+    }
+    ?>
         </tr>
         <?php
         }
@@ -141,8 +160,10 @@ $time = date("H:i:s");
         
       </table>
     </form>
-        </form>
-     <form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?> " enctype="multipart/form-data">
+    <?php if($_SESSION["status"] == 'ADMIN')
+    {
+        ?>
+        <form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?> " enctype="multipart/form-data">
       <table class="table table-hover  "  border="0">
       <tr>
           <td width="20%"><center><input class="form-control" type="text" style="text-align:center;" name="txtt2" placeholder="หัวข้อ/ชื่อเรื่อง" required></center></td>
@@ -157,6 +178,12 @@ $time = date("H:i:s");
       </table>
      </form>
 
+        <?php
+
+    }
+    ?>
+    </form>
+     
     <?php
     mysqli_close($connect);
     ?>

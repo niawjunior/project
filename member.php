@@ -2,6 +2,11 @@
 session_start();
 require_once("config.php");
 require_once("connect.php");
+if($_SESSION["STATUS"]=='')
+  {
+  header('Location: 404.php');
+  exit();
+  }
 $POST = $_SESSION["USER"];
 date_default_timezone_set('Asia/Bangkok');
 $date = date("d-m-Y");
@@ -55,8 +60,15 @@ $time = date("H:i:s");
           <th class="default" width="10%" height="50"> <div align="center"><strong>เบอร์โทร</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>รูปประจำตัว</strong></div></th>
           <th class="default" width="10%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
+              <?php if($_SESSION["status"] == 'ADMIN')
+    {
+        ?>
           <th class="default" width="10%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
           <th class="default" width="25%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+      
+        <?php
+    }
+    ?>
         </tr>
       </thead>
       <?php 
@@ -128,8 +140,15 @@ $time = date("H:i:s");
             <td><center><?php echo substr($f6,0,7).'xxx' ?></center></td>
             <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td><center><?php echo $f7 ?></center></td>
+             <?php if($_SESSION["status"] == 'ADMIN')
+    {
+        ?>
             <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
             <td align="center"><a data-toggle="tooltip" title="ลบข้อมูล" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+      
+        <?php
+    }
+    ?>
           </tr>
           <?php 
         }

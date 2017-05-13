@@ -1,5 +1,10 @@
 <?php
 session_start();
+if($_SESSION["STATUS"]=='')
+{
+  header('Location: 404.php');
+  exit();
+}
 $ID = $_SESSION["ID"];
 require_once("connect.php");
 require_once("config.php");

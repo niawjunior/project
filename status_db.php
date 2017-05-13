@@ -1,4 +1,10 @@
 <?php
+session_start();
+    if($_SESSION["STATUS"]=='')
+    {
+      header('Location: 404.php');
+      exit();
+    }
 include "config.php";
 include "connect.php";
 ?>

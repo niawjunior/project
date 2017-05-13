@@ -7,6 +7,7 @@
     </head>
     <?php
         require_once("connect.php");
+
     ?>
     <?php 
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");

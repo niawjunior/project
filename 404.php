@@ -24,10 +24,10 @@ setTimeout("location.href = 'home.php';",3000);
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">ขออภัย!! ขณะนี้บัญชีของคุณถูกระงับการใช้งาน</h4>
+          <h4 class="modal-title">ขออภัย!! การร้องขอไม่สำเร็จ</h4>
         </div>
         <div class="modal-body">
-          <p>กรุณาติดต่อผู้ดูแลระบบ เพื่อเข้าสู่ระบบอีกครั้งในภายหลัง.</p>
+          <p>กรุณาติดต่อผู้ดูแลระบบ</p>
         </div>
         <div class="modal-footer">
         </div>

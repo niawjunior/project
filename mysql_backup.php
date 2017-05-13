@@ -5,6 +5,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');    // 0 or 1 set 1 if unable to download database it will show all possible errors
 ini_set('max_execution_time', 0);  // setting 0 for no time limit
 session_start();
+        if($_SESSION["STATUS"]=='')
+        {
+        header('Location: 404.php');
+        exit();
+        }
 define('BACKUP_DIR', './myBackups/sqlbackup' ) ;
 if(isset($_GET['task'])&& $_GET['task']=='clear')
 {

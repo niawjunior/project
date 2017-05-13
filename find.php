@@ -2,6 +2,11 @@
 require_once("connect.php");
 require_once("config.php");
 session_start();
+if($_SESSION["STATUS"]=='')
+{
+  header('Location: 404.php');
+  exit();
+}
 $POST = $_SESSION["USER"];
 date_default_timezone_set('Asia/Bangkok');
 $date = date("d-m-Y");
@@ -44,7 +49,14 @@ if(isset($_POST['submit']))
         <input name="latitude" class="MapLat" value="" type="text" placeholder="Latitude" style="box-shadow: inset 0 1px 1px rgba(0,0,0,.075);line-height: 1.42857143;border-radius: 4px;padding: 6px 12px;border: 1px solid #ccc;" required>
         ลองติจูด:
         <input name="longitude" class="MapLon" value="" type="text" placeholder="Longitude" style="box-shadow: inset 0 1px 1px rgba(0,0,0,.075);line-height: 1.42857143;border-radius: 4px;padding: 6px 12px;border: 1px solid #ccc;" required>
+          <?php if($_SESSION["status"] == 'ADMIN')
+    {
+        ?>
         <button name="submit" class="btn btn-primary btn-sm" id="submit" value="" type="submit">เพิ่ม <span class="glyphicon glyphicon-plus-sign"></span></button>
+
+        <?php
+    }
+    ?>
           <a  href="/project_final/profile.php?Action=Multiple" target="_top" class="btn btn-warning btn-sm" role="button"><span class="glyphicon glyphicon-arrow-left"></span> ย้อนกลับ</a>
     </form>
         <div id="map_canvas" style="height: 100%;width: 100%;margin: 0.6em;"></div>
