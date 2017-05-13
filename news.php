@@ -162,3 +162,8 @@ $time = date("H:i:s");
     ?>
   </body>
 </html>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>

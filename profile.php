@@ -92,7 +92,7 @@ if($_GET["Action"] == "Find")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=find.php width=100% height=50% frameborder=0 scrolling=yes>
+    <IFRAME src=find.php width=100% height=50% frameborder=0 scrolling=no>
     </IFRAME>
   </div>
 </div>
@@ -107,7 +107,7 @@ if($_GET["Action"] == "Setting?Backup")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=yes>
+    <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=no>
     </IFRAME>
   </div>
 </div>

@@ -45,8 +45,21 @@
                     <td><label><strong>เพศ</strong></label></td>
                     <td>
                       <select name="txtsex" class="form-control" style="text-align-last:center;">
-                        <option value="ชาย" >ชาย</option>
-                        <option value="หญิง">หญิง</option>
+                       <?php if($f5=='ชาย')
+                          {
+                            ?>
+                            <option value="ชาย">ชาย</option>
+                            <option value="หญิง">หญิง</option>
+                            <?php
+                          }
+                          else
+                          {
+                            ?>
+                            <option value="หญิง">หญิง</option>
+                            <option value="ชาย">ชาย</option>
+                            <?php
+                          }
+                      ?>
                       </select>
                     </td>
                   </div>

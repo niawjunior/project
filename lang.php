@@ -28,7 +28,6 @@
 		    $_SESSION["strh17"] = "ยินดีต้อนรับคุณ";
 		    $_SESSION["strh18"] = "สมาชิก";
 		    $_SESSION["strh19"] = "ผู้ดูแลระบบ";
-		    $_SESSION["strh20"] = "ระงับการใช้งาน";
 		}
 	else if($_SESSION["lang"] == "en")
 		{
@@ -59,7 +58,6 @@
 		    $_SESSION["strh17"] = "WELCOME";
 		    $_SESSION["strh18"] = "MEMBER";
 		    $_SESSION["strh19"] = "ADMIN";
-		    $_SESSION["strh20"] = "BAN";
 		}
 	else
 	{
@@ -90,7 +88,6 @@
 		    $_SESSION["strh17"] = "ยินดีต้อนรับคุณ";
 		    $_SESSION["strh18"] = "สมาชิก";
 		    $_SESSION["strh19"] = "ผู้ดูแลระบบ";
-		    $_SESSION["strh20"] = "ระงับการใช้งาน";
 	}
     
 ?>

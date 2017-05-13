@@ -196,3 +196,8 @@ require_once("config.php");
             </body>
           </html>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>

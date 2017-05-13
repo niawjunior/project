@@ -2,7 +2,7 @@
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- js -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/nprogress.js"></script>
@@ -86,9 +86,3 @@ input,label,span,p,a,td,th,body,h1,h2,h3,h4,h5,h6{
 }
 
 </style>
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
-});
-</script>

@@ -19,13 +19,6 @@ $PAGE_PROFILE = "profile.php?Action=Profile";
 $PAGE_SETTING = "profile.php?Action=Setting";
 $type_user = $_SESSION["strh19"];
 }
-else if ($_SESSION["status"] =="BAN")
-{
-$PAGE = "404.php";
-$PAGE_PROFILE = "404.php";
-$PAGE_SETTING = "404.php";
-$type_user = $_SESSION["strh20"];
-}
 else
 {
 $PAGE = "profile.php";

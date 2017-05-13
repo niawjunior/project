@@ -22,7 +22,7 @@ $time = date("H:i:s");
       $f0 = $objResult['ID'];
       $f1 = $objResult['user'];
     }
-    $objQuery = mysqli_query($connect, "UPDATE member SET name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["SEX_EDIT"]."',tel = '".$_POST["txttel"]."',status = '".$_POST["STATUS_EDIT"]."' WHERE ID = '".$_POST["txtID"]."' ");
+    $objQuery = mysqli_query($connect, "UPDATE member SET name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["SEX_EDIT"]."',tel = '".$_POST["txttel"]."' WHERE ID = '".$_POST["txtID"]."' ");
     mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','แก้ไขสมาชิก',' แก้ไขข้อมูล | ชื่อ  $f1 | ไอดี   ".$_POST["txtID"]."') ");
     mysqli_query($connect,"UPDATE member SET lastactivity = 'แก้ไขสมาชิก | ชื่อ $f1'  where user = '$POST'");
     mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
@@ -87,23 +87,31 @@ $time = date("H:i:s");
           ?>
           <tr>
             <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtuser"  value="<?php echo $f1?>"></center></td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" required></center></td>
+            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" ></center></td>
             <td><center><input class="form-control" type="text" style="text-align:center;" name="txtemail"   value="<?php echo $f4?>" required></center></td>
             <td>
               <select name="SEX_EDIT" class="form-control" >
-                <option value="ชาย">ชาย</option>
-                <option value="หญิง">หญิง</option>
+                <?php if($f5=='ชาย')
+                {
+                  ?>
+                  <option value="ชาย">ชาย</option>
+                  <option value="หญิง">หญิง</option>
+                  <?php
+                }
+                else
+                {
+                  ?>
+                  <option value="หญิง">หญิง</option>
+                  <option value="ชาย">ชาย</option>
+                  <?php
+                }
+                ?>
               </select>
             </td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txttel"   value="<?php echo substr($f6,0,6).'xxx' ?>" required></center></td>
+            <td><center><input class="form-control" maxlength="10" type="text" style="text-align:center;" name="txttel"   value="<?php echo substr($f6,0,6).'xxx' ?>" required></center></td>
                            <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
-            <td>
-              <select name="STATUS_EDIT" class="form-control">
-                <option value="ADMIN">ADMIN</option>
-                <option value="BAN">BAN</option>
-              </select>
-            </td>
-            <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+             <td><center><input disabled class="form-control" type="text" style="text-align:center;"  value="<?php echo $f7?>"></center></td>
+            <td><center><button   data-toggle="tooltip" title="บันทึกข้อมูล" name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
             <td><center><button data-toggle="tooltip" title="ยกเลิก" name="btnAdd" class="btn btn-warning" id="btnCancel" value="" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
             <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
           </tr>
@@ -114,9 +122,9 @@ $time = date("H:i:s");
           ?>
           <tr>
             <td ><center><?php echo $f1 ?></center></td>
-            <td><center><?php echo $f3?></center></td>
+            <td><center><?php if($f3==''){echo 'ไม่ระบุ';}else{echo $f3;} ?></center></td>
             <td><center><?php echo $f4 ?></center></td>
-            <td><center><?php echo $f5 ?></center></td>
+            <td><center><?php if($f5==''){echo 'ไม่ระบุ';}else{echo $f5;} ?></center></td>
             <td><center><?php echo substr($f6,0,7).'xxx' ?></center></td>
             <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td><center><?php echo $f7 ?></center></td>
@@ -136,3 +144,8 @@ $time = date("H:i:s");
   ?>
 </body>
 </html>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>

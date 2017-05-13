@@ -318,3 +318,8 @@ mysqli_close($connect);
 </body>
 </html>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>

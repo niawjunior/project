@@ -30,6 +30,7 @@ if(isset($_POST['submit']))
 ?>
 <html lang="en">
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8" />
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBmH-aZePSfjYwBjBLJtuBfdqCRdawcPQg&libraries=places&region=uk&language=en"></script>
     </head>
