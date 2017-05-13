@@ -229,7 +229,7 @@ while($objResult = mysqli_fetch_array($objQuery))
   ?>
   <tr>
     <td width="27%"><center>
-      <input class="form-control" style="text-align:center;" name="txth1" type="text" value="<?php echo $f1?>" required>
+      <input autofocus="autofocus" class="form-control" style="text-align:center;" name="txth1" type="text" value="<?php echo $f1?>" required>
     </center></td>
       <td width="40%"><center>
       <input class="form-control" style="text-align:center;" name="txth2" type="text" value="<?php echo $f2?>" required>

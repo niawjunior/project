@@ -185,11 +185,11 @@ require_once("config.php");
                         <div class="form-group">
                           <h4><label class="col-md-3 control-label"><span class="glyphicon glyphicon-lock"> </span> รหัสผ่าน</label></h4>
                           <div class="col-md-8">
-                            <input type="password" class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>     
+                            <input autofocus="autofocus" type="password" class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>     
                           </div>
 				           <br><br><br>
                           <div class="col-md-9"></div>
-                          <button type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok-sign"></span></button>
+                          <button data-toggle="tooltip" title="กดยืนยันเพื่อบันทึกข้อมูล" type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok-sign"></span></button>
                         </div>
                       </div>
                     </div>

@@ -142,7 +142,7 @@ setTimeout("location.href = 'create_database.php';",3000);
     <div class="main">
         <fieldset><legend><h2>ลบฐานข้อมูล</h2></legend>
         <form name="delete" id="delete" method="post" action="delete_db.php">
-            <div><h3>ชื่อเซิฟเวอร์:</h3><input type="text" class="form-control" name="host_delete" value="localhost" required /></div>
+            <div><h3>ชื่อเซิฟเวอร์:</h3><input autofocus="autofocus" type="text" class="form-control" name="host_delete" value="localhost" required /></div>
             <div class="cls"></div>
             <div><h3>ชื่อฐานข้อมูล:</h3><input type="text" class="form-control" name="database_delete" value="" required /></div>
             <div class="cls"></div>

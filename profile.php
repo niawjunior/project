@@ -212,7 +212,7 @@ if($_GET["Action"] == "Activity")
 ?>
 <div class="row">
   <div class="col-md-12" >
-    <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=yes>
+    <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=no>
     </IFRAME>
   </div>
 </div>

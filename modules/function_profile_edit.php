@@ -13,7 +13,7 @@
                 <tr>
                   <div class="form-group">
                     <td><label><strong>ชื่อ-นามสกุล</strong></label></td>
-                    <td><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" placeholder="ชื่อจริง "></td>
+                    <td><input autofocus="autofocus" class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" placeholder="ชื่อจริง "></td>
                   </div>
                 </tr>
               <tr>

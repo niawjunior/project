@@ -166,7 +166,7 @@ $fileSize = get_file_size_unit(filesize(BACKUP_DIR . "/". $fileName . '.zip')) ;
         
         <fieldset><legend><h2>ระบบสำรองข้อมูล</h2></legend>
         <form name="backup" id="backup" method="post">
-            <div><h3>ชื่อเซิฟเวอร์:</h3><input type="text" class="form-control" name="host" value="localhost" required/></div>
+            <div><h3>ชื่อเซิฟเวอร์:</h3><input autofocus="autofocus" type="text" class="form-control" name="host" value="localhost" required/></div>
             <div class="cls"></div>
             <div><h3>ชื่อฐานข้อมูล:</h3><input type="text" class="form-control" name="database" value="" required /></div>
             <div class="cls"></div>

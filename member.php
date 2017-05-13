@@ -99,7 +99,7 @@ $time = date("H:i:s");
           ?>
           <tr>
             <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtuser"  value="<?php echo $f1?>"></center></td>
-            <td><center><input class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" ></center></td>
+            <td><center><input autofocus="autofocus" class="form-control" type="text" style="text-align:center;" name="txtname"  value="<?php echo $f3?>" ></center></td>
             <td><center><input class="form-control" type="text" style="text-align:center;" name="txtemail"   value="<?php echo $f4?>" required></center></td>
             <td>
               <select name="SEX_EDIT" class="form-control" >
@@ -137,7 +137,7 @@ $time = date("H:i:s");
             <td><center><?php if($f3==''){echo 'ไม่ระบุ';}else{echo $f3;} ?></center></td>
             <td><center><?php echo $f4 ?></center></td>
             <td><center><?php if($f5==''){echo 'ไม่ระบุ';}else{echo $f5;} ?></center></td>
-            <td><center><?php echo substr($f6,0,7).'xxx' ?></center></td>
+            <td><center><?php if($f6==''){echo 'ไม่ระบุ';}else{echo $f6;} ?></center></td>
             <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
             <td><center><?php echo $f7 ?></center></td>
              <?php if($_SESSION["status"] == 'ADMIN')

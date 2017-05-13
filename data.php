@@ -195,7 +195,7 @@ require_once("config.php");
         {
           ?>
           <tr>
-            <td><center><input  class="form-control" type="text" style="text-align:center;" name="txtplace"  value="<?php echo $f1?>" ></center></td>
+            <td><center><input autofocus="autofocus" class="form-control" type="text" style="text-align:center;" name="txtplace"  value="<?php echo $f1?>" ></center></td>
             <td><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
             <td><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
             <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>

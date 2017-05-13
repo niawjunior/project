@@ -121,7 +121,7 @@ $time = date("H:i:s");
         {
         ?>
         <tr>
-          <td width="20%"><center><input class="form-control" type="text" style="text-align:center;" name="txtt2_edit"  value="<?php echo $f2?>" required></center></td>
+          <td width="20%"><center><input autofocus="autofocus" class="form-control" type="text" style="text-align:center;" name="txtt2_edit"  value="<?php echo $f2?>" required></center></td>
           <td width="20%"><center><label style="position:relative;" class="btn btn-default btn-file" >
             <input type="file" name="fileupload_edit">
           </label></td>
