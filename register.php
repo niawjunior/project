@@ -16,7 +16,6 @@ require_once("config.php");
 </div>
 </body>
 </html>
-
   <script>
     $('body').show();
     $('.version').text(NProgress.version);
