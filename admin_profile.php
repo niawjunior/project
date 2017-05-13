@@ -12,6 +12,7 @@ require_once("config.php");
   <body>
     <?php 
     $US = $_SESSION["USER"];
+    $US_ID = $_GET['User'];
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     $objQuery4 = mysqli_query($connect,"SELECT * FROM member where user='$US'");
     while ($result4 = mysqli_fetch_array($objQuery4))
@@ -139,7 +140,15 @@ require_once("config.php");
     </div>
     <?php 
     }
-    $objQuery = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
+    if($US_ID=='')
+    {
+      $NAME = $ID;
+    }
+    else
+    {
+      $NAME = $US_ID;
+    }
+    $objQuery = mysqli_query($connect,"SELECT * FROM member WHERE ID='$NAME'");
     ?>
     <form role="form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>?Action=Update&ID=<?php echo $_GET["ID"];?>">
           <div class="panel-body">

@@ -18,11 +18,10 @@
                                 </span>
                             </a>
                         </li>
-                       <li id="tab_active_weather"><a href="about.php">ที่มาและความสำคัญ</a>
+                       <li id="tab_active_weather"><a href="about.php"><?php echo $_SESSION["strh20"];?></a>
                     </li>
-                   <li id="tab_active_research"><a href="">วิธีการติดตั้ง/ใช้งาน</a>
+                   <li id="tab_active_research"><a href=""><?php echo $_SESSION["strh21"];?></a>
                 </li>
-                
             </ul>
             <?php  if($_SESSION[ "STATUS"]=="" ) { require_once( "modules/function_login.php"); } else { require_once( "modules/function_loged.php"); } ?>
         </div>

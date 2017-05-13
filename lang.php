@@ -28,17 +28,20 @@
 		    $_SESSION["strh17"] = "ยินดีต้อนรับคุณ";
 		    $_SESSION["strh18"] = "สมาชิก";
 		    $_SESSION["strh19"] = "ผู้ดูแลระบบ";
+			$_SESSION["strh20"] = "ทีมาและความสำคัญ";
+			$_SESSION["strh21"] = "วิธีติดตั้ง/ใช้งาน";
+			$_SESSION["strh22"] = "หน้าจัดการข้อมูล";
 		}
 	else if($_SESSION["lang"] == "en")
 		{
-			$_SESSION["strwater"] = "level";
-		    $_SESSION["strmap"] = "map";
-		    $_SESSION["strgraph"] = "graph";
-		    $_SESSION["strreport"] = "report";
-		    $_SESSION["strmember"] = "member";
-		    $_SESSION["strprofile"] = "profile";
-		    $_SESSION["stractivity"] = "activity";
-		    $_SESSION["strmore"] = "more";
+			$_SESSION["strwater"] = "Level";
+		    $_SESSION["strmap"] = "Map";
+		    $_SESSION["strgraph"] = "Graph";
+		    $_SESSION["strreport"] = "Report";
+		    $_SESSION["strmember"] = "Member";
+		    $_SESSION["strprofile"] = "Profile";
+		    $_SESSION["stractivity"] = "Activity";
+		    $_SESSION["strmore"] = "More";
 		    $_SESSION["strh1"] = "Setting";
 		    $_SESSION["strh2"] = "Admin Only";
 		    $_SESSION["strh3"] = "Date/Time";
@@ -46,18 +49,21 @@
 		    $_SESSION["strh5"] = "Report System";
 		    $_SESSION["strh6"] = "Language System";
 		    $_SESSION["strh7"] = "Backup System";
-		    $_SESSION["strh8"] = "thai";
-		    $_SESSION["strh9"] = "english";
-		    $_SESSION["strh10"] = "activity";
-		    $_SESSION["strh11"] = "report";
-		    $_SESSION["strh12"] = "backup data";
-		    $_SESSION["strh13"] = "create/delete database";
-		    $_SESSION["strh14"] = "detail/status";
-		    $_SESSION["strh15"] = "ok";
+		    $_SESSION["strh8"] = "Thai";
+		    $_SESSION["strh9"] = "English";
+		    $_SESSION["strh10"] = "Activity";
+		    $_SESSION["strh11"] = "Report";
+		    $_SESSION["strh12"] = "Backup data";
+		    $_SESSION["strh13"] = "Create/delete database";
+		    $_SESSION["strh14"] = "Detail/status";
+		    $_SESSION["strh15"] = "Ok";
 		    $_SESSION["strh16"] = "LOGOUT";
 		    $_SESSION["strh17"] = "WELCOME";
 		    $_SESSION["strh18"] = "MEMBER";
 		    $_SESSION["strh19"] = "ADMIN";
+			$_SESSION["strh20"] = "Background/Signification";
+			$_SESSION["strh21"] = "Setup/How to Use";
+			$_SESSION["strh22"] = "Dashboard";
 		}
 	else
 	{
@@ -88,6 +94,9 @@
 		    $_SESSION["strh17"] = "ยินดีต้อนรับคุณ";
 		    $_SESSION["strh18"] = "สมาชิก";
 		    $_SESSION["strh19"] = "ผู้ดูแลระบบ";
+			$_SESSION["strh20"] = "ทีมาและความสำคัญ";
+			$_SESSION["strh21"] = "วิธีติดตั้ง/ใช้งาน";
+			$_SESSION["strh22"] = "หน้าจัดการข้อมูล";
 	}
     
 ?>

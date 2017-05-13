@@ -30,7 +30,7 @@ if($_SESSION["status"] == "ADMIN")
 {
 ?>
 <ul class="nav navbar-nav">
-  <li id="tab_active_weather"><a href="<?php echo $PAGE_SETTING?>">หน้าจัดการข้อมูล</a></li>
+  <li id="tab_active_weather"><a href="<?php echo $PAGE_SETTING?>"><?php echo $_SESSION["strh22"];?></a></li>
 </ul>
 <?php 
 }

@@ -120,7 +120,7 @@ $time = date("H:i:s");
                 ?>
               </select>
             </td>
-            <td><center><input class="form-control" maxlength="10" type="text" style="text-align:center;" name="txttel"   value="<?php echo substr($f6,0,6).'xxx' ?>" required></center></td>
+            <td><center><input class="form-control" maxlength="10" type="text" style="text-align:center;" name="txttel"   value="<?php echo $f6; ?>" required></center></td>
                            <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
              <td><center><input disabled class="form-control" type="text" style="text-align:center;"  value="<?php echo $f7?>"></center></td>
             <td><center><button   data-toggle="tooltip" title="บันทึกข้อมูล" name="btnUpdate" class="btn btn-success" id="btnUpdate" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
@@ -138,7 +138,7 @@ $time = date("H:i:s");
             <td><center><?php echo $f4 ?></center></td>
             <td><center><?php if($f5==''){echo 'ไม่ระบุ';}else{echo $f5;} ?></center></td>
             <td><center><?php if($f6==''){echo 'ไม่ระบุ';}else{echo $f6;} ?></center></td>
-            <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="35" width="auto" ></center></td>
+            <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="30" width="30" ></center></td>
             <td><center><?php echo $f7 ?></center></td>
              <?php if($_SESSION["status"] == 'ADMIN')
     {

@@ -25,7 +25,7 @@
 			<tr>
 				<div class="form-group">
 					<td><label><strong>เบอร์โทร</strong></label></td>
-					<td><center><label><?php echo $f6?></label></center></td>
+					<td><center><label><?php if($f6==''){echo 'ไม่ระบุ';}else{echo $f6;} ?></label></center></td>
 				</div>
 			</tr>
 			<tr>

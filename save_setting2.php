@@ -61,10 +61,10 @@ require_once("config.php");
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">เปลี่ยนระบบเป็นภาษาอังกฤษเรียบร้อยแล้ว</h4>
+              <h4 class="modal-title">Change the system to English successfully.</h4>
             </div>
             <div class="modal-body">
-              <p>กรุณารอสักครู่..</p>
+              <p>please wait..</p>
             </div>
             <div class="modal-footer">
             </div>
