@@ -16,9 +16,6 @@ require_once("config.php");
       header('Location: 404.php');
       exit();
     }
-  date_default_timezone_set('Asia/Bangkok');
-  $date = date("d-m-Y");
-  $time = date("H:i:s");
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   $POST = $_SESSION["USER"];
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
@@ -168,11 +165,11 @@ require_once("config.php");
     <table class="table table-hover  "  border="0" id="bootstrap-table">
       <tr>
         <thead class="thead-inverse">
-          <th class="default" width="25%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
+          <th class="default" width="20%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
           <th class="default" width="25%" height="50"> <div align="center"><strong>ระดับน้ำ(เมตร)</strong></div>
           </th>
-          <th class="default" width="25%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
-          <th class="default" width="25%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
+          <th class="default" width="40%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
           <?php if($_SESSION["status"] == 'ADMIN')
           {
             ?>
@@ -211,10 +208,24 @@ require_once("config.php");
         {
           ?>
           <tr>
-            <td><center><input autofocus="autofocus" class="form-control" type="text" style="text-align:center;" name="txtplace"  value="<?php echo $f1?>" ></center></td>
-            <td><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
-            <td><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
-            <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
+            <td width="27%">
+            <select  style="text-align-last:center;" name="txtplace" class="form-control" >
+              <?php 
+                $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
+              while($objResult1 = mysqli_fetch_array($objQuery5))
+              {
+                $place = $objResult1['h1'];
+                ?>
+                <center><option value="<?php echo $place?>"><center><?php echo $place?></center></option></center>
+                <?php 
+              }
+              ?>
+            </select>
+          </td>
+
+            <td width="10%"><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
+            <td width="25%"><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
+            <td width="30%"><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
             <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="btnAdd" class="btn btn-success" id="btnUpdate"  OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
             <td><center><button data-toggle="tooltip" title="ยกเลิก" data-placement="top" name="btnAdd" class="btn btn-warning" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button></center></td>
             <tr><input name="txtID" size="0" type="hidden" id="txtID" value="<?php echo $f0?>"></tr>
@@ -241,13 +252,19 @@ require_once("config.php");
           </tr>
           <?php
         }
-        ?>
-        <?php 
       }
       ?>
+    </table>
+  </form>
 
-        <?php if($_SESSION["status"] == 'ADMIN')
+<form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+<table class="table table-hover  "  border="0" id="bootstrap-table">
+          <?php if($_SESSION["status"] == 'ADMIN')
           {
+            if($_GET["Action"] == "Edit")
+            {
+              $close = 'disabled';
+            }
             ?>
  <tr>
         <?php 
@@ -260,8 +277,8 @@ require_once("config.php");
         else
         {
           ?>
-          <td>
-            <select  style="text-align-last:center;" name="PLACE" class="form-control" >
+          <td width="25%">
+            <select  style="text-align-last:center;" name="PLACE" class="form-control" <?php echo $close?>>
               <?php 
                 $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
               while($objResult1 = mysqli_fetch_array($objQuery5))
@@ -277,24 +294,22 @@ require_once("config.php");
           <?php 
         }
         ?>
-          <td><center>
-            <input style="text-align:center;" class="form-control" type="number" step="0.000001" name="txtAddlevel"  min="0" max="100" required <?php echo $TXT_PLACE ?>/>
+          <td width="20%"><center>
+            <input  <?php echo $close?> style="text-align:center;" class="form-control" type="number"  name="txtAddlevel"  min="0"  required <?php echo $TXT_PLACE ?>/>
           </center>
           </td>
-        <td><center><input class="form-control" type="time" style="text-align:center;" name="txtAddtime" required <?php echo $TXT_PLACE ?>></center></td>
-        <td><center><input class="form-control" type="date" style="text-align:center;" name="txtAdddate" required <?php echo $TXT_PLACE ?>></center></td>
-        <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success" id="submit" width="20%" value=""  <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-        <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>        
-        <!--<td><center><button type = "reset" class="btn btn-warning" width="20%" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>-->
+        <td width="25%"><center><input  <?php echo $close?> class="form-control" type="time" style="text-align:center;" name="txtAddtime" required <?php echo $TXT_PLACE ?>></center></td>
+        <td width="25%"><center><input <?php echo $close?>  class="form-control" type="date" style="text-align:center;" name="txtAdddate" required <?php echo $TXT_PLACE ?>></center></td>
+        <td><center><button <?php echo $close?> data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success" id="submit"  value=""  <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+        <td><center><button <?php echo $close?> data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" type = "reset" class="btn btn-warning" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>        
       </tr>
             <?php
           }
         ?>
-     
-    </table>
-    
+  </table>
+    </form>
 
-    <div align="right">
+   <div align="right">
       <nav>
         <ul class="pagination">
           <li <?php  if($Page==1) echo 'class="disabled"'?>>
@@ -332,7 +347,6 @@ require_once("config.php");
         </ul>
       </nav>
     </div>
-  </form>
   </body>
   </html>
 

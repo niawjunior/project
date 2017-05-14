@@ -15,9 +15,6 @@ session_start();
       exit();
     }
 $POST = $_SESSION["USER"];
-date_default_timezone_set('Asia/Bangkok');
-$date = date("d-m-Y");
-$time = date("H:i:s");
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
 
 // if($_POST["hdnCmd"] == "Add")
@@ -295,31 +292,35 @@ if($f1==$f111){$TT='ต้องการยกเลิกการใช้แ
 </form>
   <?php if($_SESSION["status"] == 'ADMIN')
     {
+      if($_GET["Action"] == "Edit")
+      {
+         $close = 'disabled';
+      }
       ?>
       <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
       <table class="table table-hover"  id="bootstrap-table">
       <tr>
         <td width="20%"><center>
-        <input class="form-control" style="text-align:center;" name="txtAddh1" type="text" placeholder="ชื่อสถานที่" required>
+        <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAddh1" type="text" placeholder="ชื่อสถานที่" required>
       </center></td>
         <td width="30%"><center>
-        <input class="form-control" style="text-align:center;" name="txtAddh2" type="text" placeholder="คำอธิบายสั้นๆ" required >
+        <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAddh2" type="text" placeholder="คำอธิบายสั้นๆ" required >
       </center></td>
         <td width="10%"><center>
-        <input class="form-control" style="text-align:center;" name="txtAddla" type="text" required>
+        <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAddla" type="text" required>
       </center></td>
         <td width="10%"><center>
-        <input class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
+        <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
       </center></td>
         <td width="10%"><center>
-        <input class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
+        <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
       </center></td>
-      <td><center><label class="btn btn-primary btn-file btn-sm" data-toggle="tooltip" title="เลือกรูปภาพ">
-          รูปภาพ <span class="glyphicon glyphicon-picture"></span> <input  data-placement="top" type="file" name="fileupload" id="fileupload" style="display: none;">
+      <td><center><label  <?php echo  $close;?> class="btn btn-primary btn-file btn-sm" data-toggle="tooltip" title="เลือกรูปภาพ">
+          รูปภาพ <span class="glyphicon glyphicon-picture"></span> <input <?php echo  $close;?> data-placement="top" type="file" name="fileupload" id="fileupload" style="display: none;">
       </label></center></td>
       <!--   <td><center><button name="btnAdd" class="btn btn-success" id="btnAdd" value="" OnClick="frmMain.hdnCmd.value='Add';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td> -->
-        <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success btn-sm" id="submit" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
-        <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" class="btn btn-warning btn-sm" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></span></button></center></td>
+        <td><center><button <?php echo  $close;?> data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success btn-sm" id="submit" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
+        <td><center><button <?php echo  $close;?> data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" class="btn btn-warning btn-sm" type = "reset" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></span></button></center></td>
           <!--<td><center><a href="profile.php?Action=Find" target="_top" type="button" class="btn btn-info">ค้นหา <span class="glyphicon glyphicon-search"></span></a></center></td>-->
         </tr>
       </table>

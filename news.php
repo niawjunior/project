@@ -7,9 +7,6 @@ session_start();
     }
 require_once("connect.php");
 require_once("config.php");
-date_default_timezone_set('Asia/Bangkok');
-$date = date("d-m-Y");
-$time = date("H:i:s");
 ?>
 <html>
   <head>
@@ -162,18 +159,22 @@ $time = date("H:i:s");
     </form>
     <?php if($_SESSION["status"] == 'ADMIN')
     {
+      if($_GET["Action"] == "Edit")
+      {
+        $close = 'disabled';
+      }
         ?>
         <form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?> " enctype="multipart/form-data">
       <table class="table table-hover  "  border="0">
       <tr>
-          <td width="20%"><center><input class="form-control" type="text" style="text-align:center;" name="txtt2" placeholder="หัวข้อ/ชื่อเรื่อง" required></center></td>
-          <td width="30%" ><center><label style="position:relative;" class="btn btn-default btn-file" >
-            <input type="file" name="fileupload" id="fileupload" required>
+          <td width="20%"><center><input <?php echo  $close;?> class="form-control" type="text" style="text-align:center;" name="txtt2" placeholder="หัวข้อ/ชื่อเรื่อง" required></center></td>
+          <td width="30%" ><center><label <?php echo  $close;?> style="position:relative;" class="btn btn-default btn-file" >
+            <input <?php echo  $close;?> type="file" name="fileupload" id="fileupload" required>
           </label></td>
-          <td><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"  required></center></td>
-          <td><center><input disabled class="form-control" type="text" style="text-align:center;" name="txtpostby" value="<?php echo $_SESSION["USER"]?>"></center></td>
-          <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" name="submit" class="btn btn-success"  id="submit" width="20%" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
-          <td><center><button data-toggle="tooltip" title="ล้างข้อมูล" type = "reset" class="btn btn-warning" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>
+          <td><center><input <?php echo  $close;?> class="form-control" type="date" style="text-align:center;" name="txtdate"  required></center></td>
+          <td><center><input <?php echo  $close;?> disabled class="form-control" type="text" style="text-align:center;" name="txtpostby" value="<?php echo $_SESSION["USER"]?>"></center></td>
+          <td><center><button <?php echo  $close;?> data-toggle="tooltip" title="บันทึกข้อมูล" name="submit" class="btn btn-success"  id="submit" width="20%" value="">บันทึก <span class="glyphicon glyphicon-ok-sign"></button></center></td>
+          <td><center><button <?php echo  $close;?> data-toggle="tooltip" title="ล้างข้อมูล" type = "reset" class="btn btn-warning" width="20%" value="">เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>
         </tr>
       </table>
      </form>

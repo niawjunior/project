@@ -6,7 +6,6 @@ if($_SESSION["STATUS"]=='')
   header('Location: 404.php');
   exit();
 }
-date_default_timezone_set('Asia/Bangkok');
 ?>
 <?php 
 if($_POST["hdnCmd"] == "Add")

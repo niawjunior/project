@@ -8,9 +8,6 @@ if($_SESSION["STATUS"]=='')
   exit();
 }
 $POST = $_SESSION["USER"];
-date_default_timezone_set('Asia/Bangkok');
-$date = date("d-m-Y");
-$time = date("H:i:s");
 ?>
 <?php
 if(isset($_POST['submit']))

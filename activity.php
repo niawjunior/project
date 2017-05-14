@@ -7,7 +7,7 @@ if($_SESSION["STATUS"]=='')
 }
 require_once("config.php");
 require_once("connect.php");
-date_default_timezone_set('Asia/Bangkok');
+$loggedTime=time()-10;
 ?>
 <html>
   <head>
@@ -21,11 +21,9 @@ date_default_timezone_set('Asia/Bangkok');
     $objQuery = mysqli_query($connect, "DELETE FROM member WHERE ID = '".$_GET["ID"]."' ");
     }
     $objQuery = mysqli_query($connect, "SELECT * FROM member ORDER BY ID DESC ");
-    $objQuery1 = mysqli_query($connect, "SELECT * FROM member WHERE on_off ='ONLINE' ");
-    $NUM = mysqli_num_rows($objQuery1);
     ?>
     <form class="nav navbar-nav navbar-right">
-      &nbsp;<label class="label label-info round btn-xs"><span class="glyphicon glyphicon-user"></span> สมาชิก Online : <?php echo $NUM?> คน&nbsp;&nbsp;</label>
+      
       <br><br>
     </form>
     <form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
@@ -41,6 +39,7 @@ date_default_timezone_set('Asia/Bangkok');
           </tr>
         </thead>
         <?php 
+         $coun = 0;
         while($objResult = mysqli_fetch_array($objQuery))
         {
         $f0 = $objResult['ID'];
@@ -51,6 +50,7 @@ date_default_timezone_set('Asia/Bangkok');
         $f9 = $objResult['date'];
         $f10 = $objResult['lastactivity'];
         $f11 = $objResult['countatvt'];
+        $f12 = $objResult['time_log'];
         ?>
         <?php 
         {
@@ -59,13 +59,15 @@ date_default_timezone_set('Asia/Bangkok');
           <td><center><?php echo $f1 ?></center></td>
           <td ><center><?php echo $f7 ?></center></td>
           <?php 
-          if($f2=='ONLINE')
+
+          if($f12>$loggedTime)
           {
-          $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span>';
+            $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span>';
+            $count = $count+1;
           }
           else
           {
-          $icon='<span class="glyphicon glyphicon-record" style="color:#f76c6c"></span>';
+             $icon='<span class="glyphicon glyphicon-record" style="color:#f76c6c"></span>';
           }
           ?>
           <td align="center"> <?php echo $icon?></td>
@@ -94,3 +96,6 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 });
 </script>
+<footer style="text-align: right;">
+<label class="label label-success round btn-lg"><span class="glyphicon glyphicon-user"></span> online <?php if(isset($count)){echo $count;}?></label>
+</footer>

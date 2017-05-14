@@ -41,7 +41,6 @@ setTimeout("location.href = 'home.php';",5000);
 }
 else
 {
-date_default_timezone_set('Asia/Bangkok');
 $date = date("d-m-Y");
 $time = date("H:i:s");
 if($remember=='B1')
@@ -57,7 +56,6 @@ unset($_SESSION["EMAIL"]);
 unset($_SESSION["user"]);
 unset($_SESSION["pass"]);
 }
-mysqli_query($connect,"UPDATE member SET on_off = 'ONLINE' WHERE user ='".$objResult["user"]."' ");
 mysqli_query($connect,"UPDATE member SET time = '$time',date = '$date' WHERE user ='".$objResult["user"]."' ");
 $_SESSION["ID"] = $objResult["ID"];
 $_SESSION["USER"] = $objResult["user"];
