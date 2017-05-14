@@ -61,8 +61,8 @@
 		    $_SESSION["strh17"] = "WELCOME";
 		    $_SESSION["strh18"] = "MEMBER";
 		    $_SESSION["strh19"] = "ADMIN";
-			$_SESSION["strh20"] = "Background/Signification";
-			$_SESSION["strh21"] = "Setup/How to Use";
+			$_SESSION["strh20"] = "Background&Signification";
+			$_SESSION["strh21"] = "Setup&How to Use";
 			$_SESSION["strh22"] = "Dashboard";
 		}
 	else

@@ -13,6 +13,7 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap-number-input.js"></script>
 <!-- CSS -->
+<!--<link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css">-->
 <link href="assets/css/animate.min.css" rel="stylesheet">
 <link href="assets/css/nprogress.css" rel="stylesheet">
 <link href="assets/css/jquery.bdt.css" type="text/css" rel="stylesheet">
@@ -22,7 +23,17 @@
 
 <!-- Style -->
 <style type="text/css">
-
+/* Large desktop */
+@media (min-width: 1200px) { ... }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { ... }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { ... }
 iframe {
 	background-image: url("photo/load.gif");
 	background-repeat: no-repeat;

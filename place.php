@@ -170,6 +170,7 @@ if($_GET["Action"] == "Del")
   {
     $data1 = $objResult8['ID'];
     $data2 = $objResult8['h1'];
+    $url = $objResult8['url'];
   }
     mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
     mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','ลบแผนที่','ลบข้อมูล | สถานที่ $data2 | ไอดี $data1') ");
@@ -178,6 +179,11 @@ if($_GET["Action"] == "Del")
 
 
   	$objQuery = mysqli_query($connect,"DELETE FROM data  WHERE ID = '".$_GET["ID"]."'");
+    define('BACKUP_DIR', './uploadphoto' ) ;
+    $file=BACKUP_DIR.DIRECTORY_SEPARATOR.$url;
+    if(file_exists($file)){ if(unlink($file));
+    }
+
     ?>
       <script>
     window.top.location.replace("profile.php?Action=Multiple");

@@ -76,11 +76,18 @@ require_once("config.php");
     {
     $data1 = $objResult8['ID'];
     $data2 = $objResult8['t2'];
+    $url =   $objResult8['url'];
     }
     mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','ลบรายงาน',' ลบข้อมูล | เรื่อง $data2 | ไอดี $data1') ");
     mysqli_query($connect,"UPDATE member SET lastactivity = 'ลบรายงาน | เรื่อง $data2 '  where user = '$POST'");
     mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
     $objQuery = mysqli_query($connect,"DELETE FROM upload WHERE ID = '".$_GET["ID"]."' ");
+    define('BACKUP_DIR', './myfile' ) ;
+    $file=BACKUP_DIR.DIRECTORY_SEPARATOR.$url;
+    if(file_exists($file)){ if(unlink($file));
+    }
+
+
     }
     $objQuery1 = mysqli_query($connect,"SELECT * FROM member");
     $objQuery = mysqli_query($connect,"SELECT * FROM upload ORDER BY ID DESC ");

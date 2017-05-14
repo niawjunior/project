@@ -8,6 +8,7 @@ require_once("lang.php");
 $connect = mysqli_connect($host, $user, $pass, $db);
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,11 +43,13 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 
             </h4>
             <div class="col-xs-12 col-sm-12">
+            <div class="row">
             <span class="label label-danger"><?php echo '<=30 น้ำน้อยวิกฤติ'?></span>
             <span class="label label-warning"><?php echo '>30-50% น้ำน้อย'?></span>
             <span class="label label-success"><?php echo '>50-80% น้ำปานกลาง'?></span>
             <span class="label label-warning"><?php echo '>80-100% น้ำมาก'?></span>
             <span class="label label-danger"><?php echo '>100% เกินความจุ'?></span>
+            </div>
             </div>
        <br>
         <h4>
