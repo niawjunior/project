@@ -16,18 +16,9 @@ $loggedTime=time()-10;
   <body>
     <?php 
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
-    if($_GET["Action"] == "Del")
-    {
-    $objQuery = mysqli_query($connect, "DELETE FROM member WHERE ID = '".$_GET["ID"]."' ");
-    }
     $objQuery = mysqli_query($connect, "SELECT * FROM member ORDER BY ID DESC ");
     ?>
-    <form class="nav navbar-nav navbar-right">
-      
-      <br><br>
-    </form>
-    <form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
-      <input type="hidden" name="hdnCmd" value="">
+    <form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
       <table class="table table-hover  "  border="0" >
         <tr>
           <thead class="thead-inverse">
@@ -51,8 +42,6 @@ $loggedTime=time()-10;
         $f10 = $objResult['lastactivity'];
         $f11 = $objResult['countatvt'];
         $f12 = $objResult['time_log'];
-        ?>
-        <?php 
         {
         ?>
         <tr>
@@ -74,7 +63,9 @@ $loggedTime=time()-10;
           <td ><center><?php echo $f8 ?> | <?php echo $f9 ?></center></td>
           <td><center><?php echo $f10?> <?php if($f10 !==""){
             ?>
-            <a class="text-primary" href="allactivity.php?user=<?php echo $f1?>" target="_blank"><button data-toggle="tooltip" title="คลิ้๊กเพื่อดูทั้งหมด" type="button" class="btn btn-warning round btn-xs">ทั้งหมด <span class="badge"><?php echo $f11?></span></button>  </a>
+            <a class="text-primary" href="allactivity.php?user=<?php echo $f1?>" target="_blank">
+            <button data-toggle="tooltip" title="คลิ้๊กเพื่อดูทั้งหมด" type="button" class="btn btn-warning round btn-xs">ทั้งหมด <span class="badge"><?php echo $f11?></span></button>
+            </a>
             <?php 
           }?></center></td>
         </tr>

@@ -12,11 +12,11 @@ include "connect.php";
 $connect = mysqli_connect($host,$user,$pass);
 if($connect)
 {
-$status_db = 'ONLINE';
+    $status_db = 'ONLINE';
 }
 else
 {
-$status_db = 'OFFLINE';
+    $status_db = 'OFFLINE';
 }
 ?>
 <?php
@@ -42,11 +42,11 @@ $ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 $login = ftp_login($ftp_conn, $ftp_username, $ftp_userpass);
 if($login)
 {
-$status_ftp = 'ONLINE';
+    $status_ftp = 'ONLINE';
 }
 else
 {
-$status_ftp = 'OFFLINE';
+    $status_ftp = 'OFFLINE';
 }
 ftp_close($ftp_conn);
 ?>
@@ -54,13 +54,16 @@ ftp_close($ftp_conn);
 $status =  GetServerStatus('localhost','80');
 function GetServerStatus($site, $port)
 {
-$status = array("OFFLINE", "ONLINE");
-$fp = @fsockopen($site, $port, $errno, $errstr, 2);
-if (!$fp) {
-return $status[0];
-} else
-{
-return $status[1];}
+    $status = array("OFFLINE", "ONLINE");
+    $fp = @fsockopen($site, $port, $errno, $errstr, 2);
+    if (!$fp)
+    {
+        return $status[0];
+    }
+    else
+    {
+        return $status[1];
+    }
 }
 ?>
 <br>
@@ -84,19 +87,20 @@ return $status[1];}
 </div>
 </div>
 <div class="main">
-<fieldset><legend><h2>สถานะต่างๆ &nbsp;<img src="photo/useron.gif" height ="20" width="auto" ></h2></legend>
+<fieldset>
+<legend><h2>สถานะต่างๆ &nbsp;<img src="photo/useron.gif" height ="20" width="auto" ></h2></legend>
 <form name="frmMain" method="post" action="<?=$_SERVER["PHP_SELF"];?>" enctype="multipart/form-data">
-<input type="hidden" name="hdnCmd" value="">
-<div><h3>สถานะการเชื่อมต่อเว็บไซต์ (HTTP):</h3><br><h4><?php echo $status?></h4></div>
-<div class="cls"></div>
-<div><h3>สถานะการเชื่อมต่อฐานข้อมูล (Database):</h3><br><h4><?php echo $status_db?></h4></div>
-<div class="cls"></div>
-<div><h3>สถานะการถ่ายโอนไฟล์ (FTP):</h3><br><h4><?php echo $status_ftp?></h4></div>
-<div class="cls"></div>
-<div><h3>ความจำที่ใช้ไปทั้งหมด (Memory Used):</h3><br><h4><?php echo number_format($total, 2, '.', ''); ?> MB</h4></div>
-<div class="cls"></div>
-<div style="text-align: center;margin-top: 50px"></div>
-<div class="cls"></div>
+    <input type="hidden" name="hdnCmd" value="">
+    <div><h3>สถานะการเชื่อมต่อเว็บไซต์ (HTTP):</h3><br><h4><?php echo $status?></h4></div>
+    <div class="cls"></div>
+    <div><h3>สถานะการเชื่อมต่อฐานข้อมูล (Database):</h3><br><h4><?php echo $status_db?></h4></div>
+    <div class="cls"></div>
+    <div><h3>สถานะการถ่ายโอนไฟล์ (FTP):</h3><br><h4><?php echo $status_ftp?></h4></div>
+    <div class="cls"></div>
+    <div><h3>ความจำที่ใช้ไปทั้งหมด (Memory Used):</h3><br><h4><?php echo number_format($total, 2, '.', ''); ?> MB</h4></div>
+    <div class="cls"></div>
+    <div style="text-align: center;margin-top: 50px"></div>
+    <div class="cls"></div>
 </form>
 </fieldset>
 </div>

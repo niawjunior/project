@@ -36,27 +36,26 @@ else
 
   if(!$_GET["Page"])
   {
-  $Page=1;
+    $Page=1;
   }
   $Prev_Page = $Page-1;
   $Next_Page = $Page+1;
   $Page_Start = (($Per_Page*$Page)-$Per_Page);
   if($Num_Rows<=$Per_Page)
   {
-  $Num_Pages =1;
+    $Num_Pages =1;
   }
   else if(($Num_Rows % $Per_Page)==0)
   {
-  $Num_Pages =($Num_Rows/$Per_Page) ;
+    $Num_Pages =($Num_Rows/$Per_Page) ;
   }
   else
   {
-  $Num_Pages =($Num_Rows/$Per_Page)+1;
-  $Num_Pages = (int)$Num_Pages;
+    $Num_Pages =($Num_Rows/$Per_Page)+1;
+    $Num_Pages = (int)$Num_Pages;
   }
   $objQuery = mysqli_query($connect,"SELECT * FROM water_table ORDER BY ID DESC LIMIT $Page_Start , $Per_Page");
-
-   $objQuery2 = mysqli_query($connect,"SELECT * FROM water_table WHERE place='$PAGE' ORDER By ID DESC LIMIT $Page_Start , $Per_Page")
+  $objQuery2 = mysqli_query($connect,"SELECT * FROM water_table WHERE place='$PAGE' ORDER By ID DESC LIMIT $Page_Start , $Per_Page")
   ?>
   <?php
   function heading()
@@ -105,28 +104,28 @@ else
     $f5 = $objResult['deep'];
     if (($f2*100)/$f5>100)
     {
-    $check="เกินความจุ";
-    $color_label="danger";
+      $check="เกินความจุ";
+      $color_label="danger";
     }
     else if((($f2*100)/$f5>80) and (($f2*100)/$f5<=100))
     {
-    $check="น้ำมาก";
-    $color_label="warning";
+      $check="น้ำมาก";
+      $color_label="warning";
     }
     else if((($f2*100)/$f5>50) and (($f2*100)/$f5<=80))
     {
-    $check="น้ำปานกลาง";
-    $color_label="success";
+      $check="น้ำปานกลาง";
+      $color_label="success";
     }
     else if((($f2*100)/$f5>30) and (($f2*100)/$f5<=50))
     {
-    $check="น้ำน้อย";
-    $color_label="warning";
+      $check="น้ำน้อย";
+      $color_label="warning";
     }
     else
     {
-    $check="น้ำน้อยวิกฤติ";
-    $color_label="danger";
+      $check="น้ำน้อยวิกฤติ";
+      $color_label="danger";
     }
     ?>
     <tr class="bg-style">

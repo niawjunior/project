@@ -19,7 +19,7 @@ session_start();
 $(window).load(function()
 {
 $('#myModal').modal('show');
-setTimeout("location.href = 'home.php';",5000);
+setTimeout("location.href = 'home.php';",3000);
 });
 </script>
 <div class="container">

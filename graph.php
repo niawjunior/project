@@ -8,10 +8,10 @@
     <?php
     session_start();
         require_once("connect.php");
-                if($_SESSION["STATUS"]=='')
+        if($_SESSION["STATUS"]=='')
         {
-        header('Location: 404.php');
-        exit();
+            header('Location: 404.php');
+            exit();
         }
     ?>
     <?php 
@@ -27,17 +27,17 @@
     $COUNT= count($PLACE);
     for ($i=0; $i <$COUNT ; $i++)
     {
-    $map[$i] = array();
-    $date = array();
-    $time = array();
-    $result = array();
-    $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$PLACE[$i]' order by ID DESC LIMIT 12");
-    while($row=mysqli_fetch_array($result))
-    {
-    array_push($map[$i],$row[level]);
-    array_push($date,$row[date]);
-    array_push($time,$row[time]);
-    }
+        $map[$i] = array();
+        $date = array();
+        $time = array();
+        $result = array();
+        $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$PLACE[$i]' order by ID DESC LIMIT 12");
+        while($row=mysqli_fetch_array($result))
+        {
+            array_push($map[$i],$row[level]);
+            array_push($date,$row[date]);
+            array_push($time,$row[time]);
+        }
     }
     ?>
     <script>
@@ -86,12 +86,12 @@
     <?php 
     for ($i=0; $i <$COUNT ; $i++)
     {
-    ?>
-    {
-    name: [<?php echo $i?>],
-    data: [<?php echo  implode(',', $map[$i]) // ข้อมูล array แกน y ?>]
-    },
-    <?php 
+        ?>
+        {
+            name: [<?php echo $i?>],
+            data: [<?php echo  implode(',', $map[$i]) // ข้อมูล array แกน y ?>]
+        },
+        <?php 
     }
     ?>
     ]

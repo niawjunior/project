@@ -79,7 +79,7 @@ require_once("config.php");
 		    $(window).load(function()
 		    {
 		    $('#myModal').modal('show');
-		    setTimeout("redirect();",3000);
+		    setTimeout("",2000);
 		    });
 		    </script>
 		    <div class="container">
@@ -100,16 +100,7 @@ require_once("config.php");
 		        </div>
 		      </div>
 		    </div>
-         <script>
-        function redirect(){
-    window.top.location.replace("profile.php?Action=Profile");
-        }
-        </script>
 		    <?php 
-		    if(!$objQuery)
-		    {
-		    echo ("ไม่สามารถบันทึกข้อมูลได้");
-		    }
     }
     if($_GET["Action"] == "Update" and $password1 !== $passwordcheck )
     {
@@ -127,7 +118,7 @@ require_once("config.php");
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">ไม่สามารถบันทึกข้อมูลได้</h4>
+              <h4 class="modal-title">ระบบแจ้งเตือน</h4>
             </div>
             <div class="modal-body">
               <p>รหัสผ่านไม่ถูกต้อง กรุณากรอกรหัสผ่านให้ถูกต้อง เพื่อบันทึกข้อมูล.</p>
@@ -155,32 +146,32 @@ require_once("config.php");
           <?php 
           while($objResult = mysqli_fetch_array($objQuery))
           {
-          $f0 = $objResult['ID'];
-          $f1 = $objResult['user'];
-          $f2 = $objResult['pass'];
-          $f3 = $objResult['name'];
-          $f4 = $objResult['email'];
-          $f5 = $objResult['sex'];
-          $f6 = $objResult['tel'];
-          $f7 = $objResult['status'];
-          if($objResult['img']=="")
-          {
-          $f8 = "photo/user.png";
+            $f0 = $objResult['ID'];
+            $f1 = $objResult['user'];
+            $f2 = $objResult['pass'];
+            $f3 = $objResult['name'];
+            $f4 = $objResult['email'];
+            $f5 = $objResult['sex'];
+            $f6 = $objResult['tel'];
+            $f7 = $objResult['status'];
+            if($objResult['img']=="")
+            {
+              $f8 = "photo/user.png";
+            }
+            else
+            {
+              $f8 = $objResult['img'];
+            }
+            if($objResult["ID"] == $_GET["ID"] and $_GET["Action"] == "Edit")
+    	      {
+    	      	require_once("modules/function_profile_edit.php");
+    	      }
+            else
+            {
+             require_once("modules/function_profile.php");
+            }
           }
-          else
-          {
-          $f8 = $objResult['img'];
-          }
-          if($objResult["ID"] == $_GET["ID"] and $_GET["Action"] == "Edit")
-	      {
-	      	require_once("modules/function_profile_edit.php");
-	      }
-          else
-          {
-           require_once("modules/function_profile.php");
-          }
-          }
-                  ?>  
+          ?>  
                 <div class="modal fade" id="loginModal"  aria-labelledby="Login" aria-hidden="true">
                   <div class="modal-dialog modl-md">
                     <div class="modal-content">
@@ -193,16 +184,16 @@ require_once("config.php");
                       <div class="modal-body">
                         <div class="form-group">
                           <h4><label class="col-md-3 control-label"><span class="glyphicon glyphicon-lock"> </span> รหัสผ่าน</label></h4>
-                          <div class="col-md-8">
+                          <div class="col-md-6">
                             <input autofocus="autofocus" type="password" class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>     
-                          </div>
-				           <br><br><br>
-                          <div class="col-md-9"></div>
+                          
                           <button data-toggle="tooltip" title="กดยืนยันเพื่อบันทึกข้อมูล" type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok-sign"></span></button>
                         </div>
                       </div>
+                      <br>
                     </div>
                   </div>
+                </div>
               </form>
               <?php 
               mysqli_close($connect);

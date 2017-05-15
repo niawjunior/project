@@ -14,20 +14,20 @@ $objQuery1 = mysqli_query($connect,"SELECT * FROM member WHERE user = '".trim($_
 $objResult1 = mysqli_fetch_array($objQuery1);
 if($objResult1)
 {
-?>
-<script>
-top.location.href=("signup_check.php?Success=FALSE")
-</script>
-<?php
+	?>
+	<script>
+	top.location.href=("signup_check.php?Success=FALSE")
+	</script>
+	<?php
 }
 else
 {
-$objResult=mysqli_query($connect,"INSERT INTO member (user,pass,email,status) VALUE ('$username1','$password1','$email1','USER')");
-?>
-<script>
-top.location.href=("signup_check.php?Success=TRUE")
-</script>
-<?php
+	$objResult=mysqli_query($connect,"INSERT INTO member (user,pass,email,status) VALUE ('$username1','$password1','$email1','USER')");
+	?>
+	<script>
+	top.location.href=("signup_check.php?Success=TRUE")
+	</script>
+	<?php
 }
 ?>
 </center>

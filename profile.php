@@ -19,31 +19,31 @@ $objQuery_SETTING = mysqli_query($connect,"SELECT * FROM setting");
 $objQuery5 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
 while($objResult5 = mysqli_fetch_array($objQuery5))
 {
-$CHECKPHOTO = $objResult5['img'];
+  $CHECKPHOTO = $objResult5['img'];
 }
 if($CHECKPHOTO=="")
 {
-$logoprofile = 'photo/user.png';
+  $logoprofile = 'photo/user.png';
 }
 else
 {
-$logoprofile = $CHECKPHOTO;
+  $logoprofile = $CHECKPHOTO;
 }
 while($objResult_SETTING = mysqli_fetch_array( $objQuery_SETTING))
 {
-$f_register = $objResult_SETTING['type_register'];
+  $f_register = $objResult_SETTING['type_register'];
 }
 ?>
 <?php
 if($_SESSION["status"] == "ADMIN")
 {
-$PAGE = "profile.php";
-$type_user ="ผู้ดูแลระบบ";
+  $PAGE = "profile.php";
+  $type_user ="ผู้ดูแลระบบ";
 }
 else
 {
-$PAGE = "profile.php";
-$type_user ="ผู้ใช้งานทั่วไป";
+  $PAGE = "profile.php";
+  $type_user ="ผู้ใช้งานทั่วไป";
 }
 ?>
 <html lang="en">
@@ -55,7 +55,6 @@ $type_user ="ผู้ใช้งานทั่วไป";
     </title>
     <link href="assets/css/all.css" rel="stylesheet">
   </head>
-  
   <body class="background">
 <?php require_once( "modules/function_nav.php");?>
 ?>
@@ -69,7 +68,7 @@ body { padding-top:1px;
 <?php
 if($_SESSION["status"] == "ADMIN" or $_SESSION["status"]=="USER")
 {
-require_once("modules/function_main.php");
+  require_once("modules/function_main.php");
 }
 ?>
 <?php
@@ -109,134 +108,133 @@ if($_GET["Action"] == "Find")
 <?php
 if($_GET["Action"] == "Setting?Backup")
 {
-?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=no>
-    </IFRAME>
+  ?>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=no>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Setting?Status")
 {
-?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=status_db.php width=100% height=100% frameborder=0 scrolling=yes>
-    </IFRAME>
+  ?>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=status_db.php width=100% height=100% frameborder=0 scrolling=yes>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Setting?Create")
 {
 ?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=create_database.php width=100% height=100% frameborder=0 scrolling=yes>
-    </IFRAME>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=create_database.php width=100% height=100% frameborder=0 scrolling=yes>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Member")
 {
 ?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=member.php width=100% height=100% frameborder=0 scrolling=yes>
-    </IFRAME>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=member.php width=100% height=100% frameborder=0 scrolling=yes>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "News")
 {
-?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=news.php width=100% height=100% frameborder=0 scrolling=yes>
-    </IFRAME>
+  ?>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=news.php width=100% height=100% frameborder=0 scrolling=yes>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Display")
 {
-?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=yes>
-    </IFRAME>
+  ?>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=yes>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Graph")
 {
-?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=graph.php width=100% height=75% frameborder=0 scrolling=yes>
-    </IFRAME>
+  ?>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=graph.php width=100% height=75% frameborder=0 scrolling=yes>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "")
 {
-?>
-<IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=yes>
-</IFRAME>
-<?php
+  ?>
+  <IFRAME src=data.php width=100% height=170% frameborder=0 scrolling=yes>
+  </IFRAME>
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Activity")
 {
-?>
-<div class="row">
-  <div class="col-md-12" >
-    <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=no>
-    </IFRAME>
+  ?>
+  <div class="row">
+    <div class="col-md-12" >
+      <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=no>
+      </IFRAME>
+    </div>
   </div>
-</div>
-<?php
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Profile")
 {
-?>
-<IFRAME src=admin_profile.php width=100% height=100% frameborder=0 scrolling=yes>
-</IFRAME>
-<?php
+  ?>
+  <IFRAME src=admin_profile.php width=100% height=100% frameborder=0 scrolling=yes>
+  </IFRAME>
+  <?php
 }
 ?>
 <?php
 if($_GET["Action"] == "Setting")
 {
-require_once("modules/function_setting.php");
+  require_once("modules/function_setting.php");
 }
 ?>
 </body>
 </html>
-
   <script>
     $('body').show();
     $('.version').text(NProgress.version);

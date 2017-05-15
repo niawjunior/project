@@ -18,7 +18,6 @@ require_once("config.php");
     }
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   $POST = $_SESSION["USER"];
-  $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
 
   ?>

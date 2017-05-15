@@ -7,8 +7,6 @@ width:100%;
 background-image:url(img/wallpapers.jpeg);
 background-repeat:no-repeat;
 background-size:cover;
-filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.image.jpg',sizingMethod='scale');
--ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
 }
 </style>
 <script>

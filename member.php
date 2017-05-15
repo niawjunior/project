@@ -4,8 +4,8 @@ require_once("config.php");
 require_once("connect.php");
 if($_SESSION["STATUS"]=='')
   {
-  header('Location: 404.php');
-  exit();
+    header('Location: 404.php');
+    exit();
   }
 $POST = $_SESSION["USER"];
 ?>
@@ -80,7 +80,6 @@ $POST = $_SESSION["USER"];
         $f6 = $objResult['tel'];
         $f7 = $objResult['status'];
         $f8 = $objResult['img']
-
         ?>
         <?php
           if($f8 == "")

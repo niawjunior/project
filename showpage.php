@@ -11,37 +11,35 @@ $Per_Page = 5;
 $Page = $_GET["Page"];
 if(!$_GET["Page"])
 {
-$Page=1;
+  $Page=1;
 }
 $Prev_Page = $Page-1;
 $Next_Page = $Page+1;
 $Page_Start = (($Per_Page*$Page)-$Per_Page);
 if($Num_Rows<=$Per_Page)
 {
-$Num_Pages =1;
+  $Num_Pages =1;
 }
 else if(($Num_Rows % $Per_Page)==0)
 {
-$Num_Pages =($Num_Rows/$Per_Page) ;
+  $Num_Pages =($Num_Rows/$Per_Page) ;
 }
 else
 {
-$Num_Pages =($Num_Rows/$Per_Page)+1;
-$Num_Pages = (int)$Num_Pages;
+  $Num_Pages =($Num_Rows/$Per_Page)+1;
+  $Num_Pages = (int)$Num_Pages;
 }
 $objQuery3 = mysqli_query($connect,"SELECT * FROM data order by ID desc  LIMIT $Page_Start , $Per_Page");
 $objQuery4 = mysqli_query($connect,"SELECT * FROM showdata");
 while($objResult4 = mysqli_fetch_array($objQuery4))
 {
-$f1111 = $objResult4['showh1'];
+  $f1111 = $objResult4['showh1'];
 }
 ?>
 <table class="table table-hover" >
   <tr bg>
     <th  width="15%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
     <th  width="60%" height="50"> <div align="center"><strong>คำอธิบาย</strong></div></th>
-    <!--<th  width="12%" height="50"> <div align="center"><strong>ละติจูด</strong></div></th>
-    <th  width="15%" height="50"> <div align="center"><strong>ลองติจูด</strong></div></th>-->
     <th  width="5%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
     <th  width="15%" height="50"> <div align="center"><strong>รูปภาพ</strong></div></th>
   </tr>
@@ -58,22 +56,19 @@ $f1111 = $objResult4['showh1'];
   <?php
   if($f000==$f1111)
   {
-  $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span>';
+    $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span>';
   }
   else
   {
-  $icon='<span class="glyphicon glyphicon-record" style="color:#f76c6c"></span>';
+    $icon='<span class="glyphicon glyphicon-record" style="color:#f76c6c"></span>';
   }
   ?>
   <tr class="bg-style">
     <td><center><a class="text-primary" href="map.php?ID=<?=$ID?>" target="_blank"><?php echo $f000 ?></a></center></td>
      <td><center><?php echo substr($f111,0,30); ?></center></td>
-    <!--<td><center><?php echo Round($f222,2) ?></center></td>
-    <td><center><?php echo Round($f333,2) ?></center></td>-->
     <td align="center"><?php echo $icon?></td>
     <td><center><img src="uploadphoto/<?php echo $f444 ?>" width="auto" height="30"></center></td>
   </tr>
-  
   <?php
   }
   ?>
@@ -89,23 +84,23 @@ $f1111 = $objResult4['showh1'];
     <?php
     for($i=1;$i<=$Num_Pages;$i++)
     {
-    if($Page-2>=2 and ($i>2 and $i<$Page-2))
-    {
-    ?>
-    <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>">...</a></li>
-    <?php
-    $i=$Page-2;
-    }
-    if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
-    {
-    ?>
-    <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>">...</a></li>
-    <?php
-    $i=$Num_Pages-1;
-    }
-    ?>
-    <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>"><?php echo $i; $e=$i; ?></a></li>
-    <?php
+      if($Page-2>=2 and ($i>2 and $i<$Page-2))
+      {
+        ?>
+        <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i;?>">...</a></li>
+        <?php
+        $i=$Page-2;
+      }
+      if($Page+5<=$Num_Pages and ($i>=$Page+3 and $i<=$Num_Pages-2))
+      {
+      ?>
+      <li><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>">...</a></li>
+      <?php
+      $i=$Num_Pages-1;
+      }
+      ?>
+      <li <?php if($Page==$i) echo 'class="active"'?>><a href="<?php $_SERVER[SCRIPT_NAME]?>?Page=<?php echo $i; ?>"><?php echo $i; $e=$i; ?></a></li>
+      <?php
     }
     ?>
     <li <?php if($Page==$Num_Pages) echo 'class="disabled"'?>>

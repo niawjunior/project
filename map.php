@@ -6,12 +6,12 @@ $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต�
 $result=mysqli_query($connect,"SELECT * FROM data WHERE ID = '$ID'");
 while ($row=mysqli_fetch_array($result))
 {
-$locations[] = array("info" => $row['h1'],"info1"=>$row['h2'],"lat"=>$row['la'], "long"=>$row['lo'],"url"=>$row['url'],"level" => $row['level'],"time" => $row['time'],"date" => $row['date'],"deep" => $row['deep']);
+    $locations[] = array("info" => $row['h1'],"info1"=>$row['h2'],"lat"=>$row['la'], "long"=>$row['lo'],"url"=>$row['url'],"level" => $row['level'],"time" => $row['time'],"date" => $row['date'],"deep" => $row['deep']);
 }
 $objQuery3 = mysqli_query($connect,"SELECT * FROM showdata");
 while($objResult3 = mysqli_fetch_array($objQuery3))
 {
-$f111 = $objResult3['showh1'];
+    $f111 = $objResult3['showh1'];
 }
 ?>
 <html>
@@ -86,70 +86,69 @@ $f111 = $objResult3['showh1'];
     });
     <?php
     foreach($locations AS $loc)
-    
     {
     ?>
     addMarker(
     <?php
     if($loc["info"] == $f111)
     {
-    $check1 =  "กำลังใช้งาน";
-    $L="success";
+        $check1 =  "กำลังใช้งาน";
+        $L="success";
     if (($loc['level']*100)/$loc['deep']>100)
     {
-    $check="เกินความจุ";
-    $color_label="danger";
+        $check="เกินความจุ";
+        $color_label="danger";
     }
     else if((($loc['level']*100)/$loc['deep']>80) and (($loc['level']*100)/$loc['deep']<=100))
     {
-    $check="น้ำมาก";
-    $color_label="warning";
+        $check="น้ำมาก";
+        $color_label="warning";
     }
     else if((($loc['level']*100)/$loc['deep']>50) and (($loc['level']*100)/$loc['deep']<=80))
     {
-    $check="น้ำปานกลาง";
-    $color_label="success";
+        $check="น้ำปานกลาง";
+        $color_label="success";
     }
     else if((($loc['level']*100)/$loc['deep']>30) and (($loc['level']*100)/$loc['deep']<=50))
     {
-    $check="น้ำน้อย";
-    $color_label="warning";
+        $check="น้ำน้อย";
+        $color_label="warning";
     }
     else
     {
-    $check="น้ำน้อยวิกฤติ";
-    $color_label="danger";
+        $check="น้ำน้อยวิกฤติ";
+        $color_label="danger";
     }
     }
     else
     {
     if (($loc['level']*100)/$loc['deep']>100)
     {
-    $check="ไม่แสดง";
-    $color_label="danger";
+        $check="ไม่แสดง";
+        $color_label="danger";
     }
     else if((($loc['level']*100)/$loc['deep']>80) and (($loc['level']*100)/$loc['deep']<=100))
     {
-    $check="ไม่แสดง";
-    $color_label="danger";
+        $check="ไม่แสดง";
+        $color_label="danger";
     }
     else if((($loc['level']*100)/$loc['deep']>50) and (($loc['level']*100)/$loc['deep']<=80))
     {
-    $check="ไม่แสดง";
-    $color_label="danger";
+        $check="ไม่แสดง";
+        $color_label="danger";
     }
     else if((($loc['level']*100)/$loc['deep']>30) and (($loc['level']*100)/$loc['deep']<=50))
     {
-    $check="ไม่แสดง";
-    $color_label="danger";
+        $check="ไม่แสดง";
+        $color_label="danger";
     }
     else
     {
-    $check="ไม่แสดง";
-    $color_label="danger";
+        $check="ไม่แสดง";
+        $color_label="danger";
     }
-    $L="warning";
-    $check1 = "รอเชื่อมต่อฮาร์ดแวร์";
+        $L="warning";
+        $check1 = "รอเชื่อมต่อฮาร์ดแวร์";
     }
     ?>
     <?php echo $loc["lat"]; ?>,
