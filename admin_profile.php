@@ -76,10 +76,13 @@ require_once("config.php");
 		    }
 		    ?>
 		    <script>
+        function redirect(){
+         window.top.location = "profile.php?Action=Profile";
+        }
 		    $(window).load(function()
 		    {
 		    $('#myModal').modal('show');
-		    setTimeout("",2000);
+		    setTimeout("redirect()",2000);
 		    });
 		    </script>
 		    <div class="container">
@@ -185,8 +188,7 @@ require_once("config.php");
                         <div class="form-group">
                           <h4><label class="col-md-3 control-label"><span class="glyphicon glyphicon-lock"> </span> รหัสผ่าน</label></h4>
                           <div class="col-md-6">
-                            <input autofocus="autofocus" type="password" class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>     
-                          
+                            <input type="password" autofocus="autofocus"  class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>     
                           <button data-toggle="tooltip" title="กดยืนยันเพื่อบันทึกข้อมูล" type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok-sign"></span></button>
                         </div>
                       </div>

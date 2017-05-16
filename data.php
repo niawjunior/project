@@ -164,15 +164,15 @@ require_once("config.php");
     <table class="table table-hover  "  border="0" id="bootstrap-table">
       <tr>
         <thead class="thead-inverse">
-          <th class="default" width="20%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
-          <th class="default" width="25%" height="50"> <div align="center"><strong>ระดับน้ำ(เมตร)</strong></div>
+          <th class="default" width="15%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
+          <th class="default" width="20%" height="50"> <div align="center"><strong>ระดับน้ำ(เมตร)</strong></div>
           </th>
-          <th class="default" width="10%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
-          <th class="default" width="40%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
+          <th class="default" width="20%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
+          <th class="default" width="30%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
           <?php if($_SESSION["status"] == 'ADMIN')
           {
             ?>
-          <th class="default" width="20%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
+          <th class="default" width="5%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
           <th class="default" width="20%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
             <?php
           }

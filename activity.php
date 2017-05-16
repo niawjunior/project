@@ -26,7 +26,14 @@ $loggedTime=time()-10;
             <th class="default" width="10%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
             <th class="default" width="13%" height="50"> <div align="center"><strong>ออนไลน์/ออฟไลน์</strong></div></th>
             <th class="default" width="20%" height="50"> <div align="center"><strong>เข้าสู่ระบบล่าสุด</strong></div></th>
+                      <?php if($_SESSION["status"] == 'ADMIN')
+          {
+            ?>
             <th class="default" width="40%" height="50"> <div align="center"><strong>กิจกรรมล่าสุด</strong></div></th>
+
+            <?php
+          }
+          ?>
           </tr>
         </thead>
         <?php 
@@ -61,13 +68,20 @@ $loggedTime=time()-10;
           ?>
           <td align="center"> <?php echo $icon?></td>
           <td ><center><?php echo $f8 ?> | <?php echo $f9 ?></center></td>
-          <td><center><?php echo $f10?> <?php if($f10 !==""){
+          
+                                <?php if($_SESSION["status"] == 'ADMIN')
+          {
+            ?>
+            <td><center><?php echo $f10?> <?php if($f10 !==""){
             ?>
             <a class="text-primary" href="allactivity.php?user=<?php echo $f1?>" target="_blank">
             <button data-toggle="tooltip" title="คลิ้๊กเพื่อดูทั้งหมด" type="button" class="btn btn-warning round btn-xs">ทั้งหมด <span class="badge"><?php echo $f11?></span></button>
             </a>
             <?php 
           }?></center></td>
+          <?php
+          }
+          ?>
         </tr>
         <?php 
         }
