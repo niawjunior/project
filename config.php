@@ -14,6 +14,8 @@
 <script src="assets/js/bootstrap-number-input.js"></script>
 <!-- CSS -->
 <!--<link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css">-->
+<!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">-->
+
 <link href="assets/css/animate.min.css" rel="stylesheet">
 <link href="assets/css/nprogress.css" rel="stylesheet">
 <link href="assets/css/jquery.bdt.css" type="text/css" rel="stylesheet">

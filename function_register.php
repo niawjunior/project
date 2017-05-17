@@ -9,20 +9,34 @@ require_once("config.php");
     <div id="logbox"  >
       <form data-toggle="validator" id="signup" method="post" role="form" action="signup.php">
         <h1>ระบบสมัครสมาชิก</h1>
-        <div class="form-group" >
+        <div class="form-group" align="center">
           <input name="username" type="text" class="input pass" id="inputName" placeholder="Username (ต้องไม่ต่ำกว่า 4 ตัวอักษร)" data-minlength="4" data-error="ชื่อผู้ใช้สั้นเกินไป" required>
           <div class="help-block with-errors"></div>
         </div>
-        <div class="form-group">
+        <div class="form-group" align="center">
           <input name="email" type="email" class="input pass" id="inputEmail" placeholder="Email address (อย่าลืมใส่เครื่องหมาย @)" data-error="คุณใส่อีเมลไม่ถูกต้อง" required>
           <div class="help-block with-errors"></div>
         </div>
-        <div class="form-group">
+        <div class="form-group" align="center">
           <input type="password" data-minlength="6" class="input pass" id="inputPassword" data-error="รหัสผ่านสั้นเกินไป" placeholder="Choose a password (ต้องไม่ต่ำกว่า 6 ตัวอักษร)" required>
           <div class="help-block with-errors"></div>
         </div>
-        <div class="form-group">
-          <input name="password2" type="password" class="input pass" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="รหัสผ่านไม่ตรงกัน" placeholder="Confirm password" required>
+        <div class="form-group" align="center">
+          <input name="password2" type="password" class="input pass" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="รหัสผ่านไม่ตรงกัน" placeholder="Confirm password" >
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group" align="center">
+        <select name="question" id="question" class="selectpicker" data-width="320px"  data-error="กรุณาเลือกคำถาม" required>
+        <option></option>
+        <option>สัตย์เลี้ยงตัวแรกของคุณชื่อว่า?</option>
+        <option>ครูประถมที่คุณชื่นชอบ?</option>
+        <option>งานอดิเรกของคุณคือ?</option>
+        <option>คุณเกิดที่จังหวัด?</option>
+        </select>
+        <div class="help-block with-errors"></div>
+        </div>
+          <div class="form-group" align="center">
+          <input name="answer" type="text" class="input pass" id="answer" placeholder="Answer" data-error="คุณยังไม่ได้ตอบคำถาม" required>
           <div class="help-block with-errors"></div>
         </div>
         <input type="submit" value="ยืนยัน!" class="inputButton"/>

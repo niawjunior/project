@@ -19,7 +19,7 @@ session_start();
 $(window).load(function()
 {
 $('#myModal').modal('show');
-setTimeout("location.href = 'home.php';",3000);
+setTimeout("location.href = 'home.php';",5000);
 });
 </script>
 <div class="container">
@@ -33,6 +33,11 @@ setTimeout("location.href = 'home.php';",3000);
 				<div class="modal-body">
 					<p>กรุณาล็อกอินเพื่อเข้าสู่ระบบอีกครั้ง.</p>
 				</div>
+				<div class="modal-footer">
+				<a href="home.php">ย้อนกลับ</a>
+				<a href="reset_pass.php" style="text-decoration: underline;">ลืมรหัสผ่าน</a>
+				</div>
+				
 			</div>
 		</div>
 	</div>

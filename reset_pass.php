@@ -11,7 +11,7 @@ require_once("config.php");
 <body class="background">
 <?php require_once( "modules/function_nav.php");?>
 <div class="container box-shadow " id="main-container" style="margin-top: 50px;">
-	<iframe src="function_register.php" width="100%" height="130%" scrolling="no" frameBorder="0">
+	<iframe src="function_reset.php" width="100%" height="130%" scrolling="no" frameBorder="0">
 	</iframe>
 </div>
 </body>

@@ -222,7 +222,7 @@ require_once("config.php");
             </select>
           </td>
 
-            <td width="10%"><center><input class="form-control" type="number" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
+            <td width="10%"><center><input class="form-control" type="text" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
             <td width="25%"><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
             <td width="30%"><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
             <td><center><button data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="btnAdd" class="btn btn-success" id="btnUpdate"  OnClick="frmMain.hdnCmd.value='Update';frmMain.submit();">บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
@@ -294,7 +294,7 @@ require_once("config.php");
         }
         ?>
           <td width="20%"><center>
-            <input  <?php echo $close?> style="text-align:center;" class="form-control" type="number"  name="txtAddlevel"  min="0"  required <?php echo $TXT_PLACE ?>/>
+            <input  <?php echo $close?> style="text-align:center;" class="form-control" type="text"  name="txtAddlevel"  min="0"  required <?php echo $TXT_PLACE ?>/>
           </center>
           </td>
         <td width="25%"><center><input  <?php echo $close?> class="form-control" type="time" style="text-align:center;" name="txtAddtime" required <?php echo $TXT_PLACE ?>></center></td>

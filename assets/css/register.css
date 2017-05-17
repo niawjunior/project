@@ -77,18 +77,15 @@
         box-shadow: 0 5px 0 #2CADAD;
     }
     .inputButton:hover {
-        top: 2px;
+         background-color:  #22b9b9;
         -webkit-box-shadow: 0 3px 0 #2CADAD;
         -moz-box-shadow: 0 3px 0 #2CADAD;
-        box-shadow: 0 3px 0 #2CADAD;
+        box-shadow: 0 5px 0 #249292;
     }
-    .inputButton:active {
-        top: 5px;
-        box-shadow: none;
-    }
-    .inputButton:focus {
-        outline: none;
-    }
+
+
+    
+
 
     .navbar-brand{
 	        font-size: xx-large;

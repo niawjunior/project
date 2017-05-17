@@ -48,8 +48,20 @@ require_once("config.php");
 			    	$pofile = '/photo/user.png';
 			    }
 		    }
-		    $objQuery = mysqli_query($connect,"UPDATE member SET pass = '".$_POST["inputPasswordConfirm"]."',name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
-	    }
+		    $objQuery = mysqli_query($connect,"UPDATE member SET pass = '".md5(md5(md5($_POST["inputPasswordConfirm"])))."',name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
+	    ?>
+      <script>
+        function logout(){
+         window.top.location = "logout.php";
+        }
+		    $(window).load(function()
+		    {
+		    $('#myModal').modal('show');
+		    setTimeout("logout()",1000);
+		    });
+		    </script>
+      <?php
+      }
 		else
 		    {
 			    $objQuery2 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
@@ -144,7 +156,7 @@ require_once("config.php");
     }
     $objQuery = mysqli_query($connect,"SELECT * FROM member WHERE ID='$NAME'");
     ?>
-    <form role="form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>?Action=Update&ID=<?php echo $_GET["ID"];?>">
+    <form  role="form" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>?Action=Update&ID=<?php echo $_GET["ID"];?>">
           <div class="panel-body">
           <?php 
           while($objResult = mysqli_fetch_array($objQuery))
@@ -175,6 +187,7 @@ require_once("config.php");
             }
           }
           ?>  
+
                 <div class="modal fade" id="loginModal"  aria-labelledby="Login" aria-hidden="true">
                   <div class="modal-dialog modl-md">
                     <div class="modal-content">
