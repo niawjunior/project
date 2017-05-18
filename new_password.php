@@ -1,15 +1,14 @@
 <?php
 	require_once("connect.php");
 	require_once("config.php");
-	$connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
+	$answer = $_POST['answer'];
 	$user_email = $_POST['user_email'];
-	$question = $_POST['question'];
-    $answer = $_POST['answer'];
-	$strSQL = mysqli_query($connect,"SELECT * FROM member WHERE (user = '$user_email' or email = '$user_email')  and question = '$question' and answer = '$answer'");
+	$connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
+ 	$strSQL = mysqli_query($connect,"SELECT * FROM member WHERE (user = '$user_email' or email = '$user_email') and answer = '$answer'");
 	$objResult = mysqli_fetch_array($strSQL);
 	if(!$objResult)
 	{
-?>
+		?>
 <script>
 $(window).load(function()
 {
@@ -26,17 +25,17 @@ setTimeout("top.location.href = 'reset_pass.php';",2500);
 					<h4 class="modal-title">ระบบแจ้งเตือน!</h4>
 				</div>
 				<div class="modal-body">
-					<p>ไม่มีชื่อผู้ใช้นี่ หรือ คำตอบของคุณไม่ถูกต้อง.</p>
+					<p>คุณตอบคำถามไม่ถูกต้อง.</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<?php 
-}
-else
-{
-?>
+	<?php
+	}
+ else
+ {
+	 ?>
 <script src="assets/js/validator.js"></script>
 <link href="assets/css/register.css" rel="stylesheet">
 <link href="assets/css/all.css" rel="stylesheet">
@@ -55,11 +54,11 @@ else
           <input name="USER_EMAIL" type="hidden" class="input pass" id="USER_EMAIL" value="<?php echo $user_email; ?>">
           <div class="help-block with-errors"></div>
         </div>
-        <input type="submit" name="change_password" id="change_pass" value="ยืนยันการเปลี่ยนรหัสผ่าน!" class="inputButton"/>
+        <input type="submit" name="change_password" id="change_pass" value="ยืนยันการทำรายการ" class="inputButton"/>
       </form>
     </div>
   </div>
 </div>
-<?php
-}
-?>
+	 <?php
+ }
+	?>
