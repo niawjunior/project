@@ -345,6 +345,7 @@ require_once("config.php");
           </li>
         </ul>
       </nav>
+      <a id="back-to-top" href="#" class="btn btn-danger btn-md back-to-top" role="button" title="เลื่อนไปบนสุด" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </div>
   </body>
   </html>

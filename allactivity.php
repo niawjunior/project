@@ -63,6 +63,7 @@ else
 		$objQuery = $objQuery4;
 	}
 ?>
+<div class="col-md-12">
 <form name="frmMain" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 <input type="hidden" name="hdnCmd" value="">
 <center><h1><thead>บันทึกกิจกรรมทั้งหมด</thead></h1></center>
@@ -99,7 +100,7 @@ while($objResult = mysqli_fetch_array($objQuery))
 }
   ?>
 </table>
-  <center>
+  <div align="right">
 	  <nav>
 	    <ul class="pagination">
 	      <li <?php  if($Page==1) echo 'class="disabled"'?>>
@@ -136,8 +137,10 @@ while($objResult = mysqli_fetch_array($objQuery))
 	      </li>
 	    </ul>
 	  </nav>
-  </center>
+		<a id="back-to-top" href="#" class="btn btn-danger btn-md back-to-top" role="button" title="เลื่อนไปบนสุด" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+  </div>
 </form>
+</div>
 <?php 
 mysqli_close($connect);
 ?>
