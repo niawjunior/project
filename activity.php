@@ -20,7 +20,7 @@ $loggedTime=time()-10;
     ?>
     <br>
     <div align="right">
-    <label id="count" class="label label-success round btn-lg"><span  class="glyphicon glyphicon-user"></span></label>
+    <label id="count" class="label label-success round btn-lg"></label>
 </div><br>
     <form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
       <table class="table table-hover  "  border="0" >
