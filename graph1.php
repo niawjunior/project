@@ -21,7 +21,7 @@
     $y2559 = array();
     $date = array();
     $time = array();
-    $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$showh1' order by ID DESC LIMIT 12");
+    $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$showh1' order by ID DESC LIMIT 10");
     while($row=mysqli_fetch_array($result))
     {
     array_push($y2559,$row[level]);

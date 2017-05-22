@@ -18,6 +18,10 @@ $loggedTime=time()-10;
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     $objQuery = mysqli_query($connect, "SELECT * FROM member ORDER BY ID DESC ");
     ?>
+    <br>
+    <div align="right">
+    <label id="count" class="label label-success round btn-lg"><span  class="glyphicon glyphicon-user"></span></label>
+</div><br>
     <form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
       <table class="table table-hover  "  border="0" >
         <tr>
@@ -60,6 +64,12 @@ $loggedTime=time()-10;
           {
             $icon='<span class="glyphicon glyphicon-record" style="color:#7ff97f"></span>';
             $count = $count+1;
+            ?>
+            <script>
+            var count =  document.getElementById('count').innerHTML = 'online '+'<?php echo $count;?>'+' คน';
+            </script>
+
+            <?php
           }
           else
           {
@@ -69,7 +79,7 @@ $loggedTime=time()-10;
           <td align="center"> <?php echo $icon?></td>
           <td ><center><?php echo $f8 ?> | <?php echo $f9 ?></center></td>
           
-                                <?php if($_SESSION["status"] == 'ADMIN')
+          <?php if($_SESSION["status"] == 'ADMIN')
           {
             ?>
             <td><center><?php echo $f10?> <?php if($f10 !==""){
@@ -101,6 +111,3 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 });
 </script>
-<footer style="text-align: right;">
-<label class="label label-success round btn-lg"><span class="glyphicon glyphicon-user"></span> online <?php if(isset($count)){echo $count;}?></label>
-</footer>
