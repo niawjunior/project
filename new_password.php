@@ -36,23 +36,20 @@ setTimeout("top.location.href = 'reset_pass.php';",2500);
  else
  {
 	 ?>
-<script src="assets/js/validator.js"></script>
 <link href="assets/css/register.css" rel="stylesheet">
 <link href="assets/css/all.css" rel="stylesheet">
 <div class="container" >
   <div class="col-md-12" >
     <div id="logbox"  >
-      <form  data-toggle="validator" id="pass_reset" method="post" role="form" action="save_password_reset.php">
+      <form  id="pass_reset" method="post" role="form" action="save_password_reset.php">
         <h1>เปลี่ยนรหัสผ่าน</h1>
 
          <div class="form-group" align="center">
-          <input type="password" data-minlength="6" class="input pass" name="inputPassword" id="inputPassword" data-error="รหัสผ่านสั้นเกินไป" placeholder="Choose a password (ต้องไม่ต่ำกว่า 6 ตัวอักษร)" required>
-          <div class="help-block with-errors"></div>
+          <input type="password" data-minlength="6" class="input pass" name="inputPassword" id="inputPassword"  placeholder="Choose a password (ต้องไม่ต่ำกว่า 6 ตัวอักษร)" required>
         </div>
         <div class="form-group" align="center">
-          <input name="inputPasswordConfirm" type="password" class="input pass" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="รหัสผ่านไม่ตรงกัน" placeholder="Confirm password" >
+          <input name="inputPasswordConfirm" type="password" class="input pass" id="inputPasswordConfirm"  placeholder="Confirm password" >
           <input name="USER_EMAIL" type="hidden" class="input pass" id="USER_EMAIL" value="<?php echo $user_email; ?>">
-          <div class="help-block with-errors"></div>
         </div>
         <input type="submit" name="change_password" id="change_pass" value="ยืนยันการทำรายการ" class="inputButton"/>
       </form>
@@ -62,3 +59,18 @@ setTimeout("top.location.href = 'reset_pass.php';",2500);
 	 <?php
  }
 	?>
+	
+<script type="text/javascript">
+window.onload = function () {
+  document.getElementById("inputPassword").onchange = validatePassword;
+  document.getElementById("inputPasswordConfirm").onchange = validatePassword;
+}
+function validatePassword(){
+var pass1=document.getElementById("inputPassword").value;
+var pass2=document.getElementById("inputPasswordConfirm").value;
+if(pass1!=pass2)
+  document.getElementById("inputPasswordConfirm").setCustomValidity("รหัสผ่านที่กรอกไม่ตรงกัน");
+else
+  document.getElementById("inputPasswordConfirm").setCustomValidity('');  
+}
+</script>

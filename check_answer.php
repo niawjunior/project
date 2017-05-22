@@ -35,7 +35,7 @@ setTimeout("top.location.href = 'reset_pass.php';",2500);
 else
 {
 	?>
-<script src="assets/js/validator.js"></script>
+
 <link href="assets/css/register.css" rel="stylesheet">
 <link href="assets/css/all.css" rel="stylesheet">
 <div class="container" >
