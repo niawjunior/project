@@ -101,3 +101,19 @@
                 </button>
                 <button data-toggle="tooltip" title="ยกเลิก" name="btnAdd" class="btn btn-warning" type="button" id="btnCancel" OnClick="window.location='<?php echo $_SERVER["PHP_SELF"];?>';">ยกเลิก <span class="glyphicon glyphicon-share-alt"></span></button>  
 </div>
+
+
+<script type="text/javascript">
+window.onload = function () {
+  document.getElementById("inputPassword").onchange = validatePassword;
+  document.getElementById("inputPasswordConfirm").onchange = validatePassword;
+}
+function validatePassword(){
+var pass1=document.getElementById("inputPassword").value;
+var pass2=document.getElementById("inputPasswordConfirm").value;
+if(pass1!=pass2)
+  document.getElementById("inputPasswordConfirm").setCustomValidity("รหัสผ่านที่กรอกไม่ตรงกัน");
+else
+  document.getElementById("inputPasswordConfirm").setCustomValidity('');  
+}
+</script>

@@ -17,8 +17,8 @@ require_once("config.php");
     $objQuery4 = mysqli_query($connect,"SELECT * FROM member where user='$US'");
     while ($result4 = mysqli_fetch_array($objQuery4))
     {
-	    $passwordcheck= $result4['pass'];
-	    $status_user = $result4['status'];
+      $passwordcheck= $result4['pass'];
+      $status_user = $result4['status'];
     }
     $password1=md5(md5(md5($_POST['txtpass'])));
     $STATUS = $_SESSION["status"];
@@ -26,96 +26,96 @@ require_once("config.php");
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
     if($_GET["Action"] == "Update" and $password1 == $passwordcheck )
     {
-	    if($_POST["inputPasswordConfirm"] !=="")
-	    {
-		    $objQuery2 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
-		    while($objResult2 = mysqli_fetch_array($objQuery2))
-		    {
-			    if($objResult2['img'] !=="" and $_POST["txtphoto"] !=="" )
-			    {
-			    	$pofile = $_POST["txtphoto"];
-			    }
-			    else if($objResult2['img'] !=="" and $_POST["txtphoto"] =="" )
-			    {
-			    	$pofile = $objResult2['img'];
-			    }
-			    else if($objResult2['img'] =="" and $_POST["txtphoto"] !=="" )
-			    {
-			    	$pofile = $_POST["txtphoto"];
-			    }
-			    else
-			    {
-			    	$pofile = '/photo/user.png';
-			    }
-		    }
-		    $objQuery = mysqli_query($connect,"UPDATE member SET pass = '".md5(md5(md5($_POST["inputPasswordConfirm"])))."',name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
-	    ?>
+      if($_POST["inputPasswordConfirm"] !=="")
+      {
+        $objQuery2 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
+        while($objResult2 = mysqli_fetch_array($objQuery2))
+        {
+          if($objResult2['img'] !=="" and $_POST["txtphoto"] !=="" )
+          {
+            $pofile = $_POST["txtphoto"];
+          }
+          else if($objResult2['img'] !=="" and $_POST["txtphoto"] =="" )
+          {
+            $pofile = $objResult2['img'];
+          }
+          else if($objResult2['img'] =="" and $_POST["txtphoto"] !=="" )
+          {
+            $pofile = $_POST["txtphoto"];
+          }
+          else
+          {
+            $pofile = '/photo/user.png';
+          }
+        }
+        $objQuery = mysqli_query($connect,"UPDATE member SET pass = '".md5(md5(md5($_POST["inputPasswordConfirm"])))."',name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
+      ?>
       <script>
         function logout(){
          window.top.location = "logout.php";
         }
-		    $(window).load(function()
-		    {
-		    $('#myModal').modal('show');
-		    setTimeout("logout()",1000);
-		    });
-		    </script>
+        $(window).load(function()
+        {
+        $('#myModal').modal('show');
+        setTimeout("logout()",1000);
+        });
+        </script>
       <?php
       }
-		else
-		    {
-			    $objQuery2 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
-			    while($objResult2 = mysqli_fetch_array($objQuery2))
-			    {
-				    if($objResult2['img'] !=="" and $_POST["txtphoto"] !=="" )
-				    {
-				    	$pofile = $_POST["txtphoto"];
-				    }
-				    else if($objResult2['img'] !=="" and $_POST["txtphoto"] =="" )
-				    {
-				    	$pofile = $objResult2['img'];
-				    }
-				    else if($objResult2['img'] =="" and $_POST["txtphoto"] !=="" )
-				    {
-				    	$pofile = $_POST["txtphoto"];
-				    }
-				    else
-				    {
-				    	$pofile = 'photo/user.png';
-				    }
-			    }
-			    $objQuery = mysqli_query($connect,"UPDATE member SET name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
-		    }
-		    ?>
-		    <script>
+    else
+        {
+          $objQuery2 = mysqli_query($connect,"SELECT * FROM member WHERE ID='$ID'");
+          while($objResult2 = mysqli_fetch_array($objQuery2))
+          {
+            if($objResult2['img'] !=="" and $_POST["txtphoto"] !=="" )
+            {
+              $pofile = $_POST["txtphoto"];
+            }
+            else if($objResult2['img'] !=="" and $_POST["txtphoto"] =="" )
+            {
+              $pofile = $objResult2['img'];
+            }
+            else if($objResult2['img'] =="" and $_POST["txtphoto"] !=="" )
+            {
+              $pofile = $_POST["txtphoto"];
+            }
+            else
+            {
+              $pofile = 'photo/user.png';
+            }
+          }
+          $objQuery = mysqli_query($connect,"UPDATE member SET name = '".$_POST["txtname"]."',email = '".$_POST["txtemail"]."',sex = '".$_POST["txtsex"]."',tel = '".$_POST["txttel"]."',status = '$status_user',img = '$pofile' WHERE ID = '$ID' ");
+        }
+        ?>
+        <script>
         function redirect(){
          window.top.location = "profile.php?Action=Profile";
         }
-		    $(window).load(function()
-		    {
-		    $('#myModal').modal('show');
-		    setTimeout("redirect()",2000);
-		    });
-		    </script>
-		    <div class="container">
-		      <div class="modal fade" id="myModal" role="dialog">
-		        <div class="modal-dialog">
-		          <!-- Modal content-->
-		          <div class="modal-content">
-		            <div class="modal-header">
-		              <button type="button" class="close" data-dismiss="modal">&times;</button>
-		              <h4 class="modal-title">ระบบแจ้งเตือน</h4>
-		            </div>
-		            <div class="modal-body">
-		              <p>บันทึกข้อมูลเรียบร้อยแล้ว</p>
-		            </div>
-		            <div class="modal-footer">
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		    <?php 
+        $(window).load(function()
+        {
+        $('#myModal').modal('show');
+        setTimeout("redirect()",2000);
+        });
+        </script>
+        <div class="container">
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">ระบบแจ้งเตือน</h4>
+                </div>
+                <div class="modal-body">
+                  <p>บันทึกข้อมูลเรียบร้อยแล้ว</p>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php 
     }
     if($_GET["Action"] == "Update" and $password1 !== $passwordcheck )
     {
@@ -178,9 +178,9 @@ require_once("config.php");
               $f8 = $objResult['img'];
             }
             if($objResult["ID"] == $_GET["ID"] and $_GET["Action"] == "Edit")
-    	      {
-    	      	require_once("modules/function_profile_edit.php");
-    	      }
+            {
+              require_once("modules/function_profile_edit.php");
+            }
             else
             {
              require_once("modules/function_profile.php");
