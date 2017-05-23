@@ -204,6 +204,7 @@ require_once("config.php");
                             <input type="password" autofocus="autofocus"  class="form-control" name="txtpass" placeholder="กรุณากรอกรหัสผ่านให้ถูกต้อง" required /></div>     
                           <button data-toggle="tooltip" title="กดยืนยันเพื่อบันทึกข้อมูล" type="submit" class="btn btn-success">ยืนยัน <span class="glyphicon glyphicon-ok-sign"></span></button>
                         </div>
+                        <br>
                       </div>
                       <br>
                     </div>

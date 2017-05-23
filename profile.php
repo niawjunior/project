@@ -111,7 +111,7 @@ if($_GET["Action"] == "Setting?Backup")
   ?>
   <div class="row">
     <div class="col-md-12" >
-      <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=no>
+      <IFRAME src=mysql_backup.php width=100% height=80% frameborder=0 scrolling=yes>
       </IFRAME>
     </div>
   </div>
@@ -211,7 +211,7 @@ if($_GET["Action"] == "Activity")
   ?>
   <div class="row">
     <div class="col-md-12" >
-      <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=no>
+      <IFRAME src=activity.php width=100% height=100% frameborder=0 scrolling=yes>
       </IFRAME>
     </div>
   </div>

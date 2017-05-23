@@ -22,7 +22,12 @@
                     </li>
                    <li id="tab_active_research"><a href=""><?php echo $_SESSION["strh21"];?></a>
                 </li>
-                 <?php 
+
+            </ul>
+            
+           
+                <ul class="nav navbar-nav navbar-right">          
+                         <?php 
                  if($_SESSION["STATUS"]!=1)
                  {
                 ?>
@@ -31,9 +36,8 @@
                 <?php
                  }
                  ?>
-
-            </ul>
-            <?php  if($_SESSION[ "STATUS"]=="" ) { require_once( "modules/function_login.php"); } else { require_once( "modules/function_loged.php"); } ?>
+                 </ul>
+                  <?php  if($_SESSION[ "STATUS"]=="" ) { require_once( "modules/function_login.php"); } else { require_once( "modules/function_loged.php"); } ?>
         </div>
     </div>
 </nav>

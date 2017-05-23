@@ -174,7 +174,7 @@ $fileSize = get_file_size_unit(filesize(BACKUP_DIR . "/". $fileName . '.zip')) ;
             <div class="cls"></div>
             <div><h3>รหัสผ่านฐานข้อมูล:</h3><input type="password" class="form-control" name="password" value=""required /></div>
             <div class="cls"></div>
-            <div style="text-align: center;margin-top: 50px">
+            <div style="text-align: center;margin-top: 40px">
             <button  type="submit" id="getdb" name="submit" class="btn btn-success" value="">
             สร้างไฟล์ข้อมูล <span class="glyphicon glyphicon-export"></span>
             </button>
