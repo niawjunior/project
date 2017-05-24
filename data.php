@@ -37,7 +37,6 @@ require_once("config.php");
     </div>
   </form>
   <?
-
   $objQuery3 = mysqli_query($connect,"SELECT * FROM showdata");
   $Rows = mysqli_num_rows($objQuery3);
   while($objResult = mysqli_fetch_array($objQuery3))
@@ -49,7 +48,7 @@ require_once("config.php");
   {
     $PLACE_ADD = $f111;
     $TXT_PLACE = 'disabled';
-    $LEVEL_ADD = $_GET['LEVEL'];
+    $LEVEL_ADD = ($f222-$_GET['LEVEL']);
     $TIME_ADD = date("H:i");
     $DATE_ADD = date("d-m-Y");
     $DEEP_ADD =  $f222;
@@ -65,7 +64,7 @@ require_once("config.php");
   if($_GET["Action"] == "ADD")
   {
     mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('$PLACE_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
-     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
+    mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
      ?>
       <script>
         window.top.location.replace("profile.php");
@@ -86,8 +85,6 @@ require_once("config.php");
           mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร '  where user = '$POST'");
           mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
         }
- 
-
 
   if($_POST["hdnCmd"] == "Update")
   {
@@ -103,9 +100,7 @@ require_once("config.php");
     mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','แก้ไขข้อมูลระดับน้ำ','แก้ไขข้อมูล | สถานที่ $data2 | ไอดี $data1 | ระดับน้ำ $data3 เมตร ') ");
     mysqli_query($connect,"UPDATE member SET lastactivity = 'แก้ไขข้อมูล | สถานที่ $data2 | ระดับน้ำ $data3 เมตร '  where user = '$POST'");
     mysqli_query($connect,"UPDATE member SET countatvt = countatvt+1 where user = '$POST'");
-
 ?>
-
     <?php
   }
   if($_GET["Action"] == "Del")
@@ -124,8 +119,7 @@ require_once("config.php");
   }
   $search= $_GET['search'];
    $objQuery11 = mysqli_query($connect,"SELECT * FROM water_table ORDER BY ID DESC");
-
-    $objQuery14 = mysqli_query($connect,"SELECT * FROM water_table WHERE (place  = '$search') ORDER BY ID DESC");
+   $objQuery14 = mysqli_query($connect,"SELECT * FROM water_table WHERE (place  = '$search') ORDER BY ID DESC");
 
    if(isset($_GET['search']))
       {
@@ -180,7 +174,6 @@ require_once("config.php");
         </thead>
       </tr>
       <?php 
-
     $objQuery3 = mysqli_query($connect,"SELECT * FROM water_table WHERE (place  = '$search') ORDER BY ID DESC LIMIT $Page_Start , $Per_Page");
 
     $objQuery4 = mysqli_query($connect,"SELECT * FROM water_table ORDER BY ID DESC LIMIT $Page_Start , $Per_Page");
@@ -221,7 +214,6 @@ require_once("config.php");
               ?>
             </select>
           </td>
-
             <td width="10%"><center><input class="form-control" type="text" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
             <td width="25%"><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
             <td width="30%"><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
@@ -244,7 +236,6 @@ require_once("config.php");
             ?>
             <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
             <td align="center"><a  data-toggle="tooltip" title="ลบข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
-
             <?php
           }
             ?>
@@ -255,7 +246,6 @@ require_once("config.php");
       ?>
     </table>
   </form>
-
 <form name="" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 <table class="table table-hover  "  border="0" id="bootstrap-table">
           <?php if($_SESSION["status"] == 'ADMIN')
@@ -276,7 +266,7 @@ require_once("config.php");
         else
         {
           ?>
-          <td width="25%">
+          <td width="15%">
             <select  style="text-align-last:center;" name="PLACE" class="form-control" <?php echo $close?>>
               <?php 
                 $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
@@ -306,8 +296,7 @@ require_once("config.php");
           }
         ?>
   </table>
-    </form>
-
+  </form>
    <div align="right">
       <nav>
         <ul class="pagination">
@@ -349,7 +338,6 @@ require_once("config.php");
     </div>
   </body>
   </html>
-
 
 <script>
 $(document).ready(function(){
