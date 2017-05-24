@@ -32,6 +32,8 @@
 			$_SESSION["strh21"] = "วิธีติดตั้ง/ใช้งาน";
 			$_SESSION["strh22"] = "หน้าจัดการข้อมูล";
 			$_SESSION["strh23"] = "ลืมรหัสผ่าน";
+			$_SESSION["strh24"] = "เข้าสู่ระบบ";
+			$_SESSION["strh25"] = "สมัครสมาชิก";
 		}
 	else if($_SESSION["lang"] == "en")
 		{
@@ -63,9 +65,11 @@
 		    $_SESSION["strh18"] = "MEMBER";
 		    $_SESSION["strh19"] = "ADMIN";
 			$_SESSION["strh20"] = "Signification";
-			$_SESSION["strh21"] = "Setup&How to Use";
+			$_SESSION["strh21"] = "How to Setup";
 			$_SESSION["strh22"] = "Dashboard";
 			$_SESSION["strh23"] = "Lost Password";
+			$_SESSION["strh24"] = "Login";
+			$_SESSION["strh25"] = "Register";
 		}
 	else
 	{
@@ -100,6 +104,8 @@
 			$_SESSION["strh21"] = "วิธีติดตั้ง/ใช้งาน";
 			$_SESSION["strh22"] = "หน้าจัดการข้อมูล";
 			$_SESSION["strh23"] = "ลืมรหัสผ่าน";
+			$_SESSION["strh24"] = "เข้าสู่ระบบ";
+			$_SESSION["strh25"] = "สมัครสมาชิก";
 	}
     
 ?>

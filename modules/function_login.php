@@ -20,7 +20,7 @@
                             </div>
 
 
-    <button type="submit" class="btn btn-warning">Login <span class="glyphicon glyphicon-log-in"></span></button>
-    <a href="register.php"><button type="button" class="btn btn-primary">Register <span class="glyphicon glyphicon-edit"></span></button>
+    <button type="submit" class="btn btn-warning"><?echo $_SESSION["strh24"];?> <span class="glyphicon glyphicon-log-in"></span></button>
+    <a href="register.php"><button type="button" class="btn btn-primary"><?echo $_SESSION["strh25"];?> <span class="glyphicon glyphicon-edit"></span></button>
     </a>
 </form>
