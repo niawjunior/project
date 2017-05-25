@@ -45,7 +45,7 @@ Edit config (connection.php,connect.php)
 ## STRUCTURE
 ![alt tag](http://i.imgur.com/6ZPcfQB.png)
 
-## PROTOTYPE
+## PROTOTYPE กดเพื่อดู Model 3D
 [![IMAGE ALT TEXT](http://i.imgur.com/szTE0lN.jpg)](https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed "Click")
 
 
