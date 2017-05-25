@@ -6,6 +6,7 @@
 <!-- js -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/nprogress.js"></script>
+<script src="assets/js/superplaceholder.js"></script>
 <script src="assets/js/bootstrap-notify.min.js"></script>
 <script src="assets/js/bootstrap-notify.js"></script>
 <script src="assets/js/jquery.bdt.js" type="text/javascript"></script>
