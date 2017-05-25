@@ -8,7 +8,7 @@ edit config connection.php and connect.php
 ## Required
 :star: PHP 5.7
 :star: BOOTSTRAP 3
-## SITE MAP
+## SITE MAP (Website)
 *  หน้าล็อกอิน
 *  หน้าสมัครสมาชิก
 *  หน้าแก้ไขโปรไฟล์
@@ -25,6 +25,22 @@ edit config connection.php and connect.php
 *  ระบบตรวจสอบการเชือมต่อ (ftp,database,memory,http)
 *  ที่มาและความสำคัญ
 *  วิธีติดตั้ง/ใช้งาน
+
+##HARDWARE
+* Arduino UNO R3
+![alt tag](http://i.imgur.com/D9WYC4C.jpg)
+* GSM sim800l
+![alt tag](http://i.imgur.com/WZquKqD.jpg)
+* Ultrasonic us-100
+![alt tag](http://www.hobbytronics.co.za/content/images/thumbs/0003199_ultrasonic-distance-measuring-transducer-us-100.jpeg)
+* Solar Cell
+![alt tag](http://ample-solar.com/wp-content/uploads/2015/08/3.jpg)
+* Battery
+![alt tag](https://static.rapidonline.com/catalogueimages/Product/S18-1157P01WL.jpg)
+* Charger
+![alt tag](http://vleindia.com/admin/uploads/1404650117.jpg)
+* Step down converter 12To5v
+![alt tag](http://i.ebayimg.com/images/g/XccAAOSwYSlXhIFg/s-l300.jpg)
 ## License
 by niaw junior
 
