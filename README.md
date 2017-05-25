@@ -9,9 +9,7 @@ Edit config (connection.php,connect.php)
 :star: PHP 5.7
 :star: BOOTSTRAP 3
 ## SITE MAP (Website)
-*  หน้าล็อกอิน
-*  หน้าสมัครสมาชิก
-*  หน้าแก้ไขโปรไฟล์
+*  ระบบ Member (Login,Register,Forgotpassword,Profile)
 *  หน้าแสดงระดับน้ำ สามารถ(เพิ่ม ลบ แก้ไข) ได้ และบอกสถานะระดับน้ำ (น้ำน้อย,ปานกลาง,น้ำมาก,เกินความจุ)
 *  Google map แสดงสถานที่ติดตั้งพร้อมรายละเอียด และระดับน้ำปัจจุบัน
 *  หน้าค้นหาสถานที่ และ เพิ่มสถานที่ติดตั้ง
@@ -42,9 +40,6 @@ Edit config (connection.php,connect.php)
 * Step down converter 12To5v
 ![alt tag](http://i.ebayimg.com/images/g/XccAAOSwYSlXhIFg/s-l300.jpg)
 
-## License
-by niaw junior
-
 
 
 ![alt tag](http://i.imgur.com/szTE0lN.jpg)
@@ -58,3 +53,7 @@ by niaw junior
 ![alt tag](http://i.imgur.com/LoUz3zl.png)
 ![alt tag](http://i.imgur.com/BORXmQK.png)
 ![alt tag](http://i.imgur.com/BORXmQK.png)
+
+## License
+by niaw junior
+
