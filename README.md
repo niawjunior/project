@@ -8,6 +8,7 @@ Edit config (connection.php,connect.php)
 ## Required
 :star: PHP 5.7
 :star: BOOTSTRAP 3
+:star: Appserv
 ## SITE MAP (Website)
 *  ระบบ Member (Login,Register,Forgotpassword,Profile)
 *  หน้าแสดงระดับน้ำ สามารถ(เพิ่ม ลบ แก้ไข) ได้ และบอกสถานะระดับน้ำ (น้ำน้อย,ปานกลาง,น้ำมาก,เกินความจุ)
@@ -46,10 +47,6 @@ Edit config (connection.php,connect.php)
 
 ## PROTOTYPE
 [![IMAGE ALT TEXT](http://i.imgur.com/szTE0lN.jpg)](https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed "Click")
-
-<iframe src="https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed"
-  allowtransparency="true" frameborder="0" scrolling="0" width="600px" height="400px"></iframe>
-
 
 
 ![alt tag](http://i.imgur.com/C9y66My.png)
