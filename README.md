@@ -1,7 +1,7 @@
 # ระบบตรวจวัดระดับน้ำในแหล่งชุมชน ผ่านระบบสารสนเทศภูมิศาสตร์
 
 ## Installation
-https://github.com/niawjunior/project_final.git
+git clone https://github.com/niawjunior/project_final.git
 
 ## Usage
 edit config connection.php and connect.php
@@ -41,6 +41,7 @@ edit config connection.php and connect.php
 ![alt tag](http://vleindia.com/admin/uploads/1404650117.jpg)
 * Step down converter 12To5v
 ![alt tag](http://i.ebayimg.com/images/g/XccAAOSwYSlXhIFg/s-l300.jpg)
+
 ## License
 by niaw junior
 
