@@ -41,8 +41,11 @@ Edit config (connection.php,connect.php)
 ![alt tag](http://i.ebayimg.com/images/g/XccAAOSwYSlXhIFg/s-l300.jpg)
 
 
-
+##STRUCTURE
+![alt tag](http://i.imgur.com/6ZPcfQB.png)
+##PROTOTYPE
 ![alt tag](http://i.imgur.com/szTE0lN.jpg)
+
 ![alt tag](http://i.imgur.com/C9y66My.png)
 ![alt tag](http://imgur.com/dZMdY5r.png)
 ![alt tag](http://i.imgur.com/YkNbOg0.png)
