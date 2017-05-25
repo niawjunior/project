@@ -45,6 +45,7 @@ Edit config (connection.php,connect.php)
 ![alt tag](http://i.imgur.com/6ZPcfQB.png)
 ##PROTOTYPE
 ![alt tag](http://i.imgur.com/szTE0lN.jpg)
+[![IMAGE ALT TEXT](http://i.imgur.com/szTE0lN.jpg)](https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed "3D Model")
 
 ![alt tag](http://i.imgur.com/C9y66My.png)
 ![alt tag](http://imgur.com/dZMdY5r.png)
