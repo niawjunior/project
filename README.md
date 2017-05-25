@@ -5,8 +5,14 @@ https://github.com/niawjunior/project_final.git
 
 ## Usage
 edit config connection.php and connect.php
-## Credits
-Sublime text,Bootstrap 3 
+## Required
+:star: PHP 5.7
+:star: BOOTSTRAP 3
+:star: SITE MAP
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
 ## License
 by niaw junior
 
