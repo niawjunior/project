@@ -24,7 +24,7 @@ Edit config (connection.php,connect.php)
 *  ที่มาและความสำคัญ
 *  วิธีติดตั้ง/ใช้งาน
 
-##HARDWARE
+## HARDWARE
 * Arduino UNO R3
 ![alt tag](http://i.imgur.com/D9WYC4C.jpg)
 * GSM sim800l
@@ -41,15 +41,14 @@ Edit config (connection.php,connect.php)
 ![alt tag](http://i.ebayimg.com/images/g/XccAAOSwYSlXhIFg/s-l300.jpg)
 
 
-##STRUCTURE
+## STRUCTURE
 ![alt tag](http://i.imgur.com/6ZPcfQB.png)
 
-##PROTOTYPE
+## PROTOTYPE
 [![IMAGE ALT TEXT](http://i.imgur.com/szTE0lN.jpg)](https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed "Click")
 
-<iframe src="<iframe src="http://ghbtns.com/github-btn.html?user=USERNAME&repo=REPONAME&type=BUTTONTYPE"
-  allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>"
-  allowtransparency="true" frameborder="0" scrolling="0" width="600" height="400"></iframe>
+<iframe src="https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed"
+  allowtransparency="true" frameborder="0" scrolling="0" width="600px" height="400px"></iframe>
 
 
 
