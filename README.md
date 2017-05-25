@@ -4,7 +4,7 @@
 git clone https://github.com/niawjunior/project_final.git
 
 ## Usage
-edit config connection.php and connect.php
+Edit config (connection.php,connect.php)
 ## Required
 :star: PHP 5.7
 :star: BOOTSTRAP 3
