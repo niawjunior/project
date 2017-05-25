@@ -43,9 +43,15 @@ Edit config (connection.php,connect.php)
 
 ##STRUCTURE
 ![alt tag](http://i.imgur.com/6ZPcfQB.png)
+
 ##PROTOTYPE
-![alt tag](http://i.imgur.com/szTE0lN.jpg)
-[![IMAGE ALT TEXT](http://i.imgur.com/szTE0lN.jpg)](https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed "3D Model")
+[![IMAGE ALT TEXT](http://i.imgur.com/szTE0lN.jpg)](https://sketchfab.com/models/188963cc19044f4b80bf93b26aedec30/embed "Click")
+
+<iframe src="<iframe src="http://ghbtns.com/github-btn.html?user=USERNAME&repo=REPONAME&type=BUTTONTYPE"
+  allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>"
+  allowtransparency="true" frameborder="0" scrolling="0" width="600" height="400"></iframe>
+
+
 
 ![alt tag](http://i.imgur.com/C9y66My.png)
 ![alt tag](http://imgur.com/dZMdY5r.png)
