@@ -8,11 +8,10 @@ edit config connection.php and connect.php
 ## Required
 :star: PHP 5.7
 :star: BOOTSTRAP 3
-:star: SITE MAP
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+## SITE MAP
+- [x] ระบบสมาชิก
+> หน้าล็อกอิน
+> หน้าสมัครสมาชิก
 ## License
 by niaw junior
 
