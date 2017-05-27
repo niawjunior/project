@@ -63,13 +63,14 @@ require_once("config.php");
   }
   if($_GET["Action"] == "ADD")
   {
+    $query_check = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '$f111' ");
+    $query_resault = mysqli_fetch_array($query_check);
+    $level = $query_resault['level'];
+    if($LEVEL_ADD != $level )
+    {
     mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('$PLACE_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
-     ?>
-      <script>
-        window.top.location.replace("profile.php");
-      </script>
-  <?php
+    }
   }
 
     if(isset($_POST["submit"]))
