@@ -130,10 +130,10 @@ $POST = $_SESSION["USER"];
           ?>
           <tr>
             <td ><center><?php echo $f1 ?></center></td>
-            <td><center><?php if($f3==''){echo 'ไม่ระบุ';}else{echo $f3;} ?></center></td>
+            <td><center><?php if($f3==''){echo 'N/A';}else{echo $f3;} ?></center></td>
             <td><center><?php echo $f4 ?></center></td>
-            <td><center><?php if($f5==''){echo 'ไม่ระบุ';}else{echo $f5;} ?></center></td>
-            <td><center><?php if($f6==''){echo 'ไม่ระบุ';}else{echo $f6;} ?></center></td>
+            <td><center><?php if($f5==''){echo 'N/A';}else{echo $f5;} ?></center></td>
+            <td><center><?php if($f6==''){echo 'N/A';}else{echo $f6;} ?></center></td>
             <td><center><img src="<?php echo $logoprofile ?>" class="img-circle " height ="30" width="30" ></center></td>
             <td><center><?php echo $f7 ?></center></td>
              <?php if($_SESSION["status"] == 'ADMIN')

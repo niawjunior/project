@@ -1,4 +1,3 @@
-﻿<meta charset="utf-8">
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
@@ -6,9 +5,7 @@
 <!-- js -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/nprogress.js"></script>
-<script src="assets/js/superplaceholder.js"></script>
-<script src="assets/js/bootstrap-notify.min.js"></script>
-<script src="assets/js/bootstrap-notify.js"></script>
+
 <script src="assets/js/jquery.bdt.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap-select.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>

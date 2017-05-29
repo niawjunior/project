@@ -12,6 +12,8 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="assets/js/bootstrap-notify.min.js"></script>
+        <script src="assets/js/bootstrap-notify.js"></script>
         <link href="assets/css/all.css" rel="stylesheet">
         <title>
         WATER LEVEL

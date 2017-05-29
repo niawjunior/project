@@ -34,10 +34,10 @@ require_once ("connect.php");
                         </ol>
                         <div class="carousel-inner">
                           <div class="item active">
-                            <img src="img/water2.JPG" alt="Los Angeles">
+                            <img src="http://www.rmuti-water.com/project_final/img/water2.jpg" alt="Los Angeles">
                           </div>
                           <div class="item">
-                            <img src="img/water3.JPG" alt="New York">
+                            <img src="http://www.rmuti-water.com/project_final/img/water3.jpg" alt="New York">
                           </div>
                         </div>
 

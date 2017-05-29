@@ -1,7 +1,7 @@
 <?php
 $host="localhost";
-$user="root";
+$user="rmutiwa_water";
 $pass="niaw2362537";
-$db="u220965490_water";
+$db="rmutiwa_water";
 $conn = mysqli_connect($host,$user,$pass,$db);
 ?>
