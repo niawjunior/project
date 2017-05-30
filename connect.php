@@ -1,7 +1,8 @@
 <?php
-// error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 $host="localhost";
-$user="rmutiwa_water";
+// $user="rmutiwa_water";
+$user="root";
 $pass="niaw2362537";
 $db="rmutiwa_water";
 $ftp_server = "rmuti-water.com";
