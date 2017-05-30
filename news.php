@@ -25,7 +25,7 @@ require_once("config.php");
     $path="myfile/";
     $remove_these = array(' ','`','"','\'','\\','/','_');
     $newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
-    $newname = time();
+    $newname = time().'-'.$newname;
     $path_copy=$path.$newname;
     $path_link="myfile/".$newname;
     move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
@@ -53,7 +53,7 @@ require_once("config.php");
         $path="myfile/";
         $remove_these = array(' ','`','"','\'','\\','/','_');
         $newname = str_replace($remove_these, '', $_FILES['fileupload_edit']['name']);
-        $newname = time();
+        $newname = time().'-'.$newname;
         $path_copy=$path.$newname;
         $path_link="myfile/".$newname;
         if(move_uploaded_file($_FILES['fileupload_edit']['tmp_name'],$path_copy))

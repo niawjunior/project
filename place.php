@@ -195,11 +195,11 @@ $objQuery = mysqli_query($connect,"SELECT * FROM data ORDER BY ID DESC ");
 <table class="table table-hover"  id="bootstrap-table">
   <tr>
   <thead class="thead-inverse">
-    <th class="default" width="15%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
+    <th class="default" width="20%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
     <th class="default" width="28%" height="50"> <div align="center"><strong>คำอธิบาย</strong></div></th>
     <th class="default" width="12%" height="50"> <div align="center"><strong>ละติจูด</strong></div></th>
     <th class="default" width="8%" height="50"> <div align="center"><strong>ลองติจูด</strong></div></th>
-    <th class="default" width="10%" height="50"> <div align="center"><strong>ความลึก(ม)</strong></div></th>
+    <th class="default" width="11%" height="50"> <div align="center"><strong>ความลึก(ม)</strong></div></th>
       <?php if($_SESSION["status"] == 'ADMIN')
         {
         ?>
