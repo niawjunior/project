@@ -176,18 +176,17 @@ if($_GET["Action"] == "Del")
 
 
   	$objQuery = mysqli_query($connect,"DELETE FROM data  WHERE ID = '".$_GET["ID"]."'");
-    define('BACKUP_DIR', './uploadphoto' ) ;
-    $file=BACKUP_DIR.DIRECTORY_SEPARATOR.$url;
-    if(file_exists($file)){ if(unlink($file));
-    }
+  
+    if($objQuery)
+    {
 
     ?>
       <script>
     window.top.location.replace("profile.php?Action=Multiple");
   </script>
     <?php
+    }
 }
-
 $objQuery1 = mysqli_query($connect,"SELECT * FROM data");
 $objQuery = mysqli_query($connect,"SELECT * FROM data ORDER BY ID DESC ");
 ?>
