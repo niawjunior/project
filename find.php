@@ -13,11 +13,11 @@ $POST = $_SESSION["USER"];
 <?php
 if(isset($_POST['submit']))
 {
- $h1 = 'ไม่ระบุ';
+ $h1 = 'N/A';
  $h2 = $_POST['searchTextField'];
  $la = $_POST['latitude'];
  $lo = $_POST['longitude'];
- $deep = 'ไม่ระบุ';
+ $deep = 'N/A';
 $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มแผนที่',' เพิ่มข้อมูล | สถานที่ ".$h1."') ");
   mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มแผนที่ | สถานที่ $h1'  where user = '$POST'");

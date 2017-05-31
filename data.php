@@ -11,11 +11,11 @@ require_once("config.php");
 <body>
   <?php 
   session_start();
-    if($_SESSION["STATUS"]=='')
-    {
-      header('Location: 404.php');
-      exit();
-    }
+    // if($_SESSION["STATUS"]=='')
+    // {
+    //   header('Location: 404.php');
+    //   exit();
+    // }
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   $POST = $_SESSION["USER"];
   $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
