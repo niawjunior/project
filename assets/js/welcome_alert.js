@@ -27,7 +27,7 @@ function alert(){
         exit: 'animated bounceOut'
     },
     template: '<div data-notify="container" class="col-sm-2 col-sm-2 alert alert-{0}" role="alert">' +
-        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss"><span class="glyphicon glyphicon-remove"></span></button>' +
         '<span data-notify="message">{2}</span>' +
     '</div>' 
 });
@@ -62,7 +62,7 @@ function alert(){
         exit: 'animated bounceOut'
     },
     template: '<div data-notify="container" class="col-sm-2 col-sm-2 alert alert-{0}" role="alert">' +
-        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss"><span class="glyphicon glyphicon-remove"></span></button>' +
         '<span data-notify="message">{2}</span>' +
     '</div>' 
 });

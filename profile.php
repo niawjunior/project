@@ -189,7 +189,7 @@ if($_GET["Action"] == "Graph")
   ?>
   <div class="row">
     <div class="col-md-12" >
-      <IFRAME src=graph.php width=100% height=75% frameborder=0 scrolling=yes>
+      <IFRAME src=graph.php width=100% height=70% frameborder=0 scrolling=yes>
       </IFRAME>
     </div>
   </div>

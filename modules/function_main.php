@@ -102,14 +102,15 @@ $time = date("H:i");
         </h3>
       </div>
       <center>
+      
       <div class="panel-body" align="center">
         <div class="row">
           <div class="col-md-12">
-            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Display" class="btn btn-info  btn-lg" role="button"><span class="glyphicon glyphicon-tint"></span> <br/><?php echo $_SESSION["strwater"] ?></a>
-            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-globe"></span> <br/><?echo $_SESSION["strmap"]?></a>
-            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Graph" class="btn btn-primary  btn-lg" role="button">
+            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Display" class="btn btn-info <?php if($_GET["Action"] =='Display' or $_GET["Action"] =='' ){$A = 'active';}?><?php $A1='';echo $A; ?> btn-lg" role="button"><span class="glyphicon glyphicon-tint"></span> <br/><?php echo $_SESSION["strwater"] ?></a>
+            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Multiple" class="btn btn-success <?php if($_GET["Action"] =='Multiple'){$A1 = 'active';}?><?php echo $A1; ?> btn-lg" role="button"><span class="glyphicon glyphicon-globe"></span> <br/><?echo $_SESSION["strmap"]?></a>
+            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Graph" class="btn btn-primary <?php if($_GET["Action"] =='Graph'){$A2 = 'active';}?><?php $A='';$A1='';echo $A2; ?> btn-lg" role="button">
             <span class="glyphicon glyphicon-stats"></span> <br/><?echo $_SESSION["strgraph"]?></a>
-            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=News" class="btn btn-warning  btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/><?echo $_SESSION["strreport"]?></a>
+            <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=News" class="btn btn-warning <?php if($_GET["Action"] =='News'){$A3 = 'active';}?><?php $A='';$A1='';$A2='';echo $A3; ?> btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/><?echo $_SESSION["strreport"]?></a>
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Member" class="btn btn-danger  btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/><?echo $_SESSION["strmember"]?></a>
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Profile" class="btn btn-primary  btn-lg" role="button"><span class="	glyphicon glyphicon-heart"></span> <br/><?echo $_SESSION["strprofile"]?></a>
             <a href="<?php echo $_SERVER["PHP_SELF"];?>?Action=Activity" class="btn btn-danger  btn-lg" role="button"><span class="glyphicon glyphicon-calendar"></span> <br/><?echo $_SESSION["stractivity"]?></a>
