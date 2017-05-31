@@ -16,9 +16,76 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         <script src="assets/js/welcome_alert.js"></script>
         <script src="assets/js/bootstrap-notify.js"></script>
         <link href="assets/css/all.css" rel="stylesheet">
+            <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         <title>
         WATER LEVEL
         </title>
+        <style>
+#myFooter .container{
+    text-align: center;
+}
+
+
+#myFooter .footer-social{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #ffffff;
+}
+
+#myFooter .fa{
+    font-size: 36px;
+    margin-right: 15px;
+    margin-left: 20px;
+    background-color: white;
+    color: #d0d0d0;
+    border-radius: 51%;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 43px;
+    text-decoration: none;
+    transition:color 0.2s;
+}
+
+#myFooter .fa-facebook:hover{
+   color: #2b55ff;
+}
+
+#myFooter .fa-facebook:focus{
+    color: #2b55ff; 
+}
+
+#myFooter .fa-github:hover{
+   color: #3c5156;
+}
+
+#myFooter .fa-github:focus{
+    color: #3c5156; 
+}
+
+
+
+#myFooter .fa-google-plus:hover{
+    color:red;
+}
+
+#myFooter .fa-google-plus:focus{
+    color:red;
+}
+
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}
+</style>
     </head>
 <body class="background">
 <?php require_once( "modules/function_nav.php");?>
@@ -42,14 +109,15 @@ $connect = mysqli_connect($host, $user, $pass, $db);
             สถานที่ที่ใช้ทดสอบ:  <font  color="#428bca"><?php echo $showh1?></font>
             	<li class="glyphicon glyphicon-alert" aria-hidden="true"></li>
             สถานะ: <?php if($check==""){$check1="ไม่ได้เชื่อมต่อ";}else{$check1=$check;}?><font  color="#428bca"><?php echo $check1?></font>
-
                 </h4>
-                <div class="col-md-12">&nbsp;
+                <div class="col-md-12">
+                <div class="form-group">
                 <span class="label label-danger"><?php echo '<=30 น้ำน้อยวิกฤติ'?></span>&nbsp;&nbsp;
                 <span class="label label-warning"><?php echo '>30-50% น้ำน้อย'?></span>&nbsp;&nbsp;
                 <span class="label label-success"><?php echo '>50-80% น้ำปานกลาง'?></span>&nbsp;&nbsp;
                 <span class="label label-warning"><?php echo '>80-100% น้ำมาก'?></span>&nbsp;&nbsp;
                 <span class="label label-danger"><?php echo '>100% เกินความจุ'?></span>
+                </div>
                 </div>
            <br>
             <h4>
@@ -85,7 +153,17 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 	<font  color="#428bca">(<?php echo $showh1?>)</font> 10 ครั้งล่าสุด</h4>
 	<iframe src="graph1.php" width="100%" height="50%" scrolling="yes" frameBorder="0">	
 	</iframe>
+<footer id="myFooter">
+        <div class="footer-social">
+            <a href="https://www.facebook.com/niawjunior.Official" class="social-icons"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/+niawjunior" class="social-icons"><i class="fa fa-google-plus"></i></a>
+            <a href="https://github.com/niawjunior" class="social-icons"><i class="fa fa-github"></i></a>
+        </div>
+    </footer>
 </div>
+
+
+
 </body>
 </html>
   <script>
