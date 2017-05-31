@@ -44,16 +44,12 @@ $connect = mysqli_connect($host, $user, $pass, $db);
             สถานะ: <?php if($check==""){$check1="ไม่ได้เชื่อมต่อ";}else{$check1=$check;}?><font  color="#428bca"><?php echo $check1?></font>
 
                 </h4>
-                <div class="col-md-12">
-                <div class="row">
                 <div class="col-md-12">&nbsp;
                 <span class="label label-danger"><?php echo '<=30 น้ำน้อยวิกฤติ'?></span>&nbsp;&nbsp;
                 <span class="label label-warning"><?php echo '>30-50% น้ำน้อย'?></span>&nbsp;&nbsp;
                 <span class="label label-success"><?php echo '>50-80% น้ำปานกลาง'?></span>&nbsp;&nbsp;
                 <span class="label label-warning"><?php echo '>80-100% น้ำมาก'?></span>&nbsp;&nbsp;
                 <span class="label label-danger"><?php echo '>100% เกินความจุ'?></span>
-                </div>
-                </div>
                 </div>
            <br>
             <h4>
