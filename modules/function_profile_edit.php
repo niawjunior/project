@@ -73,14 +73,14 @@
           <tr>
               <div class="form-group">
                 <td><label><strong>รหัสผ่านใหม่</strong></label></td>
-                <td><input type="password" data-minlength="6" style="text-align:center;" class="form-control" id="inputPassword" data-error="รหัสผ่านสั้นเกินไป" placeholder="Choose a password (ต้องไม่ต่ำกว่า 6 ตัวอักษร)" ></td>
+                <td><input type="password" minlength="6" style="text-align:center;" class="form-control" id="inputPassword"  placeholder="Choose a password (ต้องไม่ต่ำกว่า 6 ตัวอักษร)" ></td>
                 <div class="help-block with-errors"></div>
               </div>
           </tr>
           <tr>
               <div class="form-group">
                 <td><label><strong>ยืนยันรหัสผ่านอีกครั้ง</strong></label></td>
-                <td><input type="password" style="text-align:center;" class="form-control" id="inputPasswordConfirm" name ="inputPasswordConfirm" data-match="#inputPassword" data-match-error="รหัสผ่านไม่ตรงกัน" placeholder="Confirm password (ยืนยันรหัสผ่าน)" ></td>
+                <td><input type="password" style="text-align:center;" class="form-control" id="inputPasswordConfirm" name ="inputPasswordConfirm"  placeholder="Confirm password (ยืนยันรหัสผ่าน)" ></td>
                 <div class="help-block with-errors"></div>
               </div>
           </tr>
