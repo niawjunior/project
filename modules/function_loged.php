@@ -26,14 +26,6 @@ $PAGE_PROFILE = "profile.php?Action=Profile";
 $PAGE_SETTING = "profile.php?Action=Setting";
 $type_user =$_SESSION["strh18"];
 }
-if($_SESSION["status"] == "ADMIN")
-{
-?>
-<ul class="nav navbar-nav">
-  <li id="tab_active_weather"><a href="<?php echo $PAGE_SETTING?>"><?php echo $_SESSION["strh22"];?></a></li>
-</ul>
-<?php 
-}
 ?>
 <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="<?php echo $PAGE?>">
   <button class="btn btn-warning"><?php echo $_SESSION["strh17"];?> <?php echo $_SESSION["USER"]?>

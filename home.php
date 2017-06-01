@@ -13,7 +13,6 @@ $connect = mysqli_connect($host, $user, $pass, $db);
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="assets/js/bootstrap-notify.min.js"></script>
-        <script src="assets/js/welcome_alert.js"></script>
         <script src="assets/js/bootstrap-notify.js"></script>
         <link href="assets/css/all.css" rel="stylesheet">
             <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -175,6 +174,8 @@ $connect = mysqli_connect($host, $user, $pass, $db);
     NProgress.done();
   </script>
 
+<?php if(isset($f55)){
+?>
 <script type="text/javascript">
      $.notify({
 	icon: 'photo/notification-flat.png',
@@ -203,6 +204,9 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 	'</div>'
 });
   </script>
+<?
+}?>
+
   <style>
   .alert-minimalist {
 	background-color: rgb(241, 242, 240);
