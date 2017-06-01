@@ -176,6 +176,52 @@ $connect = mysqli_connect($host, $user, $pass, $db);
   </script>
 
 <script type="text/javascript">
-     alert();
+     $.notify({
+	icon: 'photo/notification-flat.png',
+	title: 'ระบบแจ้งเตือนระดับน้ำ',
+	message: 'ระดับน้ำในปัจจุบัน'+' <?php echo $f55?>'+' เมตร'
+},{
+	type: 'minimalist',
+    placement: {
+        from: "top",
+        align: "right"
+    },
+    offset: {
+        x: 10,
+        y: 54
+    },
+	delay: 3000,
+	icon_type: 'image',
+    animate: {
+        enter: 'animated bounceIn',
+        exit: 'animated bounceOut'
+    },
+	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+		'<img data-notify="icon" class="img-circle pull-left">' +
+		'<span data-notify="title">{1}</span>' +
+		'<span data-notify="message">{2}</span>' +
+	'</div>'
+});
   </script>
-  
+  <style>
+  .alert-minimalist {
+	background-color: rgb(241, 242, 240);
+	border-color: rgba(149, 149, 149, 0.3);
+	border-radius: 5px;
+	color: rgb(149, 149, 149);
+	padding: 12px;
+}
+.alert-minimalist > [data-notify="icon"] {
+	height: 50px;
+	margin-right: 12px;
+}
+.alert-minimalist > [data-notify="title"] {
+	color: rgb(51, 51, 51);
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.alert-minimalist > [data-notify="message"] {
+	font-size: 100%;
+}
+</style>
