@@ -42,7 +42,7 @@ function alert(){
     type: "info",
     allow_dismiss: true,
     newest_on_top: false,
-    showProgressbar: false,
+    showProgressbar: true,
     placement: {
         from: "top",
         align: "right"

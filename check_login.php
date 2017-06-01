@@ -70,7 +70,7 @@ $_SESSION["SEX"] = $objResult["sex"];
 $_SESSION["status"] = $objResult["status"];
 $_SESSION["STATUS"] = 1;
 session_write_close();
-header("location:home.php");
+header("location:profile.php");
 }
 ?>
 </center>
