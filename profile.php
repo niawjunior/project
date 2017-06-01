@@ -137,7 +137,7 @@ if($_GET["Action"] == "Setting?Create")
 ?>
   <div class="row">
     <div class="col-md-12" >
-      <IFRAME src=create_database.php width=100% height=100% frameborder=0 scrolling=yes>
+      <IFRAME src=create_database.php width=100% height=100% frameborder=0 scrolling=no>
       </IFRAME>
     </div>
   </div>

@@ -34,7 +34,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
 }
 
 #myFooter .fa{
-    font-size: 36px;
+    font-size: 25px;
     margin-right: 15px;
     margin-left: 20px;
     background-color: white;
@@ -158,6 +158,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
             <a href="https://www.facebook.com/niawjunior.Official" class="social-icons"><i class="fa fa-facebook"></i></a>
             <a href="https://plus.google.com/+niawjunior" class="social-icons"><i class="fa fa-google-plus"></i></a>
             <a href="https://github.com/niawjunior" class="social-icons"><i class="fa fa-github"></i></a>
+            <br>Copyright © 2017 | RMUTI | TEC4N2
         </div>
     </footer>
 </div>
