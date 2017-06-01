@@ -50,7 +50,7 @@ require_once("config.php");
     $TXT_PLACE = 'disabled';
     $LEVEL_ADD = ($f222-$_GET['LEVEL']);
     $TIME_ADD = date("H:i");
-    $DATE_ADD = date("d-m-Y");
+    $DATE_ADD = date("Y-m-d");
     $DEEP_ADD =  $f222;
     $DEEP_EDIT =  $_POST["txtdeep"];
   }
