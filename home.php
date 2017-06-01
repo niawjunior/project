@@ -41,10 +41,10 @@ $connect = mysqli_connect($host, $user, $pass, $db);
     color: #d0d0d0;
     border-radius: 51%;
     padding: 10px;
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
     text-align: center;
-    line-height: 43px;
+    /*line-height: 43px;*/
     text-decoration: none;
     transition:color 0.2s;
 }
@@ -158,7 +158,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
             <a href="https://www.facebook.com/niawjunior.Official" class="social-icons"><i class="fa fa-facebook"></i></a>
             <a href="https://plus.google.com/+niawjunior" class="social-icons"><i class="fa fa-google-plus"></i></a>
             <a href="https://github.com/niawjunior" class="social-icons"><i class="fa fa-github"></i></a>
-            <br>Copyright © 2017 | RMUTI | TEC4N2
+            <br><p>Copyright © 2017 | RMUTI | TEC4N2</p>
         </div>
     </footer>
 </div>
