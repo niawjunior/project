@@ -188,7 +188,7 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         align: "right"
     },
     offset: {
-        x: 10,
+        x: 1,
         y: 54
     },
 	delay: 3000,
