@@ -149,8 +149,12 @@ $connect = mysqli_connect($host, $user, $pass, $db);
         </div>
     </div>
 	<h4><li class="glyphicon glyphicon-signal" aria-hidden="true"></li> กราฟแสดงปริมาณน้ำใน 
-	<font  color="#428bca">(<?php echo $showh1?>)</font> 10 ครั้งล่าสุด</h4>
+	<font  color="#428bca">(<?php echo $showh1?>)</font> 20 ครั้งล่าสุด</h4>
 	<iframe src="graph1.php" width="100%" height="50%" scrolling="yes" frameBorder="0">	
+	</iframe>
+    	<h4><li class="glyphicon glyphicon-signal" aria-hidden="true"></li> กราฟแสดงปริมาณน้ำใน 
+	<font  color="#428bca">(<?php echo $showh1?>)</font> ย้อนหลัง 1 อาทิตย์ เวลา(06:00)</h4>
+	<iframe src="graph2.php" width="100%" height="50%" scrolling="yes" frameBorder="0">	
 	</iframe>
 <footer id="myFooter">
         <div class="footer-social">

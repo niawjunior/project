@@ -9,14 +9,9 @@
 <script src="assets/js/jquery.bdt.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap-select.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/bootstrap-number-input.js"></script>
 <!-- CSS -->
-<!--<link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css">-->
-<!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">-->
-
 <link href="assets/css/animate.min.css" rel="stylesheet">
 <link href="assets/css/nprogress.css" rel="stylesheet">
-<link href="assets/css/jquery.bdt.css" type="text/css" rel="stylesheet">
 <link href="assets/css/bootstrap-select.min.css" rel="stylesheet">
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="assets/fonts/fonts.css" rel="stylesheet">
@@ -39,7 +34,7 @@ input,label,span,p,a,td,th,body,h1,h2,h3,h4,h5,h6{
 	font-weight:300;
 }
 
-    .btn-warning {
+.btn-warning {
     color: #fff;
     border-color: #eea236;
     border-width: 0 0 4px 0!important;

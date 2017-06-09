@@ -7,7 +7,8 @@
     </head>
     <?php
         require_once("connect.php");
-
+        $CURRENT_DATE = date("Y-m-d");
+        $START_DATE = date("Y-m-d", strtotime("-7 day", strtotime($date)));
     ?>
     <?php 
     $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
@@ -21,7 +22,8 @@
     $y2559 = array();
     $date = array();
     $time = array();
-    $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$showh1' order by ID ASC LIMIT 20");
+    // SELECT * FROM water_table WHERE date BETWEEN '2017-06-07' AND '2017-06-09'and time = '19:59' ORDER BY ID DESC
+    $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$showh1' and date BETWEEN '$START_DATE' AND '$CURRENT_DATE'and time = '06:00' order by ID ASC LIMIT 7");
     while($row=mysqli_fetch_array($result))
     {
     array_push($y2559,$row[level]);
@@ -43,7 +45,7 @@
     text: ''
     },
     xAxis: {
-    categories: ['<?php echo  implode("<br>','", $time);?>'+'<br>']
+    categories: ['<?php echo  implode("<br>','", $date);?>'+'<br>']
     },
     yAxis: {
     title: {
@@ -53,7 +55,7 @@
     tooltip: {
     enabled: true,
     formatter: function() {
-    return '<b>'+ this.series.name +'<br>'+'เวลา '+this.x + 'ระดับน้ำ'+this.y+'เมตร';
+    return '<b>'+ this.series.name +'<br>'+'วันที่ '+this.x + 'ระดับน้ำ'+this.y+'เมตร';
     }
     },
     legend: {
