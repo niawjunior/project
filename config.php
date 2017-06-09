@@ -19,7 +19,7 @@
 <link href="assets/css/jquery.bdt.css" type="text/css" rel="stylesheet">
 <link href="assets/css/bootstrap-select.min.css" rel="stylesheet">
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Kanit:300" rel="stylesheet">
+<link href="assets/fonts/fonts.css" rel="stylesheet">
 
 <!-- Style -->
 <style type="text/css">

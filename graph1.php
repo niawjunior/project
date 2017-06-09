@@ -34,7 +34,7 @@
     $(function () {
     $('#container').highcharts({
     chart: {
-    type: 'line' 
+    type: 'spline' 
     },
     title: {
     text: '' 
