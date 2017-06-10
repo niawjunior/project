@@ -73,7 +73,7 @@
     }
     },
     series: [{
-    name: '',
+    name: '<?php echo $showh1;?>',
     data: [<?php echo  implode(',', $y2559) // ข้อมูล array แกน y ?>]
     }
     ]
