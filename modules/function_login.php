@@ -5,11 +5,11 @@
 <form id="signin" class="navbar-form navbar-right" role="form" method="post" action="check_login.php">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input  size="13" id="username" type="text" class="form-control" name="username" value="<?echo $_SESSION["user"];?>" placeholder="Username or Email" required="">
+        <input  size="15" id="username" type="text" class="form-control" name="username" value="<?echo $_SESSION["user"];?>" placeholder="Username or Email" required="">
     </div>
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input size="13" id="password" type="password" class="form-control" name="password" value="<?echo $_SESSION["pass"];?>" placeholder="Password" required="">
+        <input size="15" id="password" type="password" class="form-control" name="password" value="<?echo $_SESSION["pass"];?>" placeholder="Password" required="">
     </div>
 
 
