@@ -58,7 +58,6 @@ Edit config (connection.php,connect.php)
 ![alt tag](http://i.imgur.com/rVmY8Nj.png)
 ![alt tag](http://i.imgur.com/LoUz3zl.png)
 ![alt tag](http://i.imgur.com/BORXmQK.png)
-![alt tag](http://i.imgur.com/BORXmQK.png)
 
 ## License
 by niaw junior
