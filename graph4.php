@@ -23,7 +23,7 @@
     $date = array();
     $time = array();
     // SELECT * FROM water_table WHERE date BETWEEN '2017-06-07' AND '2017-06-09'and time = '19:59' ORDER BY ID DESC
-    $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$showh1' and date BETWEEN '$START_DATE' AND '$CURRENT_DATE'and time = '06:00' order by ID ASC LIMIT 30");
+    $result = mysqli_query($connect,"SELECT date,time,level FROM water_table WHERE place='$showh1' and date BETWEEN '$START_DATE' AND '$CURRENT_DATE'and time = '06:00' order by ID DESC LIMIT 30");
     while($row=mysqli_fetch_array($result))
     {
     array_push($y2559,$row[level]);

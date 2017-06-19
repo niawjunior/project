@@ -51,7 +51,7 @@ else
 ftp_close($ftp_conn);
 ?>
 <?php
-$status =  GetServerStatus('localhost','80');
+$status =  GetServerStatus('rmuti-water.com','80');
 function GetServerStatus($site, $port)
 {
     $status = array("OFFLINE", "ONLINE");
