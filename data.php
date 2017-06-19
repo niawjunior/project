@@ -11,15 +11,9 @@ require_once("config.php");
 <body>
   <?php 
   session_start();
-    // if($_SESSION["STATUS"]=='')
-    // {
-    //   header('Location: 404.php');
-    //   exit();
-    // }
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   $POST = $_SESSION["USER"];
   $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
-
   ?>
   <form class="navbar-form navbar-left"  method="get" action="<?php $_SERVER["PHP_SELF"];?>?<?$_POST['search'];?>">
     <div class="form-group">
@@ -66,13 +60,15 @@ require_once("config.php");
     $query_check = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '$f111' ");
     $query_resault = mysqli_fetch_array($query_check);
     $level = $query_resault['level'];
-    if($LEVEL_ADD != $level )
+    $max = $level+0.5;
+    $min = $level-0.5;
+
+    if($LEVEL_ADD >=($max) or $LEVEL_ADD <=($min))
     {
     mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('$PLACE_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
     }
   }
-
     if(isset($_POST["submit"]))
         {
           $objQuery4 = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '".$_POST["PLACE"]."'");
@@ -345,3 +341,6 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 });
 </script>
+
+<html>
+  
