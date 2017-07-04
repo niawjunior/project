@@ -42,6 +42,7 @@ require_once("config.php");
   {
     $PLACE_ADD = $f111;
     $TXT_PLACE = 'disabled';
+    $REAL_LEVEL_ADD = $_GET['LEVEL'];
     $LEVEL_ADD = ($f222-$_GET['LEVEL']);
     $TIME_ADD = date("H:i");
     $DATE_ADD = date("Y-m-d");
@@ -51,6 +52,7 @@ require_once("config.php");
   else
   {
     $PLACE_ADD = $_POST["txtAddplace"];
+    $REAL_LEVEL_ADD = $_POST["txtAddReallevel"];
     $LEVEL_ADD = $_POST["txtAddlevel"];
     $TIME_ADD = $_POST["txtAddtime"];
     $DATE_ADD = $_POST["txtAdddate"];
@@ -60,14 +62,14 @@ require_once("config.php");
     $query_check = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '$f111' ");
     $query_resault = mysqli_fetch_array($query_check);
     $level = $query_resault['level'];
-    $max = $level+0.5;
-    $min = $level-0.5;
+    // $max = $level+0.2;
+    // $min = $level-0.2;
 
-    if($LEVEL_ADD >=($max) or $LEVEL_ADD <=($min))
-    {
-    mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('$PLACE_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
+    // if($LEVEL_ADD >=($max) or $LEVEL_ADD <=($min))
+    // {
+    mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date) VALUES  ('$PLACE_ADD','$REAL_LEVEL_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
-    }
+    // }
   }
     if(isset($_POST["submit"]))
         {
@@ -76,7 +78,7 @@ require_once("config.php");
           {
             $DEEP = $objResult['deep'];
           }
-          mysqli_query($connect,"INSERT INTO water_table (place,level,deep,time,date) VALUES  ('".$_POST["PLACE"]."','$LEVEL_ADD',' $DEEP','$TIME_ADD','$DATE_ADD') ");
+          mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date) VALUES  ('".$_POST["PLACE"]."','$REAL_LEVEL_ADD', '$LEVEL_ADD',' $DEEP','$TIME_ADD','$DATE_ADD') ");
           mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '".$_POST["PLACE"]."' ");
           mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มข้อมูลระดับน้ำ','เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร ') ");
           mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร '  where user = '$POST'");
@@ -85,7 +87,7 @@ require_once("config.php");
 
   if($_POST["hdnCmd"] == "Update")
   {
-    mysqli_query($connect,"UPDATE water_table SET place = '".$_POST["txtplace"]."',level = '".$_POST["txtlevel"]."',time = '".$_POST["txttime"]."',date = '".$_POST["txtdate"]."'WHERE ID = '".$_POST["txtID"]."' ");
+    mysqli_query($connect,"UPDATE water_table SET place = '".$_POST["txtplace"]."',real_level ='".$_POST["txtReallevel"]."', level = '".$_POST["txtlevel"]."',time = '".$_POST["txttime"]."',date = '".$_POST["txtdate"]."'WHERE ID = '".$_POST["txtID"]."' ");
     mysqli_query($connect,"UPDATE data SET level = '".$_POST["txtlevel"]."',time = '".$_POST["txttime"]."',date = '".$_POST["txtdate"]."' WHERE h1 = '".$_POST["txtplace"]."' ");
     $mysql_query8 = mysqli_query($connect,"SELECT * FROM water_table WHERE ID = '".$_POST["txtID"]."'");
     while($objResult8 = mysqli_fetch_array($mysql_query8))
@@ -156,10 +158,11 @@ require_once("config.php");
       <tr>
         <thead class="thead-inverse">
           <th class="default" width="15%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
-          <th class="default" width="20%" height="50"> <div align="center"><strong>ระดับน้ำ(เมตร)</strong></div>
+            <th class="default" width="20%" height="50"> <div align="center"><strong>ระยะทางที่วัดได้ ม.</strong></div>
+          <th class="default" width="20%" height="50"> <div align="center"><strong>(ความลึก-ระยะทาง) ม.</strong></div>
           </th>
-          <th class="default" width="20%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
-          <th class="default" width="30%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
+          <th class="default" width="15%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
+          <th class="default" width="15%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
           <?php if($_SESSION["status"] == 'ADMIN')
           {
             ?>
@@ -191,6 +194,7 @@ require_once("config.php");
         $f2 = $objResult['level'];
         $f3 = $objResult['time'];
         $f4 = $objResult['date'];
+        $f7 = $objResult['real_level'];
         ?>
         <?php 
         if($objResult["ID"] == $_GET["ID"] and $_GET["Action"] == "Edit")
@@ -211,6 +215,7 @@ require_once("config.php");
               ?>
             </select>
           </td>
+           <td width="10%"><center><input class="form-control" type="text" style="text-align:center;" name="txtReallevel"  value="<?php echo $f7?>"></center></td>
             <td width="10%"><center><input class="form-control" type="text" style="text-align:center;" name="txtlevel"  value="<?php echo $f2?>"></center></td>
             <td width="25%"><center><input class="form-control" type="time" style="text-align:center;" name="txttime"   value="<?php echo $f3?>"></center></td>
             <td width="30%"><center><input class="form-control" type="date" style="text-align:center;" name="txtdate"   value="<?php echo $f4?>"></center></td>
@@ -225,6 +230,7 @@ require_once("config.php");
           ?>
           <tr>
             <td><center><?php echo $f1 ?></center></td>
+            <td><center><?php echo $f7 ?></center></td>
             <td><center><?php echo $f2 ?></center></td>
             <td><center><?php echo $f3 ?></center></td>
             <td><center><?php echo $f4 ?></center></td>
@@ -280,12 +286,17 @@ require_once("config.php");
           <?php 
         }
         ?>
-          <td width="20%"><center>
-            <input  <?php echo $close?> style="text-align:center;" class="form-control" type="text"  name="txtAddlevel"  min="0"  required <?php echo $TXT_PLACE ?>/>
+            <td width="20%"><center>
+            <input  <?php echo $close?> style="text-align:center;" class="form-control" type="text"  name="txtAddReallevel"   required <?php echo $TXT_PLACE ?>/>
           </center>
           </td>
-        <td width="25%"><center><input  <?php echo $close?> class="form-control" type="time" style="text-align:center;" name="txtAddtime" required <?php echo $TXT_PLACE ?>></center></td>
-        <td width="25%"><center><input <?php echo $close?>  class="form-control" type="date" style="text-align:center;" name="txtAdddate" required <?php echo $TXT_PLACE ?>></center></td>
+
+          <td width="20%"><center>
+            <input  <?php echo $close?> style="text-align:center;" class="form-control" type="text"  name="txtAddlevel"   required <?php echo $TXT_PLACE ?>/>
+          </center>
+          </td>
+        <td width="15%"><center><input  <?php echo $close?> class="form-control" type="time" style="text-align:center;" name="txtAddtime" required <?php echo $TXT_PLACE ?>></center></td>
+        <td width="15%"><center><input <?php echo $close?>  class="form-control" type="date" style="text-align:center;" name="txtAdddate" required <?php echo $TXT_PLACE ?>></center></td>
         <td><center><button <?php echo $close?> data-toggle="tooltip" title="บันทึกข้อมูล" data-placement="top" name="submit" class="btn btn-success" id="submit"  value=""  <?php echo $TXT_PLACE ?>>บันทึก <span class="glyphicon glyphicon-ok-sign"></span></button></center></td>
         <td><center><button <?php echo $close?> data-toggle="tooltip" title="ล้างข้อมูล" data-placement="top" type = "reset" class="btn btn-warning" <?php echo $TXT_PLACE ?>>เคลียร์ <span class="glyphicon glyphicon-remove-sign"></button></center></td>        
       </tr>

@@ -240,7 +240,7 @@ while($objResult = mysqli_fetch_array($objQuery))
       <input class="form-control" style="text-align:center;" name="txtlo" type="text" value="<?php echo $f4?>" required>
     </center></td>
       <td width="12%"><center>
-      <input class="form-control" style="text-align:center;" name="txtdeep" type="number" value="<?php echo $f5?>" required>
+      <input class="form-control" style="text-align:center;" name="txtdeep" type="text" value="<?php echo $f5?>" required>
     </center></td>
     <td ><center><label class="btn btn-primary btn-file" data-toggle="tooltip" title="เลือกรูปภาพ">
         รูปภาพ <span class="glyphicon glyphicon-picture"></span><input type="file" name="fileupload_edit" id="fileupload_edit" style="display: none;">
@@ -259,7 +259,7 @@ while($objResult = mysqli_fetch_array($objQuery))
   ?>
   <tr>
   <td width="20%"><center><a class="text-primary" href="water_level.php?PAGE=<?php echo $f1?>" target="_blank"><?php echo substr($f1,0,50);?></a></center></td>
-  <td><center><?php echo substr($f2,0,30); ?></center></td>
+  <td><center><?php echo substr($f2,0,25); ?></center></td>
   <td><center><?php echo Round($f3,2); ?></center></td>
   <td><center><?php echo Round($f4,2); ?></center></td>
   <td><center><?php echo $f5 ?></center></td>
@@ -315,7 +315,7 @@ if($f1==$f111){$TT='ต้องการยกเลิกการใช้แ
           <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAddlo" type="text" required>
         </center></td>
           <td width="10%"><center>
-          <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAdddeep" type="number" min="0" required>
+          <input <?php echo  $close;?> class="form-control" style="text-align:center;" name="txtAdddeep" type="text" required>
         </center></td>
         <td><center><label  <?php echo  $close;?> class="btn btn-primary btn-file btn-sm" data-toggle="tooltip" title="เลือกรูปภาพ">
             รูปภาพ <span class="glyphicon glyphicon-picture"></span> <input <?php echo  $close;?> data-placement="top" type="file" name="fileupload" id="fileupload" style="display: none;">
