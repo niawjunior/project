@@ -147,7 +147,7 @@ $f111 = $objResult3['showh1'];
         $color_label="danger";
     }
         $L="warning";
-        $check1 = "รอเชื่อมต่อฮาร์ดแวร์";
+        $check1 = "ไม่ได้ใช้งาน";
     }
     ?>
     <?php echo $loc["lat"]; ?>,
