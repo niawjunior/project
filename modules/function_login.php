@@ -12,7 +12,6 @@
         <input size="15" id="password" type="password" class="form-control" name="password" value="<?echo $_SESSION["pass"];?>" placeholder="Password" required="">
     </div>
 
-
  <div class="checkbox checkbox-circle">
                                     <label>
 <input type="checkbox" name="b1" value="B1"/><?php if (isset ($b1) && $b1=="B1")?>
@@ -22,6 +21,9 @@
 
     <button type="submit" class="btn btn-warning"><?echo $_SESSION["strh24"];?> <span class="glyphicon glyphicon-log-in"></span></button>
     <a href="register.php"><button type="button" class="btn btn-primary"><?echo $_SESSION["strh25"];?> <span class="glyphicon glyphicon-edit"></span></button>
+    </a>
+
+    <a href="reset_pass.php"><button type="button" class="btn btn-danger"><?echo $_SESSION["strh23"];?> <span class="glyphicon glyphicon-lock"></span></button>
     </a>
 </form>
 
