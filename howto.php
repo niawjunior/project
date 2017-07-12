@@ -23,10 +23,10 @@ require_once ("connect.php");
     <div class="container">
       <div class="row">
                   <div class="col-md-12" style="margin-top:30px">
-                      <h2 class="section-heading">วิธีเข้าระบบ</h2>
+                      <h2 class="section-heading">วิธีเข้าสู่ระบบ</h2>
                   </div>
                   <div class="col-lg-5">
-                    <h4>1. กรอกชื่อ และ รหัส สมาชิกให้ถูกต้อง จากนั้นกดเข้าสู่ระบบ</h4>
+                    <h4>กรอกชื่อ และ รหัส สมาชิกให้ถูกต้อง จากนั้นกดเข้าสู่ระบบ</h4>
                       <img src="photo/howto/3.png" alt="" width="800px">
                     </div>
                   <div class="col-md-12" style="margin-top:30px">
@@ -52,6 +52,21 @@ require_once ("connect.php");
                      <img src="photo/howto/7.png" alt="" width="800px">
                     <h4>4. กำหนดรหัสผ่านใหม่ เสร็จแล้วกดยืนยัน</h4>
                      <img src="photo/howto/8.png" alt="" width="800px">
+                    </div>
+                  <div class="col-md-12" style="margin-top:30px">
+                      <h2 class="section-heading">หน้าจัดการข้อมูลต่างๆ</h2>
+                  </div>
+                   <div class="col-lg-5" >
+                      <h4>1. เมนูต่างๆ</h4>
+                     <img src="photo/howto/10.png" alt="" width="800px">
+                     <h4>1.1 หน้าแสดงระดับน้ำ  (สามารถ ค้นหา เพิ่ม ลบ แก้ไข ข้อมูลได้)</h4>
+                     <img src="photo/howto/11.png" alt="" width="800px">
+                      <h4>1.2 หน้าจัดการแผนที่  (สามารถ ค้นหา เพิ่ม ลบ แก้ไข ข้อมูลได้)</h4>
+                     <img src="photo/howto/12.png" alt="" width="800px">
+                     <h4>1.2.1 หน้าค้นหาสถานที่</h4>
+                     <img src="photo/howto/13.png" alt="" width="800px">
+                     <h4>1.3 หน้ากราฟแสดงระดับน้ำ  (สามารถ บันทึกเป็นไฟล์ jpg,pdf ได้)</h4>
+                     <img src="photo/howto/14.png" alt="" width="800px">
                     </div>
       </div>
     </div>

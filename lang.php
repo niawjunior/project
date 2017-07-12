@@ -29,7 +29,7 @@
 		    $_SESSION["strh18"] = "สมาชิก";
 		    $_SESSION["strh19"] = "ผู้ดูแลระบบ";
 			$_SESSION["strh20"] = "ที่มาและความสำคัญ";
-			$_SESSION["strh21"] = "วิธีใช้งาน";
+			$_SESSION["strh21"] = "วิธีใช้งานเว็บไซต์";
 			$_SESSION["strh23"] = "ลืมรหัสผ่าน";
 			$_SESSION["strh24"] = "เข้าสู่ระบบ";
 			$_SESSION["strh25"] = "สมัครสมาชิก";
@@ -64,7 +64,7 @@
 		    $_SESSION["strh18"] = "MEMBER";
 		    $_SESSION["strh19"] = "ADMIN";
 			$_SESSION["strh20"] = "Signification";
-			$_SESSION["strh21"] = "How to Setup";
+			$_SESSION["strh21"] = "How to Use";
 			$_SESSION["strh23"] = "Lost Password";
 			$_SESSION["strh24"] = "Login";
 			$_SESSION["strh25"] = "Register";
@@ -99,7 +99,7 @@
 		    $_SESSION["strh18"] = "สมาชิก";
 		    $_SESSION["strh19"] = "ผู้ดูแลระบบ";
 			$_SESSION["strh20"] = "ที่มาและความสำคัญ";
-			$_SESSION["strh21"] = "วิธีใช้งาน";
+			$_SESSION["strh21"] = "วิธีใช้งานเว็บไซต์";
 			$_SESSION["strh23"] = "ลืมรหัสผ่าน";
 			$_SESSION["strh24"] = "เข้าสู่ระบบ";
 			$_SESSION["strh25"] = "สมัครสมาชิก";

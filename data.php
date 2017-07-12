@@ -67,8 +67,10 @@ require_once("config.php");
 
     // if($LEVEL_ADD >=($max) or $LEVEL_ADD <=($min))
     // {
+      if($LEVEL_ADD != $level){
     mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date) VALUES  ('$PLACE_ADD','$REAL_LEVEL_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
+      }
     // }
   }
     if(isset($_POST["submit"]))
@@ -158,8 +160,8 @@ require_once("config.php");
       <tr>
         <thead class="thead-inverse">
           <th class="default" width="15%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
-            <th class="default" width="20%" height="50"> <div align="center"><strong>ระยะทางที่วัดได้ ม.</strong></div>
-          <th class="default" width="20%" height="50"> <div align="center"><strong>(ความลึก-ระยะทาง) ม.</strong></div>
+            <th class="default" width="20%" height="50"> <div align="center"><strong>ระยะที่วัดได้ ม.</strong></div>
+          <th class="default" width="20%" height="50"> <div align="center"><strong>(ความลึก-ระยะที่วัดได้) ม.</strong></div>
           </th>
           <th class="default" width="15%" height="50"> <div align="center"><strong>เวลา</strong></div></th>
           <th class="default" width="15%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
