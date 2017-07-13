@@ -5,6 +5,13 @@
   <title></title>
 </head>
 <body>
+<?php
+require_once("connect.php");
+$connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
+$select = mysqli_query($connect,"SELECT * FROM setting");
+$result = mysqli_fetch_array($select);
+$limit_level = $result["limit_level"];
+?>
 <div class="row">
     <div class="col-md-4">
       <div class="panel panel-default">
@@ -50,6 +57,8 @@
           $checked1='checked';
         }
         ?>
+
+
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-body">
@@ -90,6 +99,22 @@
     }
     ?>
 
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form name="form1" method="post" action="save_setting3.php" accept-charset="UTF-8" role="form">
+            <fieldset>
+              <h4><label>ตั้งค่าการอัพเดทระดับน้ำ (ทุกๆกี่ เซนติเมตร)</label></h4>
+              <h4>
+                  <input type="number" name="limit_level" value="<?php echo $limit_level;?>" class="form-control" >
+                  <br>
+                  <button data-toggle="tooltip" title="กดปุ่มตกลงเพื่อทำรายการ" class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></button>
+                  <br><br>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
           <div class="col-md-12">
             <br>
             <br>

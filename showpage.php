@@ -65,7 +65,7 @@ while($objResult4 = mysqli_fetch_array($objQuery4))
   ?>
   <tr class="bg-style">
     <td><center><a class="text-primary" href="map.php?ID=<?=$ID?>" target="_blank"><?php echo $f000 ?></a></center></td>
-     <td><center><?php echo substr($f111,0,30); ?></center></td>
+     <td><center><?php echo substr($f111,0,25); ?></center></td>
     <td align="center"><?php echo $icon?></td>
     <td><center><img src="uploadphoto/<?php echo $f444 ?>" width="auto" height="30"></center></td>
   </tr>

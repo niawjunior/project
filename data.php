@@ -14,6 +14,10 @@ require_once("config.php");
   $connect = mysqli_connect($host,$user,$pass,$db) or die("เชื่อมต่อไม่สำเร็จ");
   $POST = $_SESSION["USER"];
   $objQuery5 = mysqli_query($connect,"SELECT * FROM data");
+
+  $select = mysqli_query($connect,"SELECT * FROM setting");
+  $result_limit = mysqli_fetch_array($select);
+  $limit_level = $result_limit["limit_level"]/100;
   ?>
   <form class="navbar-form navbar-left"  method="get" action="<?php $_SERVER["PHP_SELF"];?>?<?$_POST['search'];?>">
     <div class="form-group">
@@ -62,16 +66,14 @@ require_once("config.php");
     $query_check = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '$f111' ");
     $query_resault = mysqli_fetch_array($query_check);
     $level = $query_resault['level'];
-    // $max = $level+0.2;
-    // $min = $level-0.2;
+    $max = $level+$limit_level;
+    $min = $level-$limit_level;
 
-    // if($LEVEL_ADD >=($max) or $LEVEL_ADD <=($min))
-    // {
-      if($LEVEL_ADD != $level){
+    if($LEVEL_ADD >=($max) or $LEVEL_ADD <=($min))
+    {
     mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date) VALUES  ('$PLACE_ADD','$REAL_LEVEL_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
-      }
-    // }
+    }
   }
     if(isset($_POST["submit"]))
         {
