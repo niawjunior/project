@@ -50,18 +50,18 @@ $POST = $_SESSION["USER"];
     <table class="table table-hover  "  border="0" id="bootstrap-table">
       <tr>
         <thead class="thead-inverse">
-          <th class="default" width="10%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong></div></th>
-          <th class="default" width="16%" height="50"> <div align="center"><strong>ชื่อจริง</strong></div></th>
-          <th class="default" width="15%" height="50"> <div align="center"><strong>อีเมล</strong></div></th>
-          <th class="default" width="10%" height="50"> <div align="center"><strong>เพศ</strong></div></th>
-          <th class="default" width="10%" height="50"> <div align="center"><strong>เบอร์โทร</strong></div></th>
-          <th class="default" width="10%" height="50"> <div align="center"><strong>รูปประจำตัว</strong></div></th>
-          <th class="default" width="10%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh43"];?></strong></div></th>
+          <th class="default" width="16%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh44"];?></strong></div></th>
+          <th class="default" width="15%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh45"];?></strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh46"];?></strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh47"];?></strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh48"];?></strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh39"];?></strong></div></th>
               <?php if($_SESSION["status"] == 'ADMIN')
     {
         ?>
-          <th class="default" width="10%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
-          <th class="default" width="25%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+          <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh32"];?></strong></div></th>
+          <th class="default" width="25%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh33"];?></strong></div></th>
       
         <?php
     }

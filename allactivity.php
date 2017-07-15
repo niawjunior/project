@@ -70,11 +70,11 @@ else
 <table class="table table-hover" border="0">
   	<tr>
 	  <thead class="thead-inverse">
-	    <th class="default" width="10%" height="50"> <div align="center">ชื่อสมาชิก</div></th>
-	    <th class="default" width="9%" height="50"> <div align="center">เวลา</div></th>
-	    <th class="default" width="15%" height="50"> <div align="center">วันที่</th>
-	    <th class="default" width="20%" height="50"> <div align="center">การกระทำ</div></th>
-	    <th class="default" width="50%" height="50"> <div align="center">*หมายเหตุ/รายละเอียด</div></th>
+	    <th class="default" width="10%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong/></div></th>
+	    <th class="default" width="9%" height="50"> <div align="center"><strong>เวลา</strong/></div></th>
+	    <th class="default" width="15%" height="50"> <div align="center"><strong>วันที่</strong/></th>
+	    <th class="default" width="20%" height="50"> <div align="center"><strong>การกระทำ</strong/></div></th>
+	    <th class="default" width="50%" height="50"> <div align="center"><strong>*หมายเหตุ/รายละเอียด</strong/></div></th>
 	  </thead>
     </tr>
 <?php 

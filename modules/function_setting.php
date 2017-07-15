@@ -104,9 +104,9 @@ $limit_level = $result["limit_level"];
         <div class="panel-body">
           <form name="form1" method="post" action="save_setting3.php" accept-charset="UTF-8" role="form">
             <fieldset>
-              <h4><label>ตั้งค่าการอัพเดทระดับน้ำ (ทุกๆกี่ เซนติเมตร)</label></h4>
+              <h4><label><?php echo $_SESSION["strh26"];?></label></h4>
               <h4>
-                  <input type="number" name="limit_level" value="<?php echo $limit_level;?>" class="form-control" >
+                  <input type="number" name="limit_level" min="1" max="100" value="<?php echo $limit_level;?>" class="form-control" >
                   <br>
                   <button data-toggle="tooltip" title="กดปุ่มตกลงเพื่อทำรายการ" class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></button>
                   <br><br>

@@ -194,18 +194,18 @@ $objQuery = mysqli_query($connect,"SELECT * FROM data ORDER BY ID DESC ");
 <table class="table table-hover"  id="bootstrap-table">
   <tr>
   <thead class="thead-inverse">
-    <th class="default" width="20%" height="50"> <div align="center"><strong>สถานที่</strong></div></th>
-    <th class="default" width="28%" height="50"> <div align="center"><strong>คำอธิบาย</strong></div></th>
-    <th class="default" width="12%" height="50"> <div align="center"><strong>ละติจูด</strong></div></th>
-    <th class="default" width="8%" height="50"> <div align="center"><strong>ลองติจูด</strong></div></th>
-    <th class="default" width="11%" height="50"> <div align="center"><strong>ความลึก(ม)</strong></div></th>
+    <th class="default" width="20%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh27"];?></strong></div></th>
+    <th class="default" width="28%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh34"];?></strong></div></th>
+    <th class="default" width="12%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh35"];?></strong></div></th>
+    <th class="default" width="8%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh36"];?></strong></div></th>
+    <th class="default" width="11%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh37"];?></strong></div></th>
       <?php if($_SESSION["status"] == 'ADMIN')
         {
         ?>
-    <th class="default" width="5%" height="50"> <div align="center"><strong>เลือก</strong></div></th>
-    <th class="default" width="5%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
-    <th class="default" width="5%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
-    <th class="default" width="15%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+    <th class="default" width="5%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh38"];?></strong></div></th>
+    <th class="default" width="5%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh39"];?></strong></div></th>
+    <th class="default" width="5%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh32"];?></strong></div></th>
+    <th class="default" width="15%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh33"];?></strong></div></th>
         <?php
         }
       ?>

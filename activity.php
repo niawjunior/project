@@ -26,14 +26,14 @@ $loggedTime=time()-10;
       <table class="table table-hover  "  border="0" >
         <tr>
           <thead class="thead-inverse">
-            <th class="default" width="10%" height="50"> <div align="center"><strong>ชื่อสมาชิก</strong></div></th>
-            <th class="default" width="10%" height="50"> <div align="center"><strong>สถานะ</strong></div></th>
-            <th class="default" width="13%" height="50"> <div align="center"><strong>ออนไลน์/ออฟไลน์</strong></div></th>
-            <th class="default" width="20%" height="50"> <div align="center"><strong>เข้าสู่ระบบล่าสุด</strong></div></th>
+            <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh43"];?></strong></div></th>
+            <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh39"];?></strong></div></th>
+            <th class="default" width="13%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh56"];?></strong></div></th>
+            <th class="default" width="20%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh57"];?></strong></div></th>
                       <?php if($_SESSION["status"] == 'ADMIN')
           {
             ?>
-            <th class="default" width="40%" height="50"> <div align="center"><strong>กิจกรรมล่าสุด</strong></div></th>
+            <th class="default" width="40%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh58"];?></strong></div></th>
 
             <?php
           }

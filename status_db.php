@@ -97,7 +97,7 @@ function GetServerStatus($site, $port)
     <div class="cls"></div>
     <div><h3>สถานะการถ่ายโอนไฟล์ (FTP):</h3><br><h4><?php echo $status_ftp?></h4></div>
     <div class="cls"></div>
-    <div><h3>ความจำที่ใช้ไปทั้งหมด (Memory Used):</h3><br><h4><?php echo number_format($total, 2, '.', ''); ?> MB</h4></div>
+    <div><h3>พื้นที่ที่ใช้ไป (Disk Space):</h3><br><h4><?php echo number_format($total, 2, '.', ''); ?> MB</h4></div>
     <div class="cls"></div>
     <div style="text-align: center;margin-top: 50px"></div>
     <div class="cls"></div>

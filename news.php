@@ -95,15 +95,15 @@ require_once("config.php");
       <table class="table table-hover  "  border="0">
         <tr>
           <thead class="thead-inverse">
-            <th class="default" width="10%" height="50"> <div align="center"><strong>เรื่อง/ข่าวสาร</strong></div></th>
-            <th class="default" width="20%" height="50"> <div align="center"><strong>ไฟล์ประกอบ (PDF)</strong></div></th>
-            <th class="default" width="5%" height="50"> <div align="center"><strong>วันที่</strong></div></th>
-            <th class="default" width="10%" height="50"> <div align="center"><strong>โดย</strong></div></th>
+            <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh40"];?></strong></div></th>
+            <th class="default" width="20%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh41"];?></strong></div></th>
+            <th class="default" width="5%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh31"];?></strong></div></th>
+            <th class="default" width="10%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh42"];?></strong></div></th>
     <?php if($_SESSION["status"] == 'ADMIN')
     {
         ?>
-            <th class="default" width="5%" height="50"> <div align="center"><strong>แก้ไข</strong></div></th>
-            <th class="default" width="5%" height="50"> <div align="center"><strong>ลบ</strong></div></th>
+            <th class="default" width="5%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh32"];?></strong></div></th>
+            <th class="default" width="5%" height="50"> <div align="center"><strong><?php echo $_SESSION["strh33"];?></strong></div></th>
         <?php
 
     }
