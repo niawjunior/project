@@ -100,10 +100,18 @@ while($objResult3 = mysqli_fetch_array($objQuery3))
 
 }
 
+
 if($_GET["Action"] == "Use")
 {
+    $name = $_GET['name'];
+    $objQuery4 = mysqli_query($connect,"SELECT * FROM water_table WHERE place='$name' ORDER BY ID DESC LIMIT 1 ");
+    while($objResult4 = mysqli_fetch_array($objQuery4))
+    {
+          $top_level = $objResult4['level'];
 
+    }
     $objQuery = mysqli_query($connect,"UPDATE data SET h1 = '".$_POST["txth1"]."',h2 = '".$_POST["txth2"]."',la = '".$_POST["txtla"]."',lo = '".$_POST["txtlo"]."',deep = '".$_POST["txtdeep"]."'WHERE ID = '".$_POST["txtID"]."' ");
+    $objQuery = mysqli_query($connect,"UPDATE data SET level = '$top_level' WHERE h1 = '$name' ");
   	$objQuery = mysqli_query($connect,"SELECT * FROM data WHERE ID = '".$_GET["ID"]."'");
   while($objResult = mysqli_fetch_array($objQuery))
 
@@ -280,7 +288,7 @@ while($objResult = mysqli_fetch_array($objQuery))
       ?>
 <?php 
 if($f1==$f111){$TT='ต้องการยกเลิกการใช้แผนที่หรือไม่?';$text1='ยกเลิกแผนที่หลัก';}else{$TT='ต้องการใช้เป็นแผนที่หลักหรือไม่?';$text1 ='ใช้เป็นแผนที่หลัก';}?>
-<td align="center"><a data-toggle="tooltip" title="<?php echo $text1?>" href="JavaScript:if(confirm('<?php echo $TT?>')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=<?if($f1==$f111){$UU='UnUse';$II=$f222;}else{$UU='Use';$II=$f0;}?><?php echo $UU?>&ID=<?php echo $II?>';}"><?php echo $ICON?></a></td>
+<td align="center"><a data-toggle="tooltip" title="<?php echo $text1?>" href="JavaScript:if(confirm('<?php echo $TT?>')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=<?if($f1==$f111){$UU='UnUse';$II=$f222;}else{$UU='Use';$II=$f0;}?><?php echo $UU?>&ID=<?php echo $II?>&name=<?php echo $f1;?>';}"><?php echo $ICON?></a></td>
 <td align="center" > <?php echo $icon?></td>
 <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?>&Action=Edit&ID=<?php echo $objResult["ID"];?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
 <td align="center"><a data-toggle="tooltip" title="ลบข้อมูล" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
