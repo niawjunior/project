@@ -10,7 +10,6 @@
 		    $_SESSION["stractivity"] = "บันทึก";
 		    $_SESSION["strmore"] = "อื่นๆ";
 		    $_SESSION["strh1"] = "ตั้งค่าระบบ";
-		    $_SESSION["strh2"] = "เฉพาะผู้ดูและระบบเท่านั้น";
 		    $_SESSION["strh3"] = "วันที่/เวลา";
 		    $_SESSION["strh4"] = "ระบบล็อกอิน";
 		    $_SESSION["strh5"] = "ระบบบันทึก&รายงาน";
@@ -87,7 +86,6 @@
 		    $_SESSION["stractivity"] = "Activity";
 		    $_SESSION["strmore"] = "More";
 		    $_SESSION["strh1"] = "Setting";
-		    $_SESSION["strh2"] = "Admin Only";
 		    $_SESSION["strh3"] = "Date/Time";
 		    $_SESSION["strh4"] = "Login System";
 		    $_SESSION["strh5"] = "Report System";
@@ -166,7 +164,6 @@
 		    $_SESSION["stractivity"] = "บันทึก";
 		    $_SESSION["strmore"] = "อื่นๆ";
 		    $_SESSION["strh1"] = "ตั้งค่าระบบ";
-		    $_SESSION["strh2"] = "เฉพาะผู้ดูและระบบเท่านั้น";
 		    $_SESSION["strh3"] = "วันที่/เวลา";
 		    $_SESSION["strh4"] = "ระบบล็อกอิน";
 		    $_SESSION["strh5"] = "ระบบบันทึก&รายงาน";

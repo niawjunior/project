@@ -114,7 +114,7 @@ $time = date("H:i");
         <h3 class="panel-title">
         <span class="glyphicon glyphicon-bookmark">
         </span>
-        <?php echo $_SESSION["strh1"]?> (<?php echo $_SESSION["strh2"]?>)  <span class="glyphicon glyphicon-time">
+        <?php echo $_SESSION["strh1"]?>   <span class="glyphicon glyphicon-time">
         </span> <?php echo $_SESSION["strh3"]?>
          <body>
          <?php 

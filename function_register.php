@@ -9,7 +9,7 @@ require_once("config.php");
       <form id="signup" method="post" role="form" action="signup.php">
         <h1>ระบบสมัครสมาชิก</h1>
         <div class="form-group" align="center">
-          <input name="username" type="text" class="input pass" id="inputName" pattern="[A-Za-z0-9]{4}" placeholder="Username (ต้องไม่ต่ำกว่า 4 ตัวอักษร)" minlength="4" required>
+          <input name="username" type="text" class="input pass" id="inputName" placeholder="Username (ต้องไม่ต่ำกว่า 4 ตัวอักษร)" minlength="4" required>
         </div>
         <div class="form-group" align="center">
           <input name="email" type="email" class="input pass" id="inputEmail" placeholder="Email address (อย่าลืมใส่เครื่องหมาย @)"  required>

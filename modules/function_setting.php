@@ -58,7 +58,6 @@ $limit_level = $result["limit_level"];
         }
         ?>
 
-
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-body">
@@ -94,27 +93,48 @@ $limit_level = $result["limit_level"];
                 <br><br>
               </div>
             </div>
-          </div>
-        <?php
-    }
-    ?>
-
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <form name="form1" method="post" action="save_setting3.php" accept-charset="UTF-8" role="form">
-            <fieldset>
-              <h4><label><?php echo $_SESSION["strh26"];?></label></h4>
-              <h4>
-                  <input type="number" name="limit_level" min="1" max="100" value="<?php echo $limit_level;?>" class="form-control" >
-                  <br>
-                  <button data-toggle="tooltip" title="กดปุ่มตกลงเพื่อทำรายการ" class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></button>
-                  <br><br>
-                </fieldset>
+          </div> 
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <form name="form1" method="post" action="save_setting3.php" accept-charset="UTF-8" role="form">
+                <fieldset>
+                  <h4><label><?php echo $_SESSION["strh26"];?></label></h4>
+                  <h4>
+                      <input type="number" name="limit_level" min="1" max="100" value="<?php echo $limit_level;?>" class="form-control" >
+                      <br>
+                      <button data-toggle="tooltip" title="กดปุ่มตกลงเพื่อทำรายการ" class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></button>
+                      <br><br>
+                    </fieldset>
               </form>
             </div>
           </div>
         </div>
+
+      <div class="col-md-4">
+        <div class="panel panel-default">
+           <div class="panel-body">
+            <form  method="post" action="remove.php" accept-charset="UTF-8" role="form">
+              <h4><label>ลบข้อมูลระดับน้ำตามช่วงเวลา</label></h4>
+              <div class="form-group">
+                <select class="form-control" name="date_range">
+                 <option value="">เลือกช่วงเวลา</option>
+                  <option value="day">ย้อนหลัง 1 วัน</option>
+                  <option value="week">ย้อนหลัง 1 อาทิตย์</option>
+                  <option value="month">ย้อนหลัง 1 เดือน</option>
+                  <option value="year">ย้อนหลัง 1 ปี</option>
+                </select>
+                <br>
+                <button data-toggle="tooltip" title="กดปุ่มตกลงเพื่อทำรายการ" class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></button>
+                <br><br>
+              </div>
+            </form>
+          </div>
+          </div>
+      </div>
+        <?php
+    }
+    ?>
           <div class="col-md-12">
             <br>
             <br>

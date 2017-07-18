@@ -66,6 +66,13 @@ require_once("config.php");
     $query_check = mysqli_query($connect,"SELECT * FROM data WHERE h1 = '$f111' ");
     $query_resault = mysqli_fetch_array($query_check);
     $level = $query_resault['level'];
+    if($level<0){
+      $level == 0;
+      echo $level;
+      exit();
+    }else{
+      $level = $query_resault['level'];
+    }
     $max = $level+$limit_level;
     $min = $level-$limit_level;
 
@@ -116,9 +123,20 @@ require_once("config.php");
       $data2 = $objResult8['place'];
       $data3 = $objResult8['level'];
     }
+    
     mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','ลบข้อมูลระดับน้ำ','ลบข้อมูล | สถานที่ $data2 | ไอดี $data1 | ระดับน้ำ $data3 เมตร ') ");
     mysqli_query($connect,"UPDATE member SET lastactivity = 'ลบข้อมูล | สถานที่ $data2 | ระดับน้ำ $data3 เมตร '  where user = '$POST'");
     mysqli_query($connect,"DELETE FROM water_table WHERE ID = '".$_GET["ID"]."'");
+    
+    $name = $_GET['name'];
+    echo $name;
+    $objQuery4 = mysqli_query($connect,"SELECT * FROM water_table WHERE place='$name' ORDER BY ID DESC LIMIT 1 ");
+        while($objResult4 = mysqli_fetch_array($objQuery4))
+    {
+          $top_level = $objResult4['level'];
+
+    }
+    mysqli_query($connect,"UPDATE data SET level = '$top_level' WHERE h1 = '$name' ");
   }
   $search= $_GET['search'];
    $objQuery11 = mysqli_query($connect,"SELECT * FROM water_table ORDER BY ID DESC");
@@ -242,7 +260,7 @@ require_once("config.php");
           {
             ?>
             <td align="center"><a data-toggle="tooltip" title="แก้ไขข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะแก้ไขหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Edit&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-edit"></span></a></td>
-            <td align="center"><a  data-toggle="tooltip" title="ลบข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Del&ID=<?php echo $f0?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+            <td align="center"><a  data-toggle="tooltip" title="ลบข้อมูล" data-placement="top" href="JavaScript:if(confirm('ต้องการจะลบหรือไม่?')==true){window.location='<?php echo $_SERVER["PHP_SELF"];?>?Page=<?php echo $Page?><?php if(isset($_GET['search'])){?>&search=<?php echo $search?><?php }?>&Action=Del&ID=<?php echo $f0?>&name=<?php echo $f1;?>';}"> <span class="glyphicon glyphicon-trash"></span></a></td>
             <?php
           }
             ?>
@@ -310,6 +328,7 @@ require_once("config.php");
   </table>
   </form>
    <div align="right">
+   *ยกเลิกการใช้งานแผนที่ สำหรับกรอกข้อมูล
       <nav>
         <ul class="pagination">
           <li <?php  if($Page==1) echo 'class="disabled"'?>>

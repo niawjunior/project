@@ -111,7 +111,7 @@ if($_GET["Action"] == "Use")
 
     }
     $objQuery = mysqli_query($connect,"UPDATE data SET h1 = '".$_POST["txth1"]."',h2 = '".$_POST["txth2"]."',la = '".$_POST["txtla"]."',lo = '".$_POST["txtlo"]."',deep = '".$_POST["txtdeep"]."'WHERE ID = '".$_POST["txtID"]."' ");
-    $objQuery = mysqli_query($connect,"UPDATE data SET level = '$top_level' WHERE h1 = '$name' ");
+    mysqli_query($connect,"UPDATE data SET level = '$top_level' WHERE h1 = '$name' ");
   	$objQuery = mysqli_query($connect,"SELECT * FROM data WHERE ID = '".$_GET["ID"]."'");
   while($objResult = mysqli_fetch_array($objQuery))
 
