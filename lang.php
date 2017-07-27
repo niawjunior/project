@@ -32,7 +32,7 @@
 			$_SESSION["strh23"] = "ลืมรหัสผ่าน";
 			$_SESSION["strh24"] = "เข้าสู่ระบบ";
 			$_SESSION["strh25"] = "สมัครสมาชิก";
-			$_SESSION["strh26"] = "ปรับปรุงระดับน้ำทุกๆ (1-100 เซนติเมตร)";
+			$_SESSION["strh26"] = "ตั้งค่าการแจ้งเตือนระดับน้ำทุกๆ (1-100 เซนติเมตร)";
 
 			$_SESSION["strh27"] = "สถานที่";
 			$_SESSION["strh28"] = "ระยะที่วัดได้ ม.";
@@ -53,7 +53,7 @@
 			$_SESSION["strh41"] = "ไฟล์ประกอบ (PDF)";
 			$_SESSION["strh42"] = "โดย";
 
-			$_SESSION["strh43"] = "ชื่อสมาชิก";
+			$_SESSION["strh43"] = "ชื่อ";
 			$_SESSION["strh44"] = "ชื่อ-นามสกุล";
 			$_SESSION["strh45"] = "อีเมล";
 			$_SESSION["strh46"] = "เพศ";
@@ -73,6 +73,9 @@
 			$_SESSION["strh56"] = "ออนไลน์/ออฟไลน์";
 			$_SESSION["strh57"] = "เข้าสู่ระบบล่าสุด";
 			$_SESSION["strh58"] = "กิจกรรมล่าสุด";
+
+			$_SESSION["strh59"] = "ลบข้อมูลระดับน้ำรายปี";
+			$_SESSION["strh60"] = "เลือกปีที่ต้องการลบ";
 
 		}
 	else if($_SESSION["lang"] == "en")
@@ -108,7 +111,7 @@
 			$_SESSION["strh23"] = "Lost Password";
 			$_SESSION["strh24"] = "Login";
 			$_SESSION["strh25"] = "Register";
-			$_SESSION["strh26"] = "Update Every  (1-100 Centimater)";
+			$_SESSION["strh26"] = "Setting Notification (1-100 Centimater)";
 
 			
 			$_SESSION["strh27"] = "Place";
@@ -151,6 +154,10 @@
 			$_SESSION["strh57"] = "Lasted Login";
 			$_SESSION["strh58"] = "Lasted Activity";
 
+			$_SESSION["strh59"] = "Delete Water level By Year";
+
+			$_SESSION["strh60"] = "Choose The Year";
+
 
 		}
 	else
@@ -186,7 +193,7 @@
 			$_SESSION["strh23"] = "ลืมรหัสผ่าน";
 			$_SESSION["strh24"] = "เข้าสู่ระบบ";
 			$_SESSION["strh25"] = "สมัครสมาชิก";
-			$_SESSION["strh26"] = "ปรับปรุงระดับน้ำทุกๆ (1-100 เซนติเมตร)";
+			$_SESSION["strh26"] = "ตั้งค่าการแจ้งเตือนระดับน้ำทุกๆ (1-100 เซนติเมตร)";
 
 			
 			$_SESSION["strh27"] = "สถานที่";
@@ -209,7 +216,7 @@
 			$_SESSION["strh41"] = "ไฟล์ประกอบ (PDF)";
 			$_SESSION["strh42"] = "โดย";
 
-			$_SESSION["strh43"] = "ชื่อสมาชิก";
+			$_SESSION["strh43"] = "ชื่อ";
 			$_SESSION["strh44"] = "ชื่อ-นามสกุล";
 			$_SESSION["strh45"] = "อีเมล";
 			$_SESSION["strh46"] = "เพศ";
@@ -229,6 +236,9 @@
 			$_SESSION["strh56"] = "ออนไลน์/ออฟไลน์";
 			$_SESSION["strh57"] = "เข้าสู่ระบบล่าสุด";
 			$_SESSION["strh58"] = "กิจกรรมล่าสุด";
+			$_SESSION["strh59"] = "ลบข้อมูลระดับน้ำรายปี";
+
+			$_SESSION["strh60"] = "เลือกปีที่ต้องการลบ";
 
 
 	}

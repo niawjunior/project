@@ -107,31 +107,45 @@ $limit_level = $result["limit_level"];
                       <br><br>
                     </fieldset>
               </form>
+              <br>
             </div>
           </div>
         </div>
-
+<?php
+$remove_date = array();
+$select_date = mysqli_query($connect,"SELECT DISTINCT year FROM water_table");
+$i = 0;
+while ($result_date = mysqli_fetch_array($select_date)) {
+  $remove_date[$i] = $result_date["year"];
+  $i++;
+}
+?>
       <div class="col-md-4">
         <div class="panel panel-default">
            <div class="panel-body">
             <form  method="post" action="remove.php" accept-charset="UTF-8" role="form">
-              <h4><label>ลบข้อมูลระดับน้ำตามช่วงเวลา</label></h4>
+              <h4><label><?php echo $_SESSION["strh59"];?></label></h4>
               <div class="form-group">
                 <select class="form-control" name="date_range">
-                 <option value="">เลือกช่วงเวลา</option>
-                  <option value="day">ย้อนหลัง 1 วัน</option>
-                  <option value="week">ย้อนหลัง 1 อาทิตย์</option>
-                  <option value="month">ย้อนหลัง 1 เดือน</option>
-                  <option value="year">ย้อนหลัง 1 ปี</option>
+                 <option value=""><?php echo $_SESSION["strh60"];?></option>
+                  <?php
+                  for ($c=0; $c < $i; $c++) { 
+                  ?>
+                    <option value="<?php echo $remove_date[$c];?>"><?php echo $remove_date[$c];?></option>
+                  <?php
+                  }
+                  ?>
                 </select>
                 <br>
                 <button data-toggle="tooltip" title="กดปุ่มตกลงเพื่อทำรายการ" class="btn btn-sm btn-success " value=""><?php echo $_SESSION["strh15"];?> <span class="glyphicon glyphicon-ok-sign"></button>
-                <br><br>
+                <br><br><br>
               </div>
             </form>
+            <h4>*กรุณาสำรองข้อมูลก่อนลบ<a href="profile.php?Action=Setting?Backup" style="color:red"><i class="glyphicon glyphicon-chevron-right"></i>สำรองข้อมูล</h4></a>
           </div>
           </div>
       </div>
+      
         <?php
     }
     ?>

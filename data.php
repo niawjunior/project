@@ -7,6 +7,12 @@ require_once("config.php");
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
+
+  <script>
+    setTimeout(function(){
+   window.location.reload(1);
+}, 15000);
+  </script>
 </head>
 <body>
   <?php 
@@ -50,6 +56,7 @@ require_once("config.php");
     $LEVEL_ADD = ($f222-$_GET['LEVEL']);
     $TIME_ADD = date("H:i");
     $DATE_ADD = date("Y-m-d");
+    $YEAR = date("Y");
     $DEEP_ADD =  $f222;
     $DEEP_EDIT =  $_POST["txtdeep"];
   }
@@ -60,6 +67,7 @@ require_once("config.php");
     $LEVEL_ADD = $_POST["txtAddlevel"];
     $TIME_ADD = $_POST["txtAddtime"];
     $DATE_ADD = $_POST["txtAdddate"];
+    $YEAR = date("Y");
   }
   if($_GET["Action"] == "ADD")
   {
@@ -78,7 +86,7 @@ require_once("config.php");
 
     if($LEVEL_ADD >=($max) or $LEVEL_ADD <=($min))
     {
-    mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date) VALUES  ('$PLACE_ADD','$REAL_LEVEL_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD') ");
+    mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date,year) VALUES  ('$PLACE_ADD','$REAL_LEVEL_ADD','$LEVEL_ADD','$DEEP_ADD','$TIME_ADD','$DATE_ADD','$YEAR') ");
     mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '$f111' ");
     }
   }
@@ -89,7 +97,7 @@ require_once("config.php");
           {
             $DEEP = $objResult['deep'];
           }
-          mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date) VALUES  ('".$_POST["PLACE"]."','$REAL_LEVEL_ADD', '$LEVEL_ADD',' $DEEP','$TIME_ADD','$DATE_ADD') ");
+          mysqli_query($connect,"INSERT INTO water_table (place,real_level,level,deep,time,date,year) VALUES  ('".$_POST["PLACE"]."','$REAL_LEVEL_ADD', '$LEVEL_ADD',' $DEEP','$TIME_ADD','$DATE_ADD','$YEAR') ");
           mysqli_query($connect,"UPDATE data SET level = '$LEVEL_ADD',time = '$TIME_ADD',date = '$DATE_ADD' WHERE h1 = '".$_POST["PLACE"]."' ");
           mysqli_query($connect,"INSERT INTO activity (user,time,date,atvt,note) VALUES  ('$POST','$time',' $date','เพิ่มข้อมูลระดับน้ำ','เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร ') ");
           mysqli_query($connect,"UPDATE member SET lastactivity = 'เพิ่มข้อมูล | สถานที่ ".$_POST["PLACE"]." | ระดับน้ำ $LEVEL_ADD เมตร '  where user = '$POST'");
@@ -374,6 +382,9 @@ require_once("config.php");
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 });
+
+
+
 </script>
 
 <html>
