@@ -1,5 +1,5 @@
 # ระบบตรวจวัดระดับน้ำในแหล่งชุมชน ผ่านระบบสารสนเทศภูมิศาสตร์
-
+![alt text](project.jpg)
 ## Installation
 git clone https://github.com/niawjunior/project_final.git
 
@@ -59,7 +59,4 @@ Edit config (connection.php,connect.php)
 ![alt tag](http://i.imgur.com/LoUz3zl.png)
 ![alt tag](http://i.imgur.com/BORXmQK.png)
 
-## License
-
-by niaw junior
 
